@@ -2,23 +2,74 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+// ------------------------ header ------------------------ //
+// task : get individual elements (such as greeting and logout) proper spacing
+    // like the rest of the elements
+header {
+  display: flex;
+  justify-content: space-around;
+  align-items: center; 
+  height: 10vh;
+  border-bottom: 1px solid grey;
+}
+
+
+// ------------------------ session form styling ------------------------ //
 .login-form-container {
-  border: 1px solid lightgrey;
+  border: 1px solid grey;
   display: flex;
   justify-content: center;
   width: 33%;
+  padding-right: 7vh;
+  padding-left: 7vh;
+  padding-top: 10vh;
+  padding-bottom: 10vh;
 }
-
-.header {
-  // display: flex;
-  // justify-content: space-between;
-}
-
 .login-input {
   background-color: rgb(233, 233, 233);
 }
 
-.session-input-container {
-  display: flex;
-  
+// ------------------------ navbar buttons ------------------------ //
+.login-navbar-button {
+  border: 1px solid grey;
+  padding-right: 2vh;
+  padding-left: 2vh;
+  padding-top: 1.3vh;
+  padding-bottom: 1.3vh;
+  text-decoration: none; 
+  border-radius: 7px;
+  color: black;
 }
+
+.login-navbar-button:hover {
+  background-color: black;
+  color: white;
+}
+
+.logout-navbar-button {
+  border: 1px solid grey;
+  padding-right: 2vh;
+  padding-left: 2vh;
+  padding-top: 1.3vh;
+  padding-bottom: 1.3vh;
+  text-decoration: none; 
+  border-radius: 7px;
+  color: black;
+}
+
+.logout-navbar-button:hover {
+  background-color: black;
+  color: white;
+}
+
+.register-navbar-button {
+  padding-right: 2vh;
+  padding-left: 2vh;
+  text-decoration: none; 
+  color: black;
+}
+
+.register-navbar-button:hover {
+  text-decoration: underline;
+}
+

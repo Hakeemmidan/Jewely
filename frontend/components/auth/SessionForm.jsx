@@ -45,20 +45,22 @@ export class SessionForm extends React.Component {
           <div className="login-form">
             <br />
             <label className="session-input-container">
-              <p> Username: </p>
+              <p>Username</p>
               <input type="text"
                 value={this.state.username}
                 onChange={this.update('username')}
                 className="login-input"
+                placeholder="username"
               />
             </label>
             <br />
             <label className="session-input-container">
-              <p> Password: </p>
+              <p>Password</p>
               <input type="password"
                 value={this.state.password}
                 onChange={this.update('password')}
                 className="login-input"
+                placeholder="password"
               />
             </label>
             <br />
