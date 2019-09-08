@@ -12,12 +12,11 @@ export const logoutCurrentUser = () => ({
   type: LOGOUT_CURRENT_USER
 });
 
-export const receiveErrors = (errors) => ({
+export const receiveErrors = errors => ({
   type: RECEIVE_ERRORS,
-  errors: errors
+  errors
 });
 
-// lowercase login, logout, and sign are api utils
 export const signup = user => dispatch => (
   APIUtil.signup(user).then(user => (
     dispatch(receiveCurrentUser(user))

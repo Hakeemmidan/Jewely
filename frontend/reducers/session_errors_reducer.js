@@ -8,6 +8,7 @@ export const sessionErrorsReducer = (state = [], action) => {
       return [];
     case RECEIVE_ERRORS:
       return action.errors;
+      // ^ question ) Where is this coming from?
     default:
       return state;
   }
