@@ -44,7 +44,8 @@ export class SessionForm extends React.Component {
           {this.renderErrors()}
           <div className="login-form">
             <br />
-            <label>Username:
+            <label className="session-input-container">
+              <p> Username: </p>
               <input type="text"
                 value={this.state.username}
                 onChange={this.update('username')}
@@ -52,7 +53,8 @@ export class SessionForm extends React.Component {
               />
             </label>
             <br />
-            <label>Password:
+            <label className="session-input-container">
+              <p> Password: </p>
               <input type="password"
                 value={this.state.password}
                 onChange={this.update('password')}

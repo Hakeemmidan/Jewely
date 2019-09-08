@@ -9,8 +9,8 @@ import LogInFormContainer from './auth/login_form_container';
 
 export const App = () => (
   <div>
-    <header>
-      <h1>Jewely</h1>
+    <header className="header">
+      <h1 className="logo">Jewely</h1>
       <GreetingContainer />
     </header>
     <Switch>
