@@ -8,6 +8,7 @@ export class SessionForm extends React.Component {
       password: ''
     };
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.demoLogin = this.demoLogin.bind(this);
   }
 
   update(field) {
@@ -34,6 +35,47 @@ export class SessionForm extends React.Component {
     );
   }
 
+  // --------------- demo login START --------------- //
+
+  // sleep(milliseconds) {
+  //   var start = new Date().getTime();
+  //   for (var i = 0; i < 1e7; i++) {
+  //     if ((new Date().getTime() - start) > milliseconds) {
+  //       break;
+  //     }
+  //   }
+  // }
+  // ^^^ Source: https://flaviocopes.com/javascript-sleep/
+
+  demoLogin(e) {
+    // e.preventDefault();
+    
+    window.location.hash = '#/login';
+
+
+    // vvv attempt at simulating filling out a form
+    
+    // const username = 'demoUser'.split('');
+    // const password = '12345678'.split('');
+    // const usernameInputField = $('.username-input-field')
+    // for (let i = 0; i < username.length; i++) {
+    //   usernameInputField[0].value += username.shift()
+    //   this.sleep(1000)
+    // }
+      
+
+    this.setState({
+      username: 'demoUser',
+      password: '12345678'
+    });
+
+    
+
+    $('.session-submit').click();
+  }
+
+  // --------------- demo login END --------------- //
+
   render() {
     return (
       <div className="login-form-container">
@@ -41,6 +83,9 @@ export class SessionForm extends React.Component {
           Welcome to Jewely!
           <br />
           Please {this.props.formType} or {this.props.navLink}
+
+          <button onClick={this.demoLogin}> Demo Login </button>
+
           {this.renderErrors()}
           <div className="login-form">
             <br />
@@ -49,7 +94,7 @@ export class SessionForm extends React.Component {
               <input type="text"
                 value={this.state.username}
                 onChange={this.update('username')}
-                className="login-input"
+                className="login-input username-input-field"
                 placeholder="username"
               />
             </label>
@@ -59,7 +104,7 @@ export class SessionForm extends React.Component {
               <input type="password"
                 value={this.state.password}
                 onChange={this.update('password')}
-                className="login-input"
+                className="login-input password-input-field"
                 placeholder="password"
               />
             </label>
