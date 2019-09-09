@@ -14,15 +14,19 @@ header {
 }
 
 // ------------------------ session form styling ------------------------ //
-.login-form-container {
+.login-form-box {
   border: 1px solid grey;
-  display: flex;
-  justify-content: center;
   width: 33%;
   padding-right: 7vh;
   padding-left: 7vh;
   padding-top: 10vh;
   padding-bottom: 10vh;
+}
+
+.login-form-container {
+  padding-top: 4vh;
+  display: flex;
+  justify-content: center;
 }
 
 .login-input {

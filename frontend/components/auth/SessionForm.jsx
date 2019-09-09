@@ -9,6 +9,7 @@ export class SessionForm extends React.Component {
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.demoLogin = this.demoLogin.bind(this);
+    // this.fillUsername = this.fillUsername.bind(this)
   }
 
   update(field) {
@@ -46,72 +47,96 @@ export class SessionForm extends React.Component {
   //   }
   // }
   // ^^^ Source: https://flaviocopes.com/javascript-sleep/
+  // fillUsername(flag, usernameInputField, username) {
+  //   if (flag) {
+  //     setTimeout(function () {
+  //       // add a letter to username
+  //       usernameInputField[0].value += username.shift();
+  //       // if the field does not have a suffiecent letter count
+  //       if (usernameInputField[0].value.length < 'demoUser'.length) {
+  //         // add the next letter
+  //         this.fillUsername(true, usernameInputField, username)
+  //       } else {
+  //         this.fillUsername(false, usernameInputField, username)
+  //       }
+  //     }.bind(this), 200);
+
+  //     return;
+
+  //   }
+  // }
 
   demoLogin(e) {
-    // e.preventDefault();
-    
+    e.preventDefault();
     window.location.hash = '#/login';
-
-
-    // vvv attempt at simulating filling out a form
-    
-    // const username = 'demoUser'.split('');
+    const username = 'demoUser'.split('');
     // const password = '12345678'.split('');
-    // const usernameInputField = $('.username-input-field')
-    // for (let i = 0; i < username.length; i++) {
-    //   usernameInputField[0].value += username.shift()
-    //   this.sleep(1000)
-    // }
-      
+    const usernameInputField = $('.username-input-field')
+    // this.fillUsername(true, usernameInputField, username)
+    function fillUsername(flag) {
+      if (flag) {
+        debugger // this >> undefined
+        setTimeout(() => {
+          debugger // this >> window
+          usernameInputField[0].value += username.shift();
+          if (usernameInputField[0].value.length < 'demoUser'.length) {
+            fillUsername(true)
+          } else {
+            fillUsername(false)
+          }
+        }, 200);
 
-    this.setState({
-      username: 'demoUser',
-      password: '12345678'
-    });
+        return;
 
-    
-
-    $('.session-submit').click();
+      }
+    }
+    debugger // this >> SessionForm
+    fillUsername(true)
+  
+    // $('.session-submit').click();
   }
+
 
   // --------------- demo login END --------------- //
 
   render() {
     return (
       <div className="login-form-container">
-        <form onSubmit={this.handleSubmit} className="login-form-box">
-          Welcome to Jewely!
-          <br />
-          Please {this.props.formType} or {this.props.navLink}
+        <div className="login-form-box">
+          <form onSubmit={this.handleSubmit}>
+            Welcome to Jewely!
+            <br />
+            Please {this.props.formType} or {this.props.navLink}
 
-          <button onClick={this.demoLogin}> Demo Login </button>
+            <button onClick={this.demoLogin}> Demo Login </button>
 
-          {this.renderErrors()}
-          <div className="login-form">
-            <br />
-            <label className="session-input-container">
-              <p>Username</p>
-              <input type="text"
-                value={this.state.username}
-                onChange={this.update('username')}
-                className="login-input username-input-field"
-                placeholder="username"
-              />
-            </label>
-            <br />
-            <label className="session-input-container">
-              <p>Password</p>
-              <input type="password"
-                value={this.state.password}
-                onChange={this.update('password')}
-                className="login-input password-input-field"
-                placeholder="password"
-              />
-            </label>
-            <br />
-            <input className="session-submit" type="submit" value={this.props.formType} />
-          </div>
-        </form>
+            {this.renderErrors()}
+            <div className="login-form">
+              <br />
+              <label className="session-input-container">
+                <p>Username</p>
+                <input type="text"
+                  value={this.state.username}
+                  onChange={this.update('username')}
+                  className="login-input username-input-field"
+                  placeholder="username"
+                />
+              </label>
+              <br />
+              <label className="session-input-container">
+                <p>Password</p>
+                <input type="password"
+                  value={this.state.password}
+                  onChange={this.update('password')}
+                  className="login-input password-input-field"
+                  placeholder="password"
+                />
+              </label>
+              <br />
+              <input className="session-submit" type="submit" value={this.props.formType} />
+            </div>
+          </form>
+        </div>
       </div>
     );
   }
