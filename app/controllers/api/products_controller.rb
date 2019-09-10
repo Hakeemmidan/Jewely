@@ -9,24 +9,38 @@ class Api::ProductsController < ApplicationController
 
     def create
         @product = Product.new(product_params)
+
         if @product.save
-            render json: {message: "Product has been listed"}
+            render :show
+            # render json: {message: "Product has been listed"}
         else
-            render json: @product.errors.full_messages
+            render json: @product.errors.full_messages, status: 422
         end
     end
 
     def update
-        
+        @product = current_user.products.find(params[:id])
+
+        if @product.update(product_params)
+            render :show
+        else
+            render json: @product.errors.full_messages, status: 422
+        end
     end
 
-    # index : show all products
-    # show : show details for a specific product
-    # create : create a specific product using params
-    # update : update a specific product, so this is going to be a form
-    # destroy : delete a specific product
+    def destroy
+        @product = current_user.products.find(params[:id])
 
+        if @product.destroy
+            render :show
+        else
+            render json: @product.errors.full_messages, status: 422
+        end
+    end
 
+    # Note : All these actions will render either 'show' or 'index' views.
+        # Which will in turn render the partial (which is used to extract data
+        # using jBuilder)
 
     private
 
