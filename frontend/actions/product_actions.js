@@ -1,6 +1,7 @@
 export const RECEIVE_ALL_PRODUCTS = 'RECEIVE_ALL_PRODUCTS'
 export const RECEIVE_PRODUCT = 'RECEIVE_PRODUCT'
 export const REMOVE_PRODUCT = 'REMOVE_PRODUCT'
+export const RECEIVE_ERRORS = 'RECEIVE_ERRORS';
 import * as ProductAPIUtil from '../util/product_api_util';
 
 const receiveProducts = (products) => {
@@ -17,7 +18,7 @@ const receiveProduct = (product) => {
     }
 }
 
-const removeProduct = (productId) => {
+const deleteProduct = (productId) => {
     return {
         type: REMOVE_PRODUCT,
         productId
@@ -59,6 +60,6 @@ export const updateProduct = (product) => dispatch => {
 
 export const removeProduct = (productId) => dispatch => {
     return ProductAPIUtil.removeProduct(productId)
-            .then(() => dispatch(removeProduct(productId))
-            , errs => dispatch(receiveErrors(errs)))
+        .then(() => dispatch(deleteProduct(productId))
+        , errs => dispatch(receiveErrors(errs)))
 }
