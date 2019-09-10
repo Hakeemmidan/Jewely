@@ -1,7 +1,10 @@
 class Api::ProductsController < ApplicationController
     def index
         @products = Product.all
-        render :index
+    end
+
+    def show
+        @product = Product.find(params[:id])
     end
 
     def create
@@ -12,6 +15,16 @@ class Api::ProductsController < ApplicationController
             render json: @product.errors.full_messages
         end
     end
+
+    def update
+        
+    end
+
+    # index : show all products
+    # show : show details for a specific product
+    # create : create a specific product using params
+    # update : update a specific product, so this is going to be a form
+    # destroy : delete a specific product
 
 
 
