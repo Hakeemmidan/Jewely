@@ -5,7 +5,7 @@ import { fetchProducts, removeProduct } from '../../../actions/product_actions';
 
 const mapStateToProps = (state) => {
     return {
-        products: Obbject.values(state.products)
+        products: Object.values(state.products)
     }
 }
 

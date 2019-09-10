@@ -10,7 +10,8 @@ export const ProductIndexItem = (props) => {
                 {product.title}
             </Link>
             {/* ^^^ Clicking on this is going to navigate us 
-            to the product's show page */}
+            to the product's show page
+                Task: Change so that clicking on the image changes route as well */}
             <Link to={`/products/${product.id}/edit`} removeProduct={props.removeProduct}>
                 Edit
             </Link>
