@@ -21,6 +21,7 @@ gem 'pry-rails'
 gem 'annotate'
 gem 'bcrypt'
 gem 'jquery-rails'
+gem "aws-sdk-s3"
 
 gem 'jquery'
 gem 'turbolinks'
