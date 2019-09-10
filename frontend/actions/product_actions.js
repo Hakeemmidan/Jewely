@@ -24,6 +24,13 @@ const removeProduct = (productId) => {
     }
 }
 
+const receiveErrors = (errors) => {
+    return {
+        type: RECEIVE_ERRORS,
+        errors
+    }
+}
+
 // Action creators ^^^
 ////////////////////////////////////////////
 // Thunk action creators vvv
@@ -41,17 +48,17 @@ export const fetchProduct = (id) => dispatch => {
 export const createProduct = (product) => dispatch => {
     return ProductAPIUtil.createProduct(product)
             .then(product => dispatch(receiveProduct(product))
-            , err => dispatch(receiveErrors(err)))
+            , errs => dispatch(receiveErrors(errs)))
 }
 
 export const updateProduct = (product) => dispatch => {
     return ProductAPIUtil.updateProduct(product)
             .then(product => dispatch(receiveProduct(product))
-            , err => dispatch(receiveErrors(err)))
+            , errs => dispatch(receiveErrors(errs)))
 }
 
 export const removeProduct = (productId) => dispatch => {
     return ProductAPIUtil.removeProduct(productId)
             .then(() => dispatch(removeProduct(productId))
-            , err => dispatch(receiveErrors(err)))
+            , errs => dispatch(receiveErrors(errs)))
 }
