@@ -2,9 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-// ------------------------ header ------------------------ //
-// task : get individual elements (such as greeting and logout) proper spacing
-    // like the rest of the elements
+// ------------------------ header START ------------------------ //
 header {
   display: flex;
   justify-content: space-around;
@@ -12,6 +10,7 @@ header {
   height: 10vh;
   border-bottom: 1px solid grey;
 }
+// ------------------------ header END ------------------------ //
 
 // ------------------------ session form styling START ------------------------ //
 .login-form-box {
@@ -30,6 +29,7 @@ header {
 }
 
 .session-textbox {
+  display: block;
   height: 48px;
   font-size: 16px;
   border-radius: 4px;
@@ -39,6 +39,7 @@ header {
   border-style: none;
   border: 1px solid #E1E3DF;
   box-shadow: none;
+  max-width: 100%;
 }
 
 .session-form-nav-button {
@@ -88,6 +89,29 @@ header {
 .session-submit:hover {
   background-color: rgb(55, 55, 55);
 }
+
+// ------- session 'OR' START------- //
+.divider {
+	width:100%;
+	text-align:center;
+}
+
+.divider hr {
+	margin-left:auto;
+	margin-right:auto;
+  width:40%;
+  color: lightgrey;
+}
+
+.left {
+	float:left;
+}
+
+.right {
+	float:right;
+}
+// source: https://stackoverflow.com/a/2812819/7974948
+// ------- session 'OR' END------- //
 
 // ------------------------ session form styling END ------------------------ //
 // ------------------------ navbar buttons START------------------------ //

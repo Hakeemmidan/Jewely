@@ -137,28 +137,31 @@ export class SessionForm extends React.Component {
 
               <br />
 
-              <div className="session-submit">
-                <input className="session-submit" type="submit" value={this.props.formType} />
+              <div className="session-submit" onClick={this.handleSubmit}>
+                <input type="submit" value={this.props.formType} />
               </div>
 
               <br/>
             </div>
           </form>
-            or 
-            {/* ^^ want to add line break with a line to this */}
 
+          <div className="divider">
+            <hr className="left" />
+              OR
+            <hr className="right" />
+          </div>
+          {/* ^^^ source: https://stackoverflow.com/a/2812819/7974948 */}
           <br />
           
-          <div className="session-form-nav-button">
-            {this.props.navLink} 
+          <div>
+            {this.props.navLink}
           </div>
 
-          <div className="session-form-nav-button">
-            <button onClick={this.demoLogin} className="session-form-nav-button"> 
+          <div className="session-form-nav-button" onClick={this.demoLogin}>
+            <button className="session-form-nav-button"> 
               Demo Login 
             </button>
           </div>
-          {/* ^^^ Make these buttons with white background */}
         </div>
       </div>
     );
