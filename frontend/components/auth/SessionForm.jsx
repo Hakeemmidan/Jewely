@@ -150,7 +150,7 @@ export class SessionForm extends React.Component {
               OR
             <hr className="right" />
           </div>
-          {/* ^^^ source: https://stackoverflow.com/a/2812819/7974948 */}
+          {/* ^^^ 'OR' styling source: https://stackoverflow.com/a/2812819/7974948 */}
           <br />
           
           <div>
