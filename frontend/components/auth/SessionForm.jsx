@@ -27,9 +27,9 @@ export class SessionForm extends React.Component {
 
   renderErrors() {
     return (
-      <ul>
+      <ul className="session-errors-ul">
         {this.props.errors.map((error, i) => (
-          <li key={`error-${i}`}>
+          <li key={`error-${i}`} className="session-error">
             {error}
           </li>
         ))}
@@ -159,7 +159,7 @@ export class SessionForm extends React.Component {
 
           <div className="session-form-nav-button" onClick={this.demoLogin}>
             <button className="session-form-nav-button"> 
-              Demo Login 
+              demo login 
             </button>
           </div>
         </div>

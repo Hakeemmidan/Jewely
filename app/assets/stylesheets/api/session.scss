@@ -160,3 +160,12 @@ header {
 }
 
 // ------------------------ navbar buttons END ------------------------ //
+
+.session-error {
+  list-style-type: circle;
+  color: darkred;
+  float: left;
+}
+.session-errors-ul {
+  margin-bottom: 30px;
+}
