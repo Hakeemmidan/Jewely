@@ -12,7 +12,6 @@ class Api::ProductsController < ApplicationController
 
         if @product.save
             render :show
-            # render json: {message: "Product has been listed"}
         else
             render json: @product.errors.full_messages, status: 422
         end
