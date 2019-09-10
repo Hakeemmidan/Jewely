@@ -10,7 +10,7 @@ import LogInFormContainer from './auth/login_form_container';
 export const App = () => (
   <div>
     <header>
-      <a className="logo">Jewely</a>
+      <a className="logo" href="#">Jewely</a>
       <GreetingContainer />
     </header>
     <Switch>
