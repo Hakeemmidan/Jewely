@@ -13,7 +13,7 @@ header {
   border-bottom: 1px solid grey;
 }
 
-// ------------------------ session form styling ------------------------ //
+// ------------------------ session form styling START ------------------------ //
 .login-form-box {
   border: 1px solid grey;
   width: 33%;
@@ -29,12 +29,68 @@ header {
   justify-content: center;
 }
 
-.login-input {
-  background-color: rgb(233, 233, 233);
+.session-textbox {
+  height: 48px;
+  font-size: 16px;
+  border-radius: 4px;
+  padding-left: 16px;
+  padding-right: 16px;
+  position: relative;
+  border-style: none;
+  border: 1px solid #E1E3DF;
+  box-shadow: none;
 }
 
+.session-form-nav-button {
+  all: initial;
+  * {
+    all: unset;
+  }
+  // ^ clears all styling
+  display: block;
+  cursor: pointer;
+  border: 1px solid grey;
+  padding-right: 2vh;
+  padding-left: 2vh;
+  padding-top: 1.3vh;
+  padding-bottom: 1.3vh;
+  text-decoration: none; 
+  border-radius: 7px;
+  color: black;
+  margin: 7px;
+  text-align: center;
+}
 
-// ------------------------ navbar buttons ------------------------ //
+.session-form-nav-button:hover {
+  background-color: rgb(247, 247, 247)
+}
+
+.session-submit {
+  all: initial;
+  * {
+    all: unset;
+  }
+  display: block;
+  cursor: pointer;
+  border: 1px solid grey;
+  padding-right: 2vh;
+  padding-left: 2vh;
+  padding-top: 1.3vh;
+  padding-bottom: 1.3vh;
+  text-decoration: none; 
+  border-radius: 7px;
+  color: white;
+  margin: 7px;
+  text-align: center;
+  background-color: black;
+}
+
+.session-submit:hover {
+  background-color: rgb(55, 55, 55);
+}
+
+// ------------------------ session form styling END ------------------------ //
+// ------------------------ navbar buttons START------------------------ //
 .login-navbar-button {
   border: 1px solid grey;
   padding-right: 2vh;
@@ -59,6 +115,7 @@ header {
   padding-bottom: 1.3vh;
   text-decoration: none; 
   border-radius: 7px;
+  cursor: pointer;
   color: black;
 }
 
@@ -78,3 +135,4 @@ header {
   text-decoration: underline;
 }
 
+// ------------------------ navbar buttons END ------------------------ //

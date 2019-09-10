@@ -9,10 +9,9 @@ const Greeting = ({ currentUser, logout }) => {
     </nav>
   );
   const personalGreeting = () => (
-    <header>
-      <h5 className="header-name">Hi, {currentUser.username}!</h5>
+    <div>
       <button className="logout-navbar-button" onClick={logout}>Log Out</button>
-    </header>
+    </div>
   );
 
   return currentUser ? personalGreeting() : sessionLinks();
