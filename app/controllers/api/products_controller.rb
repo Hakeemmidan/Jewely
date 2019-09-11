@@ -18,7 +18,8 @@ class Api::ProductsController < ApplicationController
     end
 
     def update
-        @product = current_user.products.find(params[:id])
+        @product = Product.find(params[:id])
+        #@product = current_user.products.find(params[:id])
 
         if @product.update(product_params)
             render :show
@@ -28,7 +29,8 @@ class Api::ProductsController < ApplicationController
     end
 
     def destroy
-        @product = current_user.products.find(params[:id])
+        @product = Product.find(params[:id])
+        #@product = current_user.products.find(params[:id])
 
         if @product.destroy
             render :show
