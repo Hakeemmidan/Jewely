@@ -8,8 +8,11 @@ const mapStateToProps = (state, ownProps) => {
     const defaultProduct = {
         title: '',
         description: '',
-        price: 0
+        price: 0,
+        seller_id: state.session.id,
+        errors: state.errors.product.responseJSON
     };
+    
     // debugger
     const product = state.entities.products[ownProps.match.params.productId] || defaultProduct;
     const formType = 'Update Product';
