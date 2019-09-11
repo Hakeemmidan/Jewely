@@ -14,7 +14,7 @@ puts "#=> Seeding started"
 user1 = User.new(username: 'demoUser', password: '12345678')
 user1.save!
 photo1 = File.open('/Users/hakimalmidan/Desktop/stock-photo-woman-s-jewelry-vintage-jewelry-background-beautiful-gold-tone-brooches-braceletes-necklaces-1061675699.jpg')
-product1 = Product.create(title: 'some title1', description: 'some description', price: 199.97, quantity: 1, seller_id: user1.id,
+product1 = Product.create(title: 'some title1', description: 'some description', price: 199.97, seller_id: user1.id,
 cart_id: 1, review_id: 1)
 product1.photo.attach(io: photo1, filename: 'some image')
 product1.save!
@@ -22,7 +22,7 @@ product1.save!
 user2 = User.new(username: 'demoUser2', password: '22345678')
 user2.save!
 photo2 = File.open('/Users/hakimalmidan/Desktop/stock-photo-woman-s-jewelry-vintage-jewelry-background-beautiful-gold-tone-brooches-braceletes-necklaces-1061675699.jpg')
-product2 = Product.create(title: 'some title2', description: 'some description', price: 299.97, quantity: 2, seller_id: user2.id,
+product2 = Product.create(title: 'some title2', description: 'some description', price: 299.97, seller_id: user2.id,
 cart_id: 2, review_id: 2)
 product2.photo.attach(io: photo2, filename: 'some image')
 product2.save!
@@ -30,7 +30,7 @@ product2.save!
 user3 = User.new(username: 'demoUser3', password: '33345678')
 user3.save!
 photo3 = File.open('/Users/hakimalmidan/Desktop/stock-photo-woman-s-jewelry-vintage-jewelry-background-beautiful-gold-tone-brooches-braceletes-necklaces-1061675699.jpg')
-product3 = Product.create(title: 'some title3', description: 'some description', price: 399.97, quantity: 3, seller_id: user3.id,
+product3 = Product.create(title: 'some title3', description: 'some description', price: 399.97, seller_id: user3.id,
 cart_id: 3, review_id: 3)
 product3.photo.attach(io: photo3, filename: 'some image')
 product3.save!

@@ -23,7 +23,7 @@ export class ProductShow extends React.Component {
         return (
             <div>
                 <h3>{product.title}</h3>
-                <h4>{product.desrciption}</h4>
+                <h4>{product.description}</h4>
             </div>
         )
     }

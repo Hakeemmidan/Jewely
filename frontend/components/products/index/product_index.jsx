@@ -8,19 +8,22 @@ export class ProductIndex extends React.Component {
     }
 
     render() {
-        const products = this.props.products.map(product => {
-            return (
-                <ProductIndexItem
-                    key={product.id}
-                    product={product}
-                />
-            )
-        })
-
+        
+        // const products = this.props.products.map((product, idx) => {
+        //     return (
+                
+        //     )
+        // })
+        console.log(this.props.products)
         return (
             <div>
                 <ul className="product-index-ul">
-                    {products}
+                    {this.props.products.map((product, idx) =>
+                        <ProductIndexItem
+                            key={idx}
+                            product={product}
+                        />
+                    )}    
                 </ul>
             </div>
         )

@@ -18,6 +18,7 @@ class Api::ProductsController < ApplicationController
     end
 
     def update
+
         @product = current_user.products.find(params[:id])
 
         if @product.update(product_params)
