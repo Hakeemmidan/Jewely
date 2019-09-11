@@ -1,5 +1,3 @@
 json.array! @products do |product|
-    json.set! product.id do
-        json.partial! 'product', product: product
-    end
+    json.partial! 'product', product: product
 end

@@ -11,7 +11,7 @@ import SignUpFormContainer from './auth/signup_form_container';
 import LogInFormContainer from './auth/login_form_container';
 
 // products vvv
-// import ProductIndexContainer from './products/index/product_index_container';
+import ProductIndexContainer from './products/index/product_index_container';
 
 
 export const App = () => (
@@ -25,8 +25,8 @@ export const App = () => (
       <Switch>
         <AuthRoute exact path="/login" component={LogInFormContainer} />
         <AuthRoute exact path="/signup" component={SignUpFormContainer} />
-        {/* <Route path="/" component={ProductIndexContainer}/> */}
-        {/* <Route component={ProductIndexContainer}/> */}
+        <Route path="/" component={ProductIndexContainer}/>
+        <Route component={ProductIndexContainer}/>
         {/* ^^^ Note: User gets redirected to this if they don't enter an exisiting path.
                 This happens because there is no path parameter */}
 
