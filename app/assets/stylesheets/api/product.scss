@@ -1,0 +1,19 @@
+.product-index-image {
+    height: 100px;
+    width: 100px;
+}
+
+.product-index-item-li {
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+}
+
+.product-index-item-price {
+    text-decoration: none;
+    color: black;
+}
+
+.product-index-ul {
+    display: grid;
+}

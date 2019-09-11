@@ -5,17 +5,20 @@ export const ProductIndexItem = (props) => {
     const product = props.product
     
     return (
-        <li>
-            <img src={product.photoUrl}/>
-            <Link to={`/products/${product.id}`}> 
-                {product.title}
+        <li className="product-index-item-li">
+            <img src={product.photoUrl} className="product-index-image"/>
+            <Link to={`/products/${product.id}`} className="product-index-item-price"> 
+                {product.price}
             </Link>
+            
             {/* ^^^ Clicking on this is going to navigate us 
             to the product's show page
                 Task: Change so that clicking on the image changes route as well */}
-            <Link to={`/products/${product.id}/edit`} removeProduct={props.removeProduct}>
+
+
+            {/* <Link to={`/products/${product.id}/edit`} removeProduct={props.removeProduct}>
                 Edit
-            </Link>
+            </Link> */}
             {/* Task: Make this only visible to logged in people */}
             {/* Task: Make a delete button avilable on the edit form of a specific product
                 Not sure if passing the removeProduct function as a prop might be the best

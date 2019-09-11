@@ -19,7 +19,7 @@ export class ProductIndex extends React.Component {
 
         return (
             <div>
-                <ul>
+                <ul className="product-index-ul">
                     {products}
                 </ul>
             </div>
