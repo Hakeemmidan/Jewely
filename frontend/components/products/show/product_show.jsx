@@ -14,17 +14,28 @@ export class ProductShow extends React.Component {
         }
     }
 
+
     render() {
         const product = this.props.product
         if (!product) {
             return <div>Loading...</div>
         }
+        // check if the currentUser id === seller id
+        // debugger
 
-        return (
-            <div>
-                <h3>{product.title}</h3>
-                <h4>{product.description}</h4>
-            </div>
-        )
+        let editLink = null;
+
+        if (this.props.currentUser.id === product.seller_id) { 
+            editLink = <Link to={`/products/${product.id}/edit`}>Edit</Link>
+        }
+
+            return (
+                <div>
+                    <h3>{product.title}</h3>
+                    <h4>{product.description}</h4>
+                    {editLink}
+                </div>
+            )
+
     }
 }

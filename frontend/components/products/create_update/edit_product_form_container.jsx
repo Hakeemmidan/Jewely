@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import ProductForm from './product_form';
 import { fetchProduct, updateProduct } from '../../../actions/product_actions';
 
+
 const mapStateToProps = (state, ownProps) => {
     const defaultProduct = {
         title: '',
