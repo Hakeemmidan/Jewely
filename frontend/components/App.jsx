@@ -47,6 +47,8 @@ export const App = (props) => {
             path="/products/:productId"
             component={ProductShowContainer}
           />
+          {/* Note: The path with the wild card at the end should always be put
+              BELOW routes that have the same length */}
 
           <AuthRoute
             exact

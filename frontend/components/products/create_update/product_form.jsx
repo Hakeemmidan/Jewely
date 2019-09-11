@@ -19,9 +19,22 @@ class ProductForm extends React.Component {
         this.props.action(this.state).then(() => this.props.history.push('/'));
     }
 
+    renderErrors() {
+        return (
+            <ul className="errors-ul">
+                {this.state.errors.map((error, i) => (
+                    <li key={`error-${i}`} className="error">
+                        {error}
+                    </li>
+                ))}
+            </ul>
+        );
+    }
+
     render() {
         return (
             <div>
+                {/* {this.renderErrors()} */}
                 <h3>{this.props.formType}</h3>
                 <form onSubmit={this.handleSubmit}>
                     <label>Title

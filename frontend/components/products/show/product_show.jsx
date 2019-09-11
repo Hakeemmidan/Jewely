@@ -20,12 +20,10 @@ export class ProductShow extends React.Component {
         if (!product) {
             return <div>Loading...</div>
         }
-        // check if the currentUser id === seller id
-        // debugger
 
         let editLink = null;
-
-        if (this.props.currentUser.id === product.seller_id) { 
+        
+        if (this.props.currentUserId === product.seller_id) { 
             editLink = <Link to={`/products/${product.id}/edit`}>Edit</Link>
         }
 
