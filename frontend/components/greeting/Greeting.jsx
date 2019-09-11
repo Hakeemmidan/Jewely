@@ -10,6 +10,7 @@ const Greeting = ({ currentUser, logout }) => {
   );
   const personalGreeting = () => (
     <div>
+      <Link to={`/products/create`}>Sell On Jewely</Link>
       <button className="logout-navbar-button" onClick={logout}>Log Out</button>
     </div>
   );

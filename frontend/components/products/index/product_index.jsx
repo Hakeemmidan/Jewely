@@ -14,7 +14,6 @@ export class ProductIndex extends React.Component {
                 
         //     )
         // })
-        console.log(this.props.products)
         return (
             <div>
                 <ul className="product-index-ul">
@@ -23,7 +22,7 @@ export class ProductIndex extends React.Component {
                             key={idx}
                             product={product}
                         />
-                    )}    
+                    )}
                 </ul>
             </div>
         )
