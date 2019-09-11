@@ -6,9 +6,9 @@ export const ProductIndexItem = (props) => {
     
     return (
         <li className="product-index-item-li">
-            <img src={product.photoUrl} className="product-index-image"/>
-            <Link to={`/products/${product.id}`} className="product-index-item-price"> 
-                {product.price}
+            <Link to={`/products/${product.id}`}> 
+                <img src={product.photoUrl} className="product-index-image"/>
+                <p className="product-index-item-price">{product.price}</p>
             </Link>
             
             {/* ^^^ Clicking on this is going to navigate us 
