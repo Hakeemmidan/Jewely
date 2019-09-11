@@ -9,6 +9,7 @@ import {
 import GreetingContainer from './greeting/greeting_container';
 import SignUpFormContainer from './auth/signup_form_container';
 import LogInFormContainer from './auth/login_form_container';
+import ProductShowContainer from './products/show/product_show_container';
 
 // products vvv
 import ProductIndexContainer from './products/index/product_index_container';
@@ -23,6 +24,7 @@ export const App = () => (
     </header>
       {/* Note: this is here because we want to view differnet things based on what page we are on */}
       <Switch>
+        <Route exact path="/products/:productId" component={ProductShowContainer} />
         <AuthRoute exact path="/login" component={LogInFormContainer} />
         <AuthRoute exact path="/signup" component={SignUpFormContainer} />
         <Route path="/" component={ProductIndexContainer}/>

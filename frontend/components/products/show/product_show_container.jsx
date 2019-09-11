@@ -1,15 +1,22 @@
-// import { connect } from 'react-redux';
+import { connect } from 'react-redux';
 
-// import { fetchProduct } from '../../../actions/product_actions';
-// import { ProductShow } from './product_show';
+import { fetchProduct } from '../../../actions/product_actions';
+import { ProductShow } from './product_show';
 
 
-// const mapStateToProps = (state) => {
+const mapStateToProps = (state, ownProps) => {
+    return {
+        product: state.entities.products[ownProps.match.params.productId]
+    }
+}
 
-// }
+const mapDispatchToProps = (dispatch) => {
+    return {
+        fetchProduct: (id) => dispatch(fetchProduct(id))
+    }
+}
 
-// const mapDispatchToProps = (dispatch) => {
-
-// }
-
-// connect(mapStateToProps, mapDispatchToProps)(ProductShow)
+export default connect(
+    mapStateToProps, 
+    mapDispatchToProps)
+    (ProductShow)
