@@ -2,7 +2,8 @@ import { connect } from 'react-redux';
 import ProductForm from './product_form';
 import { createProduct } from '../../../actions/product_actions';
 
-const mapStateToProps = () => {
+const mapStateToProps = (state) => {
+    debugger
     const product = { 
         title: '', 
         description: '',
