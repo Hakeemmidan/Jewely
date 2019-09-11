@@ -6,55 +6,74 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+User.delete_all
+Product.delete_all
 
 puts "#=> Seeding started"
 
-User.create(username: 'demoUser', password: '12345678')
+user1 = User.new(username: 'demoUser', password: '12345678')
+user1.save!
 
 photo1 = File.open('/Users/hakimalmidan/Desktop/stock-photo-woman-s-jewelry-vintage-jewelry-background-beautiful-gold-tone-brooches-braceletes-necklaces-1061675699.jpg')
-product1 = Product.create(title: 'some title', description: 'some description', price: 299.97, quantity: 1, seller_id: 3,
+product1 = Product.create(title: 'some title', description: 'some description', price: 299.97, quantity: 1, seller_id: user1.id,
 cart_id: 1, review_id: 1)
 product1.photo.attach(io: photo1, filename: 'some image')
 product1.save!
 
 =begin
-product2.photo.attach(io: photo1, filename: 'some image')
-product2 = Product.create(title: 'some title', description: 'some description', price: 299.97, quantity: 1, seller_id: 3,
+photo2 = File.open('/Users/hakimalmidan/Desktop/stock-photo-woman-s-jewelry-vintage-jewelry-background-beautiful-gold-tone-brooches-braceletes-necklaces-1061675699.jpg')
+product2 = Product.create(title: 'some title2', description: 'some description2', price: 299.99, quantity: 1, seller_id: 3,
 cart_id: 1, review_id: 1)
-
-product3.photo.attach(io: photo1, filename: 'some image')
-product3 = Product.create(title: 'some title', description: 'some description', price: 299.97, quantity: 1, seller_id: 3,
+product2.photo.attach(io: photo2, filename: 'someImg')
+product2.save!
+# question ) Why can't I attach the same image more than once
+photo3 = File.open('/Users/hakimalmidan/Desktop/stock-photo-woman-s-jewelry-vintage-jewelry-background-beautiful-gold-tone-brooches-braceletes-necklaces-1061675699.jpg')
+product3 = Product.create(title: 'some title3', description: 'some description3', price: 399.99, quantity: 1, seller_id: 3,
 cart_id: 1, review_id: 1)
+product3.photo.attach(io: photo3, filename: 'someImg')
+product3.save!
 
-product4.photo.attach(io: photo1, filename: 'some image')
-product4 = Product.create(title: 'some title', description: 'some description', price: 299.97, quantity: 1, seller_id: 3,
+photo4 = File.open('/Users/hakimalmidan/Desktop/stock-photo-woman-s-jewelry-vintage-jewelry-background-beautiful-gold-tone-brooches-braceletes-necklaces-1061675699.jpg')
+product4 = Product.create(title: 'some title4', description: 'some description4', price: 499.99, quantity: 1, seller_id: 3,
 cart_id: 1, review_id: 1)
+product4.photo.attach(io: photo4, filename: 'someImg')
+product4.save!
 
-product5.photo.attach(io: photo1, filename: 'some image')
+photo5 = File.open('/Users/hakimalmidan/Desktop/stock-photo-woman-s-jewelry-vintage-jewelry-background-beautiful-gold-tone-brooches-braceletes-necklaces-1061675699.jpg')
+product5 = Product.create(title: 'some title5', description: 'some description5', price: 599.99, quantity: 1, seller_id: 3,
+cart_id: 1, review_id: 1)
+product5.photo.attach(io: photo5, filename: 'someImg')
+product5.save!
+=end
+=begin
 product5 = Product.create(title: 'some title', description: 'some description', price: 299.97, quantity: 1, seller_id: 3,
 cart_id: 1, review_id: 1)
+product5.photo.attach(io: photo1, filename: 'some image')
+product5.save!
 
-product6.photo.attach(io: photo1, filename: 'some image')
 product6 = Product.create(title: 'some title', description: 'some description', price: 299.97, quantity: 1, seller_id: 3,
 cart_id: 1, review_id: 1)
+product6.photo.attach(io: photo1, filename: 'some image')
+product6.save!
 
-product7.photo.attach(io: photo1, filename: 'some image')
 product7 = Product.create(title: 'some title', description: 'some description', price: 299.97, quantity: 1, seller_id: 3,
 cart_id: 1, review_id: 1)
+product7.photo.attach(io: photo1, filename: 'some image')
+product7.save!
 
-product8.photo.attach(io: photo1, filename: 'some image')
 product8 = Product.create(title: 'some title', description: 'some description', price: 299.97, quantity: 1, seller_id: 3,
 cart_id: 1, review_id: 1)
+product8.photo.attach(io: photo1, filename: 'some image')
+product8.save!
 
-product9.photo.attach(io: photo1, filename: 'some image')
 product9 = Product.create(title: 'some title', description: 'some description', price: 299.97, quantity: 1, seller_id: 3,
 cart_id: 1, review_id: 1)
+product9.photo.attach(io: photo1, filename: 'some image')
+product9.save!
 
-product10.photo.attach(io: photo1, filename: 'some image')
 product10 = Product.create(title: 'some title', description: 'some description', price: 299.97, quantity: 1, seller_id: 3,
 cart_id: 1, review_id: 1)
+product10.photo.attach(io: photo1, filename: 'some image')
+product10.save!
 =end
-
-
-
 puts "#=> Seeding ended"
