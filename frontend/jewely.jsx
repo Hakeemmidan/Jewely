@@ -7,13 +7,15 @@ import { Root } from './components/root';
 
 
 document.addEventListener("DOMContentLoaded", () => {
-  // debugger
   let store;
+  const currentProduct = JSON.parse(window.localStorage.getItem('productFormState'));
+
   if (window.currentUser) {
     const preloadedState = {
       session: { id: window.currentUser.id },
       entities: {
-        users: { [window.currentUser.id]: window.currentUser }
+        users: { [window.currentUser.id]: window.currentUser },
+        products: { [currentProduct.id]: currentProduct }
       }
     };
     store = configureStore(preloadedState);
@@ -25,10 +27,6 @@ document.addEventListener("DOMContentLoaded", () => {
   ReactDOM.render(<Root store={store} />, root);
 
   // TESTING START
-  window.store = store;
-  window.login = login;
-  window.logout = logout;
-  window.signup = signup;
-  window.getState = store.getState;
+    window.getState = store.getState;
   // TESTING END
 });

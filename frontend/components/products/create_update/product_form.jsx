@@ -6,14 +6,16 @@ class ProductForm extends React.Component {
         super(props);
         this.state = this.props.product
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.update = this.update.bind(this);
     }
 
     update(field) {
         return (e) => {
             this.setState({ [field]: e.target.value });
-            // debugger
-            // window.localStorage.setItem('productFormState', this.state)
+            window.localStorage.setItem('productFormState', JSON.stringify(this.state))
             // ^^^ Note: save stuff on the window so when a user refreshes they don't go away
+            // Task : Make this better by waiting for the async function setState to finish executing 
+                // (sometimes the field dosen't update completely before because setState dosen't finish setting)
         };
     }
 
@@ -27,8 +29,6 @@ class ProductForm extends React.Component {
     renderErrors() {
         let errors = [];
         errors = this.props.product.errors
-        // Task : I am not sure why the errors are not displaying for edit
-        // Task : Figure how to get rid of errors when you re-render the page for 'create'
         if (errors) {
             return (
                 <ul className="errors-ul">
