@@ -49,17 +49,17 @@ export const fetchProduct = (id) => dispatch => {
 export const createProduct = (product) => dispatch => {
     return ProductAPIUtil.createProduct(product)
             .then(product => dispatch(receiveProduct(product)),
-             errs => dispatch(receiveErrors(errs)))
+                errs => dispatch(receiveErrors(errs.responseJSON)))
 }
 
 export const updateProduct = (product) => dispatch => {
     return ProductAPIUtil.updateProduct(product)
             .then(product => dispatch(receiveProduct(product)),
-             errs => dispatch(receiveErrors(errs)))
+            errs => dispatch(receiveErrors(errs.responseJSON)))
 }
 
 export const removeProduct = (productId) => dispatch => {
     return ProductAPIUtil.removeProduct(productId)
         .then(() => dispatch(deleteProduct(productId)),
-         errs => dispatch(receiveErrors(errs)))
+            errs => dispatch(receiveErrors(errs.responseJSON)))
 }

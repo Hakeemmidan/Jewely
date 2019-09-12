@@ -5,7 +5,8 @@ import {
 export const productErrorsReducer = (state = [], action) => {
     Object.freeze(state);
     switch (action.type) {
-        case RECEIVE_PRODUCT_ERRORS:
+        case RECEIVE_PRODUCT_ERRORS:        
+            // return action.errors    
             return action.errors;
         default:
             return state;
