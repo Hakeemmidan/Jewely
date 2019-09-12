@@ -28,7 +28,7 @@ class ProductForm extends React.Component {
         formData.append('product[price]', this.state.price);
         formData.append('product[seller_id]', this.state.seller_id);
         formData.append('product[errors]', this.state.errors);
-
+        debugger
         if (this.state.photoUrl) {
             formData.append('product[photoUrl]', this.state.photoUrl);
         }
