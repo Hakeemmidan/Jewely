@@ -10,14 +10,13 @@ const mapStateToProps = (state, ownProps) => {
         title: '',
         description: '',
         price: 0,
-        seller_id: state.session.id,
-        errors: state.errors.product
-        // Note : This doesn't have the .responseJSON because it doesn't
-        // initiate an AJAX request (like create does)
+        seller_id: state.session.id
     };
 
 
     const product = state.entities.products[ownProps.match.params.productId] || defaultProduct;
+    product['errors'] = state.errors.product
+
     const formType = 'Update Product';
 
 

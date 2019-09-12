@@ -21,7 +21,8 @@ class ProductForm extends React.Component {
 
     renderErrors() {
         const errors = this.props.product.errors
-
+        // Task : I am not sure why the errors are not displaying for edit
+        // Task : Figure how to get rid of errors when you re-render the page for 'create'
         if (errors) {
             return (
                 <ul className="errors-ul">
@@ -38,8 +39,11 @@ class ProductForm extends React.Component {
     render() {
         return (
             <div>
-                {this.renderErrors()}
                 <h3>{this.props.formType}</h3>
+
+                <br/>
+
+                {this.renderErrors()}
                 <form onSubmit={this.handleSubmit}>
                     <label>Title
                     <input

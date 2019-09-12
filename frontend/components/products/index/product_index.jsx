@@ -16,14 +16,14 @@ export class ProductIndex extends React.Component {
         // })
         return (
             <div>
-                <ul className="product-index-ul">
+                <div className="product-index-list">
                     {this.props.products.map((product, idx) =>
                         <ProductIndexItem
                             key={idx}
                             product={product}
                         />
                     )}
-                </ul>
+                </div>
             </div>
         )
     }
