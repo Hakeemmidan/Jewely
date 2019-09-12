@@ -1,2 +1,4 @@
 json.extract! product, :id, :title, :description, :price, :seller_id
-json.photoUrl url_for(product.photo)
+if product.photo.attached? && product.photo.blob? && product.photo 
+    json.photoUrl url_for(product.photo)
+end
