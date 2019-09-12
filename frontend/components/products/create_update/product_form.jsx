@@ -21,9 +21,33 @@ class ProductForm extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        this.props.action(this.state)
-            .then(() => this.props.history.push(`/products/${this.props.product.id}`),
-            () => this.props.history.push(`/products/${this.props.product.id}/edit`));
+        const formData = new FormData();
+
+        formData.append('product[title]', this.state.title);
+        formData.append('product[description]', this.state.description);
+        formData.append('product[price]', this.state.price);
+        formData.append('product[seller_id]', this.state.seller_id);
+        formData.append('product[errors]', this.state.errors);
+
+        if (this.state.photoUrl) {
+            formData.append('product[photoUrl]', this.state.photoUrl);
+        }
+        debugger
+
+        this.props.action(formData)
+            .then(response => {
+                console.log('Sucesss!')
+                console.log(response)},
+                err => {
+                    console.log('Error!')
+                    console.log(err)
+                })
+            // .then(() => this.props.history.push(`/products/${this.props.product.id}`),
+            // () => this.props.history.push(`/products/${this.props.product.id}/edit`));
+    }
+
+    handleFile(e) {
+        this.setState({photoUrl: e.currentTarget.files[0]})
     }
 
     renderErrors() {
@@ -52,10 +76,10 @@ class ProductForm extends React.Component {
                 {this.renderErrors()}
                 <form onSubmit={this.handleSubmit}>
                     <label>Title
-                    <input
-                            type="text"
-                            value={this.state.title}
-                            onChange={this.update('title')} />
+                        <input
+                                type="text"
+                                value={this.state.title}
+                                onChange={this.update('title')}/>
                     </label>
 
                     <label>Description
@@ -69,6 +93,12 @@ class ProductForm extends React.Component {
                             type="number"
                             value={this.state.price}
                             onChange={this.update('price')} />
+                    </label>
+
+                    <label>Image
+                        <input 
+                            type="file"
+                            onChange={this.handleFile.bind(this)} />
                     </label>
 
                     <input type="submit" value={this.props.formType} />

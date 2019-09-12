@@ -12,11 +12,13 @@ export const fetchProduct = (id) => {
     })
 }
 
-export const createProduct = (product) => {
+export const createProduct = (formData) => {
     return $.ajax({
         method: 'POST',
         url: 'api/products',
-        data: { product }
+        data: formData,
+        contentType: false,
+        processData: false
     })
 }
 

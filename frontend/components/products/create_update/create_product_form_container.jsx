@@ -10,6 +10,7 @@ const mapStateToProps = (state) => {
         title: '', 
         description: '',
         price: 0,
+        photoUrl: null,
         seller_id: state.session.id,
         errors: errors
     };
@@ -21,7 +22,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        action: post => dispatch(createProduct(post)),
+        action: formData => dispatch(createProduct(formData)),
     };
 };
 

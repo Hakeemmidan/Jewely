@@ -46,8 +46,8 @@ export const fetchProduct = (id) => dispatch => {
             .then(product => dispatch(receiveProduct(product)))
 }
 
-export const createProduct = (product) => dispatch => {
-    return ProductAPIUtil.createProduct(product)
+export const createProduct = (formData) => dispatch => {
+    return ProductAPIUtil.createProduct(formData)
             .then(product => dispatch(receiveProduct(product)),
                 errs => dispatch(receiveErrors(errs.responseJSON)))
 }
