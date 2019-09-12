@@ -3,7 +3,7 @@ import ProductForm from './product_form';
 import { createProduct } from '../../../actions/product_actions';
 
 const mapStateToProps = (state) => {
-    const errorsArr = state.errors.product.responseJSON
+    const errorsArr = state.errors.product
     const errors = errorsArr ? errorsArr : [];
     
     const product = { 
@@ -13,6 +13,7 @@ const mapStateToProps = (state) => {
         seller_id: state.session.id,
         errors: errors
     };
+
     const formType = 'Create Product';
 
     return { product, formType };

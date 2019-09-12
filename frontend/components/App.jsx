@@ -19,8 +19,6 @@ import ProductIndexContainer from './products/index/product_index_container';
 
 
 export const App = (props) => {
-  
-  const currentUser = props.currentUser
 
   return (
     <div>
@@ -62,8 +60,6 @@ export const App = (props) => {
             component={SignUpFormContainer}
           />
 
-          
-
           <Route
             path="/"
             component={ProductIndexContainer}
@@ -72,7 +68,6 @@ export const App = (props) => {
           <Route
             component={ProductIndexContainer}
           />
-
           {/* ^^^ Note: User gets redirected to this if they don't enter an exisiting path.
                   This happens because there is no path parameter */}
 

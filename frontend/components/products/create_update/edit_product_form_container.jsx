@@ -18,6 +18,7 @@ const mapStateToProps = (state, ownProps) => {
     const product = state.entities.products[ownProps.match.params.productId] || defaultProduct;
     const formType = 'Update Product';
 
+
     return {
         product,
         formType,

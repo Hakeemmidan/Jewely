@@ -5,12 +5,11 @@ import { HashRouter } from 'react-router-dom';
 import { App } from './App';
 
 export const Root = (props) => {
-  const currentUser = Object.values(props.store.getState().entities.users)[0]
 
   return (
     <Provider store={props.store}>
       <HashRouter>
-        <App currentUser={currentUser}/>
+        <App/>
       </HashRouter>
     </Provider>
   )

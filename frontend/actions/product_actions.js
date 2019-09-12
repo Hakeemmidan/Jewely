@@ -62,4 +62,5 @@ export const removeProduct = (productId) => dispatch => {
     return ProductAPIUtil.removeProduct(productId)
         .then(() => dispatch(deleteProduct(productId)),
             errs => dispatch(receiveErrors(errs.responseJSON)))
+            // Note: Make sure to have responseJSON on your error thunk action resposne
 }

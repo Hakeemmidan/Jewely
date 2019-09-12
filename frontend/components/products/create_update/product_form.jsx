@@ -20,9 +20,10 @@ class ProductForm extends React.Component {
     }
 
     renderErrors() {
+        // task : maybe change this to this.product.errors
         return (
             <ul className="errors-ul">
-                {this.props.errors.map((error, i) => (
+                {this.props.product.errors.map((error, i) => (
                     <li key={`error-${i}`} className="error">
                         {error}
                     </li>
