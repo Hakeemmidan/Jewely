@@ -5,11 +5,13 @@ import { fetchProduct, updateProduct } from '../../../actions/product_actions';
 
 
 const mapStateToProps = (state, ownProps) => {
+
     const defaultProduct = {
         title: '',
         description: '',
         price: 0,
         seller_id: state.session.id,
+        errors: state.errors.product
         // Note : This doesn't have the .responseJSON because it doesn't
         // initiate an AJAX request (like create does)
     };
@@ -21,8 +23,7 @@ const mapStateToProps = (state, ownProps) => {
 
     return {
         product,
-        formType,
-        errors: state.errors.product
+        formType
     };
 };
 
