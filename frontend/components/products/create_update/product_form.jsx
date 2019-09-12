@@ -4,23 +4,29 @@ import { withRouter } from 'react-router-dom';
 class ProductForm extends React.Component {
     constructor(props) {
         super(props);
-        this.handleSubmit = this.handleSubmit.bind(this);
         this.state = this.props.product
+        this.handleSubmit = this.handleSubmit.bind(this);
     }
 
     update(field) {
         return (e) => {
             this.setState({ [field]: e.target.value });
+            // debugger
+            // window.localStorage.setItem('productFormState', this.state)
+            // ^^^ Note: save stuff on the window so when a user refreshes they don't go away
         };
     }
 
     handleSubmit(e) {
         e.preventDefault();
-        this.props.action(this.state).then(() => this.props.history.push('/'));
+        this.props.action(this.state)
+            .then(() => this.props.history.push(`/products/${this.props.product.id}`),
+            () => this.props.history.push(`/products/${this.props.product.id}/edit`));
     }
 
     renderErrors() {
-        const errors = this.props.product.errors
+        let errors = [];
+        errors = this.props.product.errors
         // Task : I am not sure why the errors are not displaying for edit
         // Task : Figure how to get rid of errors when you re-render the page for 'create'
         if (errors) {
