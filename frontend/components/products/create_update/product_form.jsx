@@ -32,7 +32,6 @@ class ProductForm extends React.Component {
         if (this.state.photoUrl) {
             formData.append('product[photoUrl]', this.state.photoUrl);
         }
-        debugger
 
         this.props.action(formData)
             .then(response => {
@@ -47,7 +46,16 @@ class ProductForm extends React.Component {
     }
 
     handleFile(e) {
-        this.setState({photoUrl: e.currentTarget.files[0]})
+        const reader = new FileReader();
+        const file = e.currentTarget.files[0];
+        reader.onloadend = () =>
+            this.setState({ photoUrl: reader.result, imageFile: file });
+
+        if (file) {
+            reader.readAsDataURL(file);
+        } else {
+            this.setState({ imageUrl: "", imageFile: null });
+        }
     }
 
     renderErrors() {
@@ -67,11 +75,10 @@ class ProductForm extends React.Component {
     }
 
     render() {
+        const preview = this.state.photoUrl ? <img height="100px" width="100px" src={this.state.photoUrl}/> : null
         return (
             <div>
                 <h3>{this.props.formType}</h3>
-
-                <br/>
 
                 {this.renderErrors()}
                 <form onSubmit={this.handleSubmit}>
@@ -82,11 +89,19 @@ class ProductForm extends React.Component {
                                 onChange={this.update('title')}/>
                     </label>
 
+                    <br/>
+                    <br/>
+                    <hr />
+
                     <label>Description
                         <textarea
                             value={this.state.description}
                             onChange={this.update('description')} />
                     </label>
+
+                    <br/>
+                    <br/>
+                    <hr />
 
                     <label>Price
                         <input
@@ -95,11 +110,28 @@ class ProductForm extends React.Component {
                             onChange={this.update('price')} />
                     </label>
 
-                    <label>Image
+                    <br/>
+                    <br/>
+                    <hr />
+
+                    <label>Choose Image
                         <input 
                             type="file"
                             onChange={this.handleFile.bind(this)} />
                     </label>
+
+                    <br/>
+                    <br/>
+                    <hr />
+
+                    <label>ImagePreview
+                        {preview}
+                    </label>
+
+                    <br/>
+                    <br/>
+                    <br/>
+                    <hr/>
 
                     <input type="submit" value={this.props.formType} />
                 </form>
