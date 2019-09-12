@@ -45,7 +45,6 @@ export class SessionForm extends React.Component {
         // add a letter to username
         const currentLetter = username.shift();
         usernameInputField[0].value += currentLetter
-        
         // if the field does not have a suffiecent letter count
         if (usernameInputField[0].value.length < 'demoUser'.length) {
           // add the next letter
@@ -83,17 +82,22 @@ export class SessionForm extends React.Component {
       username: 'demoUser',
       password: '12345678'
     })
-    $('.session-submit').click();
+
+    this.handleDemoLogin()
   }
   // fillUsername, and fillPassword are inspired by: https://stackoverflow.com/a/4122317/7974948
 
 
   demoLogin(e) {
     e.preventDefault();
-    window.location.hash = '#/login';
     const username = 'demoUser'.split('');
     const usernameInputField = $('.username-input-field')
     this.fillUsername(true, usernameInputField, username)
+  }
+
+  handleDemoLogin() {
+    const user = Object.assign({}, this.state);
+    this.props.demoLogin(user)
   }
 
 
@@ -107,7 +111,7 @@ export class SessionForm extends React.Component {
             Welcome to Jewely!
             <br />
             Please {this.props.formType} to continue
-            
+
 
             {this.renderErrors()}
             <div className="login-form">
@@ -115,7 +119,7 @@ export class SessionForm extends React.Component {
 
               <label className="session-input-container">
                 Username
-                <br/>
+                <br />
                 <input type="text"
                   value={this.state.username}
                   onChange={this.update('username')}
@@ -126,13 +130,13 @@ export class SessionForm extends React.Component {
               <br />
 
               <label className="session-input-container">
-                  Password
-                  <br/>
-                  <input type="password"
-                    value={this.state.password}
-                    onChange={this.update('password')}
-                    className="session-textbox password-input-field"
-                  />
+                Password
+                  <br />
+                <input type="password"
+                  value={this.state.password}
+                  onChange={this.update('password')}
+                  className="session-textbox password-input-field"
+                />
               </label>
 
               <br />
@@ -141,25 +145,25 @@ export class SessionForm extends React.Component {
                 <input type="submit" value={this.props.formType} />
               </div>
 
-              <br/>
+              <br />
             </div>
           </form>
 
           <div className="divider">
             <hr className="left" />
-              OR
+            OR
             <hr className="right" />
           </div>
           {/* ^^^ 'OR' styling source: https://stackoverflow.com/a/2812819/7974948 */}
           <br />
-          
+
           <div>
             {this.props.navLink}
           </div>
 
           <div className="session-form-nav-button" onClick={this.demoLogin}>
-            <button className="session-form-nav-button"> 
-              demo login 
+            <button className="session-form-nav-button">
+              demo login
             </button>
           </div>
         </div>
