@@ -18,7 +18,6 @@ class Api::ProductsController < ApplicationController
     end
 
     def update
-
         @product = current_user.products.find(params[:id])
 
         if @product.update(product_params)
@@ -45,6 +44,7 @@ class Api::ProductsController < ApplicationController
     private
 
     def product_params
-        params.require(:product).permit(:title, :description, :price, :photo)
+        params.require(:product).permit(:id, :title, :description, :price, :photo, :seller_id, :photoUrl)
+        # note : Don't forget to permit ids in permits 
     end
 end

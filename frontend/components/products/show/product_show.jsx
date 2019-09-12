@@ -22,7 +22,6 @@ export class ProductShow extends React.Component {
         }
 
         let editLink = null;
-        
         if (this.props.currentUserId === product.seller_id) { 
             editLink = <Link to={`/products/${product.id}/edit`}>Edit</Link>
         }

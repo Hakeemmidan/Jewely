@@ -5,7 +5,7 @@ import { createProduct } from '../../../actions/product_actions';
 const mapStateToProps = (state) => {
     const errorsArr = state.errors.product.responseJSON
     const errors = errorsArr ? errorsArr : [];
-
+    
     const product = { 
         title: '', 
         description: '',

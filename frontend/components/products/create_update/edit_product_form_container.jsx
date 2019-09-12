@@ -10,7 +10,6 @@ const mapStateToProps = (state, ownProps) => {
         description: '',
         price: 0,
         seller_id: state.session.id,
-        errors: state.errors.product
         // Note : This doesn't have the .responseJSON because it doesn't
         // initiate an AJAX request (like create does)
     };
@@ -19,7 +18,11 @@ const mapStateToProps = (state, ownProps) => {
     const product = state.entities.products[ownProps.match.params.productId] || defaultProduct;
     const formType = 'Update Product';
 
-    return { product, formType };
+    return {
+        product,
+        formType,
+        errors: state.errors.product
+    };
 };
 
 const mapDispatchToProps = dispatch => {
@@ -41,12 +44,13 @@ class EditProductForm extends React.Component {
     }
 
     render() {
-        const { action, formType, product } = this.props;
+        const { action, formType, product, errors } = this.props;
         return (
             <ProductForm
                 action={action}
                 formType={formType}
-                product={product} />
+                product={product}
+                errors={errors} />
         );
     }
 }

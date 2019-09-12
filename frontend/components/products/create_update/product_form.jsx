@@ -5,7 +5,7 @@ class ProductForm extends React.Component {
     constructor(props) {
         super(props);
         this.handleSubmit = this.handleSubmit.bind(this);
-        this.state = this.props.product;
+        this.state = this.props.product
     }
 
     update(field) {
@@ -22,7 +22,7 @@ class ProductForm extends React.Component {
     renderErrors() {
         return (
             <ul className="errors-ul">
-                {this.state.errors.map((error, i) => (
+                {this.props.errors.map((error, i) => (
                     <li key={`error-${i}`} className="error">
                         {error}
                     </li>
@@ -34,7 +34,7 @@ class ProductForm extends React.Component {
     render() {
         return (
             <div>
-                {/* {this.renderErrors()} */}
+                {this.renderErrors()}
                 <h3>{this.props.formType}</h3>
                 <form onSubmit={this.handleSubmit}>
                     <label>Title
