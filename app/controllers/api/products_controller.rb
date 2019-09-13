@@ -31,7 +31,7 @@ class Api::ProductsController < ApplicationController
         @product = current_user.products.find(params[:id])
 
         if @product.destroy
-            render :show
+            render :index
         else
             render json: @product.errors.full_messages, status: 422
         end

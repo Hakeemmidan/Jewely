@@ -5,7 +5,7 @@ class Cart < ApplicationRecord
         foreign_key: :customer_id,
         class_name: 'User'
 
-    belongs_to :cart_item,
+    belongs_to :product,
         foreign_key: :product_id,
         class_name: 'Product'
 end

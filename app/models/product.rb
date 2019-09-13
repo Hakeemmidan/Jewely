@@ -8,12 +8,13 @@ class Product < ApplicationRecord
         foreign_key: :seller_id,
         class_name: 'User'
 
-    has_one :cart,
+    has_many :carts,
         foreign_key: :product_id,
         class_name: 'Cart'
 
-    has_many :customers,
-        through: :cart
+    has_many :cart_customers,
+        through: :carts,
+        source: :customer
         
     # def self.find_by_title(title)    
     #     product = Product.find_by(title: title)
