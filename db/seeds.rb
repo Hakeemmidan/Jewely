@@ -14,14 +14,22 @@ puts "#=> Seeding started"
 user1 = User.new(username: 'demoUser', password: '12345678')
 user1.save!
 photo1 = File.open('/Users/hakimalmidan/Desktop/stock-photo-woman-s-jewelry-vintage-jewelry-background-beautiful-gold-tone-brooches-braceletes-necklaces-1061675699.jpg')
-product1 = Product.create(title: 'some title1', description: 'some description', price: 199.97, seller_id: user1.id)
+product1 = Product.create(
+    title: 'some semi-long title that describes the product 1 lasdl wld ddl',
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+    price: 199.97,
+    seller_id: user1.id)
 product1.photo.attach(io: photo1, filename: 'some image')
 product1.save!
 
 user2 = User.new(username: 'demoUser2', password: '22345678')
 user2.save!
 photo2 = File.open('/Users/hakimalmidan/Desktop/stock-photo-woman-s-jewelry-vintage-jewelry-background-beautiful-gold-tone-brooches-braceletes-necklaces-1061675699.jpg')
-product2 = Product.create(title: 'some title2', description: 'some description', price: 299.97, seller_id: user1.id)
+product2 = Product.create(
+    title: 'some semi-long title that describes the product 2 wqdlkj qwl qwoi msn,m asdli', 
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', 
+    price: 299.97, 
+    seller_id: user1.id)
 product2.photo.attach(io: photo2, filename: 'some image')
 product2.save!
 
@@ -29,7 +37,7 @@ user3 = User.new(username: 'demoUser3', password: '33345678')
 user3.save!
 photo3 = File.open('/Users/hakimalmidan/Desktop/stock-photo-woman-s-jewelry-vintage-jewelry-background-beautiful-gold-tone-brooches-braceletes-necklaces-1061675699.jpg')
 product3 = Product.create(
-    title: 'some title3',
+    title: 'some semi-long title that describes the product 3 laks lkasdj asioq qwdl qd;l',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
     price: 399.97,
     seller_id: user1.id)

@@ -23,6 +23,7 @@ export const createProduct = (formData) => {
 }
 
 export const updateProduct = (formData) => {
+    // question ) How do I grab the product id from here 
     return $.ajax({
         method: 'PATCH',
         url: `api/products/${product.id}`,

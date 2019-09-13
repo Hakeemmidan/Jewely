@@ -22,7 +22,9 @@ class ProductForm extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         const formData = new FormData();
-
+        
+        formData.append('product[id]', this.state.id);
+        // ^ question ) Should i be doing this?
         formData.append('product[title]', this.state.title);
         formData.append('product[description]', this.state.description);
         formData.append('product[price]', this.state.price);
