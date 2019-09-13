@@ -49,10 +49,8 @@ export const fetchProduct = (id) => dispatch => {
 export const createProduct = (formData) => dispatch => {
     return ProductAPIUtil.createProduct(formData)
             .then(product => {
-                debugger
                 dispatch(receiveProduct(product))},
                 errs => {
-                    debugger
                     dispatch(receiveErrors(errs.responseJSON))})
 }
 
