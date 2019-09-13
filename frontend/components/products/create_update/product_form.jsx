@@ -38,7 +38,7 @@ class ProductForm extends React.Component {
         this.props.action(formData)
             .then(response => {
                 console.log('Sucesss!')
-                console.log(response)},
+                this.renderImageUploadSucess()},
                 err => {
                     console.log('Error!')
                     console.log(err)
