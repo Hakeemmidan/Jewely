@@ -48,14 +48,12 @@ export const fetchProduct = (id) => dispatch => {
 
 export const createProduct = (formData) => dispatch => {
     return ProductAPIUtil.createProduct(formData)
-            .then(product => {
-                dispatch(receiveProduct(product))},
-                errs => {
-                    dispatch(receiveErrors(errs.responseJSON))})
+            .then(product => dispatch(receiveProduct(product)),
+                errs => dispatch(receiveErrors(errs.responseJSON)))
 }
 
-export const updateProduct = (product) => dispatch => {
-    return ProductAPIUtil.updateProduct(product)
+export const updateProduct = (formData) => dispatch => {
+    return ProductAPIUtil.updateProduct(formData)
             .then(product => dispatch(receiveProduct(product)),
             errs => dispatch(receiveErrors(errs.responseJSON)))
             // Task : ^^^ errrs is undefined for update even when there should be an error

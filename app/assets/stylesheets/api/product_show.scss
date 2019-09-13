@@ -1,0 +1,113 @@
+.product-show-image {
+    max-width: 50vh;
+    max-height: 50vh;
+    float: left;
+    padding-right: 12px;
+    padding-left: 18px;
+    margin-bottom: 7vh;
+}
+
+.listing-right-column {
+    padding-right: 18px;
+    padding-left: 12px;
+}
+
+.product-show-title {
+    font-family: 'Noto Serif', serif;
+    font-weight: normal;
+    padding-bottom: 12px;
+    text-rendering: optimizeLegibility;
+}
+
+.product-show-price {
+    font-family: 'Poppins', sans-serif;
+    // font-weight: bold;
+    font-size: 130%;
+    line-height: 1.4;
+}
+
+.quantity-label {
+    display: block;
+    padding-bottom: 6px;
+    font-family: 'Raleway', sans-serif;
+}
+
+.product-show-quantity-select {
+    // display: flex;
+    // flex-direction: row;
+    padding-bottom: 1vh;
+}
+
+.product-show-add-to-cart-button {
+  all: initial;
+  * {
+     all: unset;
+  }
+  display: block;
+  cursor: pointer;
+  border: 1px solid grey;
+  padding-right: 2vh;
+  padding-left: 2vh;
+  padding-top: 1.3vh;
+  padding-bottom: 1.3vh;
+  text-decoration: none; 
+  border-radius: 7px;
+  color: white;
+  margin: 7px;
+  text-align: center;
+  background-color: black;
+}
+
+.product-show-add-to-cart-button:hover {
+    background-color: rgb(55, 55, 55);
+}
+
+.product-show-quantity-dropdown {
+    background-color: white;
+    display: inline;
+    height: 38px;
+    font-size: 13px;
+    border-radius: 4px;
+    border-style: none;
+    border: 1px solid #E1E3DF;
+    box-shadow: none;
+    width: 6%;
+}
+
+// ------- product show lower details (doesn't include comments) START ------- //
+.product-show-column {
+    float: left;
+    border: 1px solid red;
+    padding-right: 14px;
+    padding-left: 14px;
+    margin-top: 24px;
+    margin-bottom: 24px;
+}
+.product-show-column1 {
+    width: 15%;
+}
+
+.product-show-column2 {
+    width: 42%;
+}
+
+.product-show-column3 {
+    width: 30%;
+}
+
+.product-show-lower {
+    box-sizing: border-box;
+    clear: both;
+}
+
+.product-show-lower:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.product-show-description {
+    margin: 0px;
+}
+
+// ------- product show lower details (doesn't include comments) END ------- //

@@ -22,11 +22,13 @@ export const createProduct = (formData) => {
     })
 }
 
-export const updateProduct = (product) => {
+export const updateProduct = (formData) => {
     return $.ajax({
         method: 'PATCH',
         url: `api/products/${product.id}`,
-        data: { product }
+        data: {formData},
+        contentType: false,
+        processData: false
     })
 }
 

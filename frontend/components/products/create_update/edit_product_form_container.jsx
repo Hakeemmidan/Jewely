@@ -32,7 +32,7 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = dispatch => {
     return {
         fetchProduct: id => dispatch(fetchProduct(id)),
-        action: product => dispatch(updateProduct(product)),
+        action: formData => dispatch(updateProduct(formData))
     };
 };
 

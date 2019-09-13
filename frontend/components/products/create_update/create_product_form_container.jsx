@@ -22,7 +22,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        action: formData => dispatch(createProduct(formData)),
+        action: formData => dispatch(createProduct(formData))
     };
 };
 

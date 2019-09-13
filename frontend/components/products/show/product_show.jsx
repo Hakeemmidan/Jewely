@@ -23,14 +23,65 @@ export class ProductShow extends React.Component {
         if (this.props.currentUserId === product.seller_id) { 
             editLink = <Link to={`/products/${product.id}/edit`}>Edit</Link>
         }
-
+        
             return (
                 <div>
-                    <h3>{product.title}</h3>
-                    <h4>{product.description}</h4>
-                    {editLink}
+                    <div className="clearfix">
+                        <img src={`${product.photoUrl}`} className="product-show-image" alt="" />
+
+                        <div className="listing-right-column">
+                            <h1 className="product-show-title">
+                                {product.title}
+                            </h1>
+
+                            <div>
+                                <span className="product-show-price">
+                                    ${parseFloat(product.price).toLocaleString('en')}
+                                </span>
+                            </div>
+                            
+                            <div className="product-show-quantity-select">
+                                <label className="quantity-label">
+                                    Quantity
+                                </label>
+
+                                <select className="product-show-quantity-dropdown">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                </select>
+                            </div>
+
+                            <button className="product-show-add-to-cart-button">
+                                Add to cart
+                            </button>
+
+                            <br/>
+
+                            {editLink}
+                        </div>
+                    </div>
+
+                    <br/>
+
+                    <div className="product-show-lower">
+                        <div className="product-show-column product-show-column1">
+                            I am the first column
+                        </div>
+
+                        <div className="product-show-column product-show-column2">
+                            <p className="product-show-description">
+                                {product.description}
+                            </p>
+                        </div>
+
+                        <div className="product-show-column product-show-column3">
+                            some details
+                        </div>
+                    </div>
                 </div>
             )
-
     }
 }

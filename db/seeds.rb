@@ -28,7 +28,11 @@ product2.save!
 user3 = User.new(username: 'demoUser3', password: '33345678')
 user3.save!
 photo3 = File.open('/Users/hakimalmidan/Desktop/stock-photo-woman-s-jewelry-vintage-jewelry-background-beautiful-gold-tone-brooches-braceletes-necklaces-1061675699.jpg')
-product3 = Product.create(title: 'some title3', description: 'some description', price: 399.97, seller_id: user1.id)
+product3 = Product.create(
+    title: 'some title3',
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+    price: 399.97,
+    seller_id: user1.id)
 product3.photo.attach(io: photo3, filename: 'some image')
 product3.save!
 
