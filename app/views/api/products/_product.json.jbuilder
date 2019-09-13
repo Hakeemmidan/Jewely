@@ -1,7 +1,6 @@
 json.extract! product, :id, :title, :description, :price, :seller_id, :photoUrl
 
 if product.photo.attached?
-    debugger 
     json.photoUrl url_for(product.photo)
 else
     file = File.open('app/assets/images/Jewely.jpg')
