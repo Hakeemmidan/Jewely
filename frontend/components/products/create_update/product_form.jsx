@@ -23,16 +23,46 @@ class ProductForm extends React.Component {
         e.preventDefault();
         const formData = new FormData();
         
-        formData.append('product[id]', this.state.id);
-        // ^ question ) Should i be doing this?
+        
+        formData.append('product[productId]', this.state.id);
         formData.append('product[title]', this.state.title);
         formData.append('product[description]', this.state.description);
         formData.append('product[price]', this.state.price);
         formData.append('product[seller_id]', this.state.seller_id);
         formData.append('product[errors]', this.state.errors);
+
         if (this.state.photoFile) {
             formData.append('product[photo]', this.state.photoFile);
         }
+        // else if (this.state.photoUrl) {
+        //     // This would go through if the user was editing an image
+        //         // and they only have a photoUrl rather than actual attached image.
+        //         // Their image file would be in AWS and we have to retrieve it
+
+        //     // const reader = new FileReader();
+        //     // debugger
+        //     fetch(this.state.photoUrl)
+        //         .then(res => res.blob()) // Gets the response and returns it as a blob
+        //         .then(blob => {
+        //             // Here's where you get access to the blob
+        //             // And you can use it for whatever you want
+        //             // Like calling ref().put(blob)
+
+        //             // Here, I use it to make an image appear on the page
+        //             let objectURL = URL.createObjectURL(blob);
+        //             let myImage = new Image();
+        //             myImage.src = objectURL;
+        //         })
+        //     // const file = File.createFromFileName(this.state.photoUrl)
+        //     // debugger
+        //     // reader.onloadend = () =>
+        //     //     this.setState({ photoUrl: reader.result, photoFile: file });
+        //     // if (file) {
+        //     //     reader.readAsDataURL(file);
+        //     // } else {
+        //     //     this.setState({ imageUrl: "", photoFile: null });
+        //     // } 
+        // }
 
         this.props.action(formData)
             .then(response => {

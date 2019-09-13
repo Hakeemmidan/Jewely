@@ -23,11 +23,12 @@ export const createProduct = (formData) => {
 }
 
 export const updateProduct = (formData) => {
-    // question ) How do I grab the product id from here 
+    const productId = parseInt(Array.from(formData.entries())[0][1])
+    // Note : We do this to grab productId from formData array like object
     return $.ajax({
         method: 'PATCH',
-        url: `api/products/${product.id}`,
-        data: {formData},
+        url: `api/products/${productId}`,
+        data: formData,
         contentType: false,
         processData: false
     })
