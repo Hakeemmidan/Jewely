@@ -37,6 +37,6 @@ export const updateProduct = (formData) => {
 export const removeProduct = (id) => {
     return $.ajax({
         method: 'DELETE',
-        url: `api/products/${id}`,
+        url: `api/products/${id}`
     })
 }

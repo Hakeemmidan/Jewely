@@ -8,7 +8,6 @@ const mapStateToProps = (state, ownProps) => {
     // Question : Why is the currentUser not being passed down here?
         // I passed down in app
         // side noted : It's avilable in state so you don't really need to pass it down
-
     return {
         product: state.entities.products[ownProps.match.params.productId],
         currentUserId: state.session.id

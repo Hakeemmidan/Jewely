@@ -1,7 +1,7 @@
 class Product < ApplicationRecord
     validates :title, :description, :price, presence: true
     validates :seller_id, presence: true
-    # note : this ^ triggers helper method. Notice that it is validate
+    # note : you could do validate and then method name to trigger it
     has_one_attached :photo
 
     belongs_to :seller,
