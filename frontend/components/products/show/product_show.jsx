@@ -2,6 +2,11 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 export class ProductShow extends React.Component {
+    constructor(props) {
+        super(props)
+        this.handleAddToCart = this.handleAddToCart.bind(this)
+    }
+
     componentDidMount() {
         this.props.fetchProduct(this.props.match.params.productId)
     }
@@ -11,8 +16,16 @@ export class ProductShow extends React.Component {
             this.props.fetchProduct(this.props.match.params.productId)
         }
     }
-
-
+    
+    handleAddToCart() {
+        if (this.props.currentUserId) {
+            // I am here 
+            // I was thinking that I would save the cart entry here once the user adds to cart
+            // So it would add it to the database at this point
+        }
+    }
+    
+    
     render() {
         const product = this.props.product
         if (!product) {
@@ -54,7 +67,9 @@ export class ProductShow extends React.Component {
                                 </select>
                             </div>
 
-                            <button className="product-show-add-to-cart-button">
+                            <button 
+                                className="product-show-add-to-cart-button"
+                                onClick={this.handleAddToCart}>
                                 Add to cart
                             </button>
 

@@ -9,13 +9,16 @@ import {
 import GreetingContainer from './greeting/greeting_container';
 import SignUpFormContainer from './auth/signup_form_container';
 import LogInFormContainer from './auth/login_form_container';
-import ProductShowContainer from './products/show/product_show_container';
 
+// products vvv
+import ProductShowContainer from './products/show/product_show_container';
+import ProductIndexContainer from './products/index/product_index_container';
 import EditProductFormContainer from './products/create_update/edit_product_form_container';
 import CreateProductFormContainer from './products/create_update/create_product_form_container';
 
-// products vvv
-import ProductIndexContainer from './products/index/product_index_container';
+// cart vvv 
+import CartShowContainer from './carts/show/cart_show_container'; 
+
 
 
 export const App = (props) => {
@@ -58,6 +61,12 @@ export const App = (props) => {
             exact
             path="/signup"
             component={SignUpFormContainer}
+          />
+
+          <Route 
+            exact
+            path="/cart"
+            component={CartShowContainer}
           />
 
           <Route

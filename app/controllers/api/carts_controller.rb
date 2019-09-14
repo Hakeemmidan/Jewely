@@ -17,7 +17,7 @@ class Api::CartsController < ApplicationController
         @cart_item = current_user.cart_items.find(params[:id])
 
         if @cart_item.destroy
-            render '/products/index'
+            render 'api/products/index'
             # question ) Not sure if you can do this or not
         else
             render json: @cart_item.errors.full_messages, status 422
