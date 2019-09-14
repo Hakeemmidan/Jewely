@@ -11,27 +11,27 @@ export class CartShow extends React.Component {
     }
 
     componentDidMount() {
-        // this.props.fetchCart(this.props.match.params.cartId)
-        JSON.parse(localStorage.cart).map( productId => (
+
+        for (let productId of JSON.parse(localStorage.cart)) {
             this.props.fetchProduct(productId)
                 .then(response => this.setState(state => {
                     const cartProducts = state.cartProducts.concat(response.product)
                     return {
                         cartProducts
                     }
-                })
-        )))
+                }))
+        }
     }
     // ^^^ Inspired by : https://www.robinwieruch.de/react-state-array-add-update-remove 
                     // and https://hashnode.com/post/reactjs-how-to-render-components-only-after-successful-asynchronous-call-ciwvnkjr400sq7t533lvrpdtw 
 
     render() {
-        if (JSON.parse(localStorage.cart).length === 0) {
+        if (JSON.parse(localStorage.cart).size === 0) {
             return (
                 <div>Your cart is empty</div>
             )
         }
-        if (this.state.cartProducts.length < JSON.parse(localStorage.cart).length) {
+        if (this.state.cartProducts.length < JSON.parse(localStorage.cart).size) {
             return (
                 <div>
                     <div>Loading...</div>

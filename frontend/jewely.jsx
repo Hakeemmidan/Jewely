@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
   let store;
   const currentProduct = JSON.parse(window.localStorage.getItem('productFormState'));
   if (!localStorage.cart) {
-    localStorage.setItem('cart', JSON.stringify([]))
+    localStorage.setItem('cart', JSON.stringify(new Set([])))
   }
 
   if (window.currentUser) {

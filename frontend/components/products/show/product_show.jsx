@@ -19,7 +19,7 @@ export class ProductShow extends React.Component {
 
     hasProductInCart() {
         const productId = this.props.match.params.productId 
-        JSON.parse(localStorage.cart).includes(productId)
+        JSON.parse(localStorage.cart).has(productId)
     }
     
     handleAddToCart() {
@@ -45,12 +45,12 @@ export class ProductShow extends React.Component {
             // }
 
             // push the newly selected product id to it
-            cartProductIds.push(productId)
+            cartProductIds.add(productId)
             // set it back in the state
             localStorage.setItem('cart', JSON.stringify(cartProductIds))
         } else {
             // If not, thne just set a new local storage cart and the new product id to it
-            localStorage.setItem('cart', JSON.stringify([productId]))
+            localStorage.setItem('cart', JSON.stringify(new Set([productId])))
         }
         console.log(localStorage.getItem('cart'))
     }
