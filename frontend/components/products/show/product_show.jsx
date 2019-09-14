@@ -16,13 +16,43 @@ export class ProductShow extends React.Component {
             this.props.fetchProduct(this.props.match.params.productId)
         }
     }
+
+    hasProductInCart() {
+        const productId = this.props.match.params.productId 
+        JSON.parse(localStorage.cart).includes(productId)
+    }
     
     handleAddToCart() {
-        if (this.props.currentUserId) {
-            // I am here 
-            // I was thinking that I would save the cart entry here once the user adds to cart
-            // So it would add it to the database at this point
+        // if (this.props.currentUserId) {
+        //     // I am here 
+        //     // I was thinking that I would save the cart entry here once the user adds to cart
+        //     // So it would add it to the database at this point
+        // }
+
+        // Flow : 
+            // CHeck if they have a cart
+            // if they do, add more product ids to it
+            // if not, then create a cart and then add the selected item to it
+        const productId = this.props.match.params.productId 
+        // If the local storage has a cart
+        if (localStorage.cart) {
+            // Then grab the cart product Ids array
+            const cartProductIds = JSON.parse(localStorage.getItem('cart'))
+
+            // if (cartProductIds.includes(productId)) {
+            //     // Don't allow for the addition to cart more than once
+            //     return
+            // }
+
+            // push the newly selected product id to it
+            cartProductIds.push(productId)
+            // set it back in the state
+            localStorage.setItem('cart', JSON.stringify(cartProductIds))
+        } else {
+            // If not, thne just set a new local storage cart and the new product id to it
+            localStorage.setItem('cart', JSON.stringify([productId]))
         }
+        console.log(localStorage.getItem('cart'))
     }
     
     

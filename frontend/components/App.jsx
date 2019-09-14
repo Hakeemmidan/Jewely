@@ -21,7 +21,7 @@ import CartShowContainer from './carts/show/cart_show_container';
 
 
 
-export const App = (props) => {
+export const App = () => {
 
   return (
     <div>
