@@ -1,0 +1,14 @@
+.cart-navbar-icon {
+    padding: 3px 0.2px;
+    position: relative;
+    display: inline-block;
+}
+.cart-item-count-badge {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    padding: 0.2px 6px;
+    border-radius: 50%;
+    background: orange;
+    color: black;
+}

@@ -7,7 +7,13 @@ const Greeting = ({ currentUser, logout }) => {
     <nav>
       <Link to="/signup" className="text-link-underline-hover">Register</Link>
       <Link to="/login" className="login-navbar-button">Login</Link>
-      <Link to="/cart"><CartIcon/></Link>
+      <Link to="/cart" className="cart-navbar-icon">
+        <CartIcon/>
+        <span className="cart-item-count-badge">
+          {JSON.parse(localStorage.cart).length}
+        </span>
+        {/* question ) How to make cart badge thing update when a user adds stuff to thier cart? */}
+      </Link>
     </nav>
   );
   const personalGreeting = () => (
