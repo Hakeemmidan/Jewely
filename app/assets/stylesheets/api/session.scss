@@ -65,29 +65,6 @@ header {
   background-color: rgb(247, 247, 247)
 }
 
-.session-submit {
-  all: initial;
-  * {
-    all: unset;
-  }
-  display: block;
-  cursor: pointer;
-  border: 1px solid grey;
-  padding-right: 2vh;
-  padding-left: 2vh;
-  padding-top: 1.3vh;
-  padding-bottom: 1.3vh;
-  text-decoration: none; 
-  border-radius: 7px;
-  color: white;
-  margin: 7px;
-  text-align: center;
-  background-color: black;
-}
-
-.session-submit:hover {
-  background-color: rgb(55, 55, 55);
-}
 
 // ------- session 'OR' START------- //
 .divider {

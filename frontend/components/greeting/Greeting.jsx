@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { CartIcon } from '../../util/icons';
+import { CartIcon } from '../../util/cart_icons';
 
 const Greeting = ({ currentUser, logout }) => {
   const sessionLinks = () => (

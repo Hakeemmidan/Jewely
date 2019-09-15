@@ -33,7 +33,6 @@ export class CartProductsItem extends React.Component {
                 <Link to={`/products/${product.id}`} >
                     <img src={product.photoUrl} className="product-index-image" />
                 </Link>
-
                 
                 <a
                 onClick={this.handleRemove(product.id)}

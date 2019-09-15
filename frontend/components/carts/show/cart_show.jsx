@@ -1,5 +1,11 @@
 import React from 'react';
 import { CartProductsItem } from './cart_products_item';
+import { 
+        VisaIcon, 
+        MasterCardIcon, 
+        AmericanExpressIcon,
+        DiscoverIcon,
+        PaypalIcon } from '../../../util/cart_icons';
 
 export class CartShow extends React.Component {
     constructor(props) {
@@ -65,13 +71,40 @@ export class CartShow extends React.Component {
 
         return (
             <div className="cart-container">
-                <ul className="cart-products-ul">
+                <ul className="cart-products-ul-col">
                     {cartProductsLis}
                 </ul>
-                <div>
-                    <label>
-                        Item(s) total: ${this.state.priceTotal.toLocaleString('en')}
-                    </label>
+                
+                <div className="cart-show-checkout-col">
+                    <div>
+                        <input type="radio" name="checkout-payment" checked className="cart-show-radio-input"/>
+                        <label>
+                            <VisaIcon/>
+                            <MasterCardIcon/>
+                            <AmericanExpressIcon/>
+                            <DiscoverIcon/>
+                        </label>
+                    </div>
+
+                    <div>
+                        <input type="radio" name="checkout-payment" className="cart-show-radio-input"/>
+                        <label>
+                            <PaypalIcon/>
+                        </label>
+                    </div>
+
+                    <div className="cart-show-items-total">
+                        <div>
+                            Item(s) total:
+                        </div>
+                        <div>
+                            ${this.state.priceTotal.toLocaleString('en')}
+                        </div>
+                    </div>
+
+                    <button className="black-background-button">
+                        Proceed to checkout
+                    </button>
                 </div>
             </div>
         )

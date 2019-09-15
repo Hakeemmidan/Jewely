@@ -23,7 +23,6 @@ class ProductForm extends React.Component {
         e.preventDefault();
         const formData = new FormData();
         
-        
         formData.append('product[productId]', this.state.id);
         formData.append('product[title]', this.state.title);
         formData.append('product[description]', this.state.description);
@@ -37,8 +36,7 @@ class ProductForm extends React.Component {
 
         this.props.action(formData)
             .then(response => {
-                console.log('Sucesss!')
-                this.renderImageUploadSucess()},
+                console.log('Sucesss!')},
                 err => {
                     console.log('Error!')
                     console.log(err)

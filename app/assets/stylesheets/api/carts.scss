@@ -1,3 +1,4 @@
+// ------------------------ navbar cart icon START------------------------ //
 .cart-navbar-icon {
     padding: 3px 0.2px;
     position: relative;
@@ -12,3 +13,75 @@
     background: orange;
     color: black;
 }
+// ------------------------ navbar cart icon END------------------------ //
+
+
+.cart-container {
+    border: 1px solid red;
+    display: flex;
+    padding: 18px;
+    margin-right: 5vh;
+    margin-left: 5vh;
+}
+
+
+.checkout-payment-method-icon {
+    border: 1px solid lightgray;
+    padding-right: 0.5vh;
+    padding-left: 0.5vh;
+    border-radius: 4px;
+    margin-right: 0.4vh;
+}
+
+.cart-show-items-total {
+    display: flex;
+    justify-content: space-between;
+}
+
+.cart-products-ul-col {
+    padding: 0;
+    padding-right: 18px;
+    width: 70%;
+    border-right: 1px solid lightgray;
+}
+
+.cart-show-checkout-col {
+    padding-left: 18px;
+    width: 30%;
+}
+
+
+// ------------------------ checkout radio button START------------------------ //
+input[type='radio'] {
+    // margin: 0;
+    // clear: none;
+    // background: lightgray left center no-repeat; 
+    // margin: .4rem;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+
+    border-radius: 50%;
+    width: 2vh;
+    height: 2vh;
+
+    border: 1px solid rgb(191, 191, 191);
+    transition: 0.2s all linear;
+    margin-right: 0.7vh;
+    margin-bottom: 1vh;
+    
+    position: relative;
+    top: 4px;
+}
+
+input[type='radio']:hover {
+    border: 1px solid rgb(135, 135, 135);
+}
+
+input[type='radio']:checked{
+    border: 1px solid rgb(171, 171, 171);
+    background-color: orange;
+}
+// Radio button styling inspired by: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/radio
+// Task : add white spacing between checked radio button and border
+// ------------------------ checkout radio button END------------------------ //

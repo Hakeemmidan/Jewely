@@ -141,7 +141,7 @@ export class SessionForm extends React.Component {
 
               <br />
 
-              <div className="session-submit" onClick={this.handleSubmit}>
+              <div className="black-background-button" onClick={this.handleSubmit}>
                 <input type="submit" value={this.props.formType} />
               </div>
 
