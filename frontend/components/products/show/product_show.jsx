@@ -17,38 +17,45 @@ export class ProductShow extends React.Component {
         }
     }
 
-    hasProductInCart() {
-        const productId = this.props.match.params.productId 
-        JSON.parse(localStorage.cart).includes(productId)
+  // --------------- add to cart button START --------------- //
+
+    // hasProductInCart() {
+    //     const productId = this.props.match.params.productId 
+    //     JSON.parse(localStorage.cart).includes(productId)
+    // }
+    // // question ) Why does this return undefiend here even though it returns true in console?
+
+    // addToCartAgainButton() {
+    //     return (
+    //         <Link
+    //             className="product-show-remove-from-cart-button"
+    //             onClick={this.handleAddToCart}
+    //             to="/cart">
+    //             add from cart again (this product is already in your cart)
+    //         </Link>
+    //     )
+    // }
+
+    addToCartButton() {
+        return (
+            <Link
+                className="product-show-add-to-cart-button"
+                onClick={this.handleAddToCart}
+                to="/cart">
+                Add to cart
+            </Link>
+        )
     }
+
+// --------------- add to cart button END --------------- //
     
     handleAddToCart() {
-        // if (this.props.currentUserId) {
-        //     // I am here 
-        //     // I was thinking that I would save the cart entry here once the user adds to cart
-        //     // So it would add it to the database at this point
-        // }
-
-        // Flow : 
-            // CHeck if they have a cart
-            // if they do, add more product ids to it
-            // if not, then create a cart and then add the selected item to it
         const productId = this.props.match.params.productId 
-        // If the local storage has a cart
         if (localStorage.cart) {
-            // Then grab the cart product Ids array
             let cartProductIds = JSON.parse(localStorage.getItem('cart'))
-            // if (cartProductIds.includes(productId)) {
-            //     // Don't allow for the addition to cart more than once
-            //     return
-            // }
-
-            // push the newly selected product id to it
             cartProductIds.push(productId)
-            // set it back in the state
             localStorage.setItem('cart', JSON.stringify(cartProductIds))
         } else {
-            // If not, thne just set a new local storage cart and the new product id to it
             localStorage.setItem('cart', JSON.stringify([productId]))
         }
         console.log(localStorage.getItem('cart'))
@@ -96,12 +103,9 @@ export class ProductShow extends React.Component {
                                 </select>
                             </div>
 
-                            <button 
-                                className="product-show-add-to-cart-button"
-                                onClick={this.handleAddToCart}>
-                                Add to cart
-                            </button>
-
+                            {/* {this.hasProductInCart() ? this.addToCartAgainButton() : this.addToCartButton()} */}
+                            {/* Task : ^^^ Get back to this after asking TA what is wrong with it */}
+                            {this.addToCartButton()}
                             <br/>
 
                             {editLink}

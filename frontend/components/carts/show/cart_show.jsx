@@ -5,19 +5,22 @@ export class CartShow extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            cartProducts: []
-            // Task : Maybe chsnge cartProducts to a set instead
+            cartProducts: [],
+            priceTotal: 0
         }
     }
 
     componentDidMount() {
-
+        let priceTotal = 0;
         JSON.parse(localStorage.cart).map( productId => {
             this.props.fetchProduct(productId)
                 .then(response => this.setState(state => {
+                    priceTotal += parseFloat(response.product.price)
+
                     const cartProducts = state.cartProducts.concat(response.product)
                     return {
-                        cartProducts
+                        cartProducts,
+                        priceTotal
                     }
                 }))
         })
@@ -54,6 +57,11 @@ export class CartShow extends React.Component {
                 <ul className="cart-products-ul">
                     {cartProductsLis}
                 </ul>
+                <div>
+                    <label>
+                        Item(s) total: ${this.state.priceTotal}
+                    </label>
+                </div>
             </div>
         )
     }
