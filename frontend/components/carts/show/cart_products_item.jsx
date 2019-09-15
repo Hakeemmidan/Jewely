@@ -7,17 +7,21 @@ export class CartProductsItem extends React.Component {
         super(props)
     }
 
-    // handleRemove(productId) {
-    //     // grab the cart local storage
-    //     // parse it
-    //     // remove prododuct from it
-    //     // set the cart 
-    //     // re render
-    //     const cartProductIds = JSON.parse(localStorage.getItem('cart'))
-    //     cartProductIds.delete(String(productId))
-    //     debugger
-    //     localStorage.setItem('cart', JSON.stringify(cartProductIds))
-    // }
+    handleRemove(productId) {
+        // grab the cart local storage
+        // parse it
+        // remove prododuct from it
+        // set the cart 
+        // re render
+        return () => {
+            let cartProductIds = JSON.parse(localStorage.getItem('cart'))
+            // cartProductIds = new Set(cartProductIds)
+            // cartProductIds.delete(String(productId))
+            const unwantedIdx = cartProductIds.indexOf(String(productId))
+            cartProductIds = cartProductIds.slice(0, unwantedIdx).concat(cartProductIds.slice(unwantedIdx + 1))
+            localStorage.setItem('cart', JSON.stringify(cartProductIds))
+        }
+    }
 
     render() {
         const product = this.props.product
@@ -27,8 +31,8 @@ export class CartProductsItem extends React.Component {
                     <img src={product.photoUrl} className="product-index-image" />
                 </Link>
 
-
-                {/* <button onClick={this.handleRemove(product.id)} value="Remove"/> */}
+                
+                <button onClick={this.handleRemove(product.id)} value="Remove"/>
     
                 <div className="cart-products-item-details">
                     <div className="cart-products-item-title">
