@@ -114,7 +114,7 @@ export class CartShow extends React.Component {
                             </div>
                         </div>
 
-                        <button className="black-background-button">
+                        <button id="proceed-to-checkout-button" className="black-background-button">
                             Proceed to checkout
                         </button>
                     </div>
