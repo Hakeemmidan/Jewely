@@ -12,14 +12,13 @@ export class CartProductsItem extends React.Component {
             let cartProductIdsAndQuantities = JSON.parse(localStorage.getItem('cart'))
             let unwantedIdx; 
             for (let i = 0; i < cartProductIdsAndQuantities.length; i++) {
-                if (arr2[i][0] === productId) {
-                    unwantedIdx = arr2[i][0]
+                if (parseInt(cartProductIdsAndQuantities[i][0]) === productId) {
+                    unwantedIdx = i
                     break
                 }
             }
-
             // Note : vvv This is basically deleting the item that we are trying to remove 
-            cartProductIdsAndQuantities = cartProductIdsAndQuantities.slice(0, unwantedIdx).concat(cartProductIdsAndQuantities.slice(unwantedIdx + 1))
+            cartProductIdsAndQuantities.splice(unwantedIdx, 1)
             localStorage.setItem('cart', JSON.stringify(cartProductIdsAndQuantities))
             // question ) How do i re-render after the user clicks on this?
         }
