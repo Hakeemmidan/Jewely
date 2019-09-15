@@ -28,3 +28,15 @@
 .errors-ul {
   margin-bottom: 30px;
 }
+
+.text-link-underline-hover {
+  padding-right: 2vh;
+  padding-left: 2vh;
+  text-decoration: none; 
+  color: black;
+}
+
+.text-link-underline-hover:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}

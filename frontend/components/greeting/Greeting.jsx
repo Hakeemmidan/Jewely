@@ -5,7 +5,7 @@ import { CartIcon } from '../../util/icons';
 const Greeting = ({ currentUser, logout }) => {
   const sessionLinks = () => (
     <nav>
-      <Link to="/signup" className="register-navbar-button">Register</Link>
+      <Link to="/signup" className="text-link-underline-hover">Register</Link>
       <Link to="/login" className="login-navbar-button">Login</Link>
       <Link to="/cart"><CartIcon/></Link>
     </nav>

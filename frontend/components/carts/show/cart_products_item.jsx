@@ -8,18 +8,12 @@ export class CartProductsItem extends React.Component {
     }
 
     handleRemove(productId) {
-        // grab the cart local storage
-        // parse it
-        // remove prododuct from it
-        // set the cart 
-        // re render
         return () => {
             let cartProductIds = JSON.parse(localStorage.getItem('cart'))
-            // cartProductIds = new Set(cartProductIds)
-            // cartProductIds.delete(String(productId))
             const unwantedIdx = cartProductIds.indexOf(String(productId))
             cartProductIds = cartProductIds.slice(0, unwantedIdx).concat(cartProductIds.slice(unwantedIdx + 1))
             localStorage.setItem('cart', JSON.stringify(cartProductIds))
+            // question ) How do i re-render after the user clicks on this?
         }
     }
 
@@ -32,7 +26,11 @@ export class CartProductsItem extends React.Component {
                 </Link>
 
                 
-                <button onClick={this.handleRemove(product.id)} value="Remove"/>
+                <a
+                onClick={this.handleRemove(product.id)}
+                className="text-link-underline-hover">
+                    Remove
+                </a>
     
                 <div className="cart-products-item-details">
                     <div className="cart-products-item-title">
