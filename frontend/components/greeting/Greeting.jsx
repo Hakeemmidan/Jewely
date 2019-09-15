@@ -20,7 +20,12 @@ const Greeting = ({ currentUser, logout }) => {
     <div>
       <Link to={`/products/create`}>Sell On Jewely</Link>
       <button className="logout-navbar-button" onClick={logout}>Log Out</button>
-      <Link to="/cart"><CartIcon/></Link>
+      <Link to="/cart" className="cart-navbar-icon">
+        <CartIcon />
+        <span className="cart-item-count-badge">
+          {JSON.parse(localStorage.cart).length}
+        </span>
+      </Link>
     </div>
   );
 
