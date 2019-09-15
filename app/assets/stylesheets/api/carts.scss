@@ -14,14 +14,48 @@
     color: black;
 }
 // ------------------------ navbar cart icon END------------------------ //
+.cart-show-component {
+    margin-right: 5vh;
+    margin-left: 5vh;
+}
 
+.cart-show-header {
+    display: flex;
+    justify-content: space-between;
+}
 
-.cart-container {
+.cart-show-keep-shopping-button {
+    all: initial;
+  * {
+    all: unset;
+  }
+  // ^ clears all styling
+  display: block;
+  cursor: pointer;
+  border: 1px solid lightgray;
+  font-size: 2vh;
+  color: rgb(96, 96, 96);
+  padding-right: 1.4vh;
+  padding-left: 1.4vh;
+  padding-top: 0.4vh;
+  padding-bottom: 0.4vh;
+  text-decoration: none; 
+  border-radius: 7px;
+  margin: 7px;
+  text-align: center;
+  font-weight: 30;
+//   task : Fix 'keep shopping' styling. Make sure that clikcing
+    //   the button doesn't take you anywhere
+}
+
+.cart-show-keep-shopping-button:hover {
+    background-color: rgb(247, 247, 247)
+}
+
+.cart-content-container {
     border: 1px solid red;
     display: flex;
     padding: 18px;
-    margin-right: 5vh;
-    margin-left: 5vh;
 }
 
 
