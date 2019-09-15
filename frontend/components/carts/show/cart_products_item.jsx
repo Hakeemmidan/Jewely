@@ -25,6 +25,8 @@ export class CartProductsItem extends React.Component {
         }
     }
 
+
+
     render() {
         const product = this.props.product
         return (

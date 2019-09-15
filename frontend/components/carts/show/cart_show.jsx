@@ -10,22 +10,36 @@ export class CartShow extends React.Component {
         }
     }
 
-    componentDidMount() {
+    collectProductAndQuantity(productIdAndQuantity) {
         let priceTotal = 0;
-        JSON.parse(localStorage.cart).map( productIdAndQuantity => (
-            productIdAndQuantity[0] === undefined ? null : this.props.fetchProduct(parseInt(productIdAndQuantity[0]))
-                .then(response => this.setState(state => {
-                    priceTotal += parseFloat(response.product.price)
+
+        const quantity = parseInt(productIdAndQuantity[1])
+        if (productIdAndQuantity[0] === undefined) {
+            return null
+        } else {
+            this.props.fetchProduct(parseInt(productIdAndQuantity[0]))
+                .then(response => this.setState((state) => {
+                    debugger
+                    priceTotal += (parseFloat(response.product.price) * quantity)
                     const cartProducts = state.cartProducts.concat(response.product)
                     return {
                         cartProducts,
                         priceTotal
                     }
                 }))
+        } 
+    }
+
+    // NOTE : THE TOTAL PRICE IS NOT CORRECT 
+
+    componentDidMount() {
+        JSON.parse(localStorage.cart).map( productIdAndQuantity => (
+            this.collectProductAndQuantity(productIdAndQuantity)
         ))
     }
     // ^^^ Inspired by : https://www.robinwieruch.de/react-state-array-add-update-remove 
                     // and https://hashnode.com/post/reactjs-how-to-render-components-only-after-successful-asynchronous-call-ciwvnkjr400sq7t533lvrpdtw 
+
 
     render() {
         if (JSON.parse(localStorage.cart).length === 0) {
@@ -58,7 +72,7 @@ export class CartShow extends React.Component {
                 </ul>
                 <div>
                     <label>
-                        Item(s) total: ${this.state.priceTotal}
+                        Item(s) total: ${this.state.priceTotal.toLocaleString('en')}
                     </label>
                 </div>
             </div>
