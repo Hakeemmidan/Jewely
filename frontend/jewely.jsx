@@ -7,8 +7,8 @@ import { Root } from './components/root';
 document.addEventListener("DOMContentLoaded", () => {
   let store;
   const currentProduct = JSON.parse(window.localStorage.getItem('productFormState'));
-  if (!localStorage.cart) {
-    localStorage.setItem('cart', JSON.stringify([]))
+  if (localStorage.cart === 'undefined') {
+    localStorage.setItem('cart', JSON.stringify([[]]))
   }
 
   if (window.currentUser) {

@@ -51,14 +51,15 @@ export class ProductShow extends React.Component {
     
     handleAddToCart() {
         const productId = this.props.match.params.productId 
+        const quantity = $('.product-show-quantity-dropdown')[0].value
+
         if (localStorage.cart) {
-            let cartProductIds = JSON.parse(localStorage.getItem('cart'))
-            cartProductIds.push(productId)
-            localStorage.setItem('cart', JSON.stringify(cartProductIds))
+            let cartProductIdsAndQuantities = JSON.parse(localStorage.getItem('cart'))
+            cartProductIdsAndQuantities.push([productId, quantity])
+            localStorage.setItem('cart', JSON.stringify(cartProductIdsAndQuantities))
         } else {
-            localStorage.setItem('cart', JSON.stringify([productId]))
+            localStorage.setItem('cart', JSON.stringify([productId, quantity]))
         }
-        console.log(localStorage.getItem('cart'))
     }
     
     
