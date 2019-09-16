@@ -29,7 +29,6 @@ export const App = () => {
         <Link to="/" className="logo"> Jewely </Link>
         <GreetingContainer />
       </header>
-      <body>
         {/* Noted: this is here because we want to view differnet things based on what page we are on */}
         <Switch>
           <ProtectedRoute 
@@ -85,8 +84,6 @@ export const App = () => {
               We are going to use this to pass state and dispatch */}
           {/* question: Is it typical to have all these routes in here? */}
         </Switch>
-
-    </body>
     </div>
   )
 };

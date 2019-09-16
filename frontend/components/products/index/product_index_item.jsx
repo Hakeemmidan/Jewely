@@ -3,13 +3,18 @@ import { Link } from 'react-router-dom';
 
 export const ProductIndexItem = (props) => {
     const product = props.product
-    
     return (
         <div key={props.product.id} className="product-index-item">
             
-            <Link to={`/products/${product.id}`} > 
-                <img src={product.photoUrl} className="product-index-image"/>
-                <p className="product-index-item-price">{parseFloat(product.price).toLocaleString('en')}</p>
+            <Link 
+                to={`/products/${product.id}`}
+                style={{textDecoration: 'none'}}> 
+                <img src={product.photoUrl} className="product-index-image"
+                     alt={product.title} 
+                     title={product.title}/>
+                     {/* Note: I have a title tag for the image because CHrome and Firefox don't support alt for hover */}
+                <p className="product-index-item-title">{product.title}</p>
+                <p className="product-index-item-price">${parseFloat(product.price).toLocaleString('en')}</p>
             </Link>
             
             {/* ^^^ Clicking on this is going to navigate us 

@@ -18,7 +18,7 @@ const Greeting = ({ currentUser, logout }) => {
   );
   const personalGreeting = () => (
     <div>
-      <Link to={`/products/create`}>Sell On Jewely</Link>
+      <Link to={`/products/create`} className="text-link-underline-hover">Sell On Jewely</Link>
       <button className="logout-navbar-button" onClick={logout}>Log Out</button>
       <Link to="/cart" className="cart-navbar-icon">
         <CartIcon />
