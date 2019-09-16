@@ -13,10 +13,7 @@ export const ProductIndexItem = (props) => {
                      alt={product.title} 
                      title={product.title}/>
                      {/* Note: I have a title tag for the image because CHrome and Firefox don't support alt for hover */}
-<<<<<<< HEAD
                 <p className="product-index-item-title">{product.title}</p>
-=======
->>>>>>> origin/master
                 <p className="product-index-item-price">${parseFloat(product.price).toLocaleString('en')}</p>
             </Link>
             
