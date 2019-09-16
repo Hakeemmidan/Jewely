@@ -20,7 +20,10 @@ export class CartProductsItem extends React.Component {
             // Note : vvv This is basically deleting the item that we are trying to remove 
             cartProductIdsAndQuantities.splice(unwantedIdx, 1)
             localStorage.setItem('cart', JSON.stringify(cartProductIdsAndQuantities))
-            // question ) How do i re-render after the user clicks on this?
+            location.reload
+            // Task : Consider re-rendering cart-show rather than simply refreshing the page
+                // This means that you would need to set the state of the parent container ('CartShow')
+
         }
     }
 

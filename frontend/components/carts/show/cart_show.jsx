@@ -26,7 +26,7 @@ export class CartShow extends React.Component {
                 .then(response => this.setState((state) => {
                     let priceTotal = this.state.priceTotal
                     const quantity = parseInt(productIdAndQuantity[1])
-                    priceTotal = this.state.priceTotal
+                    
                     priceTotal += (parseFloat(response.product.price) * quantity)
                     const cartProducts = state.cartProducts.concat(response.product)
                     return {
