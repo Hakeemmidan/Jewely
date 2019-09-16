@@ -8,12 +8,6 @@ export class ProductIndex extends React.Component {
     }
 
     render() {
-        
-        // const products = this.props.products.map((product, idx) => {
-        //     return (
-                
-        //     )
-        // })
         return (
             <div>
                 <div className="product-index-list">

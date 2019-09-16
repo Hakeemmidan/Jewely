@@ -1,14 +1,13 @@
 .product-index-image {
-    // max-width: 100%;
-    // max-height: 100%;
+    object-fit: scale-down;
+    width: 125px;
     height: 100px;
-    width: 100px;
-    height: auto;
+    object-position: 50% 50%;
+    border: 0.3px solid lightgray; 
 }
 
 .product-index-item-price {
     margin: 0;
-    text-decoration: none;
     color: black;
 }
 
@@ -20,8 +19,8 @@
 }
 
 .product-index-list {
+    width: 90%;
     display: flex;
-    flex-flow: row wrap;
-    justify-content: space-around;
-    padding-top: 10px;
+    flex-wrap: wrap;
+    border: 1px solid red;
 }
