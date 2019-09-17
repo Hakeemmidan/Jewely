@@ -36,16 +36,16 @@ export class ProductShow extends React.Component {
     //     )
     // }
 
-    addToCartButton() {
-        return (
-            <Link
-                className="product-show-add-to-cart-button"
-                onClick={this.handleAddToCart}
-                to="/cart">
-                Add to cart
-            </Link>
-        )
-    }
+    // addToCartButton() {
+    //     return (
+    //         <Link
+    //             className="product-show-add-to-cart-button"
+    //             onClick={this.handleAddToCart}
+    //             to="/cart">
+    //             Add to cart
+    //         </Link>
+    //     )
+    // }
 
 // --------------- add to cart button END --------------- //
     
@@ -59,9 +59,14 @@ export class ProductShow extends React.Component {
             localStorage.setItem('cart', JSON.stringify(cartProductIdsAndQuantities))
             // Question ) I want to reload the page only before we go to the link. How is that possible?
             // question ) Is it possible to re-render a component from another component? 6
-        } else {
+        } else { 
             localStorage.setItem('cart', JSON.stringify([productId, quantity]))
         }
+            // window.setTimeout(
+            //     location.reload(true), 5000
+            // )
+            location.hash = '#/cart';
+        // question ) Why does this not work? ^^^^ 
     }
     
     
@@ -108,7 +113,11 @@ export class ProductShow extends React.Component {
 
                             {/* {this.hasProductInCart() ? this.addToCartAgainButton() : this.addToCartButton()} */}
                             {/* Task : ^^^ Get back to this after asking TA what is wrong with it */}
-                            {this.addToCartButton()}
+                            <button
+                                className="product-show-add-to-cart-button"
+                                onClick={this.handleAddToCart}>
+                                Add to cart
+                            </button>
                             <br/>
 
                             {editLink}
