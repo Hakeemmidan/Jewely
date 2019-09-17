@@ -9,13 +9,15 @@
 .product-index-item-price {
     margin: 0;
     color: black;
+    font-size: 2vh;
+    font-weight: 500;
+    font-family: 'Noto Serif', serif;
 }
 
 .product-index-item {
     border: 1px solid blue;
     padding: 9px;
     max-width: 125px;
-    
 }
 
 .product-index-item-list-container {
@@ -30,11 +32,22 @@
     border: 1px solid red;
 }
 
+.product-index-item-seller-username {
+    margin: 0;
+    margin-top: 0.3vh;
+    margin-bottom: 0.3vh;
+    font-size: 1.4vh;
+    color: #595959;
+}
+
 .product-index-item-title {
     display: -webkit-box;
-    -webkit-line-clamp: 2;
+    -webkit-line-clamp: 1;
     -webkit-box-orient: vertical;
     overflow: hidden;
     text-overflow: ellipsis;
-    // Source for text-wrap: https://stackoverflow.com/a/34559614/7974948
+    // ^^^ Source for text-wrap: https://stackoverflow.com/a/34559614/7974948
+    color: black; 
+    font-size: 1.8vh;
+    margin: 0;
 }
