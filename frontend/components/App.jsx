@@ -45,7 +45,7 @@ export const App = () => {
             component={CreateProductFormContainer}
           />
 
-          <ProtectedRoute
+          <Route
             exact
             path="/users/:userId"
             component={UserShowContainer}

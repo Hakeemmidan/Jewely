@@ -84,7 +84,6 @@ export class ProductShow extends React.Component {
     }
     
     render() {
-        
         const product = this.props.product
 
         if (!product) {
