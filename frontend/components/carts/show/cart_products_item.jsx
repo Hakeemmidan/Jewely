@@ -48,6 +48,20 @@ export class CartProductsItem extends React.Component {
     }
 
 
+    populateQuantityDropDownOptions() {
+        let dropDownOptions = [];
+        for (let i = 1; i < 6; i++) {
+            if (i === this.props.product.quantity) {
+                dropDownOptions.push(<option value={`${i}`} selected>{i}</option>)
+            } else {
+                dropDownOptions.push(<option value={`${i}`}>{i}</option>)
+            }
+        }
+
+        return dropDownOptions.map( option => {
+            return option
+        })
+    }
 
     render() {
         const product = this.props.product
@@ -60,8 +74,10 @@ export class CartProductsItem extends React.Component {
                 
                 <div className="cart-products-item-details">
                     <div className="cart-products-item-title-and-remove">
-                        <div className="cart-products-item-title">
-                            <p>{product.title}</p>
+                        <div>
+                            <p className="cart-products-item-title">
+                                {product.title}
+                            </p>
                         </div>
                         <a
                         onClick={this.handleRemove(product.id)}
@@ -71,15 +87,18 @@ export class CartProductsItem extends React.Component {
                     </div>
 
 
-                    <div>
+                    <div className="cart-product-item-quantity-and-price">
                         <div>
-                            <p>
-                                quantity: {product.quantity}
-                            </p>
+                            <select className="cart-product-item-drop-down">
+                                {this.populateQuantityDropDownOptions()}
+                            </select>
                         </div>
         
-                        <div className="cart-products-item-price">
-                            <p>${parseFloat(product.price).toLocaleString('en')}</p>
+                        <div>
+                            <p className="cart-products-item-price">
+                                ${parseFloat(product.price).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,')}
+                                {/* Number format source : https://stackoverflow.com/a/14428340/7974948  */}
+                            </p>
                         </div>
                     </div>
                 </div>
