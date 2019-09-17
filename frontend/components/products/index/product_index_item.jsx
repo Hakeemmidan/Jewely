@@ -24,8 +24,8 @@ export class ProductIndexItem extends React.Component {
                          {/* Note: I have a title tag for the image because CHrome and Firefox don't support alt for hover */}
                     <p className="product-index-item-title">{product.title}</p>
                     <p className="product-index-item-seller-username">{this.props.seller.username}</p>
-                    <p className="product-index-item-price">${parseFloat(product.price).toLocaleString("en", { useGrouping: false, minimumFractionDigits: 2 })}</p>
-                    {/* Number padding method source : https://stackoverflow.com/a/49505006/7974948 */}
+                    <p className="product-index-item-price">${parseFloat(product.price).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,')}</p>
+                    {/* Number format source : https://stackoverflow.com/a/14428340/7974948  */}
                 </Link>
     
                 {/* <Link to={`/products/${product.id}/edit`} removeProduct={props.removeProduct}>

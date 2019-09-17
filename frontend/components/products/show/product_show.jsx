@@ -104,7 +104,8 @@ export class ProductShow extends React.Component {
 
                             <div>
                                 <span className="product-show-price">
-                                    ${parseFloat(product.price).toLocaleString("en", { useGrouping: false, minimumFractionDigits: 2 })}
+                                    ${parseFloat(product.price).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,')}
+                                    {/* Number format source : https://stackoverflow.com/a/14428340/7974948 */}
                                 </span>
                             </div>
                             

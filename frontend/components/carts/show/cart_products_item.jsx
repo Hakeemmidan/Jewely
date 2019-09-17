@@ -53,29 +53,34 @@ export class CartProductsItem extends React.Component {
         const product = this.props.product
         return (
             <div className="cart-products-item">
+
                 <Link to={`/products/${product.id}`} >
                     <img src={product.photoUrl} className="product-index-image" />
                 </Link>
                 
-                <a
-                onClick={this.handleRemove(product.id)}
-                className="text-link-underline-hover">
-                    Remove
-                </a>
-    
                 <div className="cart-products-item-details">
-                    <div className="cart-products-item-title">
-                        <p>{product.title}</p>
+                    <div className="cart-products-item-title-and-remove">
+                        <div className="cart-products-item-title">
+                            <p>{product.title}</p>
+                        </div>
+                        <a
+                        onClick={this.handleRemove(product.id)}
+                        className="text-link-underline-hover cart-products-item-remove">
+                            Remove
+                        </a>
                     </div>
 
+
                     <div>
-                        <p>
-                            quantity: {product.quantity}
-                        </p>
-                    </div>
-    
-                    <div className="cart-products-item-price">
-                        <p>${parseFloat(product.price).toLocaleString('en')}</p>
+                        <div>
+                            <p>
+                                quantity: {product.quantity}
+                            </p>
+                        </div>
+        
+                        <div className="cart-products-item-price">
+                            <p>${parseFloat(product.price).toLocaleString('en')}</p>
+                        </div>
                     </div>
                 </div>
             </div>

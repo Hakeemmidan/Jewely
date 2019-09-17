@@ -1,5 +1,6 @@
 .cart-products-item {
-    // display: flex;
+    display: flex;
+    justify-content: space-between;
 }
 
 .cart-products-item-price {
@@ -8,19 +9,24 @@
     color: black;
 }
 
-.cart-products-item-li {
-    list-style-type: none;
-    padding-bottom: 1vh;
-    border-bottom: 1px solid lightgrey;
-}
-
 
 .cart-products-item-title {
     float: left;
     padding-left: 12px;
+    width: 80%;
 }
 
 .cart-products-item-details {
     display: flex;
     justify-content: space-between;
+    width: 100%;
+}
+
+.cart-products-item-title-and-remove {
+    width: 50%;
+    border: 1px solid blue;
+}
+
+.cart-products-item-remove {
+    font-size: 1.5vh;
 }

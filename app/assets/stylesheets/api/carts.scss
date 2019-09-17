@@ -70,8 +70,15 @@
 .cart-show-items-total {
     display: flex;
     justify-content: space-between;
-    margin-top: 1vh;
     margin-bottom: 1vh;
+    font-family: 'Poppins', sans-serif;
+    font-weight: lighter;
+    font-size: 1.6vh;
+    padding-top: 0.4vh;
+}
+
+.cart-show-items-total-price {
+    font-size: 1.8vh;
 }
 
 .cart-products-ul-col {
@@ -89,7 +96,19 @@
 #proceed-to-checkout-button {
     margin: 0; 
     width: 80%;
+    padding-top: 12px;
+    font-family: 'Noto Serif', serif;
+    width: 90%;
+}
 
+.cart-show-payment-option {
+    padding-bottom: 6px; 
+}
+
+.cart-products-item-li {
+    list-style-type: none;
+    padding-bottom: 1vh;
+    border-bottom: 1px solid lightgrey;
 }
 
 // ------------------------ checkout radio button START------------------------ //

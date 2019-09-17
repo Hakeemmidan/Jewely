@@ -92,7 +92,7 @@ export class CartShow extends React.Component {
                     </ul>
                     
                     <div className="cart-show-checkout-col">
-                        <div>
+                        <div className="cart-show-payment-option">
                             <input type="radio" name="checkout-payment" checked className="cart-show-radio-input"/>
                             <label>
                                 <VisaIcon/>
@@ -102,7 +102,7 @@ export class CartShow extends React.Component {
                             </label>
                         </div>
 
-                        <div>
+                        <div className="cart-show-payment-option">
                             <input type="radio" name="checkout-payment" className="cart-show-radio-input"/>
                             <label>
                                 <PaypalIcon/>
@@ -113,8 +113,9 @@ export class CartShow extends React.Component {
                             <div>
                                 Item(s) total
                             </div>
-                            <div>
-                                ${this.state.priceTotal.toLocaleString('en')}
+                            <div className="cart-show-items-total-price">
+                                ${this.state.priceTotal.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,')}
+                                {/* Number format source : https://stackoverflow.com/a/14428340/7974948  */}
                             </div>
                         </div>
 
