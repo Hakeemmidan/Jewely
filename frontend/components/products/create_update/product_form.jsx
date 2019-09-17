@@ -7,6 +7,7 @@ class ProductForm extends React.Component {
         this.state = this.props.product
         this.handleSubmit = this.handleSubmit.bind(this);
         this.update = this.update.bind(this);
+        this.handleRemove = this.handleRemove.bind(this);
     }
 
     update(field) {
@@ -74,25 +75,36 @@ class ProductForm extends React.Component {
         }
     }
 
-    // renderRemoveProductButton() {
-    //     return (
-    //         <div>
-    //             <br />
-    //             <br />
-    //             <br />
-    //             <hr />
-    //             <button onClick={this.hadnleRemove()}>
-    //                 Delete product listing
-    //             </button>
-    //         </div>
-    //     )
-    // }
+    renderRemoveProductButton() {
+        return (
+            <div>
+                <br />
+                <br />
+                <br />
+                <hr />
+                <button onClick={this.handleRemove}>
+                    Delete product listing
+                </button>
+            </div>
+        )
+    }
 
-    // hadnleRemove() {
-    //     debugger
-    //     this.props.removeProduct(this.state.id)
-    //     location.hash = '#/'
-    // }
+    handleRemove() {
+        // remove it from cart (if it is there)
+        const cart = JSON.parse(localStorage.getItem('cart'))
+        for (let i = 0; i < cart.length; i++) {
+            if (parseInt(cart[i][0]) === this.state.id) {
+                cart.splice(i, 1)
+            }
+        }
+        localStorage.setItem('cart', JSON.stringify(cart))
+
+        // remove it from database
+        this.props.removeProduct(this.state.id)
+
+        // change location to the main page
+        location.hash = '#/'
+    }
 
     render() {
         const preview = this.state.photoUrl ? <img height="100px" width="100px" src={this.state.photoUrl}/> : null
