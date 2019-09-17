@@ -17,6 +17,17 @@ class Api::UsersController < ApplicationController
     @user = User.find(params[:id])
   end
 
+  def destroy
+    @user = User.find(params[:id])
+
+    if @user.destroy
+      # Question ) Should I log out the user here or is it already destroyed and logged out?
+      render 'api/products/index'
+    else
+      render json: @user.errors.full_messages, status 422
+    end
+  end
+
   private
   def user_params
     params.require(:user).permit(:password, :username)
