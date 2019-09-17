@@ -26,9 +26,13 @@ export class CartShow extends React.Component {
                 .then(response => this.setState((state) => {
                     let priceTotal = this.state.priceTotal
                     const quantity = parseInt(productIdAndQuantity[1])
+                    const product = response.product
 
+
+                    product.quantity = quantity
+                    // ^ Setting the quantity for each product in cart
                     priceTotal += (parseFloat(response.product.price) * quantity)
-                    const cartProducts = state.cartProducts.concat(response.product)
+                    const cartProducts = state.cartProducts.concat(product)
                     return {
                         cartProducts,
                         priceTotal
@@ -38,6 +42,7 @@ export class CartShow extends React.Component {
     }
 
     componentDidMount() {
+        // Note : Local storage stores a pair of product ID and quantity for each item
         JSON.parse(localStorage.cart).map( productIdAndQuantity => (
             this.collectProductAndQuantity(productIdAndQuantity)
         ))
@@ -60,11 +65,11 @@ export class CartShow extends React.Component {
             )
         }
 
-        const cartProductsLis = this.state.cartProducts.map( (product, idx) => {
+        const cartProductsLis = this.state.cartProducts.map( (cartProduct, idx) => {
             return (
                 <li key={`cart-item-${idx}`} className="cart-products-item-li">
                     <CartProductsItem
-                        product={product}
+                        product={cartProduct}
                     />
                 </li>
             )

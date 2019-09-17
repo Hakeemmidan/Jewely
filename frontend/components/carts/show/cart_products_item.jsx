@@ -67,6 +67,12 @@ export class CartProductsItem extends React.Component {
                     <div className="cart-products-item-title">
                         <p>{product.title}</p>
                     </div>
+
+                    <div>
+                        <p>
+                            quantity: {product.quantity}
+                        </p>
+                    </div>
     
                     <div className="cart-products-item-price">
                         <p>${parseFloat(product.price).toLocaleString('en')}</p>
