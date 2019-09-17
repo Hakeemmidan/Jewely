@@ -60,7 +60,6 @@
   font-size: 15px;
   line-height: 1.2;
   width: 45vw;
-  
   border-color: rgba(0, 0, 0, 0.1);
   display: inline-block;
   font-weight: bold;
@@ -86,6 +85,23 @@
     width: 6%;
 }
 
+.product-show-seller-username {
+    color: #757575;
+    text-decoration: none;
+    font-size: 1.8vh;
+}
+
+.product-show-seller-username:hover {
+    text-decoration: underline;
+}
+
+.clearfix {
+  overflow: auto;
+}
+
+.product-listing {
+    padding-top: 30px;
+}
 // ------- product show lower details (doesn't include comments) START ------- //
 .product-show-column {
     float: left;

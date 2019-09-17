@@ -73,7 +73,7 @@ export class ProductShow extends React.Component {
     render() {
         const seller = this.props.seller
         const product = this.props.product
-        
+
         if (!product) {
             return <div>Loading...</div>
         }
@@ -85,15 +85,18 @@ export class ProductShow extends React.Component {
         
             return (
                 <div>
-                    <div className="clearfix">
+                    <div className="clearfix product-listing">
                         <img src={`${product.photoUrl}`} className="product-show-image" alt="" />
 
                         <div className="listing-right-column">
-                            <Link 
-                                to={`/users/${seller.id}`}
-                                className="product-show-seller-username">
-                                {seller.username}
-                            </Link>
+                            <div>
+                                <Link 
+                                    to={`/users/${seller.id}`}
+                                    className="product-show-seller-username">
+                                    {seller.username}
+                                </Link>
+                            </div>
+
                             <h1 className="product-show-title">
                                 {product.title}
                             </h1>
