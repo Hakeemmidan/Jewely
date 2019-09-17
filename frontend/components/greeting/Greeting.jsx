@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { CartIcon } from '../../util/cart_icons';
+import { NavbarCartBadge } from '../carts/show/navbar_cart_badge';
 
 const Greeting = ({ currentUser, logout }) => {
   const sessionLinks = () => (
@@ -9,9 +10,7 @@ const Greeting = ({ currentUser, logout }) => {
       <Link to="/login" className="login-navbar-button">Login</Link>
       <Link to="/cart" className="cart-navbar-icon">
         <CartIcon/>
-        <span className="cart-item-count-badge">
-          {JSON.parse(localStorage.cart).length}
-        </span>
+        <NavbarCartBadge />
         {/* question ) How to make cart badge thing update when a user adds stuff to thier cart? */}
       </Link>
     </nav>

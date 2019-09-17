@@ -20,7 +20,10 @@ export class CartProductsItem extends React.Component {
             // Note : vvv This is basically deleting the item that we are trying to remove 
             cartProductIdsAndQuantities.splice(unwantedIdx, 1)
             localStorage.setItem('cart', JSON.stringify(cartProductIdsAndQuantities))
-            location.reload
+            // Note : vvv Having true here reloads the page without reloading the browser cache.
+                    // We don't need to reload it because we have already changed it above.
+                    // Not reloading it makes this refresh faster.
+            location.reload(true);
             /* 
             Note : I have considered simply re-rendering the cart-show component 
                    rather than re-rendering the whole page. However that means that
