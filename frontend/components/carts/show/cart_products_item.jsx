@@ -21,8 +21,25 @@ export class CartProductsItem extends React.Component {
             cartProductIdsAndQuantities.splice(unwantedIdx, 1)
             localStorage.setItem('cart', JSON.stringify(cartProductIdsAndQuantities))
             location.reload
-            // Task : Consider re-rendering cart-show rather than simply refreshing the page
-                // This means that you would need to set the state of the parent container ('CartShow')
+            /* 
+            Note : I have considered simply re-rendering the cart-show component 
+                   rather than re-rendering the whole page. However that means that
+                   you may need to pass a re-rendering function from the parent,
+                   which can make a HUGE mess in the code.
+                   Here's what you may need to do:
+                   In parent:
+                        1. Create a function that sets the state to anything using
+                            dummy variable.
+                        2. Bind that function to 'this' in the constructor.
+                        3. Pass it on to the child as a prop
+                  In child:
+                        4. Invoke both the re-rendering function and the handleRemove
+                           function (which actually removes items from localStorage).
+                             4a. This means that you may to bundle both of them onto
+                                  one function, which could cause some scope issues.
+                  All this have made decide to simply refresh the page rather than
+                  do all of that and probably make my code harder to read.
+            */
 
         }
     }
