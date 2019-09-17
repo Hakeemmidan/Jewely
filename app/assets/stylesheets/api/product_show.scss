@@ -51,11 +51,23 @@
   padding-top: 1.3vh;
   padding-bottom: 1.3vh;
   text-decoration: none; 
-  border-radius: 7px;
+  border-radius: 3px;
+  border-style: solid;
   color: white;
-  margin: 7px;
+  margin-top: 7px;
   text-align: center;
   background-color: black;
+  font-size: 15px;
+  line-height: 1.2;
+  width: 45vw;
+  
+  border-color: rgba(0, 0, 0, 0.1);
+  display: inline-block;
+  font-weight: bold;
+  font-family: 'Poppins', sans-serif;
+  white-space: nowrap;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-appearance: none;
 }
 
 .product-show-add-to-cart-button:hover {

@@ -93,7 +93,7 @@ export class ProductShow extends React.Component {
 
                             <div>
                                 <span className="product-show-price">
-                                    ${parseFloat(product.price).toLocaleString('en')}
+                                    ${parseFloat(product.price).toLocaleString("en", { useGrouping: false, minimumFractionDigits: 2 })}
                                 </span>
                             </div>
                             
