@@ -52,9 +52,9 @@ export class CartProductsItem extends React.Component {
         let dropDownOptions = [];
         for (let i = 1; i < 6; i++) {
             if (i === this.props.product.quantity) {
-                dropDownOptions.push(<option value={`${i}`} selected>{i}</option>)
+                dropDownOptions.push(<option value={`${i}`} key={`quantity-option-${i}`} defaultValue>{i}</option>)
             } else {
-                dropDownOptions.push(<option value={`${i}`}>{i}</option>)
+                dropDownOptions.push(<option value={`${i}`} key={`quantity-option-${i}`}>{i}</option>)
             }
         }
 
@@ -67,7 +67,7 @@ export class CartProductsItem extends React.Component {
         const product = this.props.product
         return (
             <div className="cart-products-item">
-
+                
                 <Link to={`/products/${product.id}`} >
                     <img src={product.photoUrl} className="product-index-image" />
                 </Link>
@@ -75,9 +75,11 @@ export class CartProductsItem extends React.Component {
                 <div className="cart-products-item-details">
                     <div className="cart-products-item-title-and-remove">
                         <div>
-                            <p className="cart-products-item-title">
-                                {product.title}
-                            </p>
+                            <Link className="cart-products-item-title-link" to={`/products/${product.id}`}>
+                                <p className="cart-products-item-title">
+                                    {product.title}
+                                </p>
+                            </Link>
                         </div>
                         <a
                         onClick={this.handleRemove(product.id)}

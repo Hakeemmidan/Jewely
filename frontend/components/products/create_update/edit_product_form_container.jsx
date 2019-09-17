@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import ProductForm from './product_form';
-import { fetchProduct, updateProduct } from '../../../actions/product_actions';
+import { fetchProduct, updateProduct, removeProduct } from '../../../actions/product_actions';
 
 
 const mapStateToProps = (state, ownProps) => {
@@ -32,6 +32,7 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = dispatch => {
     return {
         fetchProduct: id => dispatch(fetchProduct(id)),
+        removeProduct: id => dispatch(removeProduct(id)),
         action: formData => dispatch(updateProduct(formData))
     };
 };
@@ -54,6 +55,7 @@ class EditProductForm extends React.Component {
                 action={action}
                 formType={formType}
                 product={product}
+                removeProduct={this.props.removeProduct}
                 errors={errors} />
         );
     }

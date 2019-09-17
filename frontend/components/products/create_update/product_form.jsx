@@ -74,6 +74,20 @@ class ProductForm extends React.Component {
         }
     }
 
+    renderRemoveProductButton() {
+        return (
+            <div>
+                <br />
+                <br />
+                <br />
+                <hr />
+                <button onClick={this.props.removeProduct(this.state.id)}>
+                    Delete product listing
+                </button>
+            </div>
+        )
+    }
+
     render() {
         const preview = this.state.photoUrl ? <img height="100px" width="100px" src={this.state.photoUrl}/> : null
         return (
@@ -127,8 +141,9 @@ class ProductForm extends React.Component {
                     <label>ImagePreview
                         {preview}
                     </label>
+                    
+                    {this.props.removeProduct ? this.renderRemoveProductButton() : null}
 
-                    <br/>
                     <br/>
                     <br/>
                     <hr/>
