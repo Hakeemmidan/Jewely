@@ -24,9 +24,7 @@ import CreateProductFormContainer from './products/create_update/create_product_
 import CartShowContainer from './carts/show/cart_show_container'; 
 
 
-
 export const App = () => {
-
   return (
     <div>
       <header>

@@ -28,7 +28,7 @@ class Api::UsersController < ApplicationController
       # Question ) Should I log out the user here or is it already destroyed and logged out?
       render 'api/products/index'
     else
-      render json: @user.errors.full_messages, status 422
+      render json: @user.errors.full_messages, status: 422
     end
   end
 

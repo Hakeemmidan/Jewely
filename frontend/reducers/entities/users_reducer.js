@@ -1,8 +1,8 @@
 import { RECEIVE_CURRENT_USER } from '../../actions/session_actions';
 import { 
   RECEIVE_USER,
-  REMOVE_USER,
-  RECEIVE_ALL_PRODUCTS } from '../../actions/user_actions';
+  RECEIVE_ALL_USERS,
+  REMOVE_USER } from '../../actions/user_actions';
 
 export const usersReducer = (oldState = {}, action) => {
   Object.freeze(oldState);
@@ -14,7 +14,7 @@ export const usersReducer = (oldState = {}, action) => {
         [action.currentUser.id]: action.currentUser 
       });
       return nextState;
-    case RECEIVE_ALL_PRODUCTS:
+    case RECEIVE_ALL_USERS:
       return action.users
     case RECEIVE_USER:
       nextState = Object.assign({}, oldState, {
