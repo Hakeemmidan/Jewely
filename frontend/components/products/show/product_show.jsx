@@ -70,9 +70,21 @@ export class ProductShow extends React.Component {
         // question ) Why does this not work? ^^^^ 
     }
     
+    renderSellerUsername() {
+        const seller = this.props.seller
+        return (
+            <div>
+                <Link
+                    to={`/users/${seller.id}`}
+                    className="product-show-seller-username">
+                    {seller.username}
+                </Link>
+            </div>
+        )
+    }
     
     render() {
-        const seller = this.props.seller
+        
         const product = this.props.product
 
         if (!product) {
@@ -84,79 +96,73 @@ export class ProductShow extends React.Component {
             editLink = <Link to={`/products/${product.id}/edit`}>Edit</Link>
         }
         
-            return (
-                <div>
-                    <div className="clearfix product-listing">
-                        <img src={`${product.photoUrl}`} className="product-show-image" alt="" />
+        return (
+            <div>
+                <div className="clearfix product-listing">
+                    <img src={`${product.photoUrl}`} className="product-show-image" alt="" />
 
-                        <div className="listing-right-column">
-                            <div>
-                                <Link 
-                                    to={`/users/${seller.id}`}
-                                    className="product-show-seller-username">
-                                    {seller.username}
-                                </Link>
-                            </div>
+                    <div className="listing-right-column">
+                        {this.props.seller ? this.renderSellerUsername() : null}
 
-                            <h1 className="product-show-title">
-                                {product.title}
-                            </h1>
+                        <h1 className="product-show-title">
+                            {product.title}
+                        </h1>
 
-                            <div>
-                                <span className="product-show-price">
-                                    ${parseFloat(product.price).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,')}
-                                    {/* Number format source : https://stackoverflow.com/a/14428340/7974948 */}
-                                </span>
-                            </div>
-                            
-                            <div className="product-show-quantity-select">
-                                <label className="quantity-label">
-                                    Quantity
-                                </label>
-
-                                <select className="product-show-quantity-dropdown">
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                    <option value="4">4</option>
-                                    <option value="5">5</option>
-                                </select>
-                            </div>
-
-                            {/* {this.hasProductInCart() ? this.addToCartAgainButton() : this.addToCartButton()} */}
-                            {/* Task : ^^^ Get back to this after asking TA what is wrong with it */}
-                            <Link
-                                to='/cart'>
-                                <button
-                                    className="product-show-add-to-cart-button"
-                                    onClick={this.handleAddToCart}>
-                                    Add to cart
-                                </button>
-                            </Link>
-                            <br/>
-
-                            {editLink}
+                        <div>
+                            <span className="product-show-price">
+                                ${parseFloat(product.price).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,')}
+                                {/* Number format source : https://stackoverflow.com/a/14428340/7974948 */}
+                            </span>
                         </div>
-                    </div>
+                        
+                        <div className="product-show-quantity-select">
+                            <label className="quantity-label">
+                                Quantity
+                            </label>
 
-                    <br/>
-
-                    <div className="product-show-lower">
-                        <div className="product-show-column product-show-column1">
-                            I am the first column
+                            <select className="product-show-quantity-dropdown">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                            </select>
                         </div>
 
-                        <div className="product-show-column product-show-column2">
-                            <p className="product-show-description">
-                                {product.description}
-                            </p>
-                        </div>
+                        {/* {this.hasProductInCart() ? this.addToCartAgainButton() : this.addToCartButton()} */}
+                        {/* Task : ^^^ Get back to this after asking TA what is wrong with it */}
+                        <Link
+                            to='/cart'>
+                            <button
+                                className="product-show-add-to-cart-button"
+                                onClick={this.handleAddToCart}>
+                                Add to cart
+                            </button>
+                        </Link>
+                        <br/>
 
-                        <div className="product-show-column product-show-column3">
-                            some details
-                        </div>
+                        {editLink}
                     </div>
                 </div>
-            )
+
+                <br/>
+
+                <div className="product-show-lower">
+                    <div className="product-show-column product-show-column1">
+                        I am the first column
+                    </div>
+
+                    <div className="product-show-column product-show-column2">
+                        <p className="product-show-description">
+                            {product.description}
+                        </p>
+                    </div>
+
+                    <div className="product-show-column product-show-column3">
+                        some details
+                    </div>
+                </div>
+            </div>
+        )
     }
 }

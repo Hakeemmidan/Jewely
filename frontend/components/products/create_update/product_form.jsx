@@ -74,19 +74,25 @@ class ProductForm extends React.Component {
         }
     }
 
-    renderRemoveProductButton() {
-        return (
-            <div>
-                <br />
-                <br />
-                <br />
-                <hr />
-                <button onClick={this.props.removeProduct(this.state.id)}>
-                    Delete product listing
-                </button>
-            </div>
-        )
-    }
+    // renderRemoveProductButton() {
+    //     return (
+    //         <div>
+    //             <br />
+    //             <br />
+    //             <br />
+    //             <hr />
+    //             <button onClick={this.hadnleRemove()}>
+    //                 Delete product listing
+    //             </button>
+    //         </div>
+    //     )
+    // }
+
+    // hadnleRemove() {
+    //     debugger
+    //     this.props.removeProduct(this.state.id)
+    //     location.hash = '#/'
+    // }
 
     render() {
         const preview = this.state.photoUrl ? <img height="100px" width="100px" src={this.state.photoUrl}/> : null
