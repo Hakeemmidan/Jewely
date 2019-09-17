@@ -25,6 +25,10 @@ const Greeting = ({ currentUser, logout }) => {
           {JSON.parse(localStorage.cart).length}
         </span>
       </Link>
+
+      <Link to={`/users/${currentUser.id}`}>
+        your personal page
+      </Link>
     </div>
   );
 

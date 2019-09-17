@@ -5,6 +5,10 @@ import {
         Route,
         Link } from 'react-router-dom';
 
+
+// users vvv
+import UserShowContainer from './users/user_show_container';
+
 // session vvv
 import GreetingContainer from './greeting/greeting_container';
 import SignUpFormContainer from './auth/signup_form_container';
@@ -41,6 +45,12 @@ export const App = () => {
             exact
             path="/products/create"
             component={CreateProductFormContainer}
+          />
+
+          <ProtectedRoute
+            exact
+            path="/users/:userId"
+            component={UserShowContainer}
           />
 
           <Route
