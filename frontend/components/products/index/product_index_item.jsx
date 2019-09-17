@@ -16,13 +16,14 @@ export class ProductIndexItem extends React.Component {
             <div key={this.props.product.id} className="product-index-item">
                 <Link 
                     to={`/products/${product.id}`}
-                    style={{textDecoration: 'none'}}> 
+                    style={{textDecoration: 'none'}}
+                    > 
                     <img src={product.photoUrl} className="product-index-image"
                          alt={product.title} 
                          title={product.title}/>
                          {/* Note: I have a title tag for the image because CHrome and Firefox don't support alt for hover */}
                     <p className="product-index-item-title">{product.title}</p>
-                    <p className="product-index-item-seller-username">{this.props.sellerUsername}</p>
+                    <p className="product-index-item-seller-username">{this.props.seller.username}</p>
                     <p className="product-index-item-price">${parseFloat(product.price).toLocaleString("en", { useGrouping: false, minimumFractionDigits: 2 })}</p>
                     {/* Number padding method source : https://stackoverflow.com/a/49505006/7974948 */}
                 </Link>

@@ -7,7 +7,7 @@ import { fetchUser } from '../../../actions/user_actions';
 const mapStateToProps = (state) => {
     return {
         products: Object.values(state.entities.products),
-        user: Object.values(state.entities.users)[0]
+        seller: Object.values(state.entities.users)[0]
     }
 }
 const mapDispatchToProps = (dispatch) => {
