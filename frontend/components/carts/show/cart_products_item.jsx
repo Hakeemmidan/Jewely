@@ -52,17 +52,33 @@ export class CartProductsItem extends React.Component {
 
     // ---------------------- Detecting quantity change from localStorage START ----------------------
     componentDidMount() {
-        const quantityDropdown = document.getElementsByClassName('cart-product-item-drop-down')[1]
-        if (quantityDropdown) {
-            quantityDropdown.addEventListener('change', this.initiateTotalPriceChange, false)
+        const quantityDropdownArr = document.getElementsByClassName('cart-product-item-drop-down')
+
+        if (quantityDropdownArr) {
+            for (let i = 0; i < quantityDropdownArr.length; i++) {
+                quantityDropdownArr[i].addEventListener('change', this.initiateTotalPriceChange, false)
+                // Question ) Is it bad that I'm doing this?
+            }
         }
     }
 
     
-    initiateTotalPriceChange() {
-        // change local storage first
-        debugger
-    }
+    // initiateTotalPriceChange(e) {
+    //     // 1 change the local storage cart
+    //     // 2 save it (set it)
+    //     // 3 initiate a re-render of cart show
+
+    //     const cart = JSON.parse(localStorage.getItem('cart'))
+
+    //     cart.forEach( (idAndQuantity, idx) => {
+    //         if (this.props.product.id === parseInt(idAndQuantity[0])) {
+    //             cart[idx] = [this.props.product.id, e.target.value]
+    //         }
+    //     })
+
+    //     localStorage.setItem('cart', JSON.parse(cart))
+    //     //  Initiate re-render here
+    // }
     // ---------------------- Detecting quantity change from localStorage EBD ----------------------
 
     populateQuantityDropDownOptions() {
