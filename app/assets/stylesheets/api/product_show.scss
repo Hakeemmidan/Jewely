@@ -4,7 +4,7 @@
     float: left;
     padding-right: 12px;
     padding-left: 18px;
-    margin-bottom: 7vh;
+    margin-bottom: 25px;
     display: inline-block;
     overflow: hidden;  
 }
@@ -107,22 +107,14 @@
 // ------- product show lower details (doesn't include comments) START ------- //
 .product-show-column {
     float: left;
-    border: 1px solid red;
-    padding-right: 14px;
-    padding-left: 14px;
-    margin-top: 24px;
-    margin-bottom: 24px;
+    padding-right: 18px;
+    padding-left: 18px;
+    box-sizing: border-box;
 }
+
 .product-show-column1 {
-    width: 15%;
-}
-
-.product-show-column2 {
-    width: 42%;
-}
-
-.product-show-column3 {
-    width: 30%;
+    width: 100%;
+    display: block;
 }
 
 .product-show-lower {
@@ -138,6 +130,11 @@
 
 .product-show-description {
     margin: 0px;
+}
+
+.product-show-description-details-label {
+    margin: 0; 
+    font-weight: bold;
 }
 
 // ------- product show lower details (doesn't include comments) END ------- //

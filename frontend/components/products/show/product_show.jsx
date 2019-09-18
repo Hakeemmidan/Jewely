@@ -88,7 +88,7 @@ export class ProductShow extends React.Component {
 
         let editLink = null;
         if (this.props.currentUserId === product.seller_id) { 
-            editLink = <Link to={`/products/${product.id}/edit`}>Edit</Link>
+            editLink = <Link to={`/products/${product.id}/edit`}>Edit your product listing</Link>
         }
         
         return (
@@ -136,26 +136,18 @@ export class ProductShow extends React.Component {
                                 </button>
                             </Link> 
                         <br/>
-
                         {editLink}
                     </div>
                 </div>
 
-                <br/>
-
                 <div className="product-show-lower">
                     <div className="product-show-column product-show-column1">
-                        I am the first column
-                    </div>
-
-                    <div className="product-show-column product-show-column2">
+                        <p className="product-show-description-details-label">
+                            Details:
+                        </p> 
                         <p className="product-show-description">
                             {product.description}
                         </p>
-                    </div>
-
-                    <div className="product-show-column product-show-column3">
-                        some details
                     </div>
                 </div>
             </div>
