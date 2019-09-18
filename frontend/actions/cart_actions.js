@@ -1,4 +1,5 @@
 export const RECEIVE_CART = 'RECEIVE_CART';
+export const RECEIVE_CART_BADGE = 'RECEIVE_CART_BADGE';
 import * as CartAPIUtil from '../util/cart_api_util';
 
 const receiveCart = (cart) => {
@@ -8,9 +9,19 @@ const receiveCart = (cart) => {
     }
 }
 
+const receiveCartBadge = () => {
+    return {
+        type: RECEIVE_CART_BADGE
+    }
+}
+
 // Action creators ^^^
 ////////////////////////////////////////////
 // Thunk action creators vvv
+
+export const fetchCartBadge = () => dispatch => {
+    return dispatch(receiveCartBadge())
+}
 
 export const fetchCart = (id) => dispatch => {
     return CartAPIUtil.fetchCart(id)

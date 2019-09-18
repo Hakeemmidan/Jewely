@@ -2,9 +2,9 @@ import { connect } from 'react-redux';
 
 import { fetchProduct } from '../../../actions/product_actions';
 import { fetchUser } from '../../../actions/user_actions';
+import { fetchCartBadge } from '../../../actions/cart_actions';
 
 import { ProductShow } from './product_show';
-
 
 const mapStateToProps = (state, ownProps) => {
     // Question : Why is the currentUser not being passed down here?
@@ -20,7 +20,8 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = (dispatch) => {
     return {
         fetchProduct: (id) => dispatch(fetchProduct(id)),
-        fetchUser: (id) => dispatch(fetchUser(id))
+        fetchUser: (id) => dispatch(fetchUser(id)),
+        fetchCartBadge: () => dispatch(fetchCartBadge())
     }
 }
 
