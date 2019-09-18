@@ -31,8 +31,12 @@ class ProductForm extends React.Component {
         formData.append('product[seller_id]', this.state.seller_id);
         formData.append('product[errors]', this.state.errors);
 
-        if (this.state.photoFile) {
-            formData.append('product[photo]', this.state.photoFile);
+        if (this.state.photos) {
+            const photos = this.state.photos
+
+            for (let i = 0; i < photos.length; i++) {
+                formData.append('product[photos][]', this.state.photos[i]);
+            }
         }
 
         this.props.action(formData)
@@ -50,8 +54,7 @@ class ProductForm extends React.Component {
         const reader = new FileReader();
         const file = e.currentTarget.files[0];
         reader.onloadend = () =>
-            this.setState({ photoUrl: reader.result, photoFile: file });
-
+            this.setState({ photoUrls: reader.result, photoFile: file });
         if (file) {
             reader.readAsDataURL(file);
         } else {
@@ -107,7 +110,8 @@ class ProductForm extends React.Component {
     }
 
     render() {
-        const preview = this.state.photoUrl ? <img 
+        
+        const preview = this.state.photoUrls ? <img 
                                                 height="100px"
                                                 width="100px"
                                                 className="product-form-image-preview"
@@ -159,7 +163,7 @@ class ProductForm extends React.Component {
                         <br/>
                         <input 
                             type="file"
-                            onChange={this.handleFile.bind(this)} />
+                            onChange={e => this.setState({ photos: e.target.files })} />
                     </label>
 
                     <br/>

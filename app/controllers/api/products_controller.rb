@@ -49,8 +49,8 @@ class Api::ProductsController < ApplicationController
             :title,
             :description,
             :price,
-            :photo,
-            :seller_id)
+            :seller_id,
+            photos: [])
         # noted : Don't forget to permit ids in permits 
     end
 end

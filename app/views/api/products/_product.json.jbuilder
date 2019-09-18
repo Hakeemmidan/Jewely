@@ -1,9 +1,9 @@
-json.extract! product, :id, :title, :description, :price, :seller_id, :photoUrl
+json.extract! product, :id, :title, :description, :price, :seller_id, :photoUrls
 
-if product.photo.attached?
-    json.photoUrl url_for(product.photo)
+if product.photos.attached?
+    json.photoUrls product.photos.map { |file| url_for(file) }
 else
     file = File.open('app/assets/images/Jewely.jpg')
-    product.photo.attach(io: file, filename: 'defaultJewely.jpg')
-    json.photoUrl url_for(product.photo)
+    product.photos.attach(io: file, filename: 'defaultJewely.jpg')
+    json.photoUrls url_for(product.photos[0])
 end

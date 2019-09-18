@@ -105,7 +105,7 @@ export class CartProductsItem extends React.Component {
             <div className="cart-products-item">
                 
                 <Link to={`/products/${product.id}`} >
-                    <img src={product.photoUrl} className="product-index-image" />
+                    <img src={product.photoUrls[0]} className="product-index-image" />
                 </Link>
                 
                 <div className="cart-products-item-details">
