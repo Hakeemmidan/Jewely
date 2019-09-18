@@ -1,10 +1,12 @@
 .product-show-image {
-    max-width: 50vh;
-    max-height: 50vh;
+    max-width: 42%;
+    height: auto;
     float: left;
     padding-right: 12px;
     padding-left: 18px;
     margin-bottom: 7vh;
+    display: inline-block;
+    overflow: hidden;  
 }
 
 .listing-right-column {

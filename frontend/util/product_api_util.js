@@ -24,7 +24,7 @@ export const createProduct = (formData) => {
 
 export const updateProduct = (formData) => {
     const productId = parseInt(Array.from(formData.entries())[0][1])
-    // Note : We do this to grab productId from formData array like object
+    // Noted : We do this to grab productId from formData array like object
     return $.ajax({
         method: 'PATCH',
         url: `api/products/${productId}`,

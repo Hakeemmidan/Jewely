@@ -16,7 +16,7 @@ const Greeting = ({ currentUser, logout }) => {
     </nav>
   );
   const personalGreeting = () => (
-    <div>
+    <div className="navbar-right-side-content">
       <Link to={`/products/create`} className="text-link-underline-hover">Sell On Jewely</Link>
       <button className="logout-navbar-button" onClick={logout}>Log Out</button>
       <Link to="/cart" className="cart-navbar-icon">
@@ -24,8 +24,8 @@ const Greeting = ({ currentUser, logout }) => {
         <CartBadgeContainer />
       </Link>
 
-      <Link to={`/users/${currentUser.id}`}>
-        your personal page
+      <Link className="navbar-current-user-show-page-link" to={`/users/${currentUser.id}`}>
+        {currentUser.username}
       </Link>
     </div>
   );

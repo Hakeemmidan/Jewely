@@ -1,7 +1,6 @@
 class Product < ApplicationRecord
     validates :title, :description, :price, presence: true
     validates :seller_id, presence: true
-    # note : you could do validate and then method name to trigger it
     has_one_attached :photo
 
     belongs_to :seller,

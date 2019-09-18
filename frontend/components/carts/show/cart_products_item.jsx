@@ -19,7 +19,7 @@ export class CartProductsItem extends React.Component {
                     break
                 }
             }
-            // Note : vvv This is basically deleting the item that we are trying to remove 
+            // NoteD : vvv This is basically deleting the item that we are trying to remove 
             cart.splice(unwantedIdx, 1)
             localStorage.setItem('cart', JSON.stringify(cart))
             // Note : vvv Having true here reloads the page without reloading the browser cache.

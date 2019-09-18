@@ -14,7 +14,7 @@ class ProductForm extends React.Component {
         return (e) => {
             this.setState({ [field]: e.target.value });
             window.localStorage.setItem('productFormState', JSON.stringify(this.state))
-            // ^^^ Note: save stuff on the window so when a user refreshes they don't go away
+            // ^^^ Noted: save stuff on the window so when a user refreshes they don't go away
             // Task : Make this better by waiting for the async function setState to finish executing 
                 // (sometimes the field dosen't update completely before because setState dosen't finish setting)
         };

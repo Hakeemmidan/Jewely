@@ -146,3 +146,41 @@ input[type='radio']:checked{
 // Radio button styling inspired by: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/radio
 // Task : add white spacing between checked radio button and border
 // ------------------------ checkout radio button END------------------------ //
+
+.cart-is-empty-message-container {
+    padding-top: 24px;
+    width: 100%; 
+    text-align: center;
+}
+
+.cart-is-empty-message-box {
+    padding: 18px;
+    border: 1px solid lightgray;
+    width: 80%;
+
+    display: inline-block; 
+    margin: 0 auto;
+}
+// Centering technique applied to .cart-is-empty-message-container and .cart-is-empty-message-box
+    //  : https://www.w3docs.com/snippets/css/how-to-horizontally-center-a-div-in-another-div.html
+
+.cart-is-empty-message {
+    display: block;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: center;
+}
+
+.cart-is-empty-link-div {
+    display: block;
+    padding-bottom: 12px;
+    text-align: center;
+}
+
+.cart-is-empty-link {
+    color: black; 
+}
+
+.cart-is-empty-link:hover {
+    color: rgb(57, 57, 57); 
+}

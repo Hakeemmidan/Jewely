@@ -96,7 +96,9 @@ export class ProductShow extends React.Component {
         return (
             <div>
                 <div className="clearfix product-listing">
-                    <img src={`${product.photoUrl}`} className="product-show-image" alt="" />
+                    <div>
+                        <img src={`${product.photoUrl}`} className="product-show-image" alt="" />
+                    </div>
 
                     <div className="listing-right-column">
                         {this.props.seller ? this.renderSellerUsername() : null}

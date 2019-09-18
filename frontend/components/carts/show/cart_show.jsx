@@ -42,7 +42,7 @@ export class CartShow extends React.Component {
     }
 
     componentDidMount() {
-        // Note : Local storage stores a pair of product ID and quantity for each item
+        // Noted : Local storage stores a pair of product ID and quantity for each item
         JSON.parse(localStorage.cart).map( productIdAndQuantity => (
             this.collectProductAndQuantity(productIdAndQuantity)
         ))
@@ -54,7 +54,21 @@ export class CartShow extends React.Component {
     render() {
         if (JSON.parse(localStorage.cart).length === 0) {
             return (
-                <div>Your cart is empty</div>
+                <div className="cart-is-empty-message-container">
+                    <div className="cart-is-empty-message-box">
+                        <div className="cart-is-empty-message">
+                            Your cart is empty
+                        </div>
+
+                        <div className="cart-is-empty-link-div">
+                            <Link 
+                                to='/products'
+                                className="cart-is-empty-link"> 
+                            Find your next favorite piece of jewelry </Link>
+                        </div>
+
+                    </div>
+                </div>
             )
         }
         if (this.state.cartProducts.length < JSON.parse(localStorage.cart).length) {
