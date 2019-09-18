@@ -40,9 +40,37 @@ export class CartShow extends React.Component {
         } 
     }
 
+    combineProductsBasedOnQuantity() {
+        const cart = JSON.parse(localStorage.getItem('cart'))
+        
+        const obj = {}
+
+        cart.forEach(idAndQuantity => {
+            if (obj[idAndQuantity[0]]) {
+                obj[idAndQuantity[0]] += parseInt(idAndQuantity[1])
+            } else {
+                obj[idAndQuantity[0]] = parseInt(idAndQuantity[1])
+            }
+        })
+
+        const newCart = []
+
+        for (let key in obj) {
+            newCart.push([key, String(obj[key])])
+        }
+
+        debugger
+
+        localStorage.setItem('cart', JSON.stringify(newCart))
+    }
+
     componentDidMount() {
         // Noted : Local storage stores a pair of product ID and quantity for each item
+        this.combineProductsBasedOnQuantity()
+
+
         JSON.parse(localStorage.cart).map( productIdAndQuantity => (
+
             this.collectProductAndQuantity(productIdAndQuantity)
         ))
     }

@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 export class CartProductsItem extends React.Component {
     constructor(props) {
         super(props)
+        this.initiateTotalPriceChange = this.initiateTotalPriceChange.bind(this)
     }
 
     handleRemove(productId) {
@@ -49,12 +50,26 @@ export class CartProductsItem extends React.Component {
         }
     }
 
+    // ---------------------- Detecting quantity change from localStorage START ----------------------
+    componentDidMount() {
+        const quantityDropdown = document.getElementsByClassName('cart-product-item-drop-down')[1]
+        if (quantityDropdown) {
+            quantityDropdown.addEventListener('change', this.initiateTotalPriceChange, false)
+        }
+    }
+
+    
+    initiateTotalPriceChange() {
+        // change local storage first
+        debugger
+    }
+    // ---------------------- Detecting quantity change from localStorage EBD ----------------------
 
     populateQuantityDropDownOptions() {
         let dropDownOptions = [];
         for (let i = 1; i < 6; i++) {
             if (i === this.props.product.quantity) {
-                dropDownOptions.push(<option value={`${i}`} key={`quantity-option-${i}`} selected>{i}</option>)
+                dropDownOptions.push(<option value={`${i}`} key={`quantity-option-${i}`} selected >{i}</option>)
             } else {
                 dropDownOptions.push(<option value={`${i}`} key={`quantity-option-${i}`}>{i}</option>)
             }
@@ -66,6 +81,8 @@ export class CartProductsItem extends React.Component {
     }
 
     render() {
+        // Product quantity change event listener
+
         const product = this.props.product
         return (
             <div className="cart-products-item">
@@ -96,6 +113,7 @@ export class CartProductsItem extends React.Component {
 
                     <div className="cart-product-item-quantity-and-price">
                         <div>
+                            
                             <select className="cart-product-item-drop-down">
                                 {this.populateQuantityDropDownOptions()}
                             </select>

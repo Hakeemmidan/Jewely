@@ -79,12 +79,12 @@ class ProductForm extends React.Component {
         return (
             <div>
                 <br />
-                <br />
-                <br />
                 <hr />
                 <button onClick={this.handleRemove}>
                     Delete product listing
                 </button>
+                <br/>
+                <hr/>
             </div>
         )
     }
@@ -107,7 +107,12 @@ class ProductForm extends React.Component {
     }
 
     render() {
-        const preview = this.state.photoUrl ? <img height="100px" width="100px" src={this.state.photoUrl}/> : null
+        const preview = this.state.photoUrl ? <img 
+                                                height="100px"
+                                                width="100px"
+                                                className="product-form-image-preview"
+                                                src={this.state.photoUrl}/>
+                                            : null
         return (
             <div>
                 <h3>{this.props.formType}</h3>
@@ -115,6 +120,7 @@ class ProductForm extends React.Component {
                 {this.renderErrors()}
                 <form onSubmit={this.handleSubmit}>
                     <label>Title
+                        <br/>
                         <input
                                 type="text"
                                 value={this.state.title}
@@ -126,7 +132,9 @@ class ProductForm extends React.Component {
                     <hr />
 
                     <label>Description
+                        <br/>
                         <textarea
+                            rows="15" cols="50"
                             value={this.state.description}
                             onChange={this.update('description')} />
                     </label>
@@ -136,6 +144,7 @@ class ProductForm extends React.Component {
                     <hr />
 
                     <label>Price
+                        <br/>
                         <input
                             type="number"
                             value={this.state.price}
@@ -147,6 +156,7 @@ class ProductForm extends React.Component {
                     <hr />
 
                     <label>Choose Image
+                        <br/>
                         <input 
                             type="file"
                             onChange={this.handleFile.bind(this)} />
@@ -157,14 +167,11 @@ class ProductForm extends React.Component {
                     <hr />
 
                     <label>ImagePreview
+                        <br/>
                         {preview}
                     </label>
                     
                     {this.props.removeProduct ? this.renderRemoveProductButton() : null}
-
-                    <br/>
-                    <br/>
-                    <hr/>
 
                     <input type="submit" value={this.props.formType} />
                 </form>

@@ -92,3 +92,11 @@ header {
 .navbar-current-user-show-page-link:hover {
   text-decoration: underline; 
 }
+
+.product-form-image-preview {
+  object-fit: scale-down;
+  width: 125px;
+  height: 100px;
+  object-position: 50% 50%;
+  border: 0.3px solid lightgray; 
+}

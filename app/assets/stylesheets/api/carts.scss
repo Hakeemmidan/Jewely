@@ -57,7 +57,6 @@
 }
 
 .cart-content-container {
-    border: 1px solid red;
     display: flex;
     padding: 18px;
 }
@@ -99,10 +98,9 @@
 
 #proceed-to-checkout-button {
     margin: 0; 
-    width: 80%;
     padding-top: 12px;
     font-family: 'Noto Serif', serif;
-    width: 90%;
+    width: 85%;
 }
 
 .cart-show-payment-option {
