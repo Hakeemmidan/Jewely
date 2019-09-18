@@ -128,12 +128,13 @@ export class ProductShow extends React.Component {
 
                         {/* {this.hasProductInCart() ? this.addToCartAgainButton() : this.addToCartButton()} */}
                         {/* Task : ^^^ Get back to this after asking TA what is wrong with it */}
-                        
-                            <button
-                                className="product-show-add-to-cart-button"
-                                onClick={this.handleAddToCart}>
-                                Add to cart
-                            </button>
+                            <Link to='/cart'>
+                                <button
+                                    className="product-show-add-to-cart-button"
+                                    onClick={this.handleAddToCart}>
+                                    Add to cart
+                                </button>
+                            </Link> 
                         <br/>
 
                         {editLink}
