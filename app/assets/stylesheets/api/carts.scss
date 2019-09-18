@@ -9,10 +9,13 @@
     top: -8px;
     right: -8px;
     padding: 1px 7px;
+    width: 8px;
     border-radius: 50%;
     font-size: 1.5vh;
     background: orange;
     color: black;
+    display: flex;
+    justify-content: center;
 }
 // ------------------------ navbar cart icon END------------------------ //
 .cart-show-component {

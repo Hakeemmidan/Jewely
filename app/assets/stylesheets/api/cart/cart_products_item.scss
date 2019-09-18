@@ -32,13 +32,17 @@
 
 .cart-products-item-title-and-remove {
     width: 50%;
+    display: flex;
+    flex-direction: column;
 }
 
 .cart-products-item-remove {
     font-size: 1.5vh;
     left: 0;
     bottom: 0;
-    position: absolute;
+    // position: absolute;
+    padding-top: 100px
+
 }
 
 .cart-product-item-drop-down {

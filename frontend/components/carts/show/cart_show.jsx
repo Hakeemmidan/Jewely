@@ -27,8 +27,7 @@ export class CartShow extends React.Component {
                     let priceTotal = this.state.priceTotal
                     const quantity = parseInt(productIdAndQuantity[1])
                     const product = response.product
-
-
+                    
                     product.quantity = quantity
                     // ^ Setting the quantity for each product in cart
                     priceTotal += (parseFloat(response.product.price) * quantity)
@@ -71,6 +70,7 @@ export class CartShow extends React.Component {
                 </div>
             )
         }
+
         if (this.state.cartProducts.length < JSON.parse(localStorage.cart).length) {
             return (
                 <div>

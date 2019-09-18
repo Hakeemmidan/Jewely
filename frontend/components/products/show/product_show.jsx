@@ -57,8 +57,6 @@ export class ProductShow extends React.Component {
             let cartProductIdsAndQuantities = JSON.parse(localStorage.getItem('cart'))
             cartProductIdsAndQuantities.push([productId, quantity])
             localStorage.setItem('cart', JSON.stringify(cartProductIdsAndQuantities))
-            // Question ) I want to reload the page only before we go to the link. How is that possible?
-            // question ) Is it possible to re-render a component from another component? 6
             this.props.fetchCartBadge();
         } else { 
             localStorage.setItem('cart', JSON.stringify([productId, quantity]))

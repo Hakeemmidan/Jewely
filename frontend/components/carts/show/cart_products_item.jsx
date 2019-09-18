@@ -54,7 +54,7 @@ export class CartProductsItem extends React.Component {
         let dropDownOptions = [];
         for (let i = 1; i < 6; i++) {
             if (i === this.props.product.quantity) {
-                dropDownOptions.push(<option value={`${i}`} key={`quantity-option-${i}`} defaultValue>{i}</option>)
+                dropDownOptions.push(<option value={`${i}`} key={`quantity-option-${i}`} selected>{i}</option>)
             } else {
                 dropDownOptions.push(<option value={`${i}`} key={`quantity-option-${i}`}>{i}</option>)
             }
@@ -83,11 +83,14 @@ export class CartProductsItem extends React.Component {
                                 </p>
                             </Link>
                         </div>
-                        <a
-                        onClick={this.handleRemove(product.id)}
-                        className="text-link-underline-hover cart-products-item-remove">
-                            Remove
-                        </a>
+                        
+                        <div>
+                            <a
+                            onClick={this.handleRemove(product.id)}
+                            className="text-link-underline-hover cart-products-item-remove">
+                                Remove
+                            </a>
+                        </div>
                     </div>
 
 
