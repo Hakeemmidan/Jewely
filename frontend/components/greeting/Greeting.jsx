@@ -21,10 +21,7 @@ const Greeting = ({ currentUser, logout }) => {
       <button className="logout-navbar-button" onClick={logout}>Log Out</button>
       <Link to="/cart" className="cart-navbar-icon">
         <CartIcon />
-        <span className="cart-item-count-badge">
-          {/* {JSON.parse(localStorage.cart).length} */}
-          <CartBadgeContainer />
-        </span>
+        <CartBadgeContainer />
       </Link>
 
       <Link to={`/users/${currentUser.id}`}>

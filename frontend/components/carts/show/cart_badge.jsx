@@ -11,13 +11,14 @@ export class CartBadge extends React.Component {
     }
 
     render() {
-        if (!this.props.cartLocalStorage) {
+        if (!this.props.cartLocalStorage || this.props.cartLocalStorage.length === 0) {
             return null 
+        } else if (this.props.cartLocalStorage) {
+            return (
+                <div className="cart-item-count-badge">
+                    {this.props.cartLocalStorage.length}
+                </div>
+            )
         }
-        return (
-            <span className="cart-item-count-badge">
-                {this.props.cartLocalStorage.length}
-            </span>
-        )
     }
 }
