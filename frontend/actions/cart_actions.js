@@ -11,8 +11,6 @@ const receiveCart = (cart) => {
     }
 }
 
-// These action creators are used solely for re-rendering
-    // and not touching the database
 const receiveCartShow = () => {
     return {
         type: RECEIVE_CART_SHOW
@@ -34,7 +32,7 @@ export const fetchCartBadge = () => dispatch => {
 }
 
 export const fetchCartShow = () => dispatch => {
-    return dispatch(receiveCartShow)
+    return dispatch(receiveCartShow())
 }
 
 export const fetchCart = (id) => dispatch => {

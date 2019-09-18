@@ -1,8 +1,8 @@
 import { connect } from 'react-redux';
 
-import { fetchCart } from '../../../actions/cart_actions';
-import { CartShow } from './cart_show';
+import { fetchCart, fetchCartShow } from '../../../actions/cart_actions';
 import { fetchProduct } from '../../../actions/product_actions';
+import { CartShow } from './cart_show';
 
 const mapStateToProps = (state, ownProps) => {
     // question ) What are ownProps and where do they come from?
@@ -15,7 +15,8 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = (dispatch) => {
     return {
         fetchCart: (id) => dispatch(fetchCart(id)),
-        fetchProduct: (id) => dispatch(fetchProduct(id))
+        fetchProduct: (id) => dispatch(fetchProduct(id)),
+        fetchCartShow: () => dispatch(fetchCartShow())
     }
 }
 

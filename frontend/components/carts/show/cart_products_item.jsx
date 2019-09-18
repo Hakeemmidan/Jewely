@@ -63,22 +63,23 @@ export class CartProductsItem extends React.Component {
     }
 
     
-    // initiateTotalPriceChange(e) {
-    //     // 1 change the local storage cart
-    //     // 2 save it (set it)
-    //     // 3 initiate a re-render of cart show
+    initiateTotalPriceChange(e) {
+        // 1 change the local storage cart
+        // 2 save it (set it)
+        // 3 initiate a re-render of cart show
 
-    //     const cart = JSON.parse(localStorage.getItem('cart'))
+        const cart = JSON.parse(localStorage.getItem('cart'))
 
-    //     cart.forEach( (idAndQuantity, idx) => {
-    //         if (this.props.product.id === parseInt(idAndQuantity[0])) {
-    //             cart[idx] = [this.props.product.id, e.target.value]
-    //         }
-    //     })
+        cart.forEach( (idAndQuantity, idx) => {
+            if (this.props.product.id === parseInt(idAndQuantity[0])) {
+                cart[idx] = [this.props.product.id, e.target.value]
+            }
+        })
 
-    //     localStorage.setItem('cart', JSON.parse(cart))
-    //     //  Initiate re-render here
-    // }
+        localStorage.setItem('cart', JSON.stringify(cart))
+
+        this.props.fetchCartShow()
+    }
     // ---------------------- Detecting quantity change from localStorage EBD ----------------------
 
     populateQuantityDropDownOptions() {

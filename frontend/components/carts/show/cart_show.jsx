@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import { CartProductsItem } from './cart_products_item';
+import CartProductsItemContainer from './cart_products_item_container';
 import { 
         VisaIcon, 
         MasterCardIcon, 
@@ -62,11 +62,12 @@ export class CartShow extends React.Component {
     }
 
     componentDidMount() {
+        this.props.fetchCartShow()
+
         // Noted : Local storage stores a pair of product ID and quantity for each item
         this.combineProductsBasedOnQuantity()
 
         JSON.parse(localStorage.cart).map( productIdAndQuantity => (
-
             this.collectProductAndQuantity(productIdAndQuantity)
         ))
     }
@@ -106,7 +107,7 @@ export class CartShow extends React.Component {
         const cartProductsLis = this.state.cartProducts.map( (cartProduct, idx) => {
             return (
                 <li key={`cart-item-${idx}`} className="cart-products-item-li">
-                    <CartProductsItem
+                    <CartProductsItemContainer
                         product={cartProduct}
                     />
                 </li>
@@ -116,7 +117,7 @@ export class CartShow extends React.Component {
         return (
             <div className="cart-show-component">
                 <div className="cart-show-header">
-                    <h3>{JSON.parse(localStorage.cart).length} items in your cart</h3>
+                    <h3>{JSON.parse(localStorage.cart).length} item(s) in your cart</h3>
                     <Link to="/" style={{ textDecoration: 'none'}}>
                         <button className="cart-show-keep-shopping-button">
                              Keep shopping 
