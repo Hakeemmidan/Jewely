@@ -108,6 +108,7 @@ export class CartShow extends React.Component {
             return (
                 <li key={`cart-item-${idx}`} className="cart-products-item-li">
                     <CartProductsItemContainer
+
                         product={cartProduct}
                     />
                 </li>

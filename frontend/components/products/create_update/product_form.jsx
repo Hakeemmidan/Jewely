@@ -32,6 +32,7 @@ class ProductForm extends React.Component {
         formData.append('product[errors]', this.state.errors);
 
         if (this.state.photos) {
+            debugger
             const photos = this.state.photos
 
             for (let i = 0; i < photos.length; i++) {
@@ -52,13 +53,17 @@ class ProductForm extends React.Component {
 
     handleFile(e) {
         const reader = new FileReader();
-        const file = e.currentTarget.files[0];
+        const files = e.currentTarget.files;
+
         reader.onloadend = () =>
-            this.setState({ photoUrls: reader.result, photoFile: file });
-        if (file) {
-            reader.readAsDataURL(file);
+            this.setState({ photoUrls: reader.result, photoFiles: files });
+        
+        if (files) {
+            for (let i = 0; i < files.length; i++) {
+                reader.readAsDataURL(files[i]);
+            }
         } else {
-            this.setState({ imageUrl: "", photoFile: null });
+            this.setState({ photoUrls: null, photoFiles: null });
         }
     }
 
@@ -110,12 +115,11 @@ class ProductForm extends React.Component {
     }
 
     render() {
-        
         const preview = this.state.photoUrls ? <img 
                                                 height="100px"
                                                 width="100px"
                                                 className="product-form-image-preview"
-                                                src={this.state.photoUrl}/>
+                                                src={this.state.photoUrls}/>
                                             : null
         return (
             <div>
@@ -163,7 +167,8 @@ class ProductForm extends React.Component {
                         <br/>
                         <input 
                             type="file"
-                            onChange={e => this.setState({ photos: e.target.files })} 
+                            onChange={this.handleFile.bind(this)} 
+                            
                             multiple/>
                     </label>
 
@@ -175,6 +180,9 @@ class ProductForm extends React.Component {
                         <br/>
                         {preview}
                     </label>
+
+                    <br/>
+                    <hr/>
                     
                     {this.props.removeProduct ? this.renderRemoveProductButton() : null}
 

@@ -4,7 +4,7 @@ class Api::ProductsController < ApplicationController
     end
 
     def show
-        @product = Product.find(params[:id])
+        @product = Product.with_attached_photos.find(params[:id])
     end
 
     def create

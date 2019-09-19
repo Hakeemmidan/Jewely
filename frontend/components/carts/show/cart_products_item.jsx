@@ -99,6 +99,8 @@ export class CartProductsItem extends React.Component {
         })
     }
 
+
+
     render() {
         // Product quantity change event listener
 
