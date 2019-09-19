@@ -8,12 +8,15 @@ class ProductForm extends React.Component {
         this.handleSubmit = this.handleSubmit.bind(this);
         this.update = this.update.bind(this);
         this.handleRemove = this.handleRemove.bind(this);
+        this.update = this.update.bind(this)
     }
 
     update(field) {
+        let that = this
+        // Note : ^ Used to get access to this inside of the anonymous function
         return (e) => {
-            this.setState({ [field]: e.target.value });
-            window.localStorage.setItem('productFormState', JSON.stringify(this.state))
+            that.setState({ [field]: e.target.value });
+            window.localStorage.setItem('productFormState', JSON.stringify(that.state))
             // ^^^ Noted: save stuff on the window so when a user refreshes they don't go away
             // Task : Make this better by waiting for the async function setState to finish executing 
                 // (sometimes the field dosen't update completely before because setState dosen't finish setting)
@@ -32,6 +35,7 @@ class ProductForm extends React.Component {
         formData.append('product[errors]', this.state.errors);
 
 
+        debugger
         if (this.state.photoFiles) {
             const photos = this.state.photoFiles
             for (let i = 0; i < photos.length; i++) {
@@ -55,25 +59,21 @@ class ProductForm extends React.Component {
     }
 
     handleFile(e) {
-        const event = e;
+        this.setState({ photoUrls: [], photoFiles: [] })
+        // ^ Empty out the old photos (if there are any)
 
-        this.setState({ photoUrls: [] }, () => {
-            // ^ Empty out the old photos (if there are any)
+        const reader = new FileReader();
+        const files = e.currentTarget.files;
 
-            const reader = new FileReader();
-            const files = event.currentTarget.files;
+        reader.onloadend = () => this.setState({ photoUrls: reader.result, photoFiles: files });
 
-            reader.onloadend = () =>
-                this.setState({ photoUrls: reader.result, photoFiles: files });
-
-            if (files) {
-                for (let i = 0; i < files.length; i++) {
-                    reader.readAsDataURL(files[i]);
-                }
-            } else {
-                this.setState({ photoUrls: null, photoFiles: null });
+        if (files) {
+            for (let i = 0; i < files.length; i++) {
+                reader.readAsDataURL(files[i]);
             }
-        })
+        } else {
+            this.setState({ photoUrls: null, photoFiles: null });
+        }
     }
 
     renderErrors() {
@@ -130,7 +130,6 @@ class ProductForm extends React.Component {
                                                 className="product-form-image-preview"
                                                 src={this.state.photoUrls}/>
                                             : null
-
 
         return (
             <div className="product-form-box-container">

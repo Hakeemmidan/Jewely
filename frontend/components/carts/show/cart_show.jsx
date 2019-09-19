@@ -27,6 +27,7 @@ export class CartShow extends React.Component {
             cartProducts: [],
             priceTotal: 0
         })
+        
         JSON.parse(localStorage.cart).map(productIdAndQuantity => (
             this.collectProductAndQuantity(productIdAndQuantity)
         ))
