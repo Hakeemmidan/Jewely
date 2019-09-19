@@ -41,9 +41,11 @@ class ProductForm extends React.Component {
 
         this.props.action(formData)
             .then(() => 
-                this.props.formType === 'Update Product' ?
-                this.props.history.push(`/products/${this.state.id}`)
-                : this.props.history.push(`/`)
+                this.props.history.push(`/`)
+                // this.props.formType === 'Update Product' ?
+                // this.props.history.push(`/products/${this.state.id}`)
+                // : this.props.history.push(`/`)
+                // question ) Why does clicking on the delete product button also click on the submit form button? 
                 ,
                 (err) => {
                     console.log(err)
@@ -87,13 +89,12 @@ class ProductForm extends React.Component {
     renderRemoveProductButton() {
         return (
             <div>
-                <br />
-                <hr />
-                <button onClick={this.handleRemove}>
+                <button
+                    className="black-background-button"
+                    id="product-form-delete-button"
+                    onClick={this.handleRemove}>
                     Delete product listing
                 </button>
-                <br/>
-                <hr/>
             </div>
         )
     }
@@ -123,70 +124,79 @@ class ProductForm extends React.Component {
                                                 className="product-form-image-preview"
                                                 src={this.state.photoUrls}/>
                                             : null
+
+
         return (
-            <div>
-                <h3>{this.props.formType}</h3>
+            <div className="product-form-box-container">
+                <div className="product-form-box">
+                    <form onSubmit={this.handleSubmit}>
+                        <h3>{this.props.formType}</h3>
+                        {this.renderErrors()}
+                        <label>Title
+                            <br/>
+                            <input
+                                    type="text"
+                                    value={this.state.title}
+                                    onChange={this.update('title')}/>
+                        </label>
 
-                {this.renderErrors()}
-                <form onSubmit={this.handleSubmit}>
-                    <label>Title
                         <br/>
-                        <input
-                                type="text"
-                                value={this.state.title}
-                                onChange={this.update('title')}/>
-                    </label>
-
-                    <br/>
-                    <br/>
-                    <hr />
-
-                    <label>Description
                         <br/>
-                        <textarea
-                            rows="15" cols="50"
-                            value={this.state.description}
-                            onChange={this.update('description')} />
-                    </label>
+                        <hr />
 
-                    <br/>
-                    <br/>
-                    <hr />
+                        <label>Description
+                            <br/>
+                            <textarea
+                                rows="15" cols="50"
+                                value={this.state.description}
+                                onChange={this.update('description')} />
+                        </label>
 
-                    <label>Price
                         <br/>
-                        <input
-                            type="number"
-                            value={this.state.price}
-                            onChange={this.update('price')} />
-                    </label>
-
-                    <br/>
-                    <br/>
-                    <hr />
-
-                    <label>Choose Image
                         <br/>
+                        <hr />
+
+                        <label>Price
+                            <br/>
+                            <input
+                                type="number"
+                                value={this.state.price}
+                                onChange={this.update('price')} />
+                        </label>
+
+                        <br/>
+                        <br/>
+                        <hr />
+
+                        <label>Choose Image
+                            <br/>
+                            <input 
+                                type="file"
+                                onChange={this.handleFile.bind(this)} 
+                                
+                                multiple/>
+                        </label>
+
+                        <br/>
+                        <br/>
+                        <hr />
+
+                        <label>ImagePreview
+                            <br/>
+                            {preview}
+                        </label>
+                        
+                        <br/>
+                        <hr/>
+
                         <input 
-                            type="file"
-                            onChange={this.handleFile.bind(this)} 
-                            
-                            multiple/>
-                    </label>
-
-                    <br/>
-                    <br/>
-                    <hr />
-
-                    <label>ImagePreview
-                        <br/>
-                        {preview}
-                    </label>
-                    
-                    {this.props.removeProduct ? this.renderRemoveProductButton() : null}
-
-                    <input type="submit" value={this.props.formType} />
-                </form>
+                            className="black-background-button"
+                            id="form-submit-button"
+                            type="submit"
+                            value={this.props.formType} />
+                        {this.props.removeProduct ? this.renderRemoveProductButton() : null}
+                    </form>
+                </div>
             </div>
         );
     }

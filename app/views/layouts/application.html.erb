@@ -7,9 +7,20 @@
 
     <%= stylesheet_link_tag 'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
+
     <link href="https://fonts.googleapis.com/css?family=Noto+Serif|Poppins&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="carousel.css"/>
+    <link rel="stylesheet" href="node_modules/react-responsive-carousel/lib/styles/carousel.min.css"/>
 
+    <meta charset="utf-8">
+	  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	  <meta name="theme-color" content="#000000">
+
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json">
+	  <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
+
+    
     <% if current_user %>
       <script>
         window.currentUser = { 

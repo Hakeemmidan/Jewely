@@ -1,0 +1,29 @@
+#form-submit-button {
+    width: 83%;
+}
+
+.product-form-image-preview {
+  object-fit: scale-down;
+  width: 125px;
+  height: 100px;
+  object-position: 50% 50%;
+  border: 0.3px solid lightgray; 
+}
+
+.product-form-box {
+  display: flex;
+  justify-content: center;
+  border: 1px solid lightgray;
+  width: 55%;
+  margin-top: 20px;
+}
+
+.product-form-box-container {
+  display: flex;
+  justify-content: center;
+}
+
+#product-form-delete-button {
+    background-color: darkred;
+    width: 83%
+}
