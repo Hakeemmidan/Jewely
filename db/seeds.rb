@@ -19,7 +19,7 @@ product1 = Product.create(
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
     price: 199.97,
     seller_id: user1.id)
-product1.photo.attach(io: photo1, filename: 'some image')
+product1.photos.attach(io: photo1, filename: 'some image')
 product1.save!
 
 user2 = User.new(username: 'demoUser2', password: '22345678')
@@ -30,7 +30,7 @@ product2 = Product.create(
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', 
     price: 299.97, 
     seller_id: user1.id)
-product2.photo.attach(io: photo2, filename: 'some image')
+product2.photos.attach(io: photo2, filename: 'some image')
 product2.save!
 
 user3 = User.new(username: 'demoUser3', password: '33345678')
@@ -41,7 +41,7 @@ product3 = Product.create(
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
     price: 399.97,
     seller_id: user1.id)
-product3.photo.attach(io: photo3, filename: 'some image')
+product3.photos.attach(io: photo3, filename: 'some image')
 product3.save!
 
 =begin

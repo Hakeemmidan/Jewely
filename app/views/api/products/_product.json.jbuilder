@@ -1,4 +1,4 @@
-json.extract! product, :id, :title, :description, :price, :seller_id, :photoUrls
+json.extract! product, :id, :title, :description, :price, :seller_id
 
 if product.photos.attached?
     json.photoUrls product.photos.map { |file| url_for(file) }

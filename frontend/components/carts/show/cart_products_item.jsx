@@ -6,6 +6,9 @@ export class CartProductsItem extends React.Component {
     constructor(props) {
         super(props)
         this.initiateTotalPriceChange = this.initiateTotalPriceChange.bind(this)
+        this.state = {
+            change: 0
+        }
     }
 
     handleRemove(productId) {
@@ -77,7 +80,6 @@ export class CartProductsItem extends React.Component {
         })
 
         localStorage.setItem('cart', JSON.stringify(cart))
-
         this.props.fetchCartShow()
     }
     // ---------------------- Detecting quantity change from localStorage EBD ----------------------

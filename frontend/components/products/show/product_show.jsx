@@ -90,7 +90,7 @@ export class ProductShow extends React.Component {
         if (this.props.currentUserId === product.seller_id) { 
             editLink = <Link to={`/products/${product.id}/edit`}>Edit your product listing</Link>
         }
-        
+
         return (
             <div>
                 <div className="clearfix product-listing">

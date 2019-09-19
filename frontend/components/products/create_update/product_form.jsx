@@ -35,7 +35,7 @@ class ProductForm extends React.Component {
             const photos = this.state.photos
 
             for (let i = 0; i < photos.length; i++) {
-                formData.append('product[photos][]', this.state.photos[i]);
+                formData.append('product[photos][]', photos[i]);
             }
         }
 
@@ -163,7 +163,8 @@ class ProductForm extends React.Component {
                         <br/>
                         <input 
                             type="file"
-                            onChange={e => this.setState({ photos: e.target.files })} />
+                            onChange={e => this.setState({ photos: e.target.files })} 
+                            multiple/>
                     </label>
 
                     <br/>

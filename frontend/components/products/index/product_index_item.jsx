@@ -22,7 +22,7 @@ export class ProductIndexItem extends React.Component {
                     to={`/products/${product.id}`}
                     style={{textDecoration: 'none'}}
                     > 
-                    <img src={product.photoUrl} className="product-index-image"
+                    <img src={product.photoUrls[0]} className="product-index-image"
                          alt={product.title} 
                          title={product.title}/>
                          {/* Noted: I have a title tag for the image because CHrome and Firefox don't support alt for hover */}

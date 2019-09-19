@@ -6,6 +6,7 @@ export class ProductIndex extends React.Component {
     componentDidMount() {
         this.props.fetchProducts()
     }
+
     render() {
         return (
             <div className="product-index-item-list-container">
