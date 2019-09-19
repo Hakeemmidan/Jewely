@@ -11,12 +11,6 @@ const receiveCart = (cart) => {
     }
 }
 
-const receiveCartShow = () => {
-    return {
-        type: RECEIVE_CART_SHOW
-    }
-}
-
 const receiveCartBadge = () => {
     return {
         type: RECEIVE_CART_BADGE
@@ -31,9 +25,6 @@ export const fetchCartBadge = () => dispatch => {
     return dispatch(receiveCartBadge())
 }
 
-export const fetchCartShow = () => dispatch => {
-    return dispatch(receiveCartShow())
-}
 
 export const fetchCart = (id) => dispatch => {
     return CartAPIUtil.fetchCart(id)

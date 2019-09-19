@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 
-import { fetchCart, fetchCartShow } from '../../../actions/cart_actions';
+import { fetchCart } from '../../../actions/cart_actions';
 import { fetchProduct } from '../../../actions/product_actions';
 import { CartShow } from './cart_show';
 
@@ -16,7 +16,6 @@ const mapDispatchToProps = (dispatch) => {
     return {
         fetchCart: (id) => dispatch(fetchCart(id)),
         fetchProduct: (id) => dispatch(fetchProduct(id)),
-        fetchCartShow: () => dispatch(fetchCartShow())
     }
 }
 

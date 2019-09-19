@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { CartProductsItem } from './cart_products_item'; 
 
-import CartProductsItemContainer from './cart_products_item_container';
 import { 
         VisaIcon, 
         MasterCardIcon, 
@@ -16,10 +16,24 @@ export class CartShow extends React.Component {
             cartProducts: [],
             priceTotal: 0
         }
+
+        this.updatePriceTotal = this.updatePriceTotal.bind(this)
+    }
+
+    updatePriceTotal() {
+        this.combineProductsBasedOnQuantity()
+
+        this.setState({
+            cartProducts: [],
+            priceTotal: 0
+        })
+        JSON.parse(localStorage.cart).map(productIdAndQuantity => (
+            this.collectProductAndQuantity(productIdAndQuantity)
+        ))
     }
 
     componentDidMount() {
-        this.props.fetchCartShow()
+        // debugger
         this.combineProductsBasedOnQuantity()
 
         JSON.parse(localStorage.cart).map(productIdAndQuantity => (
@@ -104,8 +118,8 @@ export class CartShow extends React.Component {
         const cartProductsLis = this.state.cartProducts.map( (cartProduct, idx) => {
             return (
                 <li key={`cart-item-${idx}`} className="cart-products-item-li">
-                    <CartProductsItemContainer
-
+                    <CartProductsItem
+                        updatePriceTotal={this.updatePriceTotal}
                         product={cartProduct}
                     />
                 </li>

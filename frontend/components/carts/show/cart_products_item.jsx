@@ -54,17 +54,6 @@ export class CartProductsItem extends React.Component {
     }
 
     // ---------------------- Detecting quantity change from localStorage START ----------------------
-    componentDidMount() {
-        const quantityDropdownArr = document.getElementsByClassName('cart-product-item-drop-down')
-
-        if (quantityDropdownArr) {
-            for (let i = 0; i < quantityDropdownArr.length; i++) {
-                quantityDropdownArr[i].addEventListener('change', this.initiateTotalPriceChange, false)
-                // Question ) Is it bad that I'm doing this?
-            }
-        }
-    }
-
     
     initiateTotalPriceChange(e) {
         // 1 change the local storage cart
@@ -74,15 +63,14 @@ export class CartProductsItem extends React.Component {
         const cart = JSON.parse(localStorage.getItem('cart'))
 
         cart.forEach( (idAndQuantity, idx) => {
-            if (this.props.product.id === parseInt(idAndQuantity[0])) {
-                cart[idx] = [this.props.product.id, e.target.value]
+            if (parseInt(this.props.product.id) === parseInt(idAndQuantity[0])) {
+                cart[idx] = [this.props.product.id, e.currentTarget.value]
             }
         })
 
         localStorage.setItem('cart', JSON.stringify(cart))
-        this.props.fetchCartShow()
+        this.props.updatePriceTotal()
     }
-    // ---------------------- Detecting quantity change from localStorage EBD ----------------------
 
     populateQuantityDropDownOptions() {
         let dropDownOptions = [];
@@ -102,8 +90,6 @@ export class CartProductsItem extends React.Component {
 
 
     render() {
-        // Product quantity change event listener
-
         const product = this.props.product
         return (
             <div className="cart-products-item">
@@ -135,7 +121,9 @@ export class CartProductsItem extends React.Component {
                     <div className="cart-product-item-quantity-and-price">
                         <div>
                             
-                            <select className="cart-product-item-drop-down">
+                            <select 
+                                onChange={this.initiateTotalPriceChange}
+                                className="cart-product-item-drop-down">
                                 {this.populateQuantityDropDownOptions()}
                             </select>
                         </div>
