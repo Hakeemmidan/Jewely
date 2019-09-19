@@ -43,5 +43,9 @@
   "bugs": {
     "url": "https://github.com/Hakeemmidan/Jewely/issues"
   },
-  "homepage": "https://github.com/Hakeemmidan/Jewely#readme"
+  "homepage": "https://github.com/Hakeemmidan/Jewely#readme",
+  "devDependencies": {
+    "css-loader": "^3.2.0",
+    "style-loader": "^1.0.0"
+  }
 }
