@@ -95,7 +95,7 @@ export class ProductShow extends React.Component {
             <div>
                 <div className="clearfix product-listing">
                     <div>
-                        <img src={`${product.photoUrl}`} className="product-show-image" alt="" />
+                        <img src={`${product.photoUrls[0]}`} className="product-show-image" alt="" />
                     </div>
 
                     <div className="listing-right-column">
