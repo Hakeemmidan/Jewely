@@ -18,6 +18,17 @@ export class CartShow extends React.Component {
         }
     }
 
+    componentDidMount() {
+        this.props.fetchCartShow()
+        this.combineProductsBasedOnQuantity()
+
+        JSON.parse(localStorage.cart).map(productIdAndQuantity => (
+            this.collectProductAndQuantity(productIdAndQuantity)
+        ))
+    }
+    // ^^^ Inspired by : https://www.robinwieruch.de/react-state-array-add-update-remove
+                    // and https://hashnode.com/post/reactjs-how-to-render-components-only-after-successful-asynchronous-call-ciwvnkjr400sq7t533lvrpdtw 
+
     collectProductAndQuantity(productIdAndQuantity) {
         if (productIdAndQuantity[0] === undefined) {
             return null
@@ -60,20 +71,6 @@ export class CartShow extends React.Component {
 
         localStorage.setItem('cart', JSON.stringify(newCart))
     }
-
-    componentDidMount() {
-        this.props.fetchCartShow()
-
-        // Noted : Local storage stores a pair of product ID and quantity for each item
-        this.combineProductsBasedOnQuantity()
-
-        JSON.parse(localStorage.cart).map( productIdAndQuantity => (
-            this.collectProductAndQuantity(productIdAndQuantity)
-        ))
-    }
-    // ^^^ Inspired by : https://www.robinwieruch.de/react-state-array-add-update-remove 
-                    // and https://hashnode.com/post/reactjs-how-to-render-components-only-after-successful-asynchronous-call-ciwvnkjr400sq7t533lvrpdtw 
-
 
     render() {
         if (JSON.parse(localStorage.cart).length === 0) {

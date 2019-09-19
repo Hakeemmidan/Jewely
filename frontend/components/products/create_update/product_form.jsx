@@ -55,19 +55,25 @@ class ProductForm extends React.Component {
     }
 
     handleFile(e) {
-        const reader = new FileReader();
-        const files = e.currentTarget.files;
+        const event = e;
 
-        reader.onloadend = () =>
-            this.setState({ photoUrls: reader.result, photoFiles: files });
-        
-        if (files) {
-            for (let i = 0; i < files.length; i++) {
-                reader.readAsDataURL(files[i]);
+        this.setState({ photoUrls: [] }, () => {
+            // ^ Empty out the old photos (if there are any)
+
+            const reader = new FileReader();
+            const files = event.currentTarget.files;
+
+            reader.onloadend = () =>
+                this.setState({ photoUrls: reader.result, photoFiles: files });
+
+            if (files) {
+                for (let i = 0; i < files.length; i++) {
+                    reader.readAsDataURL(files[i]);
+                }
+            } else {
+                this.setState({ photoUrls: null, photoFiles: null });
             }
-        } else {
-            this.setState({ photoUrls: null, photoFiles: null });
-        }
+        })
     }
 
     renderErrors() {
@@ -168,7 +174,7 @@ class ProductForm extends React.Component {
                         <br/>
                         <hr />
 
-                        <label>Choose Image
+                        <label>Choose Image(s)
                             <br/>
                             <input 
                                 type="file"
@@ -181,7 +187,7 @@ class ProductForm extends React.Component {
                         <br/>
                         <hr />
 
-                        <label>ImagePreview
+                        <label> First Image Preview
                             <br/>
                             {preview}
                         </label>
