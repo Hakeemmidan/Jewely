@@ -40,10 +40,14 @@ class ProductForm extends React.Component {
         }
 
         this.props.action(formData)
-            .then(() => { this.props.history.push(`/`) },
-                    (err) => {
-                        console.log(err)
-                    })
+            .then(() => 
+                this.props.formType === 'Update Product' ?
+                this.props.history.push(`/products/${this.state.id}`)
+                : this.props.history.push(`/`)
+                ,
+                (err) => {
+                    console.log(err)
+                })
             // .then(() => this.props.history.push(`/products/${this.props.product.id}`),
             // () => this.props.history.push(`/products/${this.props.product.id}/edit`));
     }
@@ -112,6 +116,7 @@ class ProductForm extends React.Component {
     }
 
     render() {
+        // Question ) What is the deal with photoUrls? Why is it only showing one string even though I could have more than once image
         const preview = this.state.photoUrls ? <img 
                                                 height="100px"
                                                 width="100px"
