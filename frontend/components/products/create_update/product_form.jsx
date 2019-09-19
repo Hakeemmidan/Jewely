@@ -31,22 +31,19 @@ class ProductForm extends React.Component {
         formData.append('product[seller_id]', this.state.seller_id);
         formData.append('product[errors]', this.state.errors);
 
-        debugger
+
         if (this.state.photoFiles) {
             const photos = this.state.photoFiles
-
             for (let i = 0; i < photos.length; i++) {
                 formData.append('product[photos][]', photos[i]);
             }
         }
 
         this.props.action(formData)
-            .then(response => {
-                console.log('Sucesss!')},
-                err => {
-                    console.log('Error!')
-                    console.log(err)
-                })
+            .then(() => { this.props.history.push(`/`) },
+                    (err) => {
+                        console.log(err)
+                    })
             // .then(() => this.props.history.push(`/products/${this.props.product.id}`),
             // () => this.props.history.push(`/products/${this.props.product.id}/edit`));
     }
