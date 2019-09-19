@@ -31,9 +31,9 @@ class ProductForm extends React.Component {
         formData.append('product[seller_id]', this.state.seller_id);
         formData.append('product[errors]', this.state.errors);
 
-        if (this.state.photos) {
-            debugger
-            const photos = this.state.photos
+        debugger
+        if (this.state.photoFiles) {
+            const photos = this.state.photoFiles
 
             for (let i = 0; i < photos.length; i++) {
                 formData.append('product[photos][]', photos[i]);
@@ -180,9 +180,6 @@ class ProductForm extends React.Component {
                         <br/>
                         {preview}
                     </label>
-
-                    <br/>
-                    <hr/>
                     
                     {this.props.removeProduct ? this.renderRemoveProductButton() : null}
 
