@@ -22,6 +22,11 @@
 .product-index-item-list-container {
     display: flex;
     justify-content: center;
+    width: 80%;
+    margin-top: 2%;
+    margin-left: 10%;
+    margin-right: 10%;
+    border: 3px solid blue;
 }
 
 .product-index-list {

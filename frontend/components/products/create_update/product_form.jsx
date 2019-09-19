@@ -8,7 +8,8 @@ class ProductForm extends React.Component {
         this.handleSubmit = this.handleSubmit.bind(this);
         this.update = this.update.bind(this);
         this.handleRemove = this.handleRemove.bind(this);
-        this.update = this.update.bind(this)
+        this.update = this.update.bind(this);
+        this.previewImages = this.previewImages.bind(this);
     }
 
     update(field) {
@@ -67,6 +68,7 @@ class ProductForm extends React.Component {
 
         reader.onloadend = () => this.setState({ photoUrls: reader.result, photoFiles: files });
 
+        debugger
         if (files) {
             for (let i = 0; i < files.length; i++) {
                 reader.readAsDataURL(files[i]);
@@ -122,15 +124,29 @@ class ProductForm extends React.Component {
         location.hash = '#/'
     }
 
-    render() {
+    previewImages() {
+        if (this.state.photoUrls) {
+            return (
+                <ul>
+                    <br/>
+                    {this.state.photoUrls.map( photoUrl => {
+                        return (
+                        <img
+                            height="100px"
+                            width="100px"
+                            className="product-form-image-preview"
+                            src={photoUrl} />
+                        )
+                    })}
+                </ul>
+            )
+        } else {
+            return null
+        }
         // Question ) What is the deal with photoUrls? Why is it only showing one string even though I could have more than once image
-        const preview = this.state.photoUrls ? <img 
-                                                height="100px"
-                                                width="100px"
-                                                className="product-form-image-preview"
-                                                src={this.state.photoUrls}/>
-                                            : null
+    }
 
+    render() {
         return (
             <div className="product-form-box-container">
                 <div className="product-form-box">
@@ -188,7 +204,7 @@ class ProductForm extends React.Component {
 
                         <label> First Image Preview
                             <br/>
-                            {preview}
+                            {this.previewImages()}
                         </label>
                         
                         <br/>
