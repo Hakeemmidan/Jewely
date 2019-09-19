@@ -35,8 +35,6 @@ class ProductForm extends React.Component {
         formData.append('product[seller_id]', this.state.seller_id);
         formData.append('product[errors]', this.state.errors);
 
-
-        debugger
         if (this.state.photoFiles) {
             const photos = this.state.photoFiles
             for (let i = 0; i < photos.length; i++) {
@@ -68,13 +66,12 @@ class ProductForm extends React.Component {
 
         reader.onloadend = () => this.setState({ photoUrls: reader.result, photoFiles: files });
 
-        debugger
         if (files) {
             for (let i = 0; i < files.length; i++) {
                 reader.readAsDataURL(files[i]);
             }
         } else {
-            this.setState({ photoUrls: null, photoFiles: null });
+            this.setState({ photoUrls: [], photoFiles: [] });
         }
     }
 
@@ -125,7 +122,7 @@ class ProductForm extends React.Component {
     }
 
     previewImages() {
-        if (this.state.photoUrls) {
+        if (Array.isArray(this.state.photoUrls)) {
             return (
                 <ul className="product-form-image-preview-ul">
                     {this.state.photoUrls.map( photoUrl => {
@@ -139,6 +136,15 @@ class ProductForm extends React.Component {
                         )
                     })}
                 </ul>
+            )
+        } else if (typeof (this.state.photoUrls) === 'string') {
+            return (
+                <label>
+                    <br />
+                    <img
+                        className="product-form-image-preview"
+                        src={this.state.photoUrls} />
+                </label>
             )
         } else {
             return null
