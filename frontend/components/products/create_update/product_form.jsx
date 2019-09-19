@@ -127,15 +127,15 @@ class ProductForm extends React.Component {
     previewImages() {
         if (this.state.photoUrls) {
             return (
-                <ul>
-                    <br/>
+                <ul className="product-form-image-preview-ul">
                     {this.state.photoUrls.map( photoUrl => {
                         return (
-                        <img
-                            height="100px"
-                            width="100px"
-                            className="product-form-image-preview"
-                            src={photoUrl} />
+                        <label>
+                            <br/>
+                            <img
+                                className="product-form-image-preview"
+                                src={photoUrl} />
+                        </label>
                         )
                     })}
                 </ul>
@@ -150,24 +150,27 @@ class ProductForm extends React.Component {
         return (
             <div className="product-form-box-container">
                 <div className="product-form-box">
-                    <form onSubmit={this.handleSubmit}>
-                        <h3>{this.props.formType}</h3>
+                    <form 
+                        className="product-form-content"
+                        onSubmit={this.handleSubmit}>
+                        <h2>{this.props.formType}</h2>
                         {this.renderErrors()}
-                        <label>Title
+                        <label className="product-form-label">Title
                             <br/>
                             <input
+                                    className="product-form-oneline-input"
                                     type="text"
                                     value={this.state.title}
                                     onChange={this.update('title')}/>
                         </label>
 
                         <br/>
-                        <br/>
                         <hr />
 
-                        <label>Description
+                        <label className="product-form-label">Description
                             <br/>
                             <textarea
+                                className="product-form-textarea-input"
                                 rows="15" cols="50"
                                 value={this.state.description}
                                 onChange={this.update('description')} />
@@ -177,9 +180,10 @@ class ProductForm extends React.Component {
                         <br/>
                         <hr />
 
-                        <label>Price
+                        <label className="product-form-label">Price
                             <br/>
                             <input
+                                className="product-form-oneline-input"
                                 type="number"
                                 value={this.state.price}
                                 onChange={this.update('price')} />
@@ -189,7 +193,7 @@ class ProductForm extends React.Component {
                         <br/>
                         <hr />
 
-                        <label>Choose Image(s)
+                        <label className="product-form-label">Choose Image(s)
                             <br/>
                             <input 
                                 type="file"
@@ -202,7 +206,7 @@ class ProductForm extends React.Component {
                         <br/>
                         <hr />
 
-                        <label> First Image Preview
+                        <label className="product-form-label"> Image(s) Preview
                             <br/>
                             {this.previewImages()}
                         </label>
