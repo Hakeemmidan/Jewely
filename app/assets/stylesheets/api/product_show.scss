@@ -103,6 +103,7 @@
 
 .product-listing {
     padding-top: 30px;
+    display: flex;
 }
 // ------- product show lower details (doesn't include comments) START ------- //
 .product-show-column {
@@ -138,3 +139,10 @@
 }
 
 // ------- product show lower details (doesn't include comments) END ------- //
+
+.product-show-carousel-image {
+    width: 100%;
+}
+
+.product-show-photo-carousel {
+}

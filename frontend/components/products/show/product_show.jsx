@@ -87,24 +87,25 @@ export class ProductShow extends React.Component {
         
         if (Array.isArray(product.photoUrls)) {
             return (
-                <Carousel>
-                    {product.photoUrls.map(photoUrl => {
-                        return (
-                            <div>
-                                <img
-                                    className="product-form-image-preview"
-                                    src={photoUrl} />
-                            </div>
-                        )
-                    })}
-                </Carousel>
+                <div className="product-show-photo-carousel">
+                    <Carousel>
+                        {product.photoUrls.map(photoUrl => {
+                            return (
+                                <div>
+                                    <img
+                                        className="product-show-carousel-image"
+                                        src={photoUrl} />
+                                </div>
+                            )
+                        })}
+                    </Carousel>
+                </div>
             )
         } else if (typeof (product.photoUrls) === 'string') {
             return (
                 <Carousel>
                     <div>
                         <img
-                            className="product-form-image-preview"
                             src={photoUrl} />
                     </div>
                 </Carousel>
@@ -131,7 +132,7 @@ export class ProductShow extends React.Component {
             <div>
                 <div className="clearfix product-listing">
                     {/* <div>
-                        <img src={`${product.photoUrls[0]}`} className="product-show-image" alt="" />
+                        <img src={`${product.photoUrls[0]}`}  alt="" />
                     </div> */}
                     <div>
                         {this.imageShow()}
