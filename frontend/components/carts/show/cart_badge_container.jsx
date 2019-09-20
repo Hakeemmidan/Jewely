@@ -1,6 +1,5 @@
 import { connect } from 'react-redux';
 
-
 import { fetchCartBadge } from '../../../actions/cart_actions';
 import { CartBadge } from './cart_badge';
 

@@ -93,7 +93,7 @@ export class ProductShow extends React.Component {
             editLink = <Link 
                 className="text-link-underline-hover"
                 to={`/products/${product.id}/edit`}
-                style={{padding: '0'}}>
+                style={{ padding: '0', textDecoration: 'underline', color: 'rgb(74, 74, 74)'}}>
                     Edit your product listing
             </Link>
         }
