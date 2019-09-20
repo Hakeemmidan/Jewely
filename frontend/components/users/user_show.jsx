@@ -35,7 +35,7 @@ export class UserShow extends React.Component {
                 <h3 style={{color: 'purple'}}>
                     {this.state.user.username}
                 </h3>
-                <div style={{border: '3px solid purple'}}>
+                <div style={{border: '3px solid purple', padding: '30px',paddingRight: '100px'}}>
                     <p className="user-show-product-list-label">
                         Products that this user sells:
                     </p>
