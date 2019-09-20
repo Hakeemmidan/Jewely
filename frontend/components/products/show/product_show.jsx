@@ -1,10 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { Carousel } from "react-responsive-carousel";
+
 
 export class ProductShow extends React.Component {
     constructor(props) {
         super(props)
         this.handleAddToCart = this.handleAddToCart.bind(this)
+        this.imageShow = this.imageShow.bind(this)
     }
 
     componentDidMount() {
@@ -78,6 +81,39 @@ export class ProductShow extends React.Component {
             </div>
         )
     }
+
+    imageShow() {
+        const product = this.props.product
+        
+        if (Array.isArray(product.photoUrls)) {
+            return (
+                <Carousel>
+                    {product.photoUrls.map(photoUrl => {
+                        return (
+                            <div>
+                                <img
+                                    className="product-form-image-preview"
+                                    src={photoUrl} />
+                            </div>
+                        )
+                    })}
+                </Carousel>
+            )
+        } else if (typeof (product.photoUrls) === 'string') {
+            return (
+                <Carousel>
+                    <div>
+                        <img
+                            className="product-form-image-preview"
+                            src={photoUrl} />
+                    </div>
+                </Carousel>
+            )
+        } else {
+            return null
+        }
+        // Question ) What is the deal with photoUrls? Why is it only showing one string even though I could have more than once image
+    }
     
     render() {
         const product = this.props.product
@@ -94,9 +130,13 @@ export class ProductShow extends React.Component {
         return (
             <div>
                 <div className="clearfix product-listing">
-                    <div>
+                    {/* <div>
                         <img src={`${product.photoUrls[0]}`} className="product-show-image" alt="" />
+                    </div> */}
+                    <div>
+                        {this.imageShow()}
                     </div>
+
 
                     <div className="listing-right-column">
                         {this.props.seller ? this.renderSellerUsername() : null}
