@@ -61,7 +61,7 @@
   background-color: black;
   font-size: 15px;
   line-height: 1.2;
-  width: 45vw;
+  width: 35vw;
   border-color: rgba(0, 0, 0, 0.1);
   display: inline-block;
   font-weight: bold;
@@ -104,6 +104,8 @@
 .product-listing {
     padding-top: 30px;
     display: flex;
+    margin-right: 10%;
+    margin-left: 10%;
 }
 // ------- product show lower details (doesn't include comments) START ------- //
 .product-show-column {
@@ -116,6 +118,7 @@
 .product-show-column1 {
     width: 100%;
     display: block;
+    
 }
 
 .product-show-lower {
@@ -142,4 +145,12 @@
 
 .product-show-carousel-image {
     width: 100%;   
+}
+.product-show-images {
+    width: 40%;
+}
+
+.product-show-lower {
+    margin-right: 10%;
+    margin-left: 10%;   
 }

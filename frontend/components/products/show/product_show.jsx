@@ -124,7 +124,12 @@ export class ProductShow extends React.Component {
 
         let editLink = null;
         if (this.props.currentUserId === product.seller_id) { 
-            editLink = <Link to={`/products/${product.id}/edit`}>Edit your product listing</Link>
+            editLink = <Link 
+                className="text-link-underline-hover"
+                to={`/products/${product.id}/edit`}
+                style={{padding: '0'}}>
+                    Edit your product listing
+            </Link>
         }
 
         return (
@@ -133,7 +138,8 @@ export class ProductShow extends React.Component {
                     {/* <div>
                         <img src={`${product.photoUrls[0]}`}  alt="" />
                     </div> */}
-                    <div>
+                    <div
+                        className="product-show-images">
                         {this.imageShow()}
                     </div>
 
