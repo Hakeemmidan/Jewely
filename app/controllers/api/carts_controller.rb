@@ -20,7 +20,7 @@ class Api::CartsController < ApplicationController
             render 'api/products/index'
             # question ) Not sure if you can do this or not
         else
-            render json: @cart_item.errors.full_messages, status 422
+            render json: @cart_item.errors.full_messages, status: 422
         end
     end
 
