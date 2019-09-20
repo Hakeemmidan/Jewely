@@ -20,7 +20,7 @@ export class UserShow extends React.Component {
 
     populateUserProducts() {
         return (
-        <ul>
+        <ul className="user-show-products-ul">
             {this.state.products.map(product => {
                 return <UserShowItem
                     product={product} />
@@ -31,11 +31,14 @@ export class UserShow extends React.Component {
 
     render() {
         return (
-            <div>
-                <h3>{this.state.user.username}</h3>
-                <div>
-                    Products that this user sells:
-                    <br/>
+            <div className="user-show-items-container">
+                <h3 style={{color: 'purple'}}>
+                    {this.state.user.username}
+                </h3>
+                <div style={{border: '3px solid red'}}>
+                    <p className="user-show-product-list-label">
+                        Products that this user sells:
+                    </p>
                     {this.populateUserProducts()}
                 </div>
             </div>

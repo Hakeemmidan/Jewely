@@ -5,7 +5,6 @@ export class UserShowItem extends React.Component {
 
     constructor(props) {
         super(props)
-        debugger
     }
 
     render() {
@@ -13,17 +12,18 @@ export class UserShowItem extends React.Component {
 
         return (
             <li>
-                <div className="cart-products-item">
-
-                    <Link to={`/products/${product.id}`} >
+                <div>
+                    {/* <Link to={`/products/${product.id}`} >
                         <img src={product.photoUrls[0]} className="product-index-image" />
-                    </Link>
+                    </Link> */}
 
-                    <div className="cart-products-item-details">
-                        <div className="cart-products-item-title-and-remove">
+                    <div className="user-show-item-details">
+                        <div className="user-show-item-title-container">
                             <div>
-                                <Link className="cart-products-item-title-link" to={`/products/${product.id}`}>
-                                    <p className="cart-products-item-title">
+                                <Link
+                                    style={{color: 'black'}}
+                                    to={`/products/${product.id}`}>
+                                    <p className="user-show-item-title">
                                         {product.title}
                                     </p>
                                 </Link>
@@ -31,13 +31,11 @@ export class UserShowItem extends React.Component {
                         </div>
 
 
-                        <div className="cart-product-item-quantity-and-price">
-                            <div>
-                                <p className="cart-products-item-price">
-                                    ${parseFloat(product.price).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,')}
-                                    {/* Number format source : https://stackoverflow.com/a/14428340/7974948  */}
-                                </p>
-                            </div>
+                        <div className="user-show-item-price-container">
+                            <p className="user-show-item-price">
+                                ${parseFloat(product.price).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,')}
+                                {/* Number format source : https://stackoverflow.com/a/14428340/7974948  */}
+                            </p>
                         </div>
                     </div>
                 </div>

@@ -34,7 +34,6 @@ export class CartShow extends React.Component {
     }
 
     componentDidMount() {
-        // debugger
         this.combineProductsBasedOnQuantity()
 
         JSON.parse(localStorage.cart).map(productIdAndQuantity => (
