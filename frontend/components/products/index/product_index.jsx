@@ -24,6 +24,15 @@ export class ProductIndex extends React.Component {
                         showThumbs={false}
                         interval={4000}
                         >
+
+                        <div>
+                            <img
+                                className="product_index_photo_carousel_image"
+                                src="https://cdn.pixabay.com/photo/2015/05/26/09/48/chain-784422_1280.jpg"
+                            />
+                        </div>
+                        {/* Source : https://pixabay.com/photos/chain-beads-jewellery-necklace-784422/ */}
+
                         <div>
                             <img
                                 className="product_index_photo_carousel_image"
@@ -31,6 +40,7 @@ export class ProductIndex extends React.Component {
                                 />
                         </div>
                         {/* Source : https://unsplash.com/photos/RjeVqc8eC3s */}
+
                         <div>
                             <img
                                 className="product_index_photo_carousel_image"
@@ -46,14 +56,6 @@ export class ProductIndex extends React.Component {
                                 />
                         </div>
                         {/* Source : https://www.pexels.com/photo/blur-close-up-elegant-flower-298852/ */}
-
-                        <div>
-                            <img
-                                className="product_index_photo_carousel_image"
-                                src="https://cdn.pixabay.com/photo/2015/05/26/09/48/chain-784422_1280.jpg"
-                                />
-                        </div>
-                        {/* Source : https://pixabay.com/photos/chain-beads-jewellery-necklace-784422/ */}
 
                         <div>
                             <img

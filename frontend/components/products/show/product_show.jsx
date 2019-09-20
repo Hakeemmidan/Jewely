@@ -19,38 +19,6 @@ export class ProductShow extends React.Component {
             this.props.fetchProduct(this.props.match.params.productId)
         }
     }
-
-  // --------------- add to cart button START --------------- //
-
-    // hasProductInCart() {
-    //     const productId = this.props.match.params.productId 
-    //     JSON.parse(localStorage.cart).includes(productId)
-    // }
-    // // question ) Why does this return undefiend here even though it returns true in console?
-
-    // addToCartAgainButton() {
-    //     return (
-    //         <Link
-    //             className="product-show-remove-from-cart-button"
-    //             onClick={this.handleAddToCart}
-    //             to="/cart">
-    //             add from cart again (this product is already in your cart)
-    //         </Link>
-    //     )
-    // }
-
-    // addToCartButton() {
-    //     return (
-    //         <Link
-    //             className="product-show-add-to-cart-button"
-    //             onClick={this.handleAddToCart}
-    //             to="/cart">
-    //             Add to cart
-    //         </Link>
-    //     )
-    // }
-
-// --------------- add to cart button END --------------- //
     
     handleAddToCart() {
         const productId = this.props.match.params.productId 
@@ -65,8 +33,6 @@ export class ProductShow extends React.Component {
             localStorage.setItem('cart', JSON.stringify([productId, quantity]))
             this.props.fetchCartBadge();
         }
-   
-        // question ) Why does this not work? ^^^^ 
     }
     
     renderSellerUsername() {
