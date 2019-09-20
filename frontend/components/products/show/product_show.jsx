@@ -87,13 +87,12 @@ export class ProductShow extends React.Component {
         
         if (Array.isArray(product.photoUrls)) {
             return (
-                <div className="product-show-photo-carousel">
+                <div>
                     <Carousel>
                         {product.photoUrls.map(photoUrl => {
                             return (
                                 <div>
                                     <img
-                                        className="product-show-carousel-image"
                                         src={photoUrl} />
                                 </div>
                             )

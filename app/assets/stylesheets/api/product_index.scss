@@ -17,6 +17,8 @@
 .product-index-item {
     padding: 9px;
     max-width: 125px;
+    margin-left: 7px;
+    margin-right: 7px;
 }
 
 .product-index-item-list-container {
@@ -26,7 +28,7 @@
     margin-top: 2%;
     margin-left: 10%;
     margin-right: 10%;
-    border: 3px solid blue;
+    margin-bottom: 100px;
 }
 
 .product-index-list {
@@ -53,4 +55,19 @@
     color: black; 
     font-size: 1.8vh;
     margin: 0;
+}
+
+.product_index_catchphrase {
+    margin-left: 10%;
+    margin-right: 10%;
+    text-align: center;
+}
+
+.product_index_photo_carousel {
+    
+}
+
+.product_index_photo_carousel_image {
+    object-fit: scale-down;
+    height: 50vh;
 }
