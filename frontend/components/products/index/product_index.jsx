@@ -63,7 +63,7 @@ export class ProductIndex extends React.Component {
                                 src="https://images.pexels.com/photos/1413420/pexels-photo-1413420.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
                             />
                         </div>
-                        {/* Source : https://www.pexels.com/photo/black-and-gold-colored-analog-watch-with-leather-strap-1453008/ */}
+                        {/* Source : https://www.pexels.com/photo/close-up-photography-of-blue-earrings-1413420// */}
 
                     </Carousel>
                 </div>
