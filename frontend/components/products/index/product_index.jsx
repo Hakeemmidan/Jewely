@@ -17,7 +17,6 @@ export class ProductIndex extends React.Component {
                 </h2>
                 <div className="product_index_photo_carousel">
                     <Carousel 
-                        thumbWidth={12}
                         autoPlay
                         infiniteLoop={true}
                         transitionTime={1500}

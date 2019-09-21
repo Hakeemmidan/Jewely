@@ -23,75 +23,98 @@ import CreateProductFormContainer from './products/create_update/create_product_
 // cart vvv 
 import CartShowContainer from './carts/show/cart_show_container'; 
 
+// search vvv
+import SearchbarContainer from './search/searchbar_container';
 
-export const App = () => {
-  return (
-    <div>
-      <header>
-        <Link to="/" className="logo"> Jewely </Link>
-        <GreetingContainer />
-      </header>
-        {/* Noted: this is here because we want to view differnet things based on what page we are on */}
-        <Switch>
-          <ProtectedRoute 
-            exact 
-            path="/products/:productId/edit"
-            component={EditProductFormContainer}
-          />
+export class App extends React.Component {
+  constructor(props) {
+    super(props)
+  }
 
-          <ProtectedRoute
-            exact
-            path="/products/create"
-            component={CreateProductFormContainer}
-          />
+  changeRouteToSearch() {
+    location.hash = '#/search'
+  }
 
-          <Route
-            exact
-            path="/users/:userId"
-            component={UserShowContainer}
-          />
-
-          <Route
-            exact
-            path="/products/:productId"
-            component={ProductShowContainer}
-          />
-          {/* Noted: The path with the wild card at the end should always be put
-              BELOW routes that have the same length */}
-
-          <AuthRoute
-            exact
-            path="/login"
-            component={LogInFormContainer}
-          />
-
-          <AuthRoute
-            exact
-            path="/signup"
-            component={SignUpFormContainer}
-          />
-
-          <Route 
-            exact
-            path="/cart"
-            component={CartShowContainer}
-          />
-
-          <Route
-            path="/"
-            component={ProductIndexContainer}
-          />
-
-          <Route
-            component={ProductIndexContainer}
-          />
-          {/* ^^^ Noted: User gets redirected to this if they don't enter an exisiting path.
-                  This happens because there is no path parameter */}
-
-          {/* Task: Make this a home container. It should be the body.
-              We are going to use this to pass state and dispatch */}
-          {/* question: Is it typical to have all these routes in here? */}
-        </Switch>
-    </div>
-  )
+  render() {
+    return (
+      <div>
+        <header>
+          <Link to="/" className="logo"> Jewely </Link>
+          <input 
+            className="navbar-searchbar"
+            type="text" 
+            onClick={this.changeRouteToSearch
+            }/>
+          <GreetingContainer />
+        </header>
+          {/* Noted: this is here because we want to view differnet things based on what page we are on */}
+          <Switch>
+            <ProtectedRoute 
+              exact 
+              path="/products/:productId/edit"
+              component={EditProductFormContainer}
+            />
+  
+            <ProtectedRoute
+              exact
+              path="/products/create"
+              component={CreateProductFormContainer}
+            />
+  
+            <Route
+              exact
+              path="/users/:userId"
+              component={UserShowContainer}
+            />
+  
+            <Route
+              exact
+              path="/products/:productId"
+              component={ProductShowContainer}
+            />
+            {/* Noted: The path with the wild card at the end should always be put
+                BELOW routes that have the same length */}
+  
+            <AuthRoute
+              exact
+              path="/login"
+              component={LogInFormContainer}
+            />
+  
+            <AuthRoute
+              exact
+              path="/signup"
+              component={SignUpFormContainer}
+            />
+  
+            <Route
+              exact
+              path="/search"
+              component={SearchbarContainer}
+            />
+  
+            <Route 
+              exact
+              path="/cart"
+              component={CartShowContainer}
+            />
+  
+            <Route
+              path="/"
+              component={ProductIndexContainer}
+            />
+  
+            <Route
+              component={ProductIndexContainer}
+            />
+            {/* ^^^ Noted: User gets redirected to this if they don't enter an exisiting path.
+                    This happens because there is no path parameter */}
+  
+            {/* Task: Make this a home container. It should be the body.
+                We are going to use this to pass state and dispatch */}
+            {/* question: Is it typical to have all these routes in here? */}
+          </Switch>
+      </div>
+    )
+  }
 };
