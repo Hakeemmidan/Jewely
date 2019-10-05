@@ -10,6 +10,7 @@ export class ProductIndex extends React.Component {
     }
 
     render() {
+        debugger
         return (
             <div>
                 <h2 className="product_index_catchphrase">

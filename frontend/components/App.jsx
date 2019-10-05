@@ -5,7 +5,6 @@ import {
         Route,
         Link } from 'react-router-dom';
 
-
 // users vvv
 import UserShowContainer from './users/user_show_container';
 
@@ -112,7 +111,6 @@ export class App extends React.Component {
   
             {/* Task: Make this a home container. It should be the body.
                 We are going to use this to pass state and dispatch */}
-            {/* question: Is it typical to have all these routes in here? */}
           </Switch>
       </div>
     )
