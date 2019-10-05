@@ -30,10 +30,6 @@ export class App extends React.Component {
     super(props)
   }
 
-  changeRouteToSearch() {
-    location.hash = '#/search'
-  }
-
   render() {
     return (
       <div>
@@ -42,8 +38,7 @@ export class App extends React.Component {
           <input 
             className="navbar-searchbar"
             type="text" 
-            onClick={this.changeRouteToSearch
-            }/>
+          />
           <GreetingContainer />
         </header>
           {/* Noted: this is here because we want to view differnet things based on what page we are on */}
