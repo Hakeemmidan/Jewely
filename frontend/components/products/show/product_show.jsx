@@ -144,7 +144,9 @@ export class ProductShow extends React.Component {
                                 <button
                                     className="product-show-add-to-cart-button"
                                     onClick={this.handleAddToCart}>
-                                    Add to cart
+                                    <p className="product-show-add-to-cart-button-text">
+                                        Add to cart
+                                    </p>
                                 </button>
                             </Link> 
                         <br/>
