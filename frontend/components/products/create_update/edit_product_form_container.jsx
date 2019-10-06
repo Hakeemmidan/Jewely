@@ -61,4 +61,7 @@ class EditProductForm extends React.Component {
     }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(EditProductForm);
+export default connect(
+    mapStateToProps,
+    mapDispatchToProps)
+    (EditProductForm);
