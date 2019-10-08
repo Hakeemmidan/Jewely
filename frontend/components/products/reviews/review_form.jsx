@@ -1,7 +1,7 @@
 import React from 'react'
 import { withRouter } from 'react-router-dom';
 
-class ReviewForm extends React.Component {
+export class ReviewForm extends React.Component {
     constructor(props) {
         super(props)
         this.state = this.props.review
@@ -74,26 +74,29 @@ class ReviewForm extends React.Component {
         return (
             <div>
                 <form
-                onSubmit={this.handleSubmit}>
+                    onSubmit={this.handleSubmit}>
                     <label>Title
                         <br/>
                         <input 
                             type="text"
-                            value={this.state.title}/>
+                            value={this.state.title}
+                            onChange={this.update('title')}/>
                     </label>
 
                     <label>Rating
                         <br />
                         <input
                             type="integer"
-                            value={this.state.body} />
+                            value={this.state.rating}
+                            onChange={this.update('rating')}/>
                     </label>
 
                     <label>Body
                         <br />
                         <input
                             type="text"
-                            value={this.state.body} />
+                            value={this.state.body}
+                            onChange={this.update('body')}/>
                     </label>
 
                     <input
@@ -104,5 +107,3 @@ class ReviewForm extends React.Component {
         )
     }
 }
-
-export default withRouter(ReviewForm)

@@ -6,29 +6,27 @@ export const fetchReviews = () => {
 }
 
 export const createReview = (formData) => {
+    const productId = parseInt(Array.from(formData.entries())[5][1])
     return $.ajax({
         method: 'POST',
-        url: 'api/products/:product_id/reviews',
+        url: `api/products/${productId}/reviews`,
         data: formData
     })
 }
 
 export const updateReview = (formData) => {
     const reviewId = parseInt(Array.from(formData.entries())[0][1])
-    // TODO : Find product id and include it in the url
-    // We need to find the product id here
-
+    const productId = parseInt(Array.from(formData.entries())[5][1])
     return $.ajax({
         method: 'PATCH',
-        url: `api/products/:product_id/reviews/${reviewId}`,
+        url: `api/products/${productId}/reviews/${reviewId}`,
         data: formData
     })
 }
 
 export const removeReview = (id) => {
-    // TODO : Find product id and include it in the url
     return $.ajax({
         method: 'DELETE',
-        url: `api/products/:product_id/reviews/${id}`
+        url: `api/products/${productId}/reviews/${id}`
     })
 }

@@ -1,8 +1,8 @@
 import { connect } from 'react-redux'
-import ReviewForm from './review_form'
-import { createReview } from '../../../actions/product_actions'
+import {ReviewForm} from './review_form'
+import { createReview } from '../../../actions/review_actions'
 
-const mapStateToProps = (state) => {
+const mapStateToProps = (state, ownProps) => {
     const errorsArr = state.errors.review
     const errors = errorsArr ? errorsArr : [];
 
@@ -11,7 +11,7 @@ const mapStateToProps = (state) => {
         body: '',
         rating: 0,
         author_id: state.session.id,
-        product_id: state.entities.products[0],
+        product_id: Object.values(state.entities.products)[0].id,
         errors: errors
     }
     
