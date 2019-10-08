@@ -44,7 +44,7 @@ export class App extends React.Component {
           {/* Noted: this is here because we want to view differnet things based on what page we are on */}
           <Switch>
             <ProtectedRoute 
-              exact 
+              exact
               path="/products/:productId/edit"
               component={EditProductFormContainer}
             />
@@ -62,7 +62,6 @@ export class App extends React.Component {
             />
   
             <Route
-              exact
               path="/products/:productId"
               component={ProductShowContainer}
             />
