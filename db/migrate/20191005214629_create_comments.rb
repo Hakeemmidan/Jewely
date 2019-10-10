@@ -3,7 +3,7 @@ class CreateComments < ActiveRecord::Migration[5.2]
     create_table :comments do |t|
       t.string :title, null: false
       t.text :body, null: false
-      t.decimal :price, null: flase
+      t.decimal :price, null: false
       t.timestamps
     end
   end
