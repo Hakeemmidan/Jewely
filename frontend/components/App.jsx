@@ -26,7 +26,7 @@ import CartShowContainer from './carts/show/cart_show_container';
 import SearchbarContainer from './search/searchbar_container';
 
 // modal vvv
-import { Modal } from './products/reviews/modal';
+import ModalContainer from './products/reviews/modal_container';
 
 
 export class App extends React.Component {
@@ -38,7 +38,7 @@ export class App extends React.Component {
     return (
       <div>
         <header>
-          <Modal />
+          <ModalContainer />
           <Link to="/" className="logo"> Jewely </Link>
           <input 
             className="navbar-searchbar"
