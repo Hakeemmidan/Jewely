@@ -1,16 +1,19 @@
 import {
-    RECEIVE_ALL_REVIEWS,
     RECEIVE_REVIEW,
     REMOVE_REVIEW
 } from '../../actions/review_actions'
 
+import {
+    RECEIVE_PRODUCT
+} from '../../actions/product_actions';
 
 export const reviewsReducer = (oldState = {}, action) => {
     Object.freeze(oldState)
     let nextState;
     switch (action.type) {
-        case RECEIVE_ALL_REVIEWS:
-            return action.reviews
+        case RECEIVE_PRODUCT:
+            nextState = Object.assign({}, oldState, action.reviews)
+            return nextState
         case RECEIVE_REVIEW:
             nextState = Object.assign({}, oldState, {
                 [action.review.id]: action.review
