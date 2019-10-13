@@ -25,11 +25,13 @@ export class ProductShow extends React.Component {
         const quantity = $('.product-show-quantity-dropdown')[0].value
 
         if (localStorage.cart) {
+            // IF there is already items in the cart, add on to them
             let cartProductIdsAndQuantities = JSON.parse(localStorage.getItem('cart'))
             cartProductIdsAndQuantities.push([productId, quantity])
             localStorage.setItem('cart', JSON.stringify(cartProductIdsAndQuantities))
             this.props.fetchCartBadge();
         } else { 
+            // If not, then create the cart and add the targeted item and its quantity
             localStorage.setItem('cart', JSON.stringify([productId, quantity]))
             this.props.fetchCartBadge();
         }
