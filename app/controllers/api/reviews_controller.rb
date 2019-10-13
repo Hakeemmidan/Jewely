@@ -1,7 +1,5 @@
 class Api::ReviewsController < ApplicationController
-    def index
-        @reviews = Review.all
-    end
+    before_action :require_signed_in!
 
     def create
         @review = Review.new(review_params)
@@ -37,7 +35,6 @@ class Api::ReviewsController < ApplicationController
 
     def review_params
         params.require(:review).permit(
-            :id,
             :title,
             :body,
             :rating,
