@@ -1,8 +1,8 @@
 import { connect } from 'react-redux'
-import {ReviewForm} from './review_form'
+import { ReviewForm } from './review_form'
 import { createReview } from '../../../actions/review_actions'
 
-const mapStateToProps = (state, ownProps) => {
+const mapStateToProps = (state) => {
     const errorsArr = state.errors.review
     const errors = errorsArr ? errorsArr : [];
 

@@ -11,11 +11,10 @@ const receiveProducts = (products) => {
     }
 }
 
-const receiveProduct = ({product, reviews}) => {
+const receiveProduct = (product) => {
     return {
         type: RECEIVE_PRODUCT,
-        product,
-        reviews
+        product
     }
 }
 
