@@ -1,8 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Carousel } from "react-responsive-carousel";
-// import { ReviewForm } from '../reviews/review_form';
-import CreateReviewFormContainer from '../reviews/create_review_form_container';
+import { openModal } from '../../../actions/modal_actions';
 
 export class ProductShow extends React.Component {
     constructor(props) {
@@ -156,7 +155,9 @@ export class ProductShow extends React.Component {
                 </div>
 
                 <div>
-                    <CreateReviewFormContainer />
+                    <button onClick={() => openModal('create review')}>
+                        Write a review
+                    </button>
                 </div>
 
                 <div className="product-show-lower">
