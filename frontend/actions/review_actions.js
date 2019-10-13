@@ -4,17 +4,11 @@ export const REMOVE_REVIEW = 'REMOVE_REVIEW';
 export const RECEIVE_REVIEW_ERRORS = 'RECEIVE_REVIEW_ERRORS';
 import * as ReviewAPIUtil from '../util/review_api_util';
 
-const receiveReviews = (reviews) => {
-    return {
-        type: RECEIVE_ALL_REVIEWS,
-        reviews
-    }
-}
-
-const receiveReview = (review) => {
+const receiveReview = ({review, average_rating}) => {
     return {
         type: RECEIVE_REVIEW,
-        review
+        review,
+        average_rating
     }
 }
 
@@ -36,15 +30,6 @@ const deleteReview = (reviewId) => {
 ////////////////////////////////////////////
 // Thunk action creators vvv
 
-export const fetchReview = (id) => dispatch => {
-    return ReviewAPIUtil.fetchReview(id)
-            .then(review => dispatch(receiveReview(review)))
-}
-
-export const fetchReviews = () => dispatch => {
-    return ReviewAPIUtil.fetchReviews()
-            .then(reviews => dispatch(receiveReviews(reviews)))
-}
 
 export const updateReview = (FormData) => dispatch => {
     return ReviewAPIUtil.updateReview(FormData)
