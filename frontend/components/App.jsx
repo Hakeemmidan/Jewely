@@ -25,6 +25,10 @@ import CartShowContainer from './carts/show/cart_show_container';
 // search vvv
 import SearchbarContainer from './search/searchbar_container';
 
+// modal vvv
+import { Modal } from './products/reviews/modal';
+
+
 export class App extends React.Component {
   constructor(props) {
     super(props)
@@ -34,6 +38,7 @@ export class App extends React.Component {
     return (
       <div>
         <header>
+          <Modal />
           <Link to="/" className="logo"> Jewely </Link>
           <input 
             className="navbar-searchbar"
