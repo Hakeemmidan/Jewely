@@ -22,9 +22,6 @@ import CreateProductFormContainer from './products/create_update/create_product_
 // cart vvv 
 import CartShowContainer from './carts/show/cart_show_container'; 
 
-// search vvv
-import SearchbarContainer from './search/searchbar_container';
-
 // modal vvv
 import ModalContainer from './products/reviews/modal_container';
 
@@ -40,10 +37,6 @@ export class App extends React.Component {
         <header>
           <ModalContainer />
           <Link to="/" className="logo"> Jewely </Link>
-          <input 
-            className="navbar-searchbar"
-            type="text" 
-          />
           <GreetingContainer />
         </header>
           {/* Noted: this is here because we want to view differnet things based on what page we are on */}
@@ -84,12 +77,6 @@ export class App extends React.Component {
               exact
               path="/signup"
               component={SignUpFormContainer}
-            />
-  
-            <Route
-              exact
-              path="/search"
-              component={SearchbarContainer}
             />
   
             <Route 
