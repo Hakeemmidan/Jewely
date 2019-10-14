@@ -3,7 +3,7 @@ class Api::ReviewsController < ApplicationController
 
     def create
         @review = Review.new(review_params)
-
+        
         if @review.save
             render :index
         else
@@ -35,6 +35,7 @@ class Api::ReviewsController < ApplicationController
 
     def review_params
         params.require(:review).permit(
+            :id,
             :title,
             :body,
             :rating,

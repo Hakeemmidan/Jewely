@@ -30,14 +30,14 @@ const deleteReview = (reviewId) => {
 // Thunk action creators vvv
 
 
-export const updateReview = (FormData) => dispatch => {
-    return ReviewAPIUtil.updateReview(FormData)
+export const updateReview = (review) => dispatch => {
+    return ReviewAPIUtil.updateReview(review)
             .then(review => dispatch(receiveReview(review))),
             errs => dispatch(receiveErrors(errs.responseJSON))
 }
 
-export const createReview = (formData) => dispatch => {
-    return ReviewAPIUtil.createReview(formData)
+export const createReview = (review) => dispatch => {
+    return ReviewAPIUtil.createReview(review)
         .then(review => dispatch(receiveReview(review)),
             errs => dispatch(receiveErrors(errs.responseJSON)))
 }

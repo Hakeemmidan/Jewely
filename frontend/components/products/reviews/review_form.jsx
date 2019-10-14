@@ -16,8 +16,8 @@ export class ReviewForm extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-
-        this.props.action(this.state)
+        const review = this.state
+        this.props.action({review: review})
             .then(() =>
                 this.props.history.push(`/products/${this.state.product_id}`),
                 (err) => {
