@@ -1,12 +1,37 @@
 # Jewely
 
-Welcome to Jewely! An Etsy clone that specializes in allowing users to buy and sell jewelry!
+[Jewely live](https://jewely-fsp.herokuapp.com/#/)
 
-[Jewely live link](https://jewely-fsp.herokuapp.com/#/)
+## Background and Overview
+Jewely is an Etsy inspired site that specializes in allowing users to buy and sell jewelry. It works like most e-commerce stores, except in this one, you could be a vendor. A user must sign up or sign in order to be able to sell.
 
-## Technology Stack
+## Technologies
+### Stack
+- Backend
+    - postgreSQL
+    - Ruby on Rails
+- Frontend
+    - React / Redux
+### Noticable Gems
+- `bcrypt`
+    - Hash passwords before they're stored in database
+- `jbuilder`
+    - Extract a JSON object from backend and pass it on to frontend
+- `aws-sdk-s3`
+    - Required for the use of AWS S3 in Rails applications
+- `sass-rails`
+    - Sass adapter for rails pipeline
+        - All styling in this project was done through Sass
+### Noticable Dependencies
+- `@babel/core`, `@babel/preset-env`, `@babel/preset-react`, `babel-loader`
+    - Converts ES5+ JavaScript code into more compaitable versions
+- `react-responsive-carousel`
+    - Displays images in a photo carousel
+- `redux-thunk`
+    - Thunk middleware for Redux
+- `webpack`, `webpack-cli`
+    - Module bundler
 
-This site was built on a Rails backend, a Postgress SQL database, and a React/Redux frontend.
 
 ## Libraries
 One of the main libraries/packages used for this site is [React Responsive Carousel](https://www.npmjs.com/package/react-responsive-carousel). 
