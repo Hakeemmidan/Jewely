@@ -54,9 +54,29 @@ In browser:
 7. navigate to `http://localhost:3000` to view application
 
 
-## Noticable Features
+## Noticable Features / How to use
 #### Product CRUD (Create, Read, Update, Delete)
-#### Window.localStorage Cart
+##### Create
+1. After signing up / logging in, go to "Sell on Jewely" on top right of header
+2. Create product listing and submit
+
+##### Read
+1. Go to home page
+2. Click on any product listing from index to view its show page
+
+#### Update
+[You must be signed in to do this]
+1. Click on a product that you own 
+2. Click on "Edit your product listing" in product show page
+3. Edit as needed and submit
+#### Delete
+1. After navigating to a product that you own, click on "Edit your product listing"
+2. Click on "Delete product listing" (located at the bottom of product edit form)
+
+--- 
+
+#### window.localStorage Cart
+
 #### Badge Auto Re-Rendering
 #### Total Price Change On Quantity Update
 
@@ -74,11 +94,3 @@ This was done mainly to allow guest users to add items to their cart without nee
 
 #### Forms
 The localStorage is also used to store product form data. That is so when a user refreshes the page, they do not lose the information that they had typed for a specific product.
-
-
-
-## Contributing
-Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
-
-## License
-[MIT](https://choosealicense.com/licenses/mit/)
