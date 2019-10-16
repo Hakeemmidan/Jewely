@@ -3,7 +3,7 @@ export const REMOVE_REVIEW = 'REMOVE_REVIEW';
 export const RECEIVE_REVIEW_ERRORS = 'RECEIVE_REVIEW_ERRORS';
 import * as ReviewAPIUtil from '../util/review_api_util';
 
-const receiveReview = ({ review }) => {
+const receiveReview = (review) => {
     return {
         type: RECEIVE_REVIEW,
         review
