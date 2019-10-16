@@ -33,28 +33,34 @@ Jewely is an Etsy inspired site that specializes in allowing users to buy and se
 - `webpack`, `webpack-cli`
     - Module bundler
 
+
+## Setup
+### Installation
+In terminal:
+1. `bundle install` to install Ruby gems
+2. `npm install` to install JavaScript dependencies
+
+In computer:
+
+3. Make sure that PostgreSQL is running, if not, start it
+
+In terminal:
+
+4. `rails db:setup` to setup PostgreSQL database
+5. `rails s` to start Rails server
+6. `npm start` to start Webpack module bundler
+
+In browser:
+
+7. navigate to `http://localhost:3000` to view application
+
+
 ## Noticable Features
 #### Product CRUD (Create, Read, Update, Delete)
 #### Window.localStorage Cart
 #### Badge Auto Re-Rendering
 #### Total Price Change On Quantity Update
 
-
-## Configuration
-### Installation
-```
-    bundle install
-```
-```
-    npm install
-```
-### To run
-```
-    rails s
-```
-```
-    npm start
-```
 
 ## Noticeable Features
 ### Use of `window.localStorage`
