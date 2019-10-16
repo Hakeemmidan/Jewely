@@ -15,18 +15,18 @@ It was mainly used to render images in a carousel in the products index page and
 
 ## Configuration
 ### Installation
-```ruby
-bundle install
 ```
-```javascript
-npm install
+    bundle install
+```
+```
+    npm install
 ```
 ### To run
-```ruby
-rails s
 ```
-```javascript
-npm start
+    rails s
+```
+```
+    npm start
 ```
 
 ## Noticeable Features
