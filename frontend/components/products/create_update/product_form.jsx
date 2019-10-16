@@ -43,18 +43,8 @@ class ProductForm extends React.Component {
         }
 
         this.props.action(formData)
-            .then(() => 
-                this.props.history.push(`/`)
-                // this.props.formType === 'Update Product' ?
-                // this.props.history.push(`/products/${this.state.id}`)
-                // : this.props.history.push(`/`)
-                // question ) Why does clicking on the delete product button also click on the submit form button? 
-                ,
-                (err) => {
-                    console.log(err)
-                })
-            // .then(() => this.props.history.push(`/products/${this.props.product.id}`),
-            // () => this.props.history.push(`/products/${this.props.product.id}/edit`));
+            .then(() => this.props.history.push(`/`),
+            (err) => { console.log(err) })
     }
 
     handleFile(e) {

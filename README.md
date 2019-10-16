@@ -62,6 +62,34 @@ In browser:
 
 ![](app/assets/gifs/create.gif)
 
+```JavaScript
+handleSubmit(e) {
+    e.preventDefault();
+    const formData = new FormData();
+    
+    formData.append('product[productId]', this.state.id);
+    formData.append('product[title]', this.state.title);
+    formData.append('product[description]', this.state.description);
+    formData.append('product[price]', this.state.price);
+    formData.append('product[seller_id]', this.state.seller_id);
+    formData.append('product[errors]', this.state.errors);
+
+    if (this.state.photoFiles) {
+        const photos = this.state.photoFiles
+        for (let i = 0; i < photos.length; i++) {
+            formData.append('product[photos][]', photos[i]);
+        }
+    }
+
+    this.props.action(formData)
+        .then(() => this.props.history.push(`/`),
+        (err) => { console.log(err) })
+}
+```
+Both create **and** update actions share the same form (`frontend/components/products/create_update/product_form.jsx`). The only difference is that `#action` would be different depending on what got passed on from the container.
+
+Code snippet above shows how data may be passed on to DB once a user clicks submits.
+
 ##### Read
 1. Go to home page
 2. Click on any product listing from index to view its show page
@@ -83,6 +111,30 @@ In browser:
 
 ![](app/assets/gifs/delete.gif)
 
+```JavaScript
+handleRemove() {
+    // remove it from cart (if it is there)
+    const cart = JSON.parse(localStorage.getItem('cart'))
+    for (let i = 0; i < cart.length; i++) {
+        if (parseInt(cart[i][0]) === this.state.id) {
+            cart.splice(i, 1)
+        }
+    }
+    localStorage.setItem('cart', JSON.stringify(cart))
+
+    // remove it from database
+    this.props.removeProduct(this.state.id)
+
+    // change location to the main page
+    location.hash = '#/'
+}
+```
+As can be seen from snippet above, we first check if carts has targeted item by checking `window.localStorage` (which is our next noticable feature). If it contains it, we remove it. 
+
+Then we trigger `removeProduct` to remove item from database. `this.state.id` would represent the id
+of the product in the current show page.
+
+Lastly, we navigate to the home page.
 
 --- 
 
@@ -95,22 +147,12 @@ Logically, when a user adds an item to their cart, then an array of id and the q
 
 This was done mainly to allow guest users to add items to their cart without needing to sign in, allowing for better user experience in my belief. Moreover, another reasoning for this is to not query the cart database for each addition or deletion of a product, which could lead to somewhat of slow performance.
 
----
 
-#### Badge Auto Re-Rendering
-
----
-
-#### Total Price Change On Quantity Update
-
-
-## Noticeable Features
-### Use of `window.localStorage`
-#### Cart
 
 ### Todos
 - Remove photo carousel from home page because it can be distracting
 - Implement reviews
 - Implement searching
-- Make clickong on "Proceed to checkout" show Gihub and LinkedIn profiles (in a modal)
+- Possubly change as many GIFs to pictures as README currently looks chaotic
 - Include Github and LinkedIn profiles at bottom left of site page
+- Make clickong on "Proceed to checkout" show Gihub and LinkedIn profiles (in a modal)
