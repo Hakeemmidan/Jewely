@@ -1,8 +1,9 @@
 export const createReview = (review) => {
+    debugger
     return $.ajax({
         method: 'POST',
         url: `api/reviews`,
-        data: { review }
+        data: { review } // This is the format that rails is expecting object to be
     })
 }
 
