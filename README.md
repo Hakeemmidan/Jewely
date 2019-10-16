@@ -60,24 +60,40 @@ In browser:
 1. After signing up / logging in, go to "Sell on Jewely" on top right of header
 2. Create product listing and submit
 
+![](app/assets/gifs/create.gif)
+
 ##### Read
 1. Go to home page
 2. Click on any product listing from index to view its show page
+
+![](app/assets/gifs/read.gif)
 
 #### Update
 [You must be signed in to do this]
 1. Click on a product that you own 
 2. Click on "Edit your product listing" in product show page
 3. Edit as needed and submit
+
+![](app/assets/gifs/update.gif)
+
 #### Delete
 1. After navigating to a product that you own, click on "Edit your product listing"
 2. Click on "Delete product listing" (located at the bottom of product edit form)
+
+
+![](app/assets/gifs/delete.gif)
+
 
 --- 
 
 #### window.localStorage Cart
 
+---
+
 #### Badge Auto Re-Rendering
+
+---
+
 #### Total Price Change On Quantity Update
 
 
