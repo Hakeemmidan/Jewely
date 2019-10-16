@@ -28,7 +28,7 @@ export class ReviewForm extends React.Component {
 
         this.props.action(this.state)
             .then(() =>
-                this.props.history.push(`/products/${this.state.product_id}`),
+                location.reload(true),
                 (err) => {
                     console.log(err)
             })
