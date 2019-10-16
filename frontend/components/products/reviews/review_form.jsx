@@ -68,15 +68,16 @@ export class ReviewForm extends React.Component {
 
     render() {
         return (
-            <div>
+            <div className="review_form_div">
                 <form
                     onSubmit={this.handleSubmit}>
                     <label>Title
-                        <br/>
+                        <br />
                         <input 
                             type="text"
                             value={this.state.title}
                             onChange={this.update('title')}/>
+                        <br />
                     </label>
 
                     <label>Body
@@ -85,6 +86,7 @@ export class ReviewForm extends React.Component {
                             type="text"
                             value={this.state.body}
                             onChange={this.update('body')} />
+                        <br />
                     </label>
 
                     <label>Rating
@@ -93,6 +95,7 @@ export class ReviewForm extends React.Component {
                             type="number"
                             value={this.state.rating}
                             onChange={this.update('rating')}/>
+                        <br />
                     </label>
 
                     <input
