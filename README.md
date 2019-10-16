@@ -94,3 +94,10 @@ This was done mainly to allow guest users to add items to their cart without nee
 
 #### Forms
 The localStorage is also used to store product form data. That is so when a user refreshes the page, they do not lose the information that they had typed for a specific product.
+
+### Todos
+- Remove photo carousel from home page because it can be distracting
+- Implement reviews
+- Implement searching
+- Make clickong on "Proceed to checkout" show Gihub and LinkedIn profiles (in a modal)
+- Include Github and LinkedIn profiles at bottom left of site page
