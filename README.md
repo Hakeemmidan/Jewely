@@ -35,7 +35,6 @@ Jewely is an Etsy inspired site that specializes in allowing users to buy and se
 
 
 ## Setup
-### Installation
 In terminal:
 1. `bundle install` to install Ruby gems
 2. `npm install` to install JavaScript dependencies
