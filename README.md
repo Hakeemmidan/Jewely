@@ -87,6 +87,13 @@ In browser:
 --- 
 
 #### window.localStorage Cart
+The cart of this site is mainly run on `window.localStorage`. It is constructed of an array of arrays, each sub-array consisting of two items, an id, and a quantity.
+
+Example localStorage cart: `"[[43,2], [75, 1]]"` This cart would be considered to have two items with ids 43, 75 and quantities 2, 1 respectively. 
+
+Logically, when a user adds an item to their cart, then an array of id and the quantity (e.g. `[12, 2]`) of the item gets pushed to the parent array of localStorage cart. This is demonstrated in 'create' code snippet from 'CRUD' Noticable Feature.
+
+This was done mainly to allow guest users to add items to their cart without needing to sign in, allowing for better user experience in my belief. Moreover, another reasoning for this is to not query the cart database for each addition or deletion of a product, which could lead to somewhat of slow performance.
 
 ---
 
@@ -100,16 +107,6 @@ In browser:
 ## Noticeable Features
 ### Use of `window.localStorage`
 #### Cart
-The cart of this site is mainly run on `window.localStorage`. It is constructed of an array of arrays, each sub-array consisting of two items, an id, and a quantity.
-
-Example localStorage cart: `"[[43,2], [75, 1]]"` This cart would be considered to have two items with ids 43, 75 and quantities 2, 1 respectively. 
-
-Logically, when a user adds an item to their cart, then an array of id and the quantity (e.g. `[12, 2]`) of the item gets pushed to the parent array of localStorage cart.
-
-This was done mainly to allow guest users to add items to their cart without needing to sign in, allowing for better user experience in my belief. Moreover, another reasoning for this is to not query the cart database for each addition or deletion of a product, which could lead to somewhat of slow performance.
-
-#### Forms
-The localStorage is also used to store product form data. That is so when a user refreshes the page, they do not lose the information that they had typed for a specific product.
 
 ### Todos
 - Remove photo carousel from home page because it can be distracting
