@@ -27,16 +27,18 @@ Jewely is an Etsy inspired site that specializes in allowing users to buy and se
     - Converts ES5+ JavaScript code into more compaitable versions
 - `react-responsive-carousel`
     - Displays images in a photo carousel
+        - Used in product show pages and site landing page
 - `redux-thunk`
     - Thunk middleware for Redux
 - `webpack`, `webpack-cli`
     - Module bundler
 
+## Noticable Features
+#### Product CRUD (Create, Read, Update, Delete)
+#### Window.localStorage Cart
+#### Badge Auto Re-Rendering
+#### Total Price Change On Quantity Update
 
-## Libraries
-One of the main libraries/packages used for this site is [React Responsive Carousel](https://www.npmjs.com/package/react-responsive-carousel). 
-
-It was mainly used to render images in a carousel in the products index page and product show page. 
 
 ## Configuration
 ### Installation
