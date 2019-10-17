@@ -136,7 +136,6 @@ export class ProductShow extends React.Component {
 
         return (
             <div>
-                {this.renderReviews()}
                 <div className="clearfix product-listing">
                     {/* <div>
                         <img src={`${product.photoUrls[0]}`}  alt="" />
@@ -191,13 +190,15 @@ export class ProductShow extends React.Component {
                     </div>
                 </div>
 
-                <div>
-                    <button onClick={() => this.props.openModal('create review')}>
-                        Write a review
-                    </button>
-                </div>
-
                 <div className="product-show-lower">
+                    
+                    <div>
+                        <button onClick={() => this.props.openModal('create review')}>
+                            Write a review
+                        </button>
+                        {this.renderReviews()}
+                    </div>
+
                     <div className="product-show-column product-show-column1">
                         <p className="product-show-description-details-label">
                             Details:
