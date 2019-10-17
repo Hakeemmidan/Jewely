@@ -10,7 +10,8 @@ const mapStateToProps = (state, ownProps) => {
         body: '',
         rating: 0,
         author_id: state.session.id,
-        product_id: Object.values(state.entities.products)[Object.values(state.entities.products).length - 1].id, 
+        product_id: Object.values(state.entities.products)[Object.values(state.entities.products).length - 1].id,
+        // The currently opened product is always last product in global state ^^^
         errors: errors
     }
     const review = state.entities.reviews[ownProps.match.params.reviewId] || defaultReview
