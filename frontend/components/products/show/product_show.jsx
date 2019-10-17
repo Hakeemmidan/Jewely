@@ -7,6 +7,7 @@ export class ProductShow extends React.Component {
         super(props)
         this.handleAddToCart = this.handleAddToCart.bind(this)
         this.imageShow = this.imageShow.bind(this)
+        this.renderReviews = this.renderReviews.bind(this)
     }
 
     componentDidMount() {
@@ -81,6 +82,40 @@ export class ProductShow extends React.Component {
         }
         // Question ) What is the deal with photoUrls? Why is it only showing one string even though I could have more than once image
     }
+
+    renderReviews() {
+        return (
+            <ul>
+                {this.props.product.reviews.map(review => {
+                    return (
+                        <div>
+                            <div>
+                                {this.props.currentUserId}
+                            </div>
+                            <div>
+                                Title
+                                <br/>
+                                {review.title}
+                                <br/>
+                            </div>
+                            <div>
+                                Body
+                                <br/>
+                                {review.body}
+                                <br/>
+                            </div>
+                            <div>
+                                Rating
+                                <br/>
+                                {review.rating}
+                                <br/>
+                            </div>
+                        </div>
+                    )
+                })}
+            </ul>
+        )
+    }
     
     render() {
         const product = this.props.product
@@ -101,6 +136,7 @@ export class ProductShow extends React.Component {
 
         return (
             <div>
+                {this.renderReviews()}
                 <div className="clearfix product-listing">
                     {/* <div>
                         <img src={`${product.photoUrls[0]}`}  alt="" />
