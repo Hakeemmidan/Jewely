@@ -80,7 +80,6 @@ export class ProductShow extends React.Component {
         } else {
             return null
         }
-        // Question ) What is the deal with photoUrls? Why is it only showing one string even though I could have more than once image
     }
 
     renderReviews() {
@@ -88,29 +87,30 @@ export class ProductShow extends React.Component {
             <ul>
                 {this.props.product.reviews.map(review => {
                     return (
-                        <div>
+                        <li>
                             <div>
-                                {this.props.currentUserId}
+                                // TODO : We need to show the author username in here
                             </div>
+
                             <div>
-                                Title
                                 <br/>
-                                {review.title}
-                                <br/>
-                            </div>
-                            <div>
-                                Body
-                                <br/>
-                                {review.body}
+                                    <b>
+                                        {review.title}
+                                    </b>
                                 <br/>
                             </div>
+
                             <div>
-                                Rating
                                 <br/>
-                                {review.rating}
+                                    {review.body}
                                 <br/>
                             </div>
-                        </div>
+                            <div>
+                                <br/>
+                                    {review.rating}
+                                <br/>
+                            </div>
+                        </li>
                     )
                 })}
             </ul>
@@ -191,7 +191,7 @@ export class ProductShow extends React.Component {
                 </div>
 
                 <div className="product-show-lower">
-                    
+
                     <div>
                         <button onClick={() => this.props.openModal('create review')}>
                             Write a review
