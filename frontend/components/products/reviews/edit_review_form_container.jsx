@@ -10,7 +10,7 @@ const mapStateToProps = (state, ownProps) => {
         body: '',
         rating: 0,
         author_id: state.session.id,
-        product_id: state.entities.products[0],
+        product_id: Object.values(state.entities.products)[Object.values(state.entities.products).length - 1].id, 
         errors: errors
     }
     const review = state.entities.reviews[ownProps.match.params.reviewId] || defaultReview
