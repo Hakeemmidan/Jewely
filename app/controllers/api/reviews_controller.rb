@@ -5,6 +5,7 @@ class Api::ReviewsController < ApplicationController
         @review = Review.new(review_params)
         
         if @review.save
+            @review.author_username = User.find(@review.author_id).username
             render :show
         else
             render json: @review.errors.full_messages, status: 422

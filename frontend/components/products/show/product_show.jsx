@@ -89,7 +89,7 @@ export class ProductShow extends React.Component {
                     return (
                         <li>
                             <div>
-                                // TODO : We need to show the author username in here
+                            {/* // TODO : We need to show the author username in here */}
                             </div>
 
                             <div>
