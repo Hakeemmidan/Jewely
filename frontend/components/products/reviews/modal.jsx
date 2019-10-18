@@ -3,7 +3,6 @@ import CreateReviewContainer from './create_review_form_container';
 import EditReviewCOntainer from './edit_review_form_container';
 
 export function Modal({modal, closeModal}) {
-    // If modal not in global state, don't display
     if (!modal) {
         return null
     }
