@@ -14,6 +14,7 @@ const mapStateToProps = (state) => {
         // The currently opened product is always last product in global state ^^^
         errors: errors
     }
+
     
     const formType = 'Create Review'
     return { review, formType }
