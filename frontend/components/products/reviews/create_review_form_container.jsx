@@ -15,7 +15,6 @@ const mapStateToProps = (state) => {
         errors: errors
     }
     
-    console.log(review.product_id)
     const formType = 'Create Review'
     return { review, formType }
 }

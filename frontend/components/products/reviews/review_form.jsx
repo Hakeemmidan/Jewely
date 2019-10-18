@@ -16,15 +16,6 @@ export class ReviewForm extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        // const formData = new FormData();
-
-        // formData.append('review[reviewId]', this.state.id);
-        // formData.append('review[title]', this.state.title);
-        // formData.append('review[body]', this.state.body);
-        // formData.append('review[rating]', this.state.rating);
-        // formData.append('review[author_id]', this.state.author_id);
-        // formData.append('review[product_id]', this.state.product_id);
-        // formData.append('review[errors]', this.state.errors);
 
         this.props.action(this.state)
             .then(() =>
