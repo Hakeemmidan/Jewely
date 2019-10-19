@@ -21,9 +21,16 @@ export class ReviewForm extends React.Component {
         // Objective :
         // add event listener on stars to change them from unfilled 
             //to filled on hover
-        const unfilledStarsArr = Array.from(document.querySelectorAll('.rating-star.unfilled'))
+        const unfilledStarsArr = Array.from($('.rating-star.unfilled'));
+
         unfilledStarsArr.map(unfilledStar => {
-            console.log(unfilledStar)
+            $(unfilledStar).hover(
+                () => {
+                    $(unfilledStar).attr('src', 'https://image.flaticon.com/icons/svg/148/148841.svg') 
+                }, () => {
+                    $(unfilledStar).attr('src', 'https://image.flaticon.com/icons/svg/149/149222.svg') 
+                }
+            )
         })
     }
 
