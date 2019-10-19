@@ -191,7 +191,7 @@ export class ProductShow extends React.Component {
 
                 <div className="product-show-lower">
 
-                    <div>
+                    <div className="product-show-column2">
                         <button onClick={() => this.props.openModal('create review', this.props.product.id)}>
                             Write a review
                         </button>
