@@ -5,16 +5,26 @@ export class ReviewForm extends React.Component {
         super(props)
         this.state = Object.assign( {}, this.props.review, {
             filledStarImg: <img
-                className="rating-star"
+                className="rating-star filled"
                 src="https://image.flaticon.com/icons/svg/148/148841.svg" />,
             unfilledStarImg: <img
-                className="rating-star"
+                className="rating-star unfilled"
                 src="https://image.flaticon.com/icons/svg/149/149222.svg" /> 
         })
         this.handleSubmit = this.handleSubmit.bind(this);
         this.update = this.update.bind(this);
         // this.handleRemove = this.handleRemove.bind(this);
         this.update = this.update.bind(this);
+    }
+
+    componentDidMount() {
+        // Objective :
+        // add event listener on stars to change them from unfilled 
+            //to filled on hover
+        const unfilledStarsArr = Array.from(document.querySelectorAll('.rating-star.unfilled'))
+        unfilledStarsArr.map(unfilledStar => {
+            console.log(unfilledStar)
+        })
     }
 
     update(field) {
@@ -99,7 +109,6 @@ export class ReviewForm extends React.Component {
                             {this.state.unfilledStarImg}
                             {this.state.unfilledStarImg}
                         </div>
-
                         <br />
                     </label>
 
