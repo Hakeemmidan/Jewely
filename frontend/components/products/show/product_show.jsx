@@ -89,7 +89,9 @@ export class ProductShow extends React.Component {
                     return (
                         <li>
                             <div>
-                            {/* // TODO : We need to show the author username in here */}
+                                <br/>
+                                {review.author_username}
+                                <br/>
                             </div>
 
                             <div>
