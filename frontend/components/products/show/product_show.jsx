@@ -190,14 +190,6 @@ export class ProductShow extends React.Component {
                 </div>
 
                 <div className="product-show-lower">
-
-                    <div className="product-show-column2">
-                        <button onClick={() => this.props.openModal('create review', this.props.product.id)}>
-                            Write a review
-                        </button>
-                        {this.renderReviews()}
-                    </div>
-
                     <div className="product-show-column product-show-column1">
                         <p className="product-show-description-details-label">
                             Details:
@@ -205,6 +197,13 @@ export class ProductShow extends React.Component {
                         <p className="product-show-description">
                             {product.description}
                         </p>
+                    </div>
+
+                    <div className="product-show-column2">
+                        <button onClick={() => this.props.openModal('create review', this.props.product.id)}>
+                            Write a review
+                        </button>
+                        {this.renderReviews()}
                     </div>
                 </div>
             </div>
