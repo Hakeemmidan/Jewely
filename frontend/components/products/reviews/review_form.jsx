@@ -3,7 +3,14 @@ import React from 'react'
 export class ReviewForm extends React.Component {
     constructor(props) {
         super(props)
-        this.state = this.props.review
+        this.state = Object.assign( {}, this.props.review, {
+            filledStarImg: <img
+                className="rating-star"
+                src="https://image.flaticon.com/icons/svg/148/148841.svg" />,
+            unfilledStarImg: <img
+                className="rating-star"
+                src="https://image.flaticon.com/icons/svg/149/149222.svg" /> 
+        })
         this.handleSubmit = this.handleSubmit.bind(this);
         this.update = this.update.bind(this);
         // this.handleRemove = this.handleRemove.bind(this);
@@ -87,14 +94,10 @@ export class ReviewForm extends React.Component {
                             value={this.state.rating}
                             onChange={this.update('rating')}/> */}
                         <div className="rating-stars">
-                            <img 
-                                src="https://image.flaticon.com/icons/svg/149/149222.svg"/>
-                            <img 
-                                src="https://image.flaticon.com/icons/svg/149/149222.svg"/>
-                            <img 
-                                src="https://image.flaticon.com/icons/svg/149/149222.svg"/>
-                            <img
-                                src="https://image.flaticon.com/icons/svg/149/149222.svg"/>
+                            {this.state.unfilledStarImg}
+                            {this.state.unfilledStarImg}
+                            {this.state.unfilledStarImg}
+                            {this.state.unfilledStarImg}
                         </div>
 
                         <br />
