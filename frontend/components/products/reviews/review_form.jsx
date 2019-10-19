@@ -13,10 +13,12 @@ export class ReviewForm extends React.Component {
     componentDidMount() {
         const unfilledStarsArr = Array.from($('.rating-star.unfilled'));
 
-        unfilledStarsArr.map(unfilledStar => {
+        unfilledStarsArr.map((unfilledStar, idx) => {
             $(unfilledStar).hover(
                 () => {
-                    $(unfilledStar).attr('src', 'https://image.flaticon.com/icons/svg/148/148841.svg') 
+                    unfilledStarsArr.slice(0, idx + 1).map( unfilledStar2 => {
+                        $(unfilledStar2).attr('src', 'https://image.flaticon.com/icons/svg/148/148841.svg') 
+                    })
                 }, () => {
                     $(unfilledStar).attr('src', 'https://image.flaticon.com/icons/svg/149/149222.svg') 
                 }
@@ -103,23 +105,23 @@ export class ReviewForm extends React.Component {
                         <div className="rating-stars">
                             <img
                                 alt="1"
-                                className="rating-star unfilled"
+                                className="rating-star unfilled 1"
                                 src="https://image.flaticon.com/icons/svg/149/149222.svg" /> 
                             <img
                                 alt="2"
-                                className="rating-star unfilled"
+                                className="rating-star unfilled 2"
                                 src="https://image.flaticon.com/icons/svg/149/149222.svg" /> 
                             <img
                                 alt="3"
-                                className="rating-star unfilled"
+                                className="rating-star unfilled 3"
                                 src="https://image.flaticon.com/icons/svg/149/149222.svg" /> 
                             <img
                                 alt="4"
-                                className="rating-star unfilled"
+                                className="rating-star unfilled 4"
                                 src="https://image.flaticon.com/icons/svg/149/149222.svg" /> 
                             <img
                                 alt="5"
-                                className="rating-star unfilled"
+                                className="rating-star unfilled 5"
                                 src="https://image.flaticon.com/icons/svg/149/149222.svg" /> 
                         </div>
                         <br />
