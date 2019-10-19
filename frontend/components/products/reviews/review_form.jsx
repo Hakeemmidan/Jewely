@@ -82,10 +82,13 @@ export class ReviewForm extends React.Component {
 
                     <label>Rating
                         <br />
-                        <input
+                        {/* <input
                             type="number"
                             value={this.state.rating}
-                            onChange={this.update('rating')}/>
+                            onChange={this.update('rating')}/> */}
+                            <img className="test">
+
+                            </img>
                         <br />
                     </label>
 
