@@ -16,11 +16,13 @@ export class ReviewForm extends React.Component {
         unfilledStarsArr.map((unfilledStar, idx) => {
             $(unfilledStar).hover(
                 () => {
-                    unfilledStarsArr.slice(0, idx + 1).map( unfilledStar2 => {
-                        $(unfilledStar2).attr('src', 'https://image.flaticon.com/icons/svg/148/148841.svg') 
+                    unfilledStarsArr.slice(0, idx + 1).map( unfilledStar => {
+                        $(unfilledStar).attr('src', 'https://image.flaticon.com/icons/svg/148/148841.svg') 
                     })
                 }, () => {
-                    $(unfilledStar).attr('src', 'https://image.flaticon.com/icons/svg/149/149222.svg') 
+                    unfilledStarsArr.forEach(unfilledStar => {
+                        $(unfilledStar).attr('src', 'https://image.flaticon.com/icons/svg/149/149222.svg') 
+                    })
                 }
             )
         })
