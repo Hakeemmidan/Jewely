@@ -86,9 +86,17 @@ export class ReviewForm extends React.Component {
                             type="number"
                             value={this.state.rating}
                             onChange={this.update('rating')}/> */}
-                            <img className="test">
+                        <div className="rating-stars">
+                            <img 
+                                src="https://image.flaticon.com/icons/svg/149/149222.svg"/>
+                            <img 
+                                src="https://image.flaticon.com/icons/svg/149/149222.svg"/>
+                            <img 
+                                src="https://image.flaticon.com/icons/svg/149/149222.svg"/>
+                            <img
+                                src="https://image.flaticon.com/icons/svg/149/149222.svg"/>
+                        </div>
 
-                            </img>
                         <br />
                     </label>
 
