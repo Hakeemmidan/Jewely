@@ -15,7 +15,7 @@ const mapStateToProps = (state) => {
         errors: errors
     }
 
-    
+
     const formType = 'Create Review'
     return { review, formType }
 }
