@@ -40,7 +40,8 @@ class Api::ReviewsController < ApplicationController
             :body,
             :rating,
             :author_id,
-            :product_id
+            :product_id,
+            :author_username
         )
     end
 end
