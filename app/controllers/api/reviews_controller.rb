@@ -3,6 +3,9 @@ class Api::ReviewsController < ApplicationController
 
     def create
         @review = Review.new(review_params)
+        if (@review.author_id)
+            @review.author_username = User.find(@review.author_id).username
+        end
         
         if @review.save
             render :show
