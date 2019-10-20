@@ -8,6 +8,7 @@ export class ProductShow extends React.Component {
         this.handleAddToCart = this.handleAddToCart.bind(this)
         this.imageShow = this.imageShow.bind(this)
         this.renderReviews = this.renderReviews.bind(this)
+        this.calculateProductAverageRating = this.calculateProductAverageRating.bind(this)
     }
 
     componentDidMount() {
@@ -80,6 +81,17 @@ export class ProductShow extends React.Component {
         } else {
             return null
         }
+    }
+
+    calculateProductAverageRating() {
+        let ratingsSum = 0
+        let ratingsCount = 0
+        this.props.product.reviews.map(review => {
+            ratingsSum += review.rating
+            ratingsCount += 1
+        })
+
+        return parseFloat(ratingsSum / ratingsCount).toFixed(2)
     }
 
     renderStarRating(rating) {
