@@ -9,6 +9,7 @@ export class ProductShow extends React.Component {
         this.imageShow = this.imageShow.bind(this)
         this.renderReviews = this.renderReviews.bind(this)
         this.calculateProductAverageRating = this.calculateProductAverageRating.bind(this)
+        this.renderAverageStarRating = this.renderAverageStarRating.bind(this)
     }
 
     componentDidMount() {
@@ -94,7 +95,40 @@ export class ProductShow extends React.Component {
         return parseFloat(ratingsSum / ratingsCount).toFixed(2)
     }
 
-    renderStarRating(rating) {
+    renderAverageStarRating() {
+        const avgRatingFloat = this.calculateProductAverageRating()
+        const avgRatingInt = parseInt(avgRatingFloat)
+
+        const stars = []
+        for (let i = 0; i < avgRatingInt; i++) {
+            stars.push(
+                <img
+                    className="product-show-average-rating-star"
+                    src="https://image.flaticon.com/icons/svg/148/148841.svg" />
+            )
+        }
+
+        for (let j = 0; j < 5 - avgRatingInt; j++) {
+            stars.push(
+                <img
+                    className="product-show-average-rating-star"
+                    src="https://image.flaticon.com/icons/svg/149/149222.svg" />
+            )
+        }
+
+        return (
+            <div>
+                <div>
+                    {stars.map(star => star)}
+                </div>
+                <div>
+                    ({avgRatingFloat})
+                </div>
+            </div>
+        )
+    }
+
+    renderReviewStarRating(rating) {
         const stars = []
         for (let i = 0; i < rating; i++) {
             stars.push(
@@ -112,9 +146,7 @@ export class ProductShow extends React.Component {
             )
         }
 
-        return stars.map(star => {
-            return star
-        })
+        return stars.map(star => star)
     }
 
     renderReviews() {
@@ -144,7 +176,7 @@ export class ProductShow extends React.Component {
                             </div>
                             <div>
                                 <br/>
-                                    {this.renderStarRating(review.rating)}
+                                    {this.renderReviewStarRating(review.rating)}
                                 <br/>
                             </div>
                         </li>
@@ -186,6 +218,10 @@ export class ProductShow extends React.Component {
                         <h1 className="product-show-title">
                             {product.title}
                         </h1>
+
+                        <div>
+                            {this.renderAverageStarRating()}
+                        </div>
 
                         <div>
                             <span className="product-show-price">
