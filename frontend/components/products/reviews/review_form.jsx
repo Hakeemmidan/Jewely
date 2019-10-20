@@ -8,6 +8,7 @@ export class ReviewForm extends React.Component {
         this.update = this.update.bind(this);
         // this.handleRemove = this.handleRemove.bind(this);
         this.update = this.update.bind(this);
+        this.triggerAction = this.triggerAction.bind(this);
     }
 
     componentDidMount() {
@@ -51,15 +52,23 @@ export class ReviewForm extends React.Component {
         return (e) => this.setState({ [field]: e.target.value });
     }
 
-    handleSubmit(e) {
-        e.preventDefault();
-
+    triggerAction() {
         this.props.action(this.state)
             .then(() =>
                 location.reload(true),
                 (err) => {
                     console.log(err)
-            })
+                })
+    }
+
+    handleSubmit(e) {
+        e.preventDefault();
+
+        const rating = Array.from($('.filled')).length
+
+        this.setState({
+            rating
+        }, this.triggerAction)
     }
 
 
