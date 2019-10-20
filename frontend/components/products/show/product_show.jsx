@@ -82,6 +82,33 @@ export class ProductShow extends React.Component {
         }
     }
 
+    renderStarRating(rating) {
+        // Display this as stars
+        // input : int
+        // output : collection of 5 images
+        const stars = []
+        const unfilledStarCount = 0;
+        for (let i = 0; i < rating; i++) {
+            stars.push(
+                <img
+                    className="product-show-review-rating-star"
+                    src="https://image.flaticon.com/icons/svg/148/148841.svg" /> 
+            )
+        }
+        
+        for (let j = 0; j < 5 - rating; j++) {
+            stars.push(
+                <img
+                    className="product-show-review-rating-star"
+                    src="https://image.flaticon.com/icons/svg/149/149222.svg" /> 
+            )
+        }
+
+        return stars.map(star => {
+            return star
+        })
+    }
+
     renderReviews() {
         return (
             <ul>
@@ -109,7 +136,7 @@ export class ProductShow extends React.Component {
                             </div>
                             <div>
                                 <br/>
-                                    {review.rating}
+                                    {this.renderStarRating(review.rating)}
                                 <br/>
                             </div>
                         </li>
