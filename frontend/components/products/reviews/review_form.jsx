@@ -16,27 +16,28 @@ export class ReviewForm extends React.Component {
         unfilledStarsArr.map((unfilledStar, idx) => {
             $(unfilledStar).hover(
                 () => {
-                    // If someone hovers, highlight all the stars from the one highlighted and the ones before it
                     unfilledStarsArr.slice(0, idx + 1).map( unfilledStar => {
                         $(unfilledStar).attr('src', 'https://image.flaticon.com/icons/svg/148/148841.svg') 
                     })
                 }, () => {
-                    // If someone goes away from hover, then remove highlighting from all the stars
                     unfilledStarsArr.forEach(unfilledStar => {
-                        $(unfilledStar).attr('src', 'https://image.flaticon.com/icons/svg/149/149222.svg') 
+                        if ($(unfilledStar).is('.unfilled')) {
+                            // remove filling
+                            $(unfilledStar).attr('src', 'https://image.flaticon.com/icons/svg/149/149222.svg') 
+                        }
                     })
                 }
             )
 
             $(unfilledStar).click(
                 () => {
-                    // remove the unfilled class and change it to filled
-                    // remove the hover affect from all stars before currently clicked on star
                     unfilledStarsArr.slice(0, idx + 1).map(unfilledStar => {
-                        $(unfilledStar).off('mouseenter mouseleave')
                         $(unfilledStar).attr('src', 'https://image.flaticon.com/icons/svg/148/148841.svg')
                         $(unfilledStar).removeClass('unfilled').addClass('filled')
-                        console.log(unfilledStar)
+                    })
+                    unfilledStarsArr.slice(idx + 1).map(unfilledStar => {
+                        $(unfilledStar).attr('src', 'https://image.flaticon.com/icons/svg/149/149222.svg')
+                        $(unfilledStar).removeClass('filled').addClass('unfilled')
                     })
                 }
             )
