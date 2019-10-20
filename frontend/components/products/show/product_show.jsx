@@ -83,11 +83,7 @@ export class ProductShow extends React.Component {
     }
 
     renderStarRating(rating) {
-        // Display this as stars
-        // input : int
-        // output : collection of 5 images
         const stars = []
-        const unfilledStarCount = 0;
         for (let i = 0; i < rating; i++) {
             stars.push(
                 <img
