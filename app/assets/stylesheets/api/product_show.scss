@@ -135,11 +135,38 @@
 }
 
 .product-show-write-review-button {
+    all: initial;
+    * {
+        all: unset;
+    }
+    display: block;
+    cursor: pointer;
+    border: 1px solid grey;
+    text-decoration: none;
+    border-radius: 3px;
+    color: black;
+    margin-top: 7px;
+    text-align: center;
+    background-color: white;
+    font-size: 15px;
+    line-height: 1.2;
+    width: 10vw;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border: 1px solid gray;
+    display: inline-block;
+    font-weight: bold;
+    font-family: 'Poppins', sans-serif;
+    white-space: nowrap;
     position: absolute;
     bottom: 0;
     left: 0;
     margin-left: 18px;
     margin-bottom: 20px;
+}
+
+.product-show-write-review-button:hover {
+    opacity: 0.6;
 }
 
 .product-show-lower {
