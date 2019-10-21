@@ -51,3 +51,31 @@
     margin-top: 10px;
     margin-bottom: 75px;
 }
+
+.review-form-submit-button {
+    all: initial;
+    * {
+        all: unset;
+    }
+    cursor: pointer;
+    border-radius: 3px;
+    text-align: center;
+    background-color: black;
+    color: white;
+    font-size: 15px;
+    line-height: 1.2;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border: 1px solid gray;
+    display: inline-block;
+    font-weight: bold;
+    font-family: 'Poppins', sans-serif;
+    white-space: nowrap;
+    margin-top: 10px;
+}
+
+.review-form-submit-button:hover {
+    opacity: 0.8;
+}

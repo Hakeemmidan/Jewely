@@ -151,6 +151,7 @@ export class ReviewForm extends React.Component {
                     </label>
 
                     <input
+                        className="review-form-submit-button"
                         type="submit"
                         value={this.props.formType} />
                 </form>
