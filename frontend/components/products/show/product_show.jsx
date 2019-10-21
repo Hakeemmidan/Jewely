@@ -95,7 +95,7 @@ export class ProductShow extends React.Component {
         let ratingsSum = 0
         let ratingsCount = 0
         this.props.product.reviews.map(review => {
-            ratingsSum += review.rating
+            ratingsSum += parseInt(review.rating)
             ratingsCount += 1
         })
 
