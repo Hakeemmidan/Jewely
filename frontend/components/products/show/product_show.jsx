@@ -220,7 +220,7 @@ export class ProductShow extends React.Component {
                         </h1>
 
                         <div>
-                            {this.renderAverageStarRating()}
+                            {this.props.product.reviews.length > 0 ? this.renderAverageStarRating() : null}
                         </div>
 
                         <div>
