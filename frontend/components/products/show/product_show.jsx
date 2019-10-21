@@ -260,6 +260,8 @@ export class ProductShow extends React.Component {
                     </div>
                 </div>
 
+                <hr className="product-show-divider"/>
+
                 <div className="product-show-lower">
                     <div className="product-show-column product-show-column1">
                         <p className="product-show-description-details-label">

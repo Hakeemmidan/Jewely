@@ -109,6 +109,7 @@
 
 .product-listing {
     padding-top: 30px;
+    padding-bottom: 20px;
     display: flex;
     margin-right: 10%;
     margin-left: 10%;
@@ -131,6 +132,7 @@
 }
 
 .product-show-lower {
+    margin-top: 20px;
     display: flex;
     box-sizing: border-box;
     clear: both;
@@ -149,6 +151,11 @@
 .product-show-description-details-label {
     margin: 0; 
     font-weight: bolder;
+}
+
+.product-show-divider {
+    width: 80%;
+    border-top: 1px solid whitesmoke;
 }
 
 // ------- product show lower details (doesn't include comments) END ------- //
