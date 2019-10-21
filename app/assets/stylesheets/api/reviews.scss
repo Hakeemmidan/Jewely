@@ -29,3 +29,19 @@
 .reviews-count {
     font-size: 13px;
 }
+
+.product-show-review-li {
+    list-style-type: none;
+}
+
+.product-show-review-username {
+    color: black;
+}
+
+.product-show-review-username:hover {
+    color: gray;
+}
+
+.product-show-review-username-and-date-container {
+    display: flex;
+}

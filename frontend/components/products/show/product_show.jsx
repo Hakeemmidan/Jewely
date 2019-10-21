@@ -154,29 +154,28 @@ export class ProductShow extends React.Component {
             <ul>
                 {this.props.product.reviews.map(review => {
                     return (
-                        <li>
-                            <div>
-                                <br/>
-                                {review.author_username}
+                        <li className="product-show-review-li">
+                            <div className="product-show-review-username-and-date-container">
+                                
+                                <a
+                                    href="#"
+                                    className="product-show-review-username">
+                                    {review.author_username}
+                                </a>
+                                &nbsp;
+                                &nbsp;
+                                <div>
+                                    {review.created_at}
+                                </div>
                                 <br/>
                             </div>
 
                             <div>
-                                <br/>
-                                    <b>
-                                        {review.title}
-                                    </b>
-                                <br/>
+                                {this.renderReviewStarRating(review.rating)}
                             </div>
 
                             <div>
-                                <br/>
-                                    {review.body}
-                                <br/>
-                            </div>
-                            <div>
-                                <br/>
-                                    {this.renderReviewStarRating(review.rating)}
+                                {review.body}
                                 <br/>
                             </div>
                         </li>
@@ -273,10 +272,10 @@ export class ProductShow extends React.Component {
                     </div>
 
                     <div className="product-show-column2">
+                        {this.renderReviews()}
                         <button onClick={() => this.props.openModal('create review', this.props.product.id)}>
                             Write a review
                         </button>
-                        {this.renderReviews()}
                     </div>
                 </div>
             </div>
