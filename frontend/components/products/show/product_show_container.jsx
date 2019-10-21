@@ -10,7 +10,6 @@ const mapStateToProps = (state, ownProps) => {
     return {
         product: state.entities.products[ownProps.match.params.productId],
         currentUserId: state.session.id,
-        seller: Object.values(state.entities.users)[0]
     }
 }
 

@@ -5,6 +5,7 @@ import { Carousel } from "react-responsive-carousel";
 export class ProductShow extends React.Component {
     constructor(props) {
         super(props)
+        this.state = {}
         this.handleAddToCart = this.handleAddToCart.bind(this)
         this.imageShow = this.imageShow.bind(this)
         this.renderReviews = this.renderReviews.bind(this)
@@ -13,7 +14,13 @@ export class ProductShow extends React.Component {
     }
 
     componentDidMount() {
-        this.props.fetchProduct(this.props.match.params.productId)
+        this.props.fetchProduct(this.props.match.params.productId).then(action => {
+            this.props.fetchUser(action.product.seller_id).then(action => {
+                this.setState({
+                    seller: action.user
+                })
+            })
+        })
     }
     
     componentDidUpdate(prevProps) {
@@ -40,7 +47,7 @@ export class ProductShow extends React.Component {
     }
     
     renderSellerUsername() {
-        const seller = this.props.seller
+        const seller = this.state.seller
         return (
             <div>
                 <Link
@@ -212,7 +219,7 @@ export class ProductShow extends React.Component {
 
 
                     <div className="listing-right-column">
-                        {this.props.seller ? this.renderSellerUsername() : null}
+                        {this.state.seller ? this.renderSellerUsername() : null}
 
                         <h1 className="product-show-title">
                             {product.title}
