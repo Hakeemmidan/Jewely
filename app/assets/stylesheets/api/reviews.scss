@@ -15,11 +15,11 @@
 }
 
 .product-show-review-rating-star {
-    width: 20px;
+    width: 14px;
 }
 
 .product-show-average-rating-star {
-    width: 15px;
+    width: 18px;
 }
 
 .product-show-avg-rating-container {
@@ -44,4 +44,8 @@
 
 .product-show-review-username-and-date-container {
     display: flex;
+}
+
+.product-show-reviews-ul {
+    padding: 0px;
 }

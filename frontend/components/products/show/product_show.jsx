@@ -151,7 +151,7 @@ export class ProductShow extends React.Component {
 
     renderReviews() {
         return (
-            <ul>
+            <ul className="product-show-reviews-ul">
                 {this.props.product.reviews.map(review => {
                     return (
                         <li className="product-show-review-li">
