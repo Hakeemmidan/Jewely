@@ -6,7 +6,6 @@ import { fetchReview, updateReview, removeReview } from '../../../actions/review
 
 const mapStateToProps = (state, ownProps) => {
     const defaultReview = {
-        title: '',
         body: '',
         rating: 0,
         author_id: state.session.id,

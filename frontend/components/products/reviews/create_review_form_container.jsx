@@ -6,7 +6,6 @@ const mapStateToProps = (state) => {
     const errorsArr = state.errors.review
     const errors = errorsArr ? errorsArr : [];
     const review = {
-        title: '',
         body: '',
         rating: 0,
         author_id: state.session.id,
