@@ -1,7 +1,7 @@
 class Review < ApplicationRecord
-    validates :title, :body, presence: true
+    validates :body, :author_username, presence: true
     validates :rating, inclusion: { in: (1..5) }
-    validates :author_id, :product_id, :author_username, presence: true
+    validates :author_id, :product_id, presence: true
 
 
     belongs_to :author,
