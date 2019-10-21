@@ -108,15 +108,6 @@ export class ReviewForm extends React.Component {
             <div className="review_form_div">
                 <form
                     onSubmit={this.handleSubmit}>
-                    <label>Title
-                        <br />
-                        <input 
-                            type="text"
-                            value={this.state.title}
-                            onChange={this.update('title')}/>
-                        <br />
-                    </label>
-
                     <label>Body
                         <br />
                         <input
