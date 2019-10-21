@@ -185,6 +185,10 @@ export class ProductShow extends React.Component {
                                 <br/>
                             </div>
                             <br/>
+
+                            <img
+                                className="review-edit-button"
+                                src="https://image.flaticon.com/icons/svg/1159/1159876.svg"/>
                         </li>
                     )
                 })}

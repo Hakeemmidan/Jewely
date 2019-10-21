@@ -4,6 +4,9 @@
 .review_form_div {
     background-color: white;
     padding: 30px;
+    border-radius: 10px;
+    padding-left: 40px;
+    padding-right: 40px;
 }
 
 .rating-star {
@@ -32,6 +35,19 @@
 
 .product-show-review-li {
     list-style-type: none;
+    position: relative;
+}
+
+.review-edit-button {
+    position: absolute;
+    cursor: pointer;
+    width: 20px;
+    top: 0;
+    right: 0;
+}
+
+.review-edit-button:hover {
+    opacity: 0.5;
 }
 
 .product-show-review-username {
