@@ -96,8 +96,7 @@ export class ProductShow extends React.Component {
     }
 
     renderAverageStarRating() {
-        const avgRatingFloat = this.calculateProductAverageRating()
-        const avgRatingInt = parseInt(avgRatingFloat)
+        const avgRatingInt = parseInt(this.calculateProductAverageRating())
 
         const stars = []
         for (let i = 0; i < avgRatingInt; i++) {
@@ -117,12 +116,13 @@ export class ProductShow extends React.Component {
         }
 
         return (
-            <div>
+            <div className="product-show-avg-rating-container">
                 <div>
                     {stars.map(star => star)}
                 </div>
-                <div>
-                    ({avgRatingFloat})
+                &nbsp;
+                <div className="reviews-count">
+                    ({this.props.product.reviews.length})
                 </div>
             </div>
         )
