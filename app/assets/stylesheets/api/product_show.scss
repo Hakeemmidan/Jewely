@@ -165,6 +165,23 @@
     margin-bottom: 20px;
 }
 
+.product-show-write-review-signin-requirement {
+    color: gray;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    margin-left: 18px;
+    margin-bottom: 20px;
+}
+
+.review-signin-requirement-links {
+    color: gray;
+}
+.review-signin-requirement-links:hover {
+    opacity: 0.8;
+}
+
+
 .product-show-write-review-button:hover {
     opacity: 0.6;
 }
