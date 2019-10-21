@@ -156,12 +156,11 @@ export class ProductShow extends React.Component {
                     return (
                         <li className="product-show-review-li">
                             <div className="product-show-review-username-and-date-container">
-                                
-                                <a
-                                    href="#"
+                                <Link 
+                                    to={`/users/${review.author_id}`}
                                     className="product-show-review-username">
-                                    {review.author_username}
-                                </a>
+                                        {review.author_username}
+                                </Link>
                                 &nbsp;
                                 &nbsp;
                                 <div>
@@ -178,6 +177,7 @@ export class ProductShow extends React.Component {
                                 {review.body}
                                 <br/>
                             </div>
+                            <br/>
                         </li>
                     )
                 })}
