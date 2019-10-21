@@ -108,15 +108,6 @@ export class ReviewForm extends React.Component {
             <div className="review_form_div">
                 <form
                     onSubmit={this.handleSubmit}>
-                    <label>Body
-                        <br />
-                        <input
-                            type="text"
-                            value={this.state.body}
-                            onChange={this.update('body')} />
-                        <br />
-                    </label>
-
                     <label>Rating
                         <br />
                         {/* <input
@@ -127,24 +118,35 @@ export class ReviewForm extends React.Component {
                             <img
                                 alt="1"
                                 className="rating-star unfilled 1"
-                                src="https://image.flaticon.com/icons/svg/149/149222.svg" /> 
+                                src="https://image.flaticon.com/icons/svg/149/149222.svg" />
                             <img
                                 alt="2"
                                 className="rating-star unfilled 2"
-                                src="https://image.flaticon.com/icons/svg/149/149222.svg" /> 
+                                src="https://image.flaticon.com/icons/svg/149/149222.svg" />
                             <img
                                 alt="3"
                                 className="rating-star unfilled 3"
-                                src="https://image.flaticon.com/icons/svg/149/149222.svg" /> 
+                                src="https://image.flaticon.com/icons/svg/149/149222.svg" />
                             <img
                                 alt="4"
                                 className="rating-star unfilled 4"
-                                src="https://image.flaticon.com/icons/svg/149/149222.svg" /> 
+                                src="https://image.flaticon.com/icons/svg/149/149222.svg" />
                             <img
                                 alt="5"
                                 className="rating-star unfilled 5"
-                                src="https://image.flaticon.com/icons/svg/149/149222.svg" /> 
+                                src="https://image.flaticon.com/icons/svg/149/149222.svg" />
                         </div>
+                        <br />
+                    </label>
+
+                    <label>Body
+                        <br />
+                        <textarea
+                            rows="10"
+                            cols="50"
+                            type="text"
+                            value={this.state.body}
+                            onChange={this.update('body')} />
                         <br />
                     </label>
 
