@@ -270,7 +270,7 @@ export class ProductShow extends React.Component {
 
                     <div className="product-show-column2">
                         <b>
-                            Reviews:
+                            Reviews ({this.calculateProductAverageRating()} average):
                         </b>
                         {this.renderReviews()}
                         <button
