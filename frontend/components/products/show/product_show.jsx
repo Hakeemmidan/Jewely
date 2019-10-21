@@ -242,9 +242,6 @@ export class ProductShow extends React.Component {
                                 <option value="5">5</option>
                             </select>
                         </div>
-
-                        {/* {this.hasProductInCart() ? this.addToCartAgainButton() : this.addToCartButton()} */}
-                        {/* Task : ^^^ Get back to this after asking TA what is wrong with it */}
                             <Link to='/cart'>
                                 <button
                                     className="product-show-add-to-cart-button"
@@ -263,18 +260,23 @@ export class ProductShow extends React.Component {
 
                 <div className="product-show-lower">
                     <div className="product-show-column product-show-column1">
-                        <p className="product-show-description-details-label">
-                            Details:
-                        </p> 
+                        <b>
+                            Details: 
+                        </b>
                         <p className="product-show-description">
                             {product.description}
                         </p>
                     </div>
 
                     <div className="product-show-column2">
+                        <b>
+                            Reviews:
+                        </b>
                         {this.renderReviews()}
-                        <button onClick={() => this.props.openModal('create review', this.props.product.id)}>
-                            Write a review
+                        <button
+                            className="product-show-write-review-button" 
+                            onClick={() => this.props.openModal('create review', this.props.product.id)}>
+                                Write a review
                         </button>
                     </div>
                 </div>

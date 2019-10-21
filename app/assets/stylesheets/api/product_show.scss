@@ -131,6 +131,15 @@
     width: 50%;
     padding-left: 18px;
     border-left: 1px solid whitesmoke;
+    position: relative;
+}
+
+.product-show-write-review-button {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    margin-left: 18px;
+    margin-bottom: 20px;
 }
 
 .product-show-lower {
@@ -148,11 +157,7 @@
 
 .product-show-description {
     margin: 0px;
-}
-
-.product-show-description-details-label {
-    margin: 0; 
-    font-weight: bolder;
+    margin-top: 10px;
 }
 
 .product-show-divider {
