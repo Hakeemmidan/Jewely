@@ -165,7 +165,7 @@ export class ProductShow extends React.Component {
                                 &nbsp;
                                 &nbsp;
                                 <div>
-                                    {review.created_at}
+                                    {new Date(review.created_at.slice(0, 10)).toDateString().slice(4)}
                                 </div>
                                 <br/>
                             </div>
