@@ -5,11 +5,14 @@ import { fetchReview, updateReview, removeReview } from '../../../actions/review
 
 
 const mapStateToProps = (state, ownProps) => {
+    const errorsArr = state.errors.review
+    const errors = errorsArr ? errorsArr : [];
     const defaultReview = {
         body: '',
         rating: 0,
         author_id: state.session.id,
-        product_id: Object.values(state.entities.products)[Object.values(state.entities.products).length - 1].id
+        product_id: Object.values(state.entities.products)[Object.values(state.entities.products).length - 1].id,
+        errors: errors
     }
     
     const review = state.entities.reviews[ownProps.match.params.reviewId] || defaultReview
