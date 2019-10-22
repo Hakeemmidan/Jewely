@@ -10,6 +10,7 @@ const mapStateToProps = (state) => {
         seller: Object.values(state.entities.users)[0]
     }
 }
+
 const mapDispatchToProps = (dispatch) => {
     return {
         fetchProducts: () => dispatch(fetchProducts()),

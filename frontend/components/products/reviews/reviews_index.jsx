@@ -2,8 +2,6 @@ import React from 'react'
 import { Link } from 'react-router-dom';
 import { openModal } from '../../../actions/modal_actions';
 
-// This will become a presentational component
-    // We will fetch the reviews in product show
     
 export class ReviewsIndex extends React.Component {
     constructor(props) {

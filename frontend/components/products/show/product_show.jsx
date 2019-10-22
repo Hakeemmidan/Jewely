@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Carousel } from "react-responsive-carousel";
-import { ReviewsIndex } from '../reviews/reviews_index';
+import ReviewsIndexContainer from '../reviews/reviews_index_container';
 
 
 export class ProductShow extends React.Component {
@@ -223,7 +223,7 @@ export class ProductShow extends React.Component {
                         <b>
                             Reviews ({this.calculateProductAverageRating()} average):
                         </b>
-                        <ReviewsIndex 
+                        <ReviewsIndexContainer 
                             currentUserId={this.props.currentUserId}
                             reviews={this.props.product.reviews} />
                     </div>
