@@ -188,6 +188,7 @@ export class ProductShow extends React.Component {
 
                             <img
                                 className="review-edit-button"
+                                onClick={() => this.props.openModal('edit review')}
                                 src="https://image.flaticon.com/icons/svg/1159/1159876.svg"/>
                         </li>
                     )
@@ -289,7 +290,7 @@ export class ProductShow extends React.Component {
                             this.props.currentUserId ? 
                             <button
                                 className="product-show-write-review-button" 
-                                onClick={() => this.props.openModal('create review', this.props.product.id)}>
+                                onClick={() => this.props.openModal('create review')}>
                                     Write a review
                             </button> :
                             <p className="product-show-write-review-signin-requirement">
