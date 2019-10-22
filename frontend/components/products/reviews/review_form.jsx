@@ -20,6 +20,12 @@ class ReviewForm extends React.Component {
     }
 
     componentDidMount() {
+        const product_id = parseInt(this.props.location.pathname.split('/')[2])
+        this.setState({
+            product_id
+        })
+
+        debugger
         const unfilledStarsArr = Array.from($('.rating-star.unfilled'));
 
         unfilledStarsArr.map((unfilledStar, idx) => {
