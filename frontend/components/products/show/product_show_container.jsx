@@ -4,7 +4,6 @@ import { fetchProduct } from '../../../actions/product_actions';
 import { fetchUser } from '../../../actions/user_actions';
 import { fetchCartBadge } from '../../../actions/cart_actions';
 import { ProductShow } from './product_show';
-import { fetchReviews } from '../../../actions/review_actions';
 
 const mapStateToProps = (state, ownProps) => {
     return {
@@ -17,8 +16,7 @@ const mapDispatchToProps = (dispatch) => {
     return {
         fetchProduct: (id) => dispatch(fetchProduct(id)),
         fetchUser: (id) => dispatch(fetchUser(id)),
-        fetchCartBadge: () => dispatch(fetchCartBadge()),
-        fetchReviews: (id) => dispatch(fetchReviews(id))
+        fetchCartBadge: () => dispatch(fetchCartBadge())
     }
 }
 

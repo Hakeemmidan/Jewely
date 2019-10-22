@@ -223,7 +223,8 @@ export class ProductShow extends React.Component {
                         <b>
                             Reviews ({this.calculateProductAverageRating()} average):
                         </b>
-                        <ReviewsIndexContainer 
+                        <ReviewsIndexContainer
+                            productId={product.id}
                             currentUserId={this.props.currentUserId}
                             reviews={this.props.product.reviews} />
                     </div>

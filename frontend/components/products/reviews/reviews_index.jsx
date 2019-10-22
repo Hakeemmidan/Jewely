@@ -9,6 +9,10 @@ export class ReviewsIndex extends React.Component {
         this.renderReviewStarRating = this.renderReviewStarRating.bind(this)
     }
 
+    componentDidMount() {
+        this.props.fetchReviews(this.props.productId)
+    }
+
     renderReviewStarRating(rating) {
         const stars = []
         for (let i = 0; i < rating; i++) {
@@ -31,6 +35,8 @@ export class ReviewsIndex extends React.Component {
     }
 
     render() {
+        const reviews = this.props.reviews
+
         return (
             <div>
                 <ul className="product-show-reviews-ul">
@@ -64,7 +70,7 @@ export class ReviewsIndex extends React.Component {
                                 {/* <Link to={`/reviews/${review.id}`}> */}
                                 <img
                                     className="review-edit-button"
-                                    onClick={() => openModal('edit review')}
+                                    onClick={() => this.props.openModal('edit review')}
                                     src="https://image.flaticon.com/icons/svg/1159/1159876.svg" />
                                 {/* </Link> */}
                             </li>
@@ -75,7 +81,7 @@ export class ReviewsIndex extends React.Component {
                     this.props.currentUserId ?
                         <button
                             className="product-show-write-review-button"
-                            onClick={() => openModal('create review')}>
+                            onClick={() => this.props.openModal('create review')}>
                             Write a review
                                     </button> :
                         <p className="product-show-write-review-signin-requirement">
