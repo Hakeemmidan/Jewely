@@ -186,10 +186,12 @@ export class ProductShow extends React.Component {
                             </div>
                             <br/>
 
-                            <img
-                                className="review-edit-button"
-                                onClick={() => this.props.openModal('edit review')}
-                                src="https://image.flaticon.com/icons/svg/1159/1159876.svg"/>
+                            {/* <Link to={`/reviews/${review.id}`}> */}
+                                <img
+                                    className="review-edit-button"
+                                    onClick={() => this.props.openModal('edit review')}
+                                    src="https://image.flaticon.com/icons/svg/1159/1159876.svg" />
+                            {/* </Link> */}
                         </li>
                     )
                 })}

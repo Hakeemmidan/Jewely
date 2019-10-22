@@ -1,5 +1,5 @@
 import { connect } from 'react-redux'
-import { ReviewForm } from './review_form'
+import ReviewForm from './review_form'
 import { createReview } from '../../../actions/review_actions'
 
 const mapStateToProps = (state) => {

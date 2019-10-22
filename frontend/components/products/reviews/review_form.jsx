@@ -1,6 +1,14 @@
 import React from 'react'
+import PropTypes from "prop-types";
+import { withRouter } from 'react-router-dom';
 
-export class ReviewForm extends React.Component {
+class ReviewForm extends React.Component {
+    static propTypes = {
+        match: PropTypes.object.isRequired,
+        location: PropTypes.object.isRequired,
+        history: PropTypes.object.isRequired
+    };
+
     constructor(props) {
         super(props)
         this.state = this.props.review
@@ -159,3 +167,5 @@ export class ReviewForm extends React.Component {
         )
     }
 }
+
+export default withRouter(ReviewForm)
