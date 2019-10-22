@@ -29,7 +29,7 @@ const deleteReview = (reviewId) => {
 // Thunk action creators vvv
 
 export const fetchReview = (id) => dispatch => {
-    return ProductAPIUtil.fetchReview(id)
+    return ReviewAPIUtil.fetchReview(id)
         .then(review => dispatch(receiveReview(review)))
 }
 
