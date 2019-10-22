@@ -1,7 +1,7 @@
 class Api::ReviewsController < ApplicationController
     before_action :require_signed_in!
 
-    def inedx
+    def index
         if params[:product_id]
             @reviews = Product.find(params[:product_id]).reviews
         end
