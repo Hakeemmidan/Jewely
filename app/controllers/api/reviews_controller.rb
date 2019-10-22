@@ -1,6 +1,12 @@
 class Api::ReviewsController < ApplicationController
     before_action :require_signed_in!
 
+    def inedx
+        if params[:product_id]
+            @reviews = Product.find(params[:product_id]).reviews
+        end
+    end
+
     def create
         @review = Review.new(review_params)
         
