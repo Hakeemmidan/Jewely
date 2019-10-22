@@ -25,7 +25,6 @@ class ReviewForm extends React.Component {
             product_id
         })
 
-        debugger
         const unfilledStarsArr = Array.from($('.rating-star.unfilled'));
 
         unfilledStarsArr.map((unfilledStar, idx) => {
@@ -57,9 +56,6 @@ class ReviewForm extends React.Component {
                 }
             )
         })
-
-
-
     }
 
     update(field) {
@@ -69,10 +65,7 @@ class ReviewForm extends React.Component {
     triggerAction() {
         this.props.action(this.state)
             .then(() =>
-                location.reload(true),
-                (err) => {
-                    console.log(err)
-                })
+                this.props.closeModal())
     }
 
     handleSubmit(e) {
