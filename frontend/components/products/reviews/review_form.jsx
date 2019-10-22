@@ -65,7 +65,9 @@ class ReviewForm extends React.Component {
     triggerAction() {
         this.props.action(this.state)
             .then(() =>
-                this.props.closeModal())
+                    location.reload(false),
+                 errs =>
+                    console.log(errs) )
     }
 
     handleSubmit(e) {
