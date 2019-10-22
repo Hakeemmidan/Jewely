@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
+import { openModal } from '../../../actions/modal_actions';
 
 // This will become a presentational component
     // We will fetch the reviews in product show
@@ -33,44 +34,68 @@ export class ReviewsIndex extends React.Component {
 
     render() {
         return (
-            <ul className="product-show-reviews-ul">
-                {this.props.reviews.map(review => {
-                    return (
-                        <li className="product-show-review-li">
-                            <div className="product-show-review-username-and-date-container">
-                                <Link
-                                    to={`/users/${review.author_id}`}
-                                    className="product-show-review-username">
-                                    {review.author_username}
-                                </Link>
-                                &nbsp;
-                                &nbsp;
-                                        <div>
-                                    {new Date(review.created_at.slice(0, 10)).toDateString().slice(4)}
+            <div>
+                <ul className="product-show-reviews-ul">
+                    {this.props.reviews.map(review => {
+                        return (
+                            <li className="product-show-review-li">
+                                <div className="product-show-review-username-and-date-container">
+                                    <Link
+                                        to={`/users/${review.author_id}`}
+                                        className="product-show-review-username">
+                                        {review.author_username}
+                                    </Link>
+                                    &nbsp;
+                                    &nbsp;
+                                            <div>
+                                        {new Date(review.created_at.slice(0, 10)).toDateString().slice(4)}
+                                    </div>
+                                    <br />
+                                </div>
+
+                                <div>
+                                    {this.renderReviewStarRating(review.rating)}
+                                </div>
+
+                                <div>
+                                    {review.body}
+                                    <br />
                                 </div>
                                 <br />
-                            </div>
 
-                            <div>
-                                {this.renderReviewStarRating(review.rating)}
-                            </div>
-
-                            <div>
-                                {review.body}
-                                <br />
-                            </div>
-                            <br />
-
-                            {/* <Link to={`/reviews/${review.id}`}> */}
-                            <img
-                                className="review-edit-button"
-                                onClick={() => this.props.openModal('edit review')}
-                                src="https://image.flaticon.com/icons/svg/1159/1159876.svg" />
-                            {/* </Link> */}
-                        </li>
-                    )
-                })}
-            </ul>
+                                {/* <Link to={`/reviews/${review.id}`}> */}
+                                <img
+                                    className="review-edit-button"
+                                    onClick={() => openModal('edit review')}
+                                    src="https://image.flaticon.com/icons/svg/1159/1159876.svg" />
+                                {/* </Link> */}
+                            </li>
+                        )
+                    })}
+                </ul>
+                {
+                    this.props.currentUserId ?
+                        <button
+                            className="product-show-write-review-button"
+                            onClick={() => openModal('create review')}>
+                            Write a review
+                                    </button> :
+                        <p className="product-show-write-review-signin-requirement">
+                            Please &nbsp;
+                            <Link
+                                to="/login"
+                                className="review-signin-requirement-links">
+                                login
+                            </Link>
+                            &nbsp; or &nbsp;
+                            <Link
+                                to="/signup"
+                                className="review-signin-requirement-links">
+                                signup
+                            </Link> to write a review
+                        </p>
+                }
+            </div>
         )
     }
 }

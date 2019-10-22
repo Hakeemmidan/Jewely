@@ -223,30 +223,9 @@ export class ProductShow extends React.Component {
                         <b>
                             Reviews ({this.calculateProductAverageRating()} average):
                         </b>
-                        <ReviewsIndex reviews={this.props.product.reviews} />
-
-                        {
-                            this.props.currentUserId ? 
-                            <button
-                                className="product-show-write-review-button" 
-                                onClick={() => this.props.openModal('create review')}>
-                                    Write a review
-                            </button> :
-                            <p className="product-show-write-review-signin-requirement">
-                                Please &nbsp;
-                                <Link
-                                    to="/login"
-                                        className="review-signin-requirement-links">
-                                        login
-                                </Link>
-                                  &nbsp; or &nbsp;
-                                <Link
-                                    to="/signup"
-                                    className="review-signin-requirement-links">
-                                        signup
-                                </Link> to write a review
-                            </p>
-                        }
+                        <ReviewsIndex 
+                            currentUserId={this.props.currentUserId}
+                            reviews={this.props.product.reviews} />
                     </div>
                 </div>
             </div>
