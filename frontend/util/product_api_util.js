@@ -12,6 +12,13 @@ export const fetchProduct = (id) => {
     })
 }
 
+export const fetchReviews = (id) => {
+    return $.ajax({
+        method: 'GET',
+        url: `api/products/${id}/reviews`
+    })
+}
+
 export const createProduct = (formData) => {
     return $.ajax({
         method: 'POST',
