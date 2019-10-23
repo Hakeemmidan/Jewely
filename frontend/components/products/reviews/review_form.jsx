@@ -14,7 +14,6 @@ class ReviewForm extends React.Component {
         this.state = this.props.review
         this.handleSubmit = this.handleSubmit.bind(this);
         this.update = this.update.bind(this);
-        // this.handleRemove = this.handleRemove.bind(this);
         this.update = this.update.bind(this);
         this.triggerAction = this.triggerAction.bind(this);
     }
@@ -97,21 +96,6 @@ class ReviewForm extends React.Component {
     //     }
     // }
 
-    // renderRemoveReviewButton() {
-    //     return (
-    //         <div>
-    //             <button
-    //                 onClick={this.handleRemove}>
-    //                 Remove review
-    //             </button>
-    //         </div>
-    //     )
-    // }
-
-    // handleRemove() {
-    //     this.props.removeReview(this.state.id)
-    // }
-
     render() {
         return (
             <div className="review_form_div">
@@ -119,10 +103,6 @@ class ReviewForm extends React.Component {
                     onSubmit={this.handleSubmit}>
                     <label>Rating
                         <br />
-                        {/* <input
-                            type="number"
-                            value={this.state.rating}
-                            onChange={this.update('rating')}/> */}
                         <div className="rating-stars">
                             <img
                                 alt="1"
