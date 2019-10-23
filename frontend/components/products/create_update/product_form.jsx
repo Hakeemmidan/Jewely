@@ -14,13 +14,9 @@ class ProductForm extends React.Component {
 
     update(field) {
         let that = this
-        // Note : ^ Used to get access to this inside of the anonymous function
         return (e) => {
             that.setState({ [field]: e.target.value });
             window.localStorage.setItem('productFormState', JSON.stringify(that.state))
-            // ^^^ Noted: save stuff on the window so when a user refreshes they don't go away
-            // Task : Make this better by waiting for the async function setState to finish executing 
-                // (sometimes the field dosen't update completely before because setState dosen't finish setting)
         };
     }
 
@@ -45,16 +41,10 @@ class ProductForm extends React.Component {
         this.props.action(formData)
             .then(() => 
                 this.props.history.push(`/`)
-                // this.props.formType === 'Update Product' ?
-                // this.props.history.push(`/products/${this.state.id}`)
-                // : this.props.history.push(`/`)
-                // question ) Why does clicking on the delete product button also click on the submit form button? 
                 ,
                 (err) => {
                     console.log(err)
                 })
-            // .then(() => this.props.history.push(`/products/${this.props.product.id}`),
-            // () => this.props.history.push(`/products/${this.props.product.id}/edit`));
     }
 
     handleFile(e) {
@@ -149,7 +139,6 @@ class ProductForm extends React.Component {
         } else {
             return null
         }
-        // Question ) What is the deal with photoUrls? Why is it only showing one string even though I could have more than once image
     }
 
     render() {
