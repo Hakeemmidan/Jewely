@@ -78,6 +78,12 @@ export class ReviewsIndex extends React.Component {
                                     onClick={() => this.props.openModal('edit review')}
                                     src="https://image.flaticon.com/icons/svg/1159/1159876.svg" /> */}
                                 {/* </Link> */}
+                                { this.props.currentUserId === review.author_id  ? 
+                                    <img
+                                        className="review-delete-button"
+                                        src="https://image.flaticon.com/icons/svg/216/216683.svg" /> :
+                                    null
+                                }
                             </li>
                         )
                     })}

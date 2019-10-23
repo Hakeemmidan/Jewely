@@ -50,6 +50,18 @@
     opacity: 0.5;
 }
 
+.review-delete-button {
+    position: absolute;
+    cursor: pointer;
+    width: 20px;
+    top: 0;
+    right: 0;
+}
+
+.review-delete-button:hover {
+    opacity: 0.5;
+}
+
 .product-show-review-username {
     color: black;
 }
