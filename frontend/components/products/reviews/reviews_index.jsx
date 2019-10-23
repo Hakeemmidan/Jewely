@@ -12,9 +12,11 @@ export class ReviewsIndex extends React.Component {
 
     componentDidMount() {
         this.props.fetchReviews(this.props.productId).then(
-            action => this.setState({
-                reviews: action.reviews
-            })
+            action => {
+                this.setState({
+                    reviews: action.reviews
+                })
+            }
         )
     }
 
@@ -41,7 +43,6 @@ export class ReviewsIndex extends React.Component {
 
     render() {
         const reviews = this.state.reviews
-        
         return (
             <div>
                 <ul className="product-show-reviews-ul">

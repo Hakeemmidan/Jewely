@@ -1,5 +1,4 @@
 class Api::ReviewsController < ApplicationController
-    before_action :require_signed_in!
 
     def index
         if params[:product_id]
