@@ -55,7 +55,7 @@ export class ReviewsIndex extends React.Component {
                 <ul className="product-show-reviews-ul">
                     {reviews.map(review => {
                         return (
-                            <li className="product-show-review-li">
+                            <li key={`review-id-${review.id}`} className="product-show-review-li">
                                 <div className="product-show-review-username-and-date-container">
                                     <Link
                                         to={`/users/${review.author_id}`}

@@ -16,8 +16,8 @@ export const reviewsReducer = (oldState = {}, action) => {
             })
             return nextState
         case REMOVE_REVIEW:
-            nextState = Object.assign({}, oldState)
-            delete nextState.reviews[action.reviewId]
+            nextState = Object.values(Object.assign({}, oldState))
+            nextState = Object.assign({}, nextState.filter( review => review.id !== action.reviewId ))
             return nextState
         default:
             return oldState
