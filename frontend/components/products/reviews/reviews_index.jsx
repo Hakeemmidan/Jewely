@@ -5,13 +5,17 @@ export class ReviewsIndex extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            reviews: this.props.reviews
+            reviews: []
         }
         this.renderReviewStarRating = this.renderReviewStarRating.bind(this)
     }
 
     componentDidMount() {
-        this.props.fetchReviews(this.props.productId)
+        this.props.fetchReviews(this.props.productId).then(
+            action => this.setState({
+                reviews: action.reviews
+            })
+        )
     }
 
     renderReviewStarRating(rating) {
@@ -37,7 +41,7 @@ export class ReviewsIndex extends React.Component {
 
     render() {
         const reviews = this.state.reviews
-
+        
         return (
             <div>
                 <ul className="product-show-reviews-ul">
