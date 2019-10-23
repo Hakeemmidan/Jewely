@@ -36,8 +36,8 @@ const deleteReview = (reviewId) => {
 ////////////////////////////////////////////
 // Thunk action creators vvv
 
-export const fetchReviews = (id) => dispatch => {
-    return ReviewAPIUtil.fetchReviews(id)
+export const fetchReviews = (productId) => dispatch => {
+    return ReviewAPIUtil.fetchReviews(productId)
         .then(reviews => dispatch(receiveReviews(reviews)))
 }
 // Reminder: id used here is product id ^^^
