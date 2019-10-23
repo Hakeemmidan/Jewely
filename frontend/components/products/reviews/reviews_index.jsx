@@ -7,6 +7,7 @@ export class ReviewsIndex extends React.Component {
         this.state = {
             reviews: []
         }
+        this.handleRemoveReview = this.handleRemoveReview.bind(this)
         this.renderReviewStarRating = this.renderReviewStarRating.bind(this)
     }
 
@@ -39,6 +40,12 @@ export class ReviewsIndex extends React.Component {
         }
 
         return stars.map(star => star)
+    }
+
+    handleRemoveReview(reviewId) {
+        return () => this.props.removeReview(reviewId).then(action => {
+            
+        })
     }
 
     render() {
@@ -82,6 +89,7 @@ export class ReviewsIndex extends React.Component {
                                 { this.props.currentUserId === review.author_id  ? 
                                     <img
                                         className="review-delete-button"
+                                        onClick={this.handleRemoveReview(review.id)}
                                         src="https://image.flaticon.com/icons/svg/216/216683.svg" /> :
                                     null
                                 }
