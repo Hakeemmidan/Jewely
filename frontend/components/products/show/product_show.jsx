@@ -138,7 +138,7 @@ export class ProductShow extends React.Component {
     
     render() {
         const product = this.props.product
-
+        
         if (!product) {
             return <div>Loading...</div>
         }
@@ -226,7 +226,7 @@ export class ProductShow extends React.Component {
                         <ReviewsIndexContainer
                             productId={product.id}
                             currentUserId={this.props.currentUserId}
-                            reviews={this.props.product.reviews} />
+                        />
                     </div>
                 </div>
             </div>

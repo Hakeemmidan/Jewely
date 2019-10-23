@@ -1,11 +1,12 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
-import { openModal } from '../../../actions/modal_actions';
 
-    
 export class ReviewsIndex extends React.Component {
     constructor(props) {
         super(props)
+        this.state = {
+            reviews: this.props.reviews
+        }
         this.renderReviewStarRating = this.renderReviewStarRating.bind(this)
     }
 
@@ -35,12 +36,12 @@ export class ReviewsIndex extends React.Component {
     }
 
     render() {
-        const reviews = this.props.reviews
+        const reviews = this.state.reviews
 
         return (
             <div>
                 <ul className="product-show-reviews-ul">
-                    {this.props.reviews.map(review => {
+                    {reviews.map(review => {
                         return (
                             <li className="product-show-review-li">
                                 <div className="product-show-review-username-and-date-container">
@@ -68,10 +69,10 @@ export class ReviewsIndex extends React.Component {
                                 <br />
 
                                 {/* <Link to={`/reviews/${review.id}`}> */}
-                                <img
+                                {/* <img
                                     className="review-edit-button"
                                     onClick={() => this.props.openModal('edit review')}
-                                    src="https://image.flaticon.com/icons/svg/1159/1159876.svg" />
+                                    src="https://image.flaticon.com/icons/svg/1159/1159876.svg" /> */}
                                 {/* </Link> */}
                             </li>
                         )

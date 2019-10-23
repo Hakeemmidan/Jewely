@@ -52,6 +52,6 @@ class Api::ProductsController < ApplicationController
             :price,
             :seller_id,
             photos: [])
-        # noted : Don't forget to permit ids in permits 
+            # noted : Don't forget to permit ids in permits 
     end
 end
