@@ -46,7 +46,7 @@ export class ReviewsIndex extends React.Component {
 
     handleRemoveReview(reviewId) {
         return () => this.props.removeReview(reviewId).then(action => {
-            
+            debugger
         })
     }
 

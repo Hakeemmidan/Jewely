@@ -98,7 +98,7 @@ export class ProductShow extends React.Component {
     }
 
     renderAverageStarRating() {
-        const avgRatingInt = parseInt(this.calculateProductAverageRating())
+        const avgRatingInt = Math.round(this.calculateProductAverageRating())
 
         const stars = []
         for (let i = 0; i < avgRatingInt; i++) {
