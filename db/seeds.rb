@@ -18,7 +18,8 @@ product1 = Product.create(
     title: 'some semi-long title that describes the product 1 lasdl wld ddl',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
     price: 199.97,
-    seller_id: user1.id)
+    seller_id: user1.id,
+    seller_username: user1.username)
 product1.photos.attach(io: photo1, filename: 'some image')
 product1.save!
 
@@ -29,7 +30,8 @@ product2 = Product.create(
     title: 'some semi-long title that describes the product 2 wqdlkj qwl qwoi msn,m asdli', 
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', 
     price: 299.97, 
-    seller_id: user1.id)
+    seller_id: user2.id,
+    seller_username: user2.username)
 product2.photos.attach(io: photo2, filename: 'some image')
 product2.save!
 
@@ -40,7 +42,8 @@ product3 = Product.create(
     title: 'some semi-long title that describes the product 3 laks lkasdj asioq qwdl qd;l',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
     price: 399.97,
-    seller_id: user1.id)
+    seller_id: user3.id,
+    seller_username: user3.username)
 product3.photos.attach(io: photo3, filename: 'some image')
 product3.save!
 
