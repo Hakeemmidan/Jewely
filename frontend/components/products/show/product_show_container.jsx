@@ -1,5 +1,4 @@
 import { connect } from 'react-redux';
-
 import { fetchProduct } from '../../../actions/product_actions';
 import { fetchCartBadge } from '../../../actions/cart_actions';
 import { ProductShow } from './product_show';

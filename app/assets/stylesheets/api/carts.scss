@@ -1,13 +1,14 @@
 // ------------------------ navbar cart icon START------------------------ //
 .cart-navbar-icon {
+    top: 5px;
     padding: 3px 0.2px;
     position: relative;
     display: inline-block;
 }
 .cart-item-count-badge {
     position: absolute;
-    top: -9px;
-    right: -11px;
+    top: -8px;
+    left: 32px;
     padding: 1px 7px;
     width: 8px;
     border-radius: 50%;
