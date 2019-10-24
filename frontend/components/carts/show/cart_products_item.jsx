@@ -74,7 +74,7 @@ export class CartProductsItem extends React.Component {
 
     populateQuantityDropDownOptions() {
         let dropDownOptions = [];
-        for (let i = 1; i < 6; i++) {
+        for (let i = 1; i < 14; i++) {
             if (i === this.props.product.quantity) {
                 dropDownOptions.push(<option value={`${i}`} key={`quantity-option-${i}`} selected >{i}</option>)
             } else {
