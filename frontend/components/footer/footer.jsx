@@ -7,11 +7,11 @@ export function Footer() {
                 href="https://github.com/Hakeemmidan"
                 target="_blank">
                 <img
-                    class="personal-account-img-link"
+                    class="personal-account-img-link github"
                     src="https://image.flaticon.com/icons/svg/733/733609.svg"
                     alt="Github logo"/>
             </a>
-
+            &nbsp;
             <a
                 href="https://www.linkedin.com/in/abdulhakeem-almidan/"
                 target="_blank">

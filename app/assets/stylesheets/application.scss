@@ -15,6 +15,15 @@
  *= require_self
  */
 
+html, body {
+  min-height: 120vh;
+}
+
+.main-container-div {
+  min-height: 120vh;
+  position: relative;
+}
+
 .logo {
   color: grey;
 }

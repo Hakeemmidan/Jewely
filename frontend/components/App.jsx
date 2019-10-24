@@ -28,6 +28,9 @@ import ModalContainer from './products/reviews/modal_container';
 // reviews vvv
 // import EditReviewFormContainer from './products/reviews/edit_review_form_container';
 
+// footer vvv
+import { Footer } from './footer/footer';
+
 export class App extends React.Component {
   constructor(props) {
     super(props)
@@ -35,7 +38,7 @@ export class App extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="main-container-div">
         <header>
           <ModalContainer />
           <Link to="/" className="logo"> Jewely </Link>
@@ -107,6 +110,7 @@ export class App extends React.Component {
             {/* Task: Make this a home container. It should be the body.
                 We are going to use this to pass state and dispatch */}
           </Switch>
+          <Footer />
       </div>
     )
   }
