@@ -61,9 +61,9 @@ export class ProductShow extends React.Component {
             return (
                 <div>
                     <Carousel>
-                        {product.photoUrls.map(photoUrl => {
+                        {product.photoUrls.map((photoUrl, idx) => {
                             return (
-                                <div>
+                                <div key={`photo-${product.id}-${idx}`}>
                                     <img
                                         src={photoUrl} />
                                 </div>
@@ -104,6 +104,7 @@ export class ProductShow extends React.Component {
         for (let i = 0; i < avgRatingInt; i++) {
             stars.push(
                 <img
+                    key={`filledStar-${i}`}
                     className="product-show-average-rating-star"
                     src="https://image.flaticon.com/icons/svg/148/148841.svg" />
             )
@@ -112,6 +113,7 @@ export class ProductShow extends React.Component {
         for (let j = 0; j < 5 - avgRatingInt; j++) {
             stars.push(
                 <img
+                    key={`unfilledStar-${j}`}
                     className="product-show-average-rating-star"
                     src="https://image.flaticon.com/icons/svg/149/149222.svg" />
             )

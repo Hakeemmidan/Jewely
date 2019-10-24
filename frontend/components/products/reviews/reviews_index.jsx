@@ -21,11 +21,12 @@ export class ReviewsIndex extends React.Component {
         )
     }
 
-    renderReviewStarRating(rating) {
+    renderReviewStarRating(rating, reviewId) {
         const stars = []
         for (let i = 0; i < rating; i++) {
             stars.push(
                 <img
+                    key={`filledStar-index-${i}-${reviewId}`}
                     className="product-show-review-rating-star"
                     src="https://image.flaticon.com/icons/svg/148/148841.svg" />
             )
@@ -34,6 +35,7 @@ export class ReviewsIndex extends React.Component {
         for (let j = 0; j < 5 - rating; j++) {
             stars.push(
                 <img
+                    key={`unfilledStar-index-${j}-${reviewId}`}
                     className="product-show-review-rating-star"
                     src="https://image.flaticon.com/icons/svg/149/149222.svg" />
             )
@@ -64,14 +66,14 @@ export class ReviewsIndex extends React.Component {
                                     </Link>
                                     &nbsp;
                                     &nbsp;
-                                            <div>
+                                    <div>
                                         {new Date(review.created_at.slice(0, 10)).toDateString().slice(4)}
                                     </div>
                                     <br />
                                 </div>
 
                                 <div>
-                                    {this.renderReviewStarRating(review.rating)}
+                                    {this.renderReviewStarRating(review.rating, review.id)}
                                 </div>
 
                                 <div>

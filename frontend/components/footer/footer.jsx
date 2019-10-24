@@ -2,7 +2,7 @@ import React from 'react'
 
 export function Footer() {
     return (
-        <div class="personal-accounts-links">
+        <div className="personal-accounts-links">
             <a
                 href="https://github.com/Hakeemmidan"
                 target="_blank">
