@@ -1,5 +1,5 @@
 class Product < ApplicationRecord
-    validates :title, :description, :price, presence: true
+    validates :title, :description, :price, :seller_username, presence: true
     validates :seller_id, presence: true
     # has_one_attached :photo
     has_many_attached :photos

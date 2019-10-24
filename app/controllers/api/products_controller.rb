@@ -10,6 +10,10 @@ class Api::ProductsController < ApplicationController
     def create
         @product = Product.new(product_params)
 
+        if (@product.seller_id)
+            @product.seller_username = User.find(@product.seller_id).username
+        end
+
         if @product.save
             render :show
         else
@@ -51,6 +55,7 @@ class Api::ProductsController < ApplicationController
             :description,
             :price,
             :seller_id,
+            :seller_username,
             photos: [])
     end
 end
