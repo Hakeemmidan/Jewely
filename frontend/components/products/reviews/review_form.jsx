@@ -98,7 +98,7 @@ class ReviewForm extends React.Component {
 
     render() {
         return (
-            <div className="review_form_div">
+            <div className="review-form-div">
                 <form
                     onSubmit={this.handleSubmit}>
                     <label>Rating

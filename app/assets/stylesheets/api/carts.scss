@@ -186,3 +186,11 @@ input[type='radio']:checked{
 .cart-is-empty-link:hover {
     color: rgb(57, 57, 57); 
 }
+
+.proceed-to-checkout-modal-div {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    padding-left: 40px;
+    padding-right: 40px;
+}
