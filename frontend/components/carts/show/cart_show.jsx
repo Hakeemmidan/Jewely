@@ -172,7 +172,8 @@ export class CartShow extends React.Component {
 
                         <button 
                             id="proceed-to-checkout-button"
-                            className="black-background-button">
+                            className="black-background-button"
+                            onClick={() => this.props.openModal('proceed to checkout')}>
                             Proceed to checkout
                         </button>
                     </div>
