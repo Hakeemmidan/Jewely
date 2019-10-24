@@ -7,7 +7,6 @@ import ReviewsIndexContainer from '../reviews/reviews_index_container';
 export class ProductShow extends React.Component {
     constructor(props) {
         super(props)
-        this.state = {}
         this.handleAddToCart = this.handleAddToCart.bind(this)
         this.imageShow = this.imageShow.bind(this)
         this.calculateProductAverageRating = this.calculateProductAverageRating.bind(this)
@@ -15,13 +14,7 @@ export class ProductShow extends React.Component {
     }
 
     componentDidMount() {
-        this.props.fetchProduct(this.props.match.params.productId).then(action => {
-            this.props.fetchUser(action.product.seller_id).then(action => {
-                this.setState({
-                    seller: action.user
-                })
-            })
-        })
+        this.props.fetchProduct(this.props.match.params.productId)
     }
     
     componentDidUpdate(prevProps) {
@@ -48,13 +41,14 @@ export class ProductShow extends React.Component {
     }
     
     renderSellerUsername() {
-        const seller = this.state.seller
+        const product = this.props.product
+
         return (
             <div>
                 <Link
-                    to={`/users/${seller.id}`}
+                    to={`/users/${product.seller_id}`}
                     className="product-show-seller-username">
-                    {seller.username}
+                    {product.seller_username}
                 </Link>
             </div>
         )
@@ -163,7 +157,7 @@ export class ProductShow extends React.Component {
 
 
                     <div className="listing-right-column">
-                        {this.state.seller ? this.renderSellerUsername() : null}
+                        {this.renderSellerUsername()}
 
                         <h1 className="product-show-title">
                             {product.title}
