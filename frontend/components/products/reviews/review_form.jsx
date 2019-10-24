@@ -131,6 +131,7 @@ class ReviewForm extends React.Component {
                     <label>Body
                         <br />
                         <textarea
+                            className="review-form-textarea"
                             rows="10"
                             cols="50"
                             type="text"
