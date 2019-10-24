@@ -16,7 +16,7 @@ export function Footer() {
                 href="https://www.linkedin.com/in/abdulhakeem-almidan/"
                 target="_blank">
                 <img
-                    className="personal-account-img-link"
+                    className="personal-account-img-link linkedin"
                     src="https://image.flaticon.com/icons/svg/25/25320.svg"
                     alt="LinkedIn logo"/>
             </a>

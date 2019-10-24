@@ -2,9 +2,8 @@
     display: flex;
     box-sizing: border-box;
     position: absolute;
-    width: 20%;
-    bottom: 0;
-    right: 7px;
+    bottom: 0px;
+    right: 10%;
 }
 
 .personal-account-img-link {
@@ -12,12 +11,12 @@
     padding-right: 10px;
 }
 
-.personal-account-img-link:hover {
-    opacity: 0.6;
+.personal-account-img-link.linkedin {
+    padding-right: 0px;
 }
 
-.personal-account-img-link.github {
-    padding-left: 7px;
+.personal-account-img-link:hover {
+    opacity: 0.6;
 }
 
 #root {
