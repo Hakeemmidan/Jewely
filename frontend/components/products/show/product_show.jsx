@@ -137,6 +137,8 @@ export class ProductShow extends React.Component {
             return <div>Loading...</div>
         }
 
+        const avgRating = this.calculateProductAverageRating()
+
         let editLink = null;
         if (this.props.currentUserId === product.seller_id) { 
             editLink = <Link 
@@ -215,7 +217,16 @@ export class ProductShow extends React.Component {
 
                     <div className="product-show-column2">
                         <b>
-                            Reviews ({this.calculateProductAverageRating()} average):
+                            Reviews {avgRating > 0 ? `(${avgRating} average):` :
+                                <div style={{display: 'inline', fontWeight: 'normal'}}>:
+                                    <br/>
+                                    <br/>
+                                    None at the moment 🐣
+                                    <br/> 
+                                    Be the first to review!👇
+                                </div>
+                        
+                        }
                         </b>
                         <ReviewsIndexContainer
                             productId={product.id}
