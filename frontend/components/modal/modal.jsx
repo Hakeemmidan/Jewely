@@ -1,6 +1,6 @@
 import React from 'react'
-import CreateReviewContainer from './create_review_form_container';
-import EditReviewCOntainer from './edit_review_form_container';
+import CreateReviewContainer from '../products/reviews/create_review_form_container';
+import EditReviewCOntainer from '../products/reviews/edit_review_form_container';
 
 export function Modal({modal, closeModal}) {
     if (!modal) {

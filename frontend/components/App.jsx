@@ -23,7 +23,7 @@ import CreateProductFormContainer from './products/create_update/create_product_
 import CartShowContainer from './carts/show/cart_show_container'; 
 
 // modal vvv
-import ModalContainer from './products/reviews/modal_container';
+import ModalContainer from './modal/modal_container';
 
 // reviews vvv
 // import EditReviewFormContainer from './products/reviews/edit_review_form_container';
