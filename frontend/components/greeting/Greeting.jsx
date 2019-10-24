@@ -11,7 +11,6 @@ const Greeting = ({ currentUser, logout }) => {
       <Link to="/cart" className="cart-navbar-icon">
         <CartIcon/>
         <CartBadgeContainer />
-        {/* question ) How to make cart badge thing update when a user adds stuff to thier cart? */}
       </Link>
     </nav>
   );

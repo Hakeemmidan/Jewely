@@ -1,17 +1,27 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Carousel } from "react-responsive-carousel";
+import ReviewsIndexContainer from '../reviews/reviews_index_container';
 
 
 export class ProductShow extends React.Component {
     constructor(props) {
         super(props)
+        this.state = {}
         this.handleAddToCart = this.handleAddToCart.bind(this)
         this.imageShow = this.imageShow.bind(this)
+        this.calculateProductAverageRating = this.calculateProductAverageRating.bind(this)
+        this.renderAverageStarRating = this.renderAverageStarRating.bind(this)
     }
 
     componentDidMount() {
-        this.props.fetchProduct(this.props.match.params.productId)
+        this.props.fetchProduct(this.props.match.params.productId).then(action => {
+            this.props.fetchUser(action.product.seller_id).then(action => {
+                this.setState({
+                    seller: action.user
+                })
+            })
+        })
     }
     
     componentDidUpdate(prevProps) {
@@ -25,18 +35,20 @@ export class ProductShow extends React.Component {
         const quantity = $('.product-show-quantity-dropdown')[0].value
 
         if (localStorage.cart) {
+            // IF there is already items in the cart, add on to them
             let cartProductIdsAndQuantities = JSON.parse(localStorage.getItem('cart'))
             cartProductIdsAndQuantities.push([productId, quantity])
             localStorage.setItem('cart', JSON.stringify(cartProductIdsAndQuantities))
             this.props.fetchCartBadge();
         } else { 
+            // If not, then create the cart and add the targeted item and its quantity
             localStorage.setItem('cart', JSON.stringify([productId, quantity]))
             this.props.fetchCartBadge();
         }
     }
     
     renderSellerUsername() {
-        const seller = this.props.seller
+        const seller = this.state.seller
         return (
             <div>
                 <Link
@@ -78,12 +90,55 @@ export class ProductShow extends React.Component {
         } else {
             return null
         }
-        // Question ) What is the deal with photoUrls? Why is it only showing one string even though I could have more than once image
+    }
+
+    calculateProductAverageRating() {
+        let ratingsSum = 0
+        let ratingsCount = 0
+        this.props.product.reviews.map(review => {
+            ratingsSum += parseInt(review.rating)
+            ratingsCount += 1
+        })
+
+        return parseFloat(ratingsSum / ratingsCount).toFixed(2)
+    }
+
+    renderAverageStarRating() {
+        const avgRatingInt = parseInt(this.calculateProductAverageRating())
+
+        const stars = []
+        for (let i = 0; i < avgRatingInt; i++) {
+            stars.push(
+                <img
+                    className="product-show-average-rating-star"
+                    src="https://image.flaticon.com/icons/svg/148/148841.svg" />
+            )
+        }
+
+        for (let j = 0; j < 5 - avgRatingInt; j++) {
+            stars.push(
+                <img
+                    className="product-show-average-rating-star"
+                    src="https://image.flaticon.com/icons/svg/149/149222.svg" />
+            )
+        }
+
+        return (
+            <div className="product-show-avg-rating-container">
+                <div>
+                    {stars.map(star => star)}
+                </div>
+                &nbsp;
+                <div className="reviews-count">
+                    ({this.props.product.reviews.length})
+                </div>
+            </div>
+        )
     }
     
     render() {
         const product = this.props.product
-
+        
         if (!product) {
             return <div>Loading...</div>
         }
@@ -101,9 +156,6 @@ export class ProductShow extends React.Component {
         return (
             <div>
                 <div className="clearfix product-listing">
-                    {/* <div>
-                        <img src={`${product.photoUrls[0]}`}  alt="" />
-                    </div> */}
                     <div
                         className="product-show-images">
                         {this.imageShow()}
@@ -111,11 +163,15 @@ export class ProductShow extends React.Component {
 
 
                     <div className="listing-right-column">
-                        {this.props.seller ? this.renderSellerUsername() : null}
+                        {this.state.seller ? this.renderSellerUsername() : null}
 
                         <h1 className="product-show-title">
                             {product.title}
                         </h1>
+
+                        <div>
+                            {this.props.product.reviews.length > 0 ? this.renderAverageStarRating() : null}
+                        </div>
 
                         <div>
                             <span className="product-show-price">
@@ -137,9 +193,6 @@ export class ProductShow extends React.Component {
                                 <option value="5">5</option>
                             </select>
                         </div>
-
-                        {/* {this.hasProductInCart() ? this.addToCartAgainButton() : this.addToCartButton()} */}
-                        {/* Task : ^^^ Get back to this after asking TA what is wrong with it */}
                             <Link to='/cart'>
                                 <button
                                     className="product-show-add-to-cart-button"
@@ -154,14 +207,26 @@ export class ProductShow extends React.Component {
                     </div>
                 </div>
 
+                <hr className="product-show-divider"/>
+
                 <div className="product-show-lower">
                     <div className="product-show-column product-show-column1">
-                        <p className="product-show-description-details-label">
-                            Details:
-                        </p> 
+                        <b>
+                            Details: 
+                        </b>
                         <p className="product-show-description">
                             {product.description}
                         </p>
+                    </div>
+
+                    <div className="product-show-column2">
+                        <b>
+                            Reviews ({this.calculateProductAverageRating()} average):
+                        </b>
+                        <ReviewsIndexContainer
+                            productId={product.id}
+                            currentUserId={this.props.currentUserId}
+                        />
                     </div>
                 </div>
             </div>

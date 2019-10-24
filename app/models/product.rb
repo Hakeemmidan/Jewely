@@ -15,11 +15,8 @@ class Product < ApplicationRecord
     has_many :cart_customers,
         through: :carts,
         source: :customer
-        
-    # def self.find_by_title(title)    
-    #     product = Product.find_by(title: title)
-    #     return nil unless product
-    #     product
-    # end
-    # Task : ^ Not sure if I am going to need this or not
+
+    has_many :reviews,
+        foreign_key: :product_id,
+        class_name: 'Review'
 end

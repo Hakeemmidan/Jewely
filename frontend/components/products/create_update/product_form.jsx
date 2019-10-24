@@ -14,13 +14,9 @@ class ProductForm extends React.Component {
 
     update(field) {
         let that = this
-        // Note : ^ Used to get access to this inside of the anonymous function
         return (e) => {
             that.setState({ [field]: e.target.value });
             window.localStorage.setItem('productFormState', JSON.stringify(that.state))
-            // ^^^ Noted: save stuff on the window so when a user refreshes they don't go away
-            // Task : Make this better by waiting for the async function setState to finish executing 
-                // (sometimes the field dosen't update completely before because setState dosen't finish setting)
         };
     }
 
@@ -139,7 +135,6 @@ class ProductForm extends React.Component {
         } else {
             return null
         }
-        // Question ) What is the deal with photoUrls? Why is it only showing one string even though I could have more than once image
     }
 
     render() {
