@@ -7,6 +7,7 @@ import ReviewsIndexContainer from '../reviews/reviews_index_container';
 export class ProductShow extends React.Component {
     constructor(props) {
         super(props)
+        this.state = {}
         this.handleAddToCart = this.handleAddToCart.bind(this)
         this.imageShow = this.imageShow.bind(this)
         this.calculateProductAverageRating = this.calculateProductAverageRating.bind(this)
@@ -14,7 +15,9 @@ export class ProductShow extends React.Component {
     }
 
     componentDidMount() {
-        this.props.fetchProduct(this.props.match.params.productId)
+        this.props.fetchProduct(this.props.match.params.productId).then(action => this.setState({
+            product: action.product
+        }))
     }
     
     componentDidUpdate(prevProps) {
