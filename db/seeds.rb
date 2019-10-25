@@ -8,6 +8,7 @@
 
 User.delete_all
 Product.delete_all
+Review.delete_all
 
 puts "#=> Seeding started"
 
