@@ -11,6 +11,12 @@ export class CartProductsItem extends React.Component {
         }
     }
 
+    componentDidMount() {
+        this.setState({
+            product: this.props.product
+        })
+    }
+
     handleRemove(productId) {
         return () => {
             let cart = JSON.parse(localStorage.getItem('cart'))
@@ -90,7 +96,12 @@ export class CartProductsItem extends React.Component {
 
 
     render() {
-        const product = this.props.product
+        const product = this.state.product
+
+        if (!this.state.product) {
+            return <div></div>
+        }
+        
         return (
             <div className="cart-products-item">
                 
