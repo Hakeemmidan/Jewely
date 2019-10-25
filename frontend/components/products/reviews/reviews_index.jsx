@@ -54,7 +54,7 @@ export class ReviewsIndex extends React.Component {
         return () => this.props.removeReview(reviewId)
             .then(action => this.setState({
                 reviews: this.state.reviews.filter(review => review.id !== action.reviewId)
-            }))
+            }, this.props.reRenderParent))
     }
 
     render() {

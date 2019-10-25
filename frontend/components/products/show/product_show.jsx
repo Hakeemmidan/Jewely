@@ -10,6 +10,7 @@ export class ProductShow extends React.Component {
         this.state = {}
         this.handleAddToCart = this.handleAddToCart.bind(this)
         this.imageShow = this.imageShow.bind(this)
+        this.reRenderParent = this.reRenderParent.bind(this)
         this.calculateProductAverageRating = this.calculateProductAverageRating.bind(this)
         this.renderAverageStarRating = this.renderAverageStarRating.bind(this)
     }
@@ -87,6 +88,12 @@ export class ProductShow extends React.Component {
         } else {
             return null
         }
+    }
+
+    reRenderParent() {
+        this.props.fetchProduct(this.props.match.params.productId).then(action => this.setState({
+            product: action.product
+        }))
     }
 
     calculateProductAverageRating() {
@@ -243,6 +250,7 @@ export class ProductShow extends React.Component {
                         }
                         </b>
                         <ReviewsIndexContainer
+                            reRenderParent={this.reRenderParent}
                             productId={product.id}
                             currentUserId={this.props.currentUserId}
                         />

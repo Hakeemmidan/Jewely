@@ -8,7 +8,8 @@ const mapStateToProps = (state, ownProps) => {
     return {
         productId: ownProps.productId,
         currentUserId: ownProps.currentUserId,
-        reviews: Object.values(state.entities.reviews)
+        reviews: Object.values(state.entities.reviews),
+        reRenderParent: ownProps.reRenderParent
     }
 }
 
