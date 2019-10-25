@@ -157,7 +157,7 @@ export class ProductShow extends React.Component {
         const product = this.state.product
         
         if (!product) {
-            return <div>Loading...</div>
+            return <div></div>
         }
 
         const avgRating = this.calculateProductAverageRating()

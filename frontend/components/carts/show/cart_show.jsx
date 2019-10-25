@@ -108,11 +108,7 @@ export class CartShow extends React.Component {
         }
 
         if (this.state.cartProducts.length < JSON.parse(localStorage.cart).length) {
-            return (
-                <div>
-                    <div>Loading...</div>
-                </div>
-            )
+            return <div></div>
         }
 
         const cartProductsLis = this.state.cartProducts.map( (cartProduct, idx) => {
