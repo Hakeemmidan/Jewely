@@ -44,7 +44,7 @@ export class ProductShow extends React.Component {
     }
     
     renderSellerUsername() {
-        const product = this.props.product
+        const product = this.state.product
 
         return (
             <div>
@@ -58,7 +58,7 @@ export class ProductShow extends React.Component {
     }
 
     imageShow() {
-        const product = this.props.product
+        const product = this.state.product
         
         if (Array.isArray(product.photoUrls)) {
             return (
@@ -92,7 +92,7 @@ export class ProductShow extends React.Component {
     calculateProductAverageRating() {
         let ratingsSum = 0
         let ratingsCount = 0
-        this.props.product.reviews.map(review => {
+        this.state.product.reviews.map(review => {
             ratingsSum += parseInt(review.rating)
             ratingsCount += 1
         })
@@ -129,14 +129,14 @@ export class ProductShow extends React.Component {
                 </div>
                 &nbsp;
                 <div className="reviews-count">
-                    ({this.props.product.reviews.length})
+                    ({this.state.product.reviews.length})
                 </div>
             </div>
         )
     }
     
     render() {
-        const product = this.props.product
+        const product = this.state.product
         
         if (!product) {
             return <div>Loading...</div>
@@ -171,7 +171,7 @@ export class ProductShow extends React.Component {
                         </h1>
 
                         <div>
-                            {this.props.product.reviews.length > 0 ? this.renderAverageStarRating() : null}
+                            {this.state.product.reviews.length > 0 ? this.renderAverageStarRating() : null}
                         </div>
 
                         <div>
