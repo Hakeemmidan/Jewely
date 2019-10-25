@@ -39,6 +39,7 @@ export class CartProductsItem extends React.Component {
             })
             
             that.props.updatePriceTotal()
+            that.props.fetchCartBadge()
         }
     }
 
