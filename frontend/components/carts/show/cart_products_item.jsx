@@ -18,6 +18,7 @@ export class CartProductsItem extends React.Component {
     }
 
     handleRemove(productId) {
+        const that = this
         return () => {
             let cart = JSON.parse(localStorage.getItem('cart'))
             // NB : The cart is composed of id and quantity pairings.
@@ -35,7 +36,13 @@ export class CartProductsItem extends React.Component {
             // Note : vvv Having true here reloads the page without reloading the browser cache.
                     // We don't need to reload it because we have already changed it above.
                     // Not reloading it makes this refresh faster.
-            location.reload(true);
+
+            // location.reload(true);
+            that.setState({
+                product: null
+            })
+            
+            that.props.updatePriceTotal()
             /* 
             Note : I have considered simply re-rendering the cart-show component 
                    rather than re-rendering the whole page. However that means that
