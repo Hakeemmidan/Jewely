@@ -90,6 +90,17 @@ export class ProductShow extends React.Component {
         }
     }
 
+    shouldComponentUpdate(nextProps) {
+        if (this.props.product) {
+            if (nextProps.product.reviews.length !== this.props.product.reviews.length) {
+                this.setState({
+                    product: nextProps.product
+                })
+            }
+        }
+        return true
+    }
+
     reRenderParent() {
         this.props.fetchProduct(this.props.match.params.productId).then(action => this.setState({
             product: action.product

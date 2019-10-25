@@ -2,6 +2,7 @@ import { connect } from 'react-redux'
 import ReviewForm from './review_form'
 import { createReview } from '../../../actions/review_actions'
 import { closeModal } from '../../../actions/modal_actions';
+import { fetchProduct } from '../../../actions/product_actions';
 
 const mapStateToProps = (state) => {
     const errorsArr = state.errors.review
@@ -20,7 +21,8 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
     return {
         action: review => dispatch(createReview(review)),
-        closeModal: () => dispatch(closeModal())
+        closeModal: () => dispatch(closeModal()),
+        fetchProduct: (id) => dispatch(fetchProduct(id))
     }
 }
 

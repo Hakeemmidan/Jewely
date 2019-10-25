@@ -67,6 +67,7 @@ class ReviewForm extends React.Component {
         this.props.action(this.state)
             .then(() => {
                 that.props.closeModal()
+                that.props.fetchProduct(that.state.product_id)
             },
                  errs =>
                     console.log(errs) )
