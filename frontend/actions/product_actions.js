@@ -3,11 +3,13 @@ export const RECEIVE_PRODUCT = 'RECEIVE_PRODUCT'
 export const REMOVE_PRODUCT = 'REMOVE_PRODUCT'
 export const RECEIVE_PRODUCT_ERRORS = 'RECEIVE_PRODUCT_ERRORS';
 import * as ProductAPIUtil from '../util/product_api_util';
+import { convertArrayOfObjectsToObject } from '../app_helper_methods';
+
 
 const receiveProducts = (products) => {
     return {
         type: RECEIVE_ALL_PRODUCTS,
-        products
+        products: convertArrayOfObjectsToObject(products)
     }
 }
 
