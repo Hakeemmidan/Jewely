@@ -59,11 +59,13 @@ export class ReviewsIndex extends React.Component {
     }
 
     render() {
-        const reviews = this.state.reviews
+        let reviews = this.state.reviews
 
         if (!reviews) {
             return <div></div>
         }
+
+        reviews = Object.values(reviews)
 
         return (
             <div>
