@@ -30,39 +30,15 @@ export class CartProductsItem extends React.Component {
                     break
                 }
             }
-            // Noted : vvv This is basically deleting the item that we are trying to remove 
+            // This is basically deleting the item that we are trying to remove 
             cart.splice(unwantedIdx, 1)
             localStorage.setItem('cart', JSON.stringify(cart))
-            // Note : vvv Having true here reloads the page without reloading the browser cache.
-                    // We don't need to reload it because we have already changed it above.
-                    // Not reloading it makes this refresh faster.
 
-            // location.reload(true);
             that.setState({
                 product: null
             })
             
             that.props.updatePriceTotal()
-            /* 
-            Note : I have considered simply re-rendering the cart-show component 
-                   rather than re-rendering the whole page. However that means that
-                   you may need to pass a re-rendering function from the parent,
-                   which can make a HUGE mess in the code.
-                   Here's what you may need to do:
-                   In parent:
-                        1. Create a function that sets the state to anything using
-                            dummy variable.
-                        2. Bind that function to 'this' in the constructor.
-                        3. Pass it on to the child as a prop
-                  In child:
-                        4. Invoke both the re-rendering function and the handleRemove
-                           function (which actually removes items from localStorage).
-                             4a. This means that you may to bundle both of them onto
-                                  one function, which could cause some scope issues.
-                  All this have made decide to simply refresh the page rather than
-                  do all of that and probably make my code harder to read.
-            */
-
         }
     }
 

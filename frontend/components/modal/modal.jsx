@@ -1,6 +1,6 @@
 import React from 'react'
-import CreateReviewContainer from '../products/reviews/create_review_form_container';
-import EditReviewCOntainer from '../products/reviews/edit_review_form_container';
+import CreateReviewFormContainer from '../products/reviews/create_review_form_container';
+import EditReviewFormContainer from '../products/reviews/edit_review_form_container';
 import { CartProceedToCheckout } from '../carts/show/cart_proceed_to_checkout';
 
 export function Modal({modal, closeModal}) {
@@ -11,10 +11,10 @@ export function Modal({modal, closeModal}) {
     let component;
     switch (modal) {
         case 'create review':
-            component = <CreateReviewContainer />            
+            component = <CreateReviewFormContainer />            
             break;
         case 'edit review':
-            component = <EditReviewCOntainer />
+            component = <EditReviewFormContainer />
             break;
         case 'proceed to checkout':
             component = <CartProceedToCheckout />
