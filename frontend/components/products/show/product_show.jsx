@@ -207,7 +207,6 @@ export class ProductShow extends React.Component {
                                 <option value="11">11</option>
                                 <option value="12">12</option>
                                 <option value="13">13</option>
-
                             </select>
                         </div>
                             <Link to='/cart'>

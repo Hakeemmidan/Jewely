@@ -62,9 +62,12 @@ class ReviewForm extends React.Component {
     }
 
     triggerAction() {
+        const that = this
+
         this.props.action(this.state)
-            .then(() =>
-                    location.reload(false),
+            .then(() => {
+                that.props.closeModal()
+            },
                  errs =>
                     console.log(errs) )
     }
