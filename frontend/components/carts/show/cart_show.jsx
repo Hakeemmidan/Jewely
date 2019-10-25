@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { CartProductsItem } from './cart_products_item/cart_products_item'; 
+import CartProductsItemContainer from './cart_products_item/cart_products_item_container'; 
 
 import {
         VisaIcon, 
@@ -114,7 +114,7 @@ export class CartShow extends React.Component {
         const cartProductsLis = this.state.cartProducts.map( (cartProduct, idx) => {
             return (
                 <li key={`cart-item-${idx}`} className="cart-products-item-li">
-                    <CartProductsItem
+                    <CartProductsItemContainer
                         updatePriceTotal={this.updatePriceTotal}
                         product={cartProduct}
                     />
