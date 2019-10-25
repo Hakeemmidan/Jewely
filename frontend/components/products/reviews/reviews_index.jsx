@@ -51,9 +51,10 @@ export class ReviewsIndex extends React.Component {
             // 3. What's up with the console error
             // 4. Why are products bouncing when I go back to home page ?
         // Side note : I want to setState to re-render
-        return () => this.props.removeReview(reviewId).then(action => {
-            debugger
-        })
+        return () => this.props.removeReview(reviewId)
+            .then(action => this.setState({
+                reviews: this.state.reviews.filter(review => review.id !== action.reviewId)
+            }))
     }
 
     render() {
