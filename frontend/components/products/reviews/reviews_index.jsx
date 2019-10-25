@@ -4,9 +4,7 @@ import { Link } from 'react-router-dom';
 export class ReviewsIndex extends React.Component {
     constructor(props) {
         super(props)
-        this.state = {
-            reviews: []
-        }
+        this.state = {}
         this.handleRemoveReview = this.handleRemoveReview.bind(this)
         this.renderReviewStarRating = this.renderReviewStarRating.bind(this)
     }
@@ -19,6 +17,15 @@ export class ReviewsIndex extends React.Component {
                 })
             }
         )
+    }
+
+    shouldComponentUpdate(nextProps) {
+        if (nextProps.reviews.length !== this.props.reviews.length) {
+            this.setState({
+                reviews: nextProps.reviews
+            })
+        }
+        return true
     }
 
     renderReviewStarRating(rating, reviewId) {
@@ -59,6 +66,11 @@ export class ReviewsIndex extends React.Component {
 
     render() {
         const reviews = this.state.reviews
+
+        if (!reviews) {
+            return <div></div>
+        }
+
         return (
             <div>
                 <ul className="product-show-reviews-ul">
