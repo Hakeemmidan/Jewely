@@ -32,8 +32,6 @@ export class ProductIndex extends React.Component {
                             <ProductIndexItem
                                 key={idx}
                                 product={product}
-                                seller={this.props.seller}
-                                fetchUser={this.props.fetchUser}
                             />
                         )}
                     </div>

@@ -6,14 +6,6 @@ export class ProductIndexItem extends React.Component {
         super(props)
     }
 
-    componentDidMount() {
-        this.props.fetchUser(this.props.product.seller_id)
-    }
-
-    renderSellerName() {
-        return <p className="product-index-item-seller-username">{this.props.seller.username}</p>
-    }
-
     render() {
         const product = this.props.product
         return (
@@ -27,7 +19,7 @@ export class ProductIndexItem extends React.Component {
                          title={product.title}/>
                          {/* Noted: I have a title tag for the image because CHrome and Firefox don't support alt for hover */}
                     <p className="product-index-item-title">{product.title}</p>
-                    {this.props.seller ? this.renderSellerName() : null}     
+                    <p className="product-index-item-seller-username">{this.props.product.seller_username}</p>
                     <p className="product-index-item-price">${parseFloat(product.price).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,')}</p>
                     {/* Number format source : https://stackoverflow.com/a/14428340/7974948  */}
                 </Link>
