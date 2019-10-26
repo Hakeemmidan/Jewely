@@ -186,11 +186,18 @@ class ProductForm extends React.Component {
 
                         <label className="product-form-label">Choose Image(s)
                             <br/>
-                            <input 
-                                type="file"
-                                onChange={this.handleFile.bind(this)} 
-                                
-                                multiple/>
+                            <div className="product-form-file-input-container">
+                                <input
+                                    className="product-form-file-input"
+                                    type="file"
+                                    id="img1"
+                                    onChange={this.handleFile.bind(this)}/>
+                                <label
+                                    className="product-form-file-input-label"
+                                    htmlFor="img1">
+                                    Select an image
+                                </label>
+                            </div>
                         </label>
 
                         <br/>
