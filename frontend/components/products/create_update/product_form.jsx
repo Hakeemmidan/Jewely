@@ -127,6 +127,39 @@ class ProductForm extends React.Component {
         )
     }
 
+    renderChooseImages() {
+        const imgPlaceholders = [];
+
+        for (let i = 1; i < 5; i++) {
+            imgPlaceholders.push(
+                <div className="product-form-file-input-container">
+                    <div className="product-form-file-input-border-box">
+                        <input
+                            className="product-form-file-input"
+                            type="file"
+                            id={`img${i}`}
+                            onChange={this.handleFile.bind(this)} />
+                        <label
+                            className="product-form-file-input-label"
+                            htmlFor={`img${i}`}>
+                            Select an image
+                        </label>
+
+                        <label>
+                            <br />
+                            <img
+                                className="product-form-image-preview"
+                                src={this.state.photoUrls[`img${i}`]} />
+                        </label>
+                    </div>
+                </div>
+            )    
+        }
+
+
+        return imgPlaceholders.map(imgPlaceholder => imgPlaceholder)
+    }
+
     render() {
         return (
             <div className="product-form-box-container">
@@ -177,28 +210,7 @@ class ProductForm extends React.Component {
                         <label className="product-form-label">Choose Image(s)
                             <br/>
                             <br/>
-                            <div className="product-form-file-input-container">
-                                <div className="product-form-file-input-border-box">
-                                    <input
-                                        className="product-form-file-input"
-                                        type="file"
-                                        id="img1"
-                                        onChange={this.handleFile.bind(this)}/>
-                                    <label
-                                        className="product-form-file-input-label"
-                                        htmlFor="img1">
-                                        Select an image
-                                    </label>
-
-                                    <label>
-                                        <br />
-                                        <img
-                                            className="product-form-image-preview"
-                                            src={this.state.photoUrls["img1"]} />
-                                    </label>
-
-                                </div>
-                            </div>
+                            {this.renderChooseImages()}
                         </label>
 
                         <br/>
