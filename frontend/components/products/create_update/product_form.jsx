@@ -44,21 +44,29 @@ class ProductForm extends React.Component {
     }
 
     handleFile(e) {
-        this.setState({ photoUrls: [], photoFiles: [] })
+        // this.setState({ photoUrls: [], photoFiles: [] })
         // ^ Empty out the old photos (if there are any)
 
         const reader = new FileReader();
         const files = e.currentTarget.files;
 
-        reader.onloadend = () => this.setState({ photoUrls: reader.result, photoFiles: files });
+        const file = { [e.currentTarget.id]: reader.result }
+        const newPhotoUrls = Object.assign({}, this.state.photoUrl, file)
 
-        if (files) {
-            for (let i = 0; i < files.length; i++) {
-                reader.readAsDataURL(files[i]);
-            }
-        } else {
-            this.setState({ photoUrls: [], photoFiles: [] });
-        }
+        debugger
+
+        reader.onloadend = () => this.setState({
+            photoUrls: newPhotoUrls,
+            photoFiles: files
+        });
+
+        // if (files) {
+        //     for (let i = 0; i < files.length; i++) {
+        //         reader.readAsDataURL(files[i]);
+        //     }
+        // } else {
+        //     this.setState({ photoUrls: [], photoFiles: [] });
+        // }
     }
 
     renderErrors() {
