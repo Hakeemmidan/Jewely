@@ -152,6 +152,17 @@ export class ProductShow extends React.Component {
             </div>
         )
     }
+
+    populateQuantityDropDownOptions() {
+        let dropDownOptions = [];
+        for (let i = 1; i < 14; i++) {
+            dropDownOptions.push(<option value={`${i}`}>{i}</option>)
+        }
+
+        return dropDownOptions.map(option => {
+            return option
+        })
+    }
     
     render() {
         const product = this.state.product
@@ -205,19 +216,7 @@ export class ProductShow extends React.Component {
                             </label>
 
                             <select className="product-show-quantity-dropdown">
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                                <option value="5">5</option>
-                                <option value="6">6</option>
-                                <option value="7">7</option>
-                                <option value="8">8</option>
-                                <option value="9">9</option>
-                                <option value="10">10</option>
-                                <option value="11">11</option>
-                                <option value="12">12</option>
-                                <option value="13">13</option>
+                                {this.populateQuantityDropDownOptions()}
                             </select>
                         </div>
                             <Link to='/cart'>

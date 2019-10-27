@@ -186,6 +186,7 @@ class ProductForm extends React.Component {
 
                         <label className="product-form-label">Choose Image(s)
                             <br/>
+                            <br/>
                             <div className="product-form-file-input-container">
                                 <input
                                     className="product-form-file-input"
