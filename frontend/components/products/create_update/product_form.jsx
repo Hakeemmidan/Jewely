@@ -49,24 +49,19 @@ class ProductForm extends React.Component {
 
         const reader = new FileReader();
         const files = e.currentTarget.files;
+        
+        if (files) {
+            reader.readAsDataURL(files[0]);
+        }
 
-        const file = { [e.currentTarget.id]: reader.result }
-        const newPhotoUrls = Object.assign({}, this.state.photoUrl, file)
-
-        debugger
+        const imgId = e.currentTarget.id
 
         reader.onloadend = () => this.setState({
-            photoUrls: newPhotoUrls,
+            photoUrls: Object.assign({}, this.state.photoUrl, {
+                [imgId]: reader.result
+            }),
             photoFiles: files
-        });
-
-        // if (files) {
-        //     for (let i = 0; i < files.length; i++) {
-        //         reader.readAsDataURL(files[i]);
-        //     }
-        // } else {
-        //     this.setState({ photoUrls: [], photoFiles: [] });
-        // }
+        }, this.viewState);
     }
 
     renderErrors() {
@@ -146,6 +141,7 @@ class ProductForm extends React.Component {
     }
 
     render() {
+        debugger
         return (
             <div className="product-form-box-container">
                 <div className="product-form-box">
