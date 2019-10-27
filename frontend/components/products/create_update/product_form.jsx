@@ -189,16 +189,14 @@ class ProductForm extends React.Component {
                                         htmlFor="img1">
                                         Select an image
                                     </label>
-                                    {Object.values(this.state.photoUrls).map(photoUrl => {
-                                        return (
-                                            <label>
-                                                <br />
-                                                <img
-                                                    className="product-form-image-preview"
-                                                    src={photoUrl} />
-                                            </label>
-                                        )
-                                    })}
+
+                                    <label>
+                                        <br />
+                                        <img
+                                            className="product-form-image-preview"
+                                            src={this.state.photoUrls["img1"]} />
+                                    </label>
+
                                 </div>
                             </div>
                         </label>
