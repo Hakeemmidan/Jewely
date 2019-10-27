@@ -20,15 +20,15 @@ export class ProductShow extends React.Component {
             product: action.product
         }))
     }
-    
+
     componentDidUpdate(prevProps) {
         if (prevProps.match.params.productId != this.props.match.params.productId) {
             this.props.fetchProduct(this.props.match.params.productId)
         }
     }
-    
+
     handleAddToCart() {
-        const productId = this.props.match.params.productId 
+        const productId = this.props.match.params.productId
         const quantity = $('.product-show-quantity-dropdown')[0].value
 
         if (localStorage.cart) {
@@ -37,13 +37,13 @@ export class ProductShow extends React.Component {
             cartProductIdsAndQuantities.push([productId, quantity])
             localStorage.setItem('cart', JSON.stringify(cartProductIdsAndQuantities))
             this.props.fetchCartBadge();
-        } else { 
+        } else {
             // If not, then create the cart and add the targeted item and its quantity
             localStorage.setItem('cart', JSON.stringify([productId, quantity]))
             this.props.fetchCartBadge();
         }
     }
-    
+
     renderSellerUsername() {
         const product = this.state.product
 
@@ -60,7 +60,7 @@ export class ProductShow extends React.Component {
 
     imageShow() {
         const product = this.state.product
-        
+
         if (Array.isArray(product.photoUrls)) {
             return (
                 <div>
@@ -152,10 +152,21 @@ export class ProductShow extends React.Component {
             </div>
         )
     }
-    
+
+    populateQuantityDropDownOptions() {
+        let dropDownOptions = [];
+        for (let i = 1; i < 14; i++) {
+            dropDownOptions.push(<option value={`${i}`}>{i}</option>)
+        }
+
+        return dropDownOptions.map(option => {
+            return option
+        })
+    }
+
     render() {
         const product = this.state.product
-        
+
         if (!product) {
             return <div></div>
         }
@@ -163,12 +174,12 @@ export class ProductShow extends React.Component {
         const avgRating = this.calculateProductAverageRating()
 
         let editLink = null;
-        if (this.props.currentUserId === product.seller_id) { 
-            editLink = <Link 
+        if (this.props.currentUserId === product.seller_id) {
+            editLink = <Link
                 className="text-link-underline-hover"
                 to={`/products/${product.id}/edit`}
-                style={{ padding: '0', textDecoration: 'underline', color: 'rgb(74, 74, 74)'}}>
-                    Edit your product listing
+                style={{ padding: '0', textDecoration: 'underline', color: 'rgb(74, 74, 74)' }}>
+                Edit your product listing
             </Link>
         }
 
@@ -198,48 +209,36 @@ export class ProductShow extends React.Component {
                                 {/* Number format source : https://stackoverflow.com/a/14428340/7974948 */}
                             </span>
                         </div>
-                        
+
                         <div className="product-show-quantity-select">
                             <label className="quantity-label">
                                 Quantity
                             </label>
 
                             <select className="product-show-quantity-dropdown">
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                                <option value="5">5</option>
-                                <option value="6">6</option>
-                                <option value="7">7</option>
-                                <option value="8">8</option>
-                                <option value="9">9</option>
-                                <option value="10">10</option>
-                                <option value="11">11</option>
-                                <option value="12">12</option>
-                                <option value="13">13</option>
+                                {this.populateQuantityDropDownOptions()}
                             </select>
                         </div>
-                            <Link to='/cart'>
-                                <button
-                                    className="product-show-add-to-cart-button"
-                                    onClick={this.handleAddToCart}>
-                                    <p className="product-show-add-to-cart-button-text">
-                                        Add to cart
+                        <Link to='/cart'>
+                            <button
+                                className="product-show-add-to-cart-button"
+                                onClick={this.handleAddToCart}>
+                                <p className="product-show-add-to-cart-button-text">
+                                    Add to cart
                                     </p>
-                                </button>
-                            </Link> 
-                        <br/>
+                            </button>
+                        </Link>
+                        <br />
                         {editLink}
                     </div>
                 </div>
 
-                <hr className="product-show-divider"/>
+                <hr className="product-show-divider" />
 
                 <div className="product-show-lower">
                     <div className="product-show-column product-show-column1">
                         <b>
-                            Details: 
+                            Details:
                         </b>
                         <p className="product-show-description">
                             {product.description}
@@ -249,15 +248,15 @@ export class ProductShow extends React.Component {
                     <div className="product-show-column2">
                         <b>
                             Reviews {avgRating > 0 ? `(${avgRating} average):` :
-                                <div style={{display: 'inline', fontWeight: 'normal'}}>:
-                                    <br/>
-                                    <br/>
+                                <div style={{ display: 'inline', fontWeight: 'normal' }}>:
+                                    <br />
+                                    <br />
                                     None at the moment 🐣
-                                    <br/> 
+                                    <br />
                                     Be the first to review!👇
                                 </div>
-                        
-                        }
+
+                            }
                         </b>
                         <ReviewsIndexContainer
                             reRenderParent={this.reRenderParent}
