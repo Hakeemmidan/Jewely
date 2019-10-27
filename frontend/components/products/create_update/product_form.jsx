@@ -128,7 +128,6 @@ class ProductForm extends React.Component {
     }
 
     render() {
-        debugger
         return (
             <div className="product-form-box-container">
                 <div className="product-form-box">
@@ -190,6 +189,16 @@ class ProductForm extends React.Component {
                                         htmlFor="img1">
                                         Select an image
                                     </label>
+                                    {Object.values(this.state.photoUrls).map(photoUrl => {
+                                        return (
+                                            <label>
+                                                <br />
+                                                <img
+                                                    className="product-form-image-preview"
+                                                    src={photoUrl} />
+                                            </label>
+                                        )
+                                    })}
                                 </div>
                             </div>
                         </label>
@@ -200,7 +209,7 @@ class ProductForm extends React.Component {
 
                         <label className="product-form-label"> Image(s) Preview
                             <br/>
-                            {this.previewImages()}
+                            {/* {this.previewImages()} */}
                         </label>
                         
                         <br/>
