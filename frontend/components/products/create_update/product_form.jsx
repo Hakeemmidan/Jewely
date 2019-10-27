@@ -188,16 +188,18 @@ class ProductForm extends React.Component {
                             <br/>
                             <br/>
                             <div className="product-form-file-input-container">
-                                <input
-                                    className="product-form-file-input"
-                                    type="file"
-                                    id="img1"
-                                    onChange={this.handleFile.bind(this)}/>
-                                <label
-                                    className="product-form-file-input-label"
-                                    htmlFor="img1">
-                                    Select an image
-                                </label>
+                                <div className="product-form-file-input-border-box">
+                                    <input
+                                        className="product-form-file-input"
+                                        type="file"
+                                        id="img1"
+                                        onChange={this.handleFile.bind(this)}/>
+                                    <label
+                                        className="product-form-file-input-label"
+                                        htmlFor="img1">
+                                        Select an image
+                                    </label>
+                                </div>
                             </div>
                         </label>
 
