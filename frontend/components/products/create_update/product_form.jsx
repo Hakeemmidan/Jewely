@@ -111,33 +111,20 @@ class ProductForm extends React.Component {
     }
 
     previewImages() {
-        if (Array.isArray(this.state.photoUrls)) {
-            return (
-                <ul className="product-form-image-preview-ul">
-                    {this.state.photoUrls.map( photoUrl => {
-                        return (
-                        <label>
-                            <br/>
-                            <img
-                                className="product-form-image-preview"
-                                src={photoUrl} />
-                        </label>
-                        )
-                    })}
-                </ul>
-            )
-        } else if (typeof (this.state.photoUrls) === 'string') {
-            return (
-                <label>
-                    <br />
-                    <img
-                        className="product-form-image-preview"
-                        src={this.state.photoUrls} />
-                </label>
-            )
-        } else {
-            return null
-        }
+        return (
+            <ul className="product-form-image-preview-ul">
+                {Object.values(this.state.photoUrls).map( photoUrl => {
+                    return (
+                    <label>
+                        <br/>
+                        <img
+                            className="product-form-image-preview"
+                            src={photoUrl} />
+                    </label>
+                    )
+                })}
+            </ul>
+        )
     }
 
     render() {
