@@ -48,19 +48,19 @@ class ProductForm extends React.Component {
         // ^ Empty out the old photos (if there are any)
 
         const reader = new FileReader();
-        const files = e.currentTarget.files;
+        const imgIdStr = e.currentTarget.id // e.g. 'img0'
+        const imgId = imgIdStr[3]
+        const files = {[imgId]: e.currentTarget.files[0]};
         
         if (files) {
-            reader.readAsDataURL(files[0]);
+            reader.readAsDataURL(files[imgId]);
         }
 
         debugger
 
-        const imgId = e.currentTarget.id
-
         reader.onloadend = () => this.setState({
             photoUrls: Object.assign({}, this.state.photoUrls, {
-                [imgId]: reader.result
+                [imgIdStr]: reader.result
             }),
             photoFiles: Object.assign({}, this.state.photoFiles, files)
         }, this.viewState);
