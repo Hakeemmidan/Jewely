@@ -5,6 +5,7 @@ class ProductForm extends React.Component {
     constructor(props) {
         super(props);
         this.state = this.props.product
+
         this.handleSubmit = this.handleSubmit.bind(this);
         this.update = this.update.bind(this);
         this.handleRemove = this.handleRemove.bind(this);
@@ -20,6 +21,20 @@ class ProductForm extends React.Component {
         };
     }
 
+    componentDidMount() {
+        // Format exisiting photos into our wanted format
+        const existingPhotoUrls = this.state.photoUrls
+        const formattedPhotoUrls = {}
+        
+        for (let i = 0; i < existingPhotoUrls.length; i++) {
+            formattedPhotoUrls[`img${i}`] = existingPhotoUrls[i]
+        }
+
+        this.setState({
+            photoUrls: formattedPhotoUrls
+        })
+    }
+
     handleSubmit(e) {
         e.preventDefault();
         const formData = new FormData();
@@ -32,9 +47,11 @@ class ProductForm extends React.Component {
         formData.append('product[errors]', this.state.errors);
 
         if (this.state.photoFiles) {
-            const photos = this.state.photoFiles
-            for (let i = 0; i < Object.keys(photos).length; i++) {
-                formData.append('product[photos][]', photos[i]);
+            const photos = Object.values(this.state.photoFiles)
+            for (let i = 0; i < photos.length; i++) {
+                if (photos[i]) {
+                    formData.append('product[photos][]', photos[i]);
+                }
             }
         }
 
