@@ -23,7 +23,7 @@ class Api::ProductsController < ApplicationController
 
     def update
         @product = current_user.products.find(params[:id])
-        @product.photos.destroy_all
+        # @product.photos.destroy_all
 
         if @product.update(product_params)
             render :show

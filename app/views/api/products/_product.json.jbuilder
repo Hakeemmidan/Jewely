@@ -1,6 +1,7 @@
 json.extract! product, :id, :title, :description, :price, :seller_id, :reviews, :seller_username
 
 if product.photos.attached?
+    json.photoFiles product.photos.map { |file| file }
     json.photoUrls product.photos.map { |file| url_for(file) }
 else
     file = File.open('app/assets/images/Jewely.jpg')
