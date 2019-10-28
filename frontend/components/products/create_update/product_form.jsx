@@ -11,6 +11,7 @@ class ProductForm extends React.Component {
         this.handleRemove = this.handleRemove.bind(this);
         this.update = this.update.bind(this);
         this.renderChooseImages = this.renderChooseImages.bind(this);
+        this.collectOverwrittenPhotosIds = this.collectOverwrittenPhotosIds.bind(this);
     }
 
     update(field) {
@@ -48,10 +49,11 @@ class ProductForm extends React.Component {
 
         if (this.state.photoFiles) {
             const photos = Object.values(this.state.photoFiles)
+            
             debugger
 
             for (let i = 0; i < photos.length; i++) {
-                if (!photos[i].blod_id) { // If the photo isn't already in db
+                if (!photos[i].blob_id) { // If the photo isn't already in db
                     formData.append('product[photos][]', photos[i]);
                 }
             }
@@ -65,11 +67,20 @@ class ProductForm extends React.Component {
     collectOverwrittenPhotosIds(oldObj, insertedObj) {
         const keys1 = Object.keys(oldObj)
         const keys2 = Object.keys(insertedObj)
-        overwrittenPhotosKeys = keys1.filter(key => keys2.indexOf(key) !== -1)
+        const overwrittenPhotosKeys = keys1.filter(key => keys2.indexOf(key) !== -1)
 
         const overwrittenPhotoIds = overwrittenPhotosKeys.map(key => oldObj[key].id)
+        
+        let photosToDeleteIds;
+        if (this.state.photosToDeleteIds) {
+            photosToDeleteIds = this.state.photosToDeleteIds.concat(overwrittenPhotoIds)
+        } else {
+            photosToDeleteIds = overwrittenPhotoIds
+        }
 
-        return overwrittenPhotoIds
+        this.setState({
+            photosToDeleteIds
+        })        
     }
 
     handleFile(e) {
@@ -79,7 +90,8 @@ class ProductForm extends React.Component {
         const file = {[imgId]: e.currentTarget.files[0]};
         const photoFilesObj = Object.assign({}, this.state.photoFiles)
 
-        
+        this.collectOverwrittenPhotosIds(photoFilesObj, file)
+
         if (file) {
             reader.readAsDataURL(file[imgId]);
         }
