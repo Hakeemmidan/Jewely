@@ -10,6 +10,7 @@ class ProductForm extends React.Component {
         this.handleRemove = this.handleRemove.bind(this);
         this.update = this.update.bind(this);
         this.previewImages = this.previewImages.bind(this);
+        this.renderChooseImages = this.renderChooseImages.bind(this);
     }
 
     update(field) {
@@ -57,7 +58,7 @@ class ProductForm extends React.Component {
         const imgId = e.currentTarget.id
 
         reader.onloadend = () => this.setState({
-            photoUrls: Object.assign({}, this.state.photoUrl, {
+            photoUrls: Object.assign({}, this.state.photoUrls, {
                 [imgId]: reader.result
             }),
             photoFiles: files
@@ -128,6 +129,7 @@ class ProductForm extends React.Component {
     }
 
     renderChooseImages() {
+        debugger
         const imgPlaceholders = [];
 
         for (let i = 1; i < 5; i++) {
