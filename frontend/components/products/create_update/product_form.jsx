@@ -39,7 +39,7 @@ class ProductForm extends React.Component {
         }
 
         this.props.action(formData)
-            .then(() => this.props.history.push(`/`),
+            .then(() => location.hash = '#/',
             (err) => { console.log(err) })
     }
 
@@ -111,7 +111,6 @@ class ProductForm extends React.Component {
     }
 
     renderChooseImages() {
-        debugger
         const imgPlaceholders = [];
 
         for (let i = 1; i < 5; i++) {
