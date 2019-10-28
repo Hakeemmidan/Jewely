@@ -38,8 +38,6 @@ class ProductForm extends React.Component {
             }
         }
 
-        debugger
-
         this.props.action(formData)
             .then(() => location.hash = '#/',
             (err) => { console.log(err) })
