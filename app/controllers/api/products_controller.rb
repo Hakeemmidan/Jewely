@@ -34,7 +34,8 @@ class Api::ProductsController < ApplicationController
 
     def destroy
         @product = current_user.products.find(params[:id])
-
+        @product.photos.destroy_all
+        
         if @product.destroy
             render :index
         else

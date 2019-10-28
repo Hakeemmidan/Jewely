@@ -24,7 +24,7 @@ class ProductForm extends React.Component {
         e.preventDefault();
         const formData = new FormData();
         
-        formData.append('product[productId]', this.state.id);
+        formData.append('product[id]', this.state.id);
         formData.append('product[title]', this.state.title);
         formData.append('product[description]', this.state.description);
         formData.append('product[price]', this.state.price);
