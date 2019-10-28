@@ -33,10 +33,12 @@ class ProductForm extends React.Component {
 
         if (this.state.photoFiles) {
             const photos = this.state.photoFiles
-            for (let i = 0; i < photos.length; i++) {
+            for (let i = 0; i < Object.keys(photos).length; i++) {
                 formData.append('product[photos][]', photos[i]);
             }
         }
+
+        debugger
 
         this.props.action(formData)
             .then(() => location.hash = '#/',
@@ -44,25 +46,20 @@ class ProductForm extends React.Component {
     }
 
     handleFile(e) {
-        // this.setState({ photoUrls: [], photoFiles: [] })
-        // ^ Empty out the old photos (if there are any)
-
         const reader = new FileReader();
         const imgIdStr = e.currentTarget.id // e.g. 'img0'
         const imgId = imgIdStr[3]
-        const files = {[imgId]: e.currentTarget.files[0]};
+        const file = {[imgId]: e.currentTarget.files[0]};
         
-        if (files) {
-            reader.readAsDataURL(files[imgId]);
+        if (file) {
+            reader.readAsDataURL(file[imgId]);
         }
-
-        debugger
 
         reader.onloadend = () => this.setState({
             photoUrls: Object.assign({}, this.state.photoUrls, {
                 [imgIdStr]: reader.result
             }),
-            photoFiles: Object.assign({}, this.state.photoFiles, files)
+            photoFiles: Object.assign({}, this.state.photoFiles, file)
         }, this.viewState);
     }
 
