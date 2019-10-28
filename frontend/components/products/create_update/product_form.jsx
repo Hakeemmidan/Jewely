@@ -54,13 +54,15 @@ class ProductForm extends React.Component {
             reader.readAsDataURL(files[0]);
         }
 
+        debugger
+
         const imgId = e.currentTarget.id
 
         reader.onloadend = () => this.setState({
             photoUrls: Object.assign({}, this.state.photoUrls, {
                 [imgId]: reader.result
             }),
-            photoFiles: files
+            photoFiles: Object.assign({}, this.state.photoFiles, files)
         }, this.viewState);
     }
 
@@ -113,13 +115,14 @@ class ProductForm extends React.Component {
     renderChooseImages() {
         const imgPlaceholders = [];
 
-        for (let i = 1; i < 5; i++) {
+        for (let i = 0; i < 4; i++) {
             imgPlaceholders.push(
                 <div className="product-form-file-input-container">
                     <div className="product-form-file-input-border-box">
                         <input
                             className="product-form-file-input"
                             type="file"
+                            accept="image/*"
                             id={`img${i}`}
                             onChange={this.handleFile.bind(this)} />
                         <label
