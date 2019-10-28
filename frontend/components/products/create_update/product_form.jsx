@@ -9,7 +9,6 @@ class ProductForm extends React.Component {
         this.update = this.update.bind(this);
         this.handleRemove = this.handleRemove.bind(this);
         this.update = this.update.bind(this);
-        this.previewImages = this.previewImages.bind(this);
         this.renderChooseImages = this.renderChooseImages.bind(this);
     }
 
@@ -111,23 +110,6 @@ class ProductForm extends React.Component {
         location.hash = '#/'
     }
 
-    previewImages() {
-        return (
-            <ul className="product-form-image-preview-ul">
-                {Object.values(this.state.photoUrls).map( photoUrl => {
-                    return (
-                    <label>
-                        <br/>
-                        <img
-                            className="product-form-image-preview"
-                            src={photoUrl} />
-                    </label>
-                    )
-                })}
-            </ul>
-        )
-    }
-
     renderChooseImages() {
         debugger
         const imgPlaceholders = [];
@@ -216,14 +198,6 @@ class ProductForm extends React.Component {
                         </label>
 
                         <br/>
-                        <br/>
-                        <hr />
-
-                        <label className="product-form-label"> Image(s) Preview
-                            <br/>
-                            {/* {this.previewImages()} */}
-                        </label>
-                        
                         <br/>
                         <hr/>
 
