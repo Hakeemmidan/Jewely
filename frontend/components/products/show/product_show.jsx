@@ -163,7 +163,7 @@ export class ProductShow extends React.Component {
             return option
         })
     }
-
+    
     render() {
         const product = this.state.product
 

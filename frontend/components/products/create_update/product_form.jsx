@@ -9,7 +9,7 @@ class ProductForm extends React.Component {
         this.update = this.update.bind(this);
         this.handleRemove = this.handleRemove.bind(this);
         this.update = this.update.bind(this);
-        this.previewImages = this.previewImages.bind(this);
+        this.renderChooseImages = this.renderChooseImages.bind(this);
     }
 
     update(field) {
@@ -33,32 +33,32 @@ class ProductForm extends React.Component {
 
         if (this.state.photoFiles) {
             const photos = this.state.photoFiles
-            for (let i = 0; i < photos.length; i++) {
+            for (let i = 0; i < Object.keys(photos).length; i++) {
                 formData.append('product[photos][]', photos[i]);
             }
         }
 
         this.props.action(formData)
-            .then(() => this.props.history.push(`/`),
+            .then(() => location.hash = '#/',
             (err) => { console.log(err) })
     }
 
     handleFile(e) {
-        this.setState({ photoUrls: [], photoFiles: [] })
-        // ^ Empty out the old photos (if there are any)
-
         const reader = new FileReader();
-        const files = e.currentTarget.files;
-
-        reader.onloadend = () => this.setState({ photoUrls: reader.result, photoFiles: files });
-
-        if (files) {
-            for (let i = 0; i < files.length; i++) {
-                reader.readAsDataURL(files[i]);
-            }
-        } else {
-            this.setState({ photoUrls: [], photoFiles: [] });
+        const imgIdStr = e.currentTarget.id // e.g. 'img0'
+        const imgId = imgIdStr[3]
+        const file = {[imgId]: e.currentTarget.files[0]};
+        
+        if (file) {
+            reader.readAsDataURL(file[imgId]);
         }
+
+        reader.onloadend = () => this.setState({
+            photoUrls: Object.assign({}, this.state.photoUrls, {
+                [imgIdStr]: reader.result
+            }),
+            photoFiles: Object.assign({}, this.state.photoFiles, file)
+        }, this.viewState);
     }
 
     renderErrors() {
@@ -107,34 +107,38 @@ class ProductForm extends React.Component {
         location.hash = '#/'
     }
 
-    previewImages() {
-        if (Array.isArray(this.state.photoUrls)) {
-            return (
-                <ul className="product-form-image-preview-ul">
-                    {this.state.photoUrls.map( photoUrl => {
-                        return (
+    renderChooseImages() {
+        const imgPlaceholders = [];
+
+        for (let i = 0; i < 4; i++) {
+            imgPlaceholders.push(
+                <div className="product-form-file-input-container">
+                    <div className="product-form-file-input-border-box">
+                        <input
+                            className="product-form-file-input"
+                            type="file"
+                            accept="image/*"
+                            id={`img${i}`}
+                            onChange={this.handleFile.bind(this)} />
+                        <label
+                            className="product-form-file-input-label"
+                            htmlFor={`img${i}`}>
+                            Select an image
+                        </label>
+
                         <label>
-                            <br/>
+                            <br />
                             <img
                                 className="product-form-image-preview"
-                                src={photoUrl} />
+                                src={this.state.photoUrls[`img${i}`]} />
                         </label>
-                        )
-                    })}
-                </ul>
-            )
-        } else if (typeof (this.state.photoUrls) === 'string') {
-            return (
-                <label>
-                    <br />
-                    <img
-                        className="product-form-image-preview"
-                        src={this.state.photoUrls} />
-                </label>
-            )
-        } else {
-            return null
+                    </div>
+                </div>
+            )    
         }
+
+
+        return imgPlaceholders.map(imgPlaceholder => imgPlaceholder)
     }
 
     render() {
@@ -186,22 +190,11 @@ class ProductForm extends React.Component {
 
                         <label className="product-form-label">Choose Image(s)
                             <br/>
-                            <input 
-                                type="file"
-                                onChange={this.handleFile.bind(this)} 
-                                
-                                multiple/>
-                        </label>
-
-                        <br/>
-                        <br/>
-                        <hr />
-
-                        <label className="product-form-label"> Image(s) Preview
                             <br/>
-                            {this.previewImages()}
+                            {this.renderChooseImages()}
                         </label>
-                        
+
+                        <br/>
                         <br/>
                         <hr/>
 
