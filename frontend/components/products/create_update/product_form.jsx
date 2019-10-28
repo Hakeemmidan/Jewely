@@ -130,7 +130,7 @@ class ProductForm extends React.Component {
                             <br />
                             <img
                                 className="product-form-image-preview"
-                                src={this.state.photoUrls[`img${i}`]} />
+                                src={this.state.photoUrls[`img${i}`] ? this.state.photoUrls[`img${i}`] : this.state.photoUrls[i]}/>
                         </label>
                     </div>
                 </div>
