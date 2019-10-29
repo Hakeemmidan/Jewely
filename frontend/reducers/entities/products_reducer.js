@@ -18,7 +18,7 @@ export const productsReducer = (oldState = {}, action) => {
             return nextState
         case REMOVE_PRODUCT:
             nextState = Object.assign({}, oldState)
-            delete nextState.products[action.productId]
+            delete nextState[action.productId]
             return nextState
         default:
             return oldState

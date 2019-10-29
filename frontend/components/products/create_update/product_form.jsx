@@ -60,7 +60,9 @@ class ProductForm extends React.Component {
         formData.append('product[photosToDeleteIds]', this.state.photosToDeleteIds)
 
         this.props.action(formData)
-            .then(() => location.hash = '#/',
+            .then(() => {
+                location.hash = '#/'
+            },
             (err) => { console.log(err) })
     }
 

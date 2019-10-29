@@ -1,6 +1,5 @@
 import React from 'react';
 import { ProductIndexItem } from './product_index_item';
-import { Carousel } from "react-responsive-carousel";
 
 
 export class ProductIndex extends React.Component {

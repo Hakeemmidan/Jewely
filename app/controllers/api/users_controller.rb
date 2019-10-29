@@ -20,6 +20,7 @@ class Api::UsersController < ApplicationController
 
   def destroy
     @user = User.find(params[:id])
+    @user.reviews.destroy_all
 
     if @user.destroy
       # Question ) Should I log out the user here or is it already destroyed and logged out?
