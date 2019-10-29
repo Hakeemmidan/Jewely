@@ -1,12 +1,17 @@
 import React from 'react';
 
-const handleChange = (filter, updateFilter) => e => (
-    updateFilter(filter, parseInt(e.currentTarget.value))
-);
-
-class FilterForm {
+export class FilterForm {
     constructor(props) {
         super(props)
+        this.handleChange = this.handleChange.bind(this)
+    }
+
+    handleChange(filter) { 
+        return (
+            e => (
+                this.props.updateFilter(filter, parseInt(e.currentTarget.value))
+            )
+        )
     }
 
     render() {
@@ -16,7 +21,7 @@ class FilterForm {
                 <input
                     type="number"
                     value={this.props.search}
-                    onChange={handleChange('search', this.props.updateFilter)}
+                    onChange={handleChange('search')}
                 />
             </div>
         )
