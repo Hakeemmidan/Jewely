@@ -67,7 +67,9 @@ export class ProductShow extends React.Component {
                     <Carousel>
                         {product.photoUrls.map((photoUrl, idx) => {
                             return (
-                                <div key={`photo-${product.id}-${idx}`}>
+                                <div
+                                    className="product-show-imgs-container" 
+                                    key={`photo-${product.id}-${idx}`}>
                                     <img
                                         src={photoUrl} />
                                 </div>
