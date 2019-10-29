@@ -1,6 +1,12 @@
 class Api::ProductsController < ApplicationController
     def index
-        @products = Product.all
+        if params[:search].present?
+            @products = Product.all.where('lower(title) LIKE ?', "%#{params[:search]}%")
+        else
+            @products = Product.all
+        end
+
+        @products
     end
     
     def show
