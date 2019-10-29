@@ -12,6 +12,7 @@ class ProductForm extends React.Component {
         this.update = this.update.bind(this);
         this.renderChooseImages = this.renderChooseImages.bind(this);
         this.collectOverwrittenPhotosIds = this.collectOverwrittenPhotosIds.bind(this);
+        this.renderSelectImage = this.renderSelectImage.bind(this);
     }
 
     update(field) {
@@ -154,36 +155,41 @@ class ProductForm extends React.Component {
         location.hash = '#/'
     }
 
+    renderSelectImage(imgIdx) {
+        if (!this.state.photoUrls[`img${imgIdx}`] && !this.state.photoUrls[imgIdx]) {
+            return <p className="product-form-select-image-statement">
+                Select an image
+            </p>
+        }
+    }
+
     renderChooseImages() {
         const imgPlaceholders = [];
 
         for (let i = 0; i < 4; i++) {
             imgPlaceholders.push(
-                <div key={`product-form-img-file-input-container-${i}`} className="product-form-file-input-container">
-                    <div key={`product-form-img-border-box-${i}`} className="product-form-file-input-border-box">
-                        <input
-                            key={`product-form-img-input-${i}`}
-                            className="product-form-file-input"
-                            type="file"
-                            accept="image/*"
-                            id={`img${i}`}
-                            onChange={this.handleFile.bind(this)} />
-                        <label
-                            key={`product-form-img-label-${i}`}
-                            className="product-form-file-input-label"
-                            htmlFor={`img${i}`}>
-                            Select an image
-                        </label>
-
-                        <label>
-                            <br />
+                    <div key={`product-form-img-file-input-container-${i}`} className="product-form-file-input-container">
+                        <div key={`product-form-img-border-box-${i}`} className="product-form-file-input-border-box">
+                            <input
+                                key={`product-form-img-input-${i}`}
+                                className="product-form-file-input"
+                                type="file"
+                                accept="image/*"
+                                id={`img${i}`}
+                                onChange={this.handleFile.bind(this)} />
+                            <label
+                                key={`product-form-img-label-${i}`}
+                                className="product-form-file-input-label"
+                                htmlFor={`img${i}`}>
+                                {this.renderSelectImage(i)}
+                            </label>
                             <img
+                                htmlFor={`img${i}`}
                                 key={`product-form-img-preview-${i}`}
                                 className="product-form-image-preview"
                                 src={this.state.photoUrls[`img${i}`] ? this.state.photoUrls[`img${i}`] : this.state.photoUrls[i]}/>
-                        </label>
+                        </div>
                     </div>
-                </div>
             )
         }
 
@@ -239,14 +245,14 @@ class ProductForm extends React.Component {
                         <hr />
 
                         <label className="product-form-label">Choose Image(s)
-                            <br/>
+                            <p className="product-form-sublabel">
+                                Click to select new image
+                            </p>
                             <br/>
                             {this.renderChooseImages()}
                         </label>
 
                         <br/>
-                        <br/>
-                        <hr/>
 
                         <input 
                             className="black-background-button"
