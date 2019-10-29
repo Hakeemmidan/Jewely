@@ -1,6 +1,6 @@
 import React from 'react';
 
-export class FilterForm {
+export class FilterForm extends React.Component {
     constructor(props) {
         super(props)
         this.handleChange = this.handleChange.bind(this)

@@ -28,6 +28,9 @@ import ModalContainer from './modal/modal_container';
 // reviews vvv
 // import EditReviewFormContainer from './products/reviews/edit_review_form_container';
 
+// filter vvv
+import FilterFormContainer from './filter/filter_form_container';
+
 // footer vvv
 import { Footer } from './footer/footer';
 
@@ -42,6 +45,7 @@ export class App extends React.Component {
         <header>
           <ModalContainer />
           <Link to="/" className="logo"> Jewely </Link>
+          <FilterFormContainer />
           <GreetingContainer />
         </header>
           {/* Noted: this is here because we want to view differnet things based on what page we are on */}
