@@ -2,10 +2,9 @@ import React from 'react';
 import { connect } from 'react-redux';
 import ProductForm from './product_form';
 import { fetchProduct, updateProduct, removeProduct } from '../../../actions/product_actions';
-
+import { openModal, closeModal } from '../../../actions/modal_actions';
 
 const mapStateToProps = (state, ownProps) => {
-
     const defaultProduct = {
         title: '',
         description: '',
@@ -14,14 +13,12 @@ const mapStateToProps = (state, ownProps) => {
         seller_id: state.session.id,
     };
 
-
     const product = state.entities.products[ownProps.match.params.productId] || defaultProduct;
     product['errors'] = state.errors.product
     // Noted : This is different than how it was done it create form container
             // because in this case we need to first check if a product exists
 
     const formType = 'Update Product';
-
 
     return {
         product,
@@ -33,7 +30,9 @@ const mapDispatchToProps = dispatch => {
     return {
         fetchProduct: id => dispatch(fetchProduct(id)),
         removeProduct: id => dispatch(removeProduct(id)),
-        action: formData => dispatch(updateProduct(formData))
+        action: formData => dispatch(updateProduct(formData)),
+        openModal: (modal) => dispatch(openModal(modal)),
+        closeModal: () => dispatch(closeModal())
     };
 };
 

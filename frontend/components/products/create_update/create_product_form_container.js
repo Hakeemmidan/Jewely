@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import ProductForm from './product_form';
 import { createProduct } from '../../../actions/product_actions';
+import { openModal, closeModal } from '../../../actions/modal_actions';
 
 const mapStateToProps = (state) => {
     const errorsArr = state.errors.product
@@ -22,7 +23,9 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        action: formData => dispatch(createProduct(formData))
+        action: formData => dispatch(createProduct(formData)),
+        openModal: (modal) => dispatch(openModal(modal)),
+        closeModal: () => dispatch(closeModal())
     };
 };
 
