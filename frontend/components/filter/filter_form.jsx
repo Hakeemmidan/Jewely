@@ -16,14 +16,13 @@ export class FilterForm extends React.Component {
 
     render() {
         return (
-            <div>
-                <label>Search</label>
                 <input
                     type="string"
+                    placeholder="Search"
+                    className="search-input-field"
                     value={this.props.search}
                     onChange={this.handleChange('search')}
                 />
-            </div>
         )
     }
 };
