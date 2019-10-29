@@ -63,27 +63,28 @@ export class ProductShow extends React.Component {
 
         if (Array.isArray(product.photoUrls)) {
             return (
-                <div>
-                    <Carousel>
-                        {product.photoUrls.map((photoUrl, idx) => {
-                            return (
-                                <div
-                                    className="product-show-imgs-container" 
-                                    key={`photo-${product.id}-${idx}`}>
-                                    <img
-                                        className="product-show-carousel-images"
-                                        src={photoUrl} />
-                                </div>
-                            )
-                        })}
-                    </Carousel>
-                </div>
+                <Carousel>
+                    {product.photoUrls.map((photoUrl, idx) => {
+                        return (
+                            <div
+                                className="product-show-imgs-container" 
+                                key={`photo-${product.id}-${idx}-container`}>
+                                <img
+                                    key={`photo-${product.id}-${idx}`}
+                                    className="product-show-carousel-images"
+                                    src={photoUrl} />
+                            </div>
+                        )
+                    })}
+                </Carousel>
             )
         } else if (typeof (product.photoUrls) === 'string') {
             return (
                 <Carousel>
-                    <div>
+                    <div
+                        key={`photo-${product.id}-single-photo-container`}>
                         <img
+                            key={`photo-${product.id}-single-photo`}
                             src={photoUrl} />
                     </div>
                 </Carousel>
@@ -128,7 +129,7 @@ export class ProductShow extends React.Component {
         for (let i = 0; i < avgRatingInt; i++) {
             stars.push(
                 <img
-                    key={`filledStar-${i}`}
+                    key={`avg-filledStar-${i}`}
                     className="product-show-average-rating-star"
                     src="https://image.flaticon.com/icons/svg/148/148841.svg" />
             )
@@ -137,7 +138,7 @@ export class ProductShow extends React.Component {
         for (let j = 0; j < 5 - avgRatingInt; j++) {
             stars.push(
                 <img
-                    key={`unfilledStar-${j}`}
+                    key={`avg-unfilledStar-${j}`}
                     className="product-show-average-rating-star"
                     src="https://image.flaticon.com/icons/svg/149/149222.svg" />
             )

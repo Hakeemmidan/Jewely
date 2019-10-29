@@ -155,15 +155,17 @@ class ProductForm extends React.Component {
 
         for (let i = 0; i < 4; i++) {
             imgPlaceholders.push(
-                <div className="product-form-file-input-container">
-                    <div className="product-form-file-input-border-box">
+                <div key={`product-form-img-file-input-container-${i}`} className="product-form-file-input-container">
+                    <div key={`product-form-img-border-box-${i}`} className="product-form-file-input-border-box">
                         <input
+                            key={`product-form-img-input-${i}`}
                             className="product-form-file-input"
                             type="file"
                             accept="image/*"
                             id={`img${i}`}
                             onChange={this.handleFile.bind(this)} />
                         <label
+                            key={`product-form-img-label-${i}`}
                             className="product-form-file-input-label"
                             htmlFor={`img${i}`}>
                             Select an image
@@ -172,6 +174,7 @@ class ProductForm extends React.Component {
                         <label>
                             <br />
                             <img
+                                key={`product-form-img-preview-${i}`}
                                 className="product-form-image-preview"
                                 src={this.state.photoUrls[`img${i}`] ? this.state.photoUrls[`img${i}`] : this.state.photoUrls[i]}/>
                         </label>
