@@ -71,6 +71,7 @@ export class ProductShow extends React.Component {
                                     className="product-show-imgs-container" 
                                     key={`photo-${product.id}-${idx}`}>
                                     <img
+                                        className="product-show-carousel-images"
                                         src={photoUrl} />
                                 </div>
                             )

@@ -230,3 +230,9 @@
     align-items: center;
     justify-content: center;
 }
+
+.product-show-carousel-images {
+    object-fit: contain;
+    max-width: 40vw;
+    max-height: 60vh;
+}
