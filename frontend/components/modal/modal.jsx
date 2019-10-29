@@ -20,7 +20,7 @@ export function Modal({modal, closeModal}) {
         case 'proceed to checkout':
             component = <CartProceedToCheckout />
             break;
-        case 'lodaing':
+        case 'loading':
             component = <LoadingModal />
             break;
         default:

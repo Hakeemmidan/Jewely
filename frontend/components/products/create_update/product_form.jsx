@@ -62,8 +62,12 @@ class ProductForm extends React.Component {
             }
         }
 
+        this.props.openModal('loading')
+        
+        const that = this
         this.props.action(formData)
             .then(() => {
+                that.props.closeModal()
                 location.hash = '#/'
             },
             (err) => { console.log(err) })
@@ -138,7 +142,9 @@ class ProductForm extends React.Component {
         )
     }
 
-    handleRemove() {
+    handleRemove(e) {
+        e.stopPropagation()
+
         // remove it from cart (if it is there)
         const cart = JSON.parse(localStorage.getItem('cart'))
         for (let i = 0; i < cart.length; i++) {

@@ -54,6 +54,8 @@ class EditProductForm extends React.Component {
                 action={action}
                 formType={formType}
                 product={product}
+                openModal={this.props.openModal}
+                closeModal={this.props.closeModal}
                 removeProduct={this.props.removeProduct}
                 errors={errors} />
         );
