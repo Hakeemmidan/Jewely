@@ -40,7 +40,11 @@ class ProductForm extends React.Component {
         e.preventDefault();
         const formData = new FormData();
         
-        formData.append('product[id]', this.state.id);
+        if (this.props.formType === 'Update Product') {
+            formData.append('product[id]', this.state.id);
+            formData.append('product[photosToDeleteIds]', this.state.photosToDeleteIds)
+        }
+        
         formData.append('product[title]', this.state.title);
         formData.append('product[description]', this.state.description);
         formData.append('product[price]', this.state.price);
@@ -56,8 +60,6 @@ class ProductForm extends React.Component {
                 }
             }
         }
-
-        formData.append('product[photosToDeleteIds]', this.state.photosToDeleteIds)
 
         this.props.action(formData)
             .then(() => {
