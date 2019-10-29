@@ -45,10 +45,15 @@ export class App extends React.Component {
         <header>
           <ModalContainer />
           <Link to="/" className="logo"> Jewely </Link>
-          <FilterFormContainer />
+          <Switch>
+            <ProtectedRoute
+              exact
+              path="/"
+              component={FilterFormContainer}
+            />
+          </Switch>
           <GreetingContainer />
         </header>
-          {/* Noted: this is here because we want to view differnet things based on what page we are on */}
           <Switch>
             <ProtectedRoute 
               exact
@@ -61,12 +66,6 @@ export class App extends React.Component {
               path="/products/create"
               component={CreateProductFormContainer}
             />
-{/* 
-            <ProtectedRoute
-              exact
-              path="/reviews/:reviewId"
-              component={ModalContainer}
-            /> */}
   
             <Route
               exact
@@ -108,11 +107,8 @@ export class App extends React.Component {
             <Route
               component={ProductIndexContainer}
             />
-            {/* ^^^ Noted: User gets redirected to this if they don't enter an exisiting path.
+            {/* ^^^ User gets redirected to this if they don't enter an exisiting path.
                     This happens because there is no path parameter */}
-  
-            {/* Task: Make this a home container. It should be the body.
-                We are going to use this to pass state and dispatch */}
           </Switch>
           <Footer />
       </div>
