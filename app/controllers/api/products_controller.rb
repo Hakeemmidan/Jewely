@@ -1,7 +1,8 @@
 class Api::ProductsController < ApplicationController
     def index
         if params[:search].present?
-            @products = Product.all.where('lower(title) LIKE ?', "%#{params[:search]}%")
+            @products = Product.all.where('lower(title) LIKE :search
+                                           OR lower(description) LIKE :search', search: "%#{params[:search]}%")
         else
             @products = Product.all
         end
