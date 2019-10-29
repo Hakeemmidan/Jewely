@@ -39,6 +39,8 @@ class ProductForm extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
+        e.stopPropagation();
+
         const formData = new FormData();
         
         if (this.props.formType === 'Update Product') {
@@ -135,6 +137,7 @@ class ProductForm extends React.Component {
                 <button
                     className="black-background-button"
                     id="product-form-delete-button"
+                    type="button"
                     onClick={this.handleRemove}>
                     Delete product listing
                 </button>
@@ -265,8 +268,8 @@ class ProductForm extends React.Component {
                             id="form-submit-button"
                             type="submit"
                             value={this.props.formType} />
-                        {this.props.removeProduct ? this.renderRemoveProductButton() : null}
-                    </form>
+                            {this.props.removeProduct ? this.renderRemoveProductButton() : null}
+                    </form> 
                 </div>
             </div>
         );
