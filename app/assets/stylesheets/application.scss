@@ -79,16 +79,21 @@ body {
 header {
   font-family: 'Poppins', sans-serif;
   width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center; 
+  height: 10vh;
+  border-bottom: 1px solid grey;
+}
+
+.navbar-right-side-content {
+  padding-right: 10%;
 }
 
 .navbar-right-side-content > * {
   padding-left: 9px;
   padding-right: 9px;
 }
-
-// .navbar-right-side-content *:not(:first-child){
-//   border-left:1px solid lightgray;
-// }
 
 .navbar-current-user-show-page-link {
   color: black;
@@ -123,4 +128,25 @@ header {
     left: 15px;
     color: white;
     font-size: 120%;
+}
+
+
+.search-input-field {
+  display: block;
+  height: 31px;
+  font-size: 15px;
+  border-radius: 4px;
+  padding-left: 16px;
+  padding-right: 16px;
+  border-style: none;
+  border: 1px solid #E1E3DF;
+  box-shadow: none;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.logo-and-search-bar {
+  display: flex;
+  padding-left: 10%;
+  width:50%;
 }

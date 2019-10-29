@@ -42,18 +42,22 @@ export class App extends React.Component {
   render() {
     return (
       <div className="main-container-div">
+
         <header>
           <ModalContainer />
-          <Link to="/" className="logo"> Jewely </Link>
-          <Switch>
-            <ProtectedRoute
-              exact
-              path="/"
-              component={FilterFormContainer}
-            />
-          </Switch>
+          <div className="logo-and-search-bar">
+            <Link to="/" className="logo"> Jewely </Link>
+            <Switch>
+              <ProtectedRoute
+                exact
+                path="/"
+                component={FilterFormContainer}
+              />
+            </Switch>
+          </div>
           <GreetingContainer />
         </header>
+
           <Switch>
             <ProtectedRoute 
               exact
