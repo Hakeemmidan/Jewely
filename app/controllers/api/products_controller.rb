@@ -23,7 +23,10 @@ class Api::ProductsController < ApplicationController
 
     def update
         @product = current_user.products.find(params[:id])
-        # @product.photos.destroy_all
+
+        params[:product][:photosToDeleteIds].split(',').map do |id|
+            @product.photos.destroy(id)
+        end
 
         if @product.update(product_params)
             render :show

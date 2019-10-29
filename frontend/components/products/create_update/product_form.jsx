@@ -49,8 +49,6 @@ class ProductForm extends React.Component {
 
         if (this.state.photoFiles) {
             const photos = Object.values(this.state.photoFiles)
-            
-            debugger
 
             for (let i = 0; i < photos.length; i++) {
                 if (!photos[i].blob_id) { // If the photo isn't already in db
@@ -58,6 +56,8 @@ class ProductForm extends React.Component {
                 }
             }
         }
+
+        formData.append('product[photosToDeleteIds]', this.state.photosToDeleteIds)
 
         this.props.action(formData)
             .then(() => location.hash = '#/',
