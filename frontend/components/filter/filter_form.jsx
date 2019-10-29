@@ -9,7 +9,7 @@ export class FilterForm extends React.Component {
     handleChange(filter) { 
         return (
             e => (
-                this.props.updateFilter(filter, parseInt(e.currentTarget.value))
+                this.props.updateFilter(filter, e.currentTarget.value)
             )
         )
     }
@@ -19,9 +19,9 @@ export class FilterForm extends React.Component {
             <div>
                 <label>Search</label>
                 <input
-                    type="number"
+                    type="string"
                     value={this.props.search}
-                    onChange={handleChange('search')}
+                    onChange={this.handleChange('search')}
                 />
             </div>
         )

@@ -3,7 +3,7 @@ import { fetchProducts } from './product_actions'
 export const RECEIVE_UPDATE_FILTER = 'RECEIVE_UPDATE_FILTER';
 
 export const receiveFilter = (filter, value) => ({
-    type: UPDATE_FILTER,
+    type: RECEIVE_UPDATE_FILTER,
     filter,
     value
 });

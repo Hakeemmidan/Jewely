@@ -6,7 +6,7 @@ export const filtersReducer = (oldState = {search: ''}, action) => {
         const newFilter = {
             [action.filter]: action.value
         };
-        return merge({}, oldState, newFilter);
+        return Object.assign({}, oldState, newFilter);
     } else {
         return oldState;
     }
