@@ -130,7 +130,6 @@ header {
     font-size: 120%;
 }
 
-
 .search-input-field {
   display: block;
   height: 31px;
@@ -149,4 +148,12 @@ header {
   display: flex;
   padding-left: 10%;
   width:50%;
+}
+
+.loading-modal {
+  background-color: white;
+  padding: 30px;
+  border-radius: 10px;
+  padding-left: 40px;
+  padding-right: 40px;
 }

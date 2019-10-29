@@ -2,6 +2,7 @@ import React from 'react'
 import CreateReviewFormContainer from '../products/reviews/create_review_form_container';
 import EditReviewFormContainer from '../products/reviews/edit_review_form_container';
 import { CartProceedToCheckout } from '../carts/show/cart_proceed_to_checkout';
+import { LoadingModal } from './loading_modal';
 
 export function Modal({modal, closeModal}) {
     if (!modal) {
@@ -18,6 +19,9 @@ export function Modal({modal, closeModal}) {
             break;
         case 'proceed to checkout':
             component = <CartProceedToCheckout />
+            break;
+        case 'lodaing':
+            component = <LoadingModal />
             break;
         default:
             return null;
