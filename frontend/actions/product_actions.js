@@ -38,8 +38,8 @@ const receiveErrors = (errors) => {
 ////////////////////////////////////////////
 // Thunk action creators vvv
 
-export const fetchProducts = () => dispatch => {
-    return ProductAPIUtil.fetchProducts()
+export const fetchProducts = (filters) => dispatch => {
+    return ProductAPIUtil.fetchProducts(filters)
             .then(products => dispatch(receiveProducts(products)))
 }
 

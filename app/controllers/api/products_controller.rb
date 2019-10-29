@@ -5,8 +5,6 @@ class Api::ProductsController < ApplicationController
         else
             @products = Product.all
         end
-
-        @products
     end
     
     def show
