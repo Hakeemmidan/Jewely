@@ -5,7 +5,7 @@ import CartBadgeContainer from '../carts/show/cart_badge/cart_badge_container';
 
 const Greeting = ({ currentUser, logout }) => {
   const sessionLinks = () => (
-    <nav>
+    <nav className="navbar-right-side-content">
       <Link to="/signup" className="text-link-underline-hover">Register</Link>
       <Link to="/login" className="login-navbar-button">Login</Link>
       <Link to="/cart" className="cart-navbar-icon">
