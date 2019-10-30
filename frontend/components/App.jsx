@@ -48,7 +48,7 @@ export class App extends React.Component {
           <div className="logo-and-search-bar">
             <Link to="/" className="logo"> Jewely </Link>
             <Switch>
-              <ProtectedRoute
+              <Route
                 exact
                 path="/"
                 component={FilterFormContainer}
