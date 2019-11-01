@@ -18,7 +18,7 @@ export class FilterForm extends React.Component {
         return (
                 <input
                     type="string"
-                    placeholder="Search"
+                    placeholder="Type to filter products by name and description"
                     className="search-input-field"
                     value={this.props.search}
                     onChange={this.handleChange('search')}
