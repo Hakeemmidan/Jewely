@@ -38,7 +38,7 @@ export class ProductIndex extends React.Component {
 
                 <div className="products-index-what-is-jewely-container">
                     <img
-                        className="products-index-what-jewely" 
+                        className="products-index-what-is-jewely-img" 
                         src={window.whatIsJewely}
                         alt="whatIsJewelyImg"/>
                 </div>

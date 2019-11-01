@@ -3,6 +3,7 @@ import React from 'react'
 export function Footer() {
     return (
         <div className="footer-container">
+            <img src={window.footer} alt="footer-top-edges"/>
             <a
                 href="https://github.com/Hakeemmidan"
                 target="_blank">
