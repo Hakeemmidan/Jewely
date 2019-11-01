@@ -183,19 +183,6 @@
     opacity: 0.6;
 }
 
-.product-show-lower {
-    margin-top: 20px;
-    display: flex;
-    box-sizing: border-box;
-    clear: both;
-}
-
-.product-show-lower:after {
-    content: "";
-    display: table;
-    clear: both;
-}
-
 .product-show-description {
     margin: 0px;
     margin-top: 10px;
@@ -220,8 +207,19 @@
 }
 
 .product-show-lower {
+    display: flex;
+    box-sizing: border-box;
+    clear: both;
+    margin-top: 20px;
     margin-right: 10%;
-    margin-left: 10%;   
+    margin-left: 10%;
+    padding-bottom: 15%;
+}
+
+.product-show-lower:after {
+    content: "";
+    display: table;
+    clear: both;
 }
 
 .product-show-imgs-container {
