@@ -35,6 +35,8 @@ export class ProductIndex extends React.Component {
                         )}
                     </div>
                 </div>
+                <img src={window.whatIsJewely} alt=""/>
+
             </div>
         )
     }
