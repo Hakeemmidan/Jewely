@@ -9,6 +9,12 @@ export function Footer() {
                 className="footer-top-edges"
                 src={window.footer}
                 alt="footer-top-edges" />
+            <a
+                className="footer-documentation-button"
+                target="_blank"
+                href="https://github.com/Hakeemmidan/Jewely">
+                documentation
+            </a>
             <div className="personal-links-container">
                 <a
                     href="https://github.com/Hakeemmidan"
