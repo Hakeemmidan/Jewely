@@ -4,7 +4,13 @@
     padding: 3px 0.2px;
     position: relative;
     display: inline-block;
+    opacity: 0.8;
 }
+
+.cart-navbar-icon:hover {
+    opacity: 1.0;
+}
+
 .cart-item-count-badge {
     position: absolute;
     top: -8px;

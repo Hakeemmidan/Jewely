@@ -9,12 +9,13 @@
     width: 4vw;
     max-width: 30px;
     height: 100%;
-    fill: whitesmoke;
+    fill: white;
     margin-left: 0.5vw;
+    opacity: 0.8;
 }
 
 .personal-account-img-link:hover {
-    opacity: 0.6;
+    opacity: 1;
 }
 
 #root {
