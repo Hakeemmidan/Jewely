@@ -63,11 +63,20 @@
     text-align: center;
 }
 
-.product_index_photo_carousel {
-    
-}
-
 .product_index_photo_carousel_image {
     object-fit: scale-down;
     height: 50vh;
+}
+
+.products-index-what-is-jewely-container {
+    text-align: center;
+    margin: 0 10% 0 10%;
+    background-color: #fcf0e3;
+}
+
+.products-index-what-jewely {
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    max-width: 800px;
 }
