@@ -28,6 +28,10 @@ export function Footer() {
                     <LinkedInIcon />
                 </a>
             </div>
+            <div
+                className="footer-second-layer">
+                    
+            </div>
         </div>
     )
 }
