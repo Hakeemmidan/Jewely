@@ -50,6 +50,36 @@ export class App extends React.Component {
             <Switch>
               <Route
                 exact
+                path="/products/:productId/edit"
+                component={FilterFormContainer}
+              />
+
+              <ProtectedRoute
+                exact
+                path="/products/create"
+                component={FilterFormContainer}
+              />
+
+              <Route
+                exact
+                path="/users/:userId"
+                component={FilterFormContainer}
+              />
+
+              <Route
+                exact
+                path="/products/:productId"
+                component={FilterFormContainer}
+              />
+
+              <Route
+                exact
+                path="/cart"
+                component={FilterFormContainer}
+              />
+
+              <Route
+                exact
                 path="/"
                 component={FilterFormContainer}
               />
