@@ -1,16 +1,16 @@
 .personal-links-container {
     margin-top: 10px;
     position: absolute;
-    right: 10%;
+    right: 2vw;
+    top: 6vh;
 }
 
 .personal-account-img-link {
-    width: 30px;
-    padding-right: 10px;
-}
-
-.personal-account-img-link.linkedin {
-    padding-right: 0px;
+    width: 4vw;
+    max-width: 30px;
+    height: 100%;
+    fill: whitesmoke;
+    margin-left: 0.5vw;
 }
 
 .personal-account-img-link:hover {
@@ -27,5 +27,6 @@
 }
 
 .footer-container {
+    position: relative;
     width: 100%;
 }

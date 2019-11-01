@@ -16,7 +16,7 @@ export function Footer() {
                     <GithubIcon />
                 </a>
                 &nbsp;
-            <a
+                <a
                     href="https://www.linkedin.com/in/abdulhakeem-almidan/"
                     target="_blank">
                     <LinkedInIcon />
