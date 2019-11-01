@@ -240,16 +240,7 @@ export class ProductShow extends React.Component {
                 <hr className="product-show-divider" />
 
                 <div className="product-show-lower">
-                    <div className="product-show-column product-show-column1">
-                        <b>
-                            Details:
-                        </b>
-                        <p className="product-show-description">
-                            {product.description}
-                        </p>
-                    </div>
-
-                    <div className="product-show-column2">
+                    <div className="product-show-column1">
                         <b>
                             Reviews {avgRating > 0 ? `(${avgRating} average):` :
                                 <div style={{ display: 'inline', fontWeight: 'normal' }}>:
@@ -267,6 +258,15 @@ export class ProductShow extends React.Component {
                             productId={product.id}
                             currentUserId={this.props.currentUserId}
                         />
+                    </div>
+
+                    <div className="product-show-column product-show-column2">
+                        <b>
+                            Details:
+                        </b>
+                        <p className="product-show-description">
+                            {product.description}
+                        </p>
                     </div>
                 </div>
             </div>
