@@ -30,7 +30,9 @@ export function Footer() {
             </div>
             <div
                 className="footer-second-layer">
-                    
+                <p className="footer-second-layer-created-by">
+                    Etsy inspired site created by Abdulhakeem Almidan, 2019
+                </p>
             </div>
         </div>
     )
