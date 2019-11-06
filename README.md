@@ -150,9 +150,4 @@ This was done mainly to allow guest users to add items to their cart without nee
 
 
 ### Todos
-- Remove photo carousel from home page because it can be distracting
-- Implement reviews
-- Implement searching
-- Possubly change as many GIFs to pictures as README currently looks chaotic
-- Include Github and LinkedIn profiles at bottom left of site page
-- Make clickong on "Proceed to checkout" show Gihub and LinkedIn profiles (in a modal)
+- Change GIFs to images in `README.md` as docs are currently distracting
