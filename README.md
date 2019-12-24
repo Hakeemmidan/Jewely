@@ -60,7 +60,8 @@ In browser:
 1. After signing up / logging in, go to "Sell on Jewely" on top right of header
 2. Create product listing and submit
 
-![](app/assets/gifs/create.gif)
+![](app/assets/images/readme_images/create.png)
+![](app/assets/images/readme_images/create-submit.png)
 
 ```JavaScript
 handleSubmit(e) {
@@ -94,7 +95,7 @@ Code snippet above shows how data may be passed on to DB once a user clicks subm
 1. Go to home page
 2. Click on any product listing from index to view its show page
 
-![](app/assets/gifs/read.gif)
+![](app/assets/images/readme_images/read.png)
 
 #### Update
 [You must be signed in to do this]
@@ -102,14 +103,14 @@ Code snippet above shows how data may be passed on to DB once a user clicks subm
 2. Click on "Edit your product listing" in product show page
 3. Edit as needed and submit
 
-![](app/assets/gifs/update.gif)
+![](app/assets/images/readme_images/update.png)
 
 #### Delete
 1. After navigating to a product that you own, click on "Edit your product listing"
 2. Click on "Delete product listing" (located at the bottom of product edit form)
 
 
-![](app/assets/gifs/delete.gif)
+![](app/assets/images/readme_images/update-delete-submit.png)
 
 ```JavaScript
 handleRemove() {
@@ -146,13 +147,3 @@ Example localStorage cart: `"[[43,2], [75, 1]]"` This cart would be considered t
 Logically, when a user adds an item to their cart, then an array of id and the quantity (e.g. `[12, 2]`) of the item gets pushed to the parent array of localStorage cart. This is demonstrated in 'create' code snippet from 'CRUD' Noticable Feature.
 
 This was done mainly to allow guest users to add items to their cart without needing to sign in, allowing for better user experience in my belief. Moreover, another reasoning for this is to not query the cart database for each addition or deletion of a product, which could lead to somewhat of slow performance.
-
-
-
-### Todos
-- Remove photo carousel from home page because it can be distracting
-- Implement reviews
-- Implement searching
-- Possubly change as many GIFs to pictures as README currently looks chaotic
-- Include Github and LinkedIn profiles at bottom left of site page
-- Make clickong on "Proceed to checkout" show Gihub and LinkedIn profiles (in a modal)
