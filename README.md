@@ -8,7 +8,7 @@ Jewely is an Etsy inspired site that specializes in allowing users to buy and se
 ## Technologies
 ### Stack
 - Database
-    - postgreSQ
+    - postgreSQL
 - Backend
     - Ruby on Rails
 - Frontend
