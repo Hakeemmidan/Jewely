@@ -7,12 +7,13 @@ Jewely is an Etsy inspired site that specializes in allowing users to buy and se
 
 ## Technologies
 ### Stack
+- Database
+    - postgreSQ
 - Backend
-    - postgreSQL
     - Ruby on Rails
 - Frontend
     - React / Redux
-### Noticable Gems
+### Noticeable Gems
 - `bcrypt`
     - Hash passwords before they're stored in database
 - `jbuilder`
@@ -22,9 +23,9 @@ Jewely is an Etsy inspired site that specializes in allowing users to buy and se
 - `sass-rails`
     - Sass adapter for rails pipeline
         - All styling in this project was done through Sass
-### Noticable Dependencies
+### Noticeable Dependencies
 - `@babel/core`, `@babel/preset-env`, `@babel/preset-react`, `babel-loader`
-    - Converts ES5+ JavaScript code into more compaitable versions
+    - Converts ES5+ JavaScript code into more compatible versions
 - `react-responsive-carousel`
     - Displays images in a photo carousel
         - Used in product show pages and site landing page
@@ -54,7 +55,7 @@ In browser:
 7. navigate to `http://localhost:3000` to view application
 
 
-## Noticable Features / How to use
+## Noticeable Features / How to use
 #### Product CRUD (Create, Read, Update, Delete)
 ##### Create
 1. After signing up / logging in, go to "Sell on Jewely" on top right of header
@@ -130,7 +131,7 @@ handleRemove() {
     location.hash = '#/'
 }
 ```
-As can be seen from snippet above, we first check if carts has targeted item by checking `window.localStorage` (which is our next noticable feature). If it contains it, we remove it. 
+As can be seen from snippet above, we first check if the cart has targeted item by checking `window.localStorage` (which is our next noticable feature). If it contains it, we remove it. 
 
 Then we trigger `removeProduct` to remove item from database. `this.state.id` would represent the id
 of the product in the current show page.
@@ -144,6 +145,6 @@ The cart of this site is mainly run on `window.localStorage`. It is constructed 
 
 Example localStorage cart: `"[[43,2], [75, 1]]"` This cart would be considered to have two items with ids 43, 75 and quantities 2, 1 respectively. 
 
-Logically, when a user adds an item to their cart, then an array of id and the quantity (e.g. `[12, 2]`) of the item gets pushed to the parent array of localStorage cart. This is demonstrated in 'create' code snippet from 'CRUD' Noticable Feature.
+Logically, when a user adds an item to their cart, then an array of id and the quantity (e.g. `[12, 2]`) of the item gets pushed to the parent array of localStorage cart. This is demonstrated in 'create' code snippet from 'CRUD' Noticeable Feature.
 
-This was done mainly to allow guest users to add items to their cart without needing to sign in, allowing for better user experience in my belief. Moreover, another reasoning for this is to not query the cart database for each addition or deletion of a product, which could lead to somewhat of slow performance.
+This was done mainly to allow guest users to add items to their cart without needing to sign in, allowing for better user experience in my belief. Moreover, another reasoning for this is to not query the cart database for each addition or deletion of a product, which could lead to somewhat slow performance.
