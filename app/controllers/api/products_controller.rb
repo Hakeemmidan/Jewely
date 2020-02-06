@@ -51,12 +51,7 @@ class Api::ProductsController < ApplicationController
         end
     end
 
-    # Noted : All these actions will render either 'show' or 'index' views.
-        # Which will in turn render the partial (which is used to extract data
-        # using jBuilder)
-
     private
-
     def product_params
         params.require(:product).permit(
             :id,

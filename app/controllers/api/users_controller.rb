@@ -23,7 +23,6 @@ class Api::UsersController < ApplicationController
     @user.reviews.destroy_all
 
     if @user.destroy
-      # Question ) Should I log out the user here or is it already destroyed and logged out?
       render 'api/products/index'
     else
       render json: @user.errors.full_messages, status: 422
