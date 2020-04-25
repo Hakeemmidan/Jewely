@@ -15,8 +15,6 @@ const mapStateToProps = (state, ownProps) => {
 
     const product = state.entities.products[ownProps.match.params.productId] || defaultProduct;
     product['errors'] = state.errors.product
-    // Noted : This is different than how it was done it create form container
-            // because in this case we need to first check if a product exists
 
     const formType = 'Update Product';
 

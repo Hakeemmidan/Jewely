@@ -112,7 +112,7 @@ export class App extends React.Component {
               path="/products/:productId"
               component={ProductShowContainer}
             />
-            {/* Noted: The path with the wild card at the end should always be put
+            {/* Paths with wild cards at the end should always be put
                 BELOW routes that have the same length */}
   
             <AuthRoute

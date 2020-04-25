@@ -41,7 +41,6 @@ export const fetchReviews = (productId) => dispatch => {
     return ReviewAPIUtil.fetchReviews(productId)
         .then(reviews => dispatch(receiveReviews(reviews)))
 }
-// Reminder: id used here is product id ^^^
 
 export const fetchReview = (id) => dispatch => {
     return ReviewAPIUtil.fetchReview(id)

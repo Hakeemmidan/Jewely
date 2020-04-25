@@ -83,23 +83,6 @@ class ReviewForm extends React.Component {
         }, this.triggerAction)
     }
 
-
-    // renderErrors() {
-    //     let errors = []
-    //     errors = this.props.review.errors
-    //     if (errors) {
-    //         return (
-    //             <ul className="errors-ul">
-    //                 {this.props.review.errors.map((error, i) => (
-    //                     <li key={`error-${i}`} className="error">
-    //                         {error}
-    //                     </li>
-    //                 ))}
-    //             </ul>
-    //         );
-    //     }
-    // }
-
     render() {
         return (
             <div className="review-form-div">

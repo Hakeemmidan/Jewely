@@ -13,5 +13,4 @@ export const Root = (props) => {
       </HashRouter>
     </Provider>
   )
-  // Noted: HashRouter passes ownProps by default 
 }
