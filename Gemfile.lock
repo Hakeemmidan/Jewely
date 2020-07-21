@@ -245,7 +245,7 @@ DEPENDENCIES
   capybara (>= 2.15)
   chromedriver-helper
   coffee-rails (~> 4.2)
-  graphiql-rails
+  graphiql-rails (= 1.7.0)
   graphql (~> 1.11)
   jbuilder (~> 2.5)
   jquery
@@ -266,7 +266,7 @@ DEPENDENCIES
   web-console (>= 3.3.0)
 
 RUBY VERSION
-   ruby 2.6.3p62
+   ruby 2.5.1p57
 
 BUNDLED WITH
    2.1.4
