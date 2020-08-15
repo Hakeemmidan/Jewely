@@ -2,21 +2,21 @@
   "name": "Jewely",
   "private": true,
   "dependencies": {
-    "@babel/core": "^7.6.0",
+    "@babel/core": "^7.11.1",
     "@babel/plugin-proposal-class-properties": "^7.5.5",
-    "@babel/preset-env": "^7.6.0",
+    "@babel/preset-env": "^7.11.0",
     "@babel/preset-react": "^7.0.0",
     "babel-loader": "^8.0.6",
     "prop-types": "^15.7.2",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
-    "react-redux": "^7.1.1",
+    "react-redux": "^7.2.1",
     "react-responsive-carousel": "^3.1.50",
     "react-router-dom": "^5.0.1",
     "redux": "^4.0.4",
     "redux-logger": "^3.0.6",
     "redux-thunk": "^2.3.0",
-    "webpack": "^4.39.3",
+    "webpack": "^4.44.1",
     "webpack-cli": "^3.3.8"
   },
   "description": "This README would normally document whatever steps are necessary to get the application up and running.",
@@ -47,7 +47,7 @@
   },
   "homepage": "https://github.com/Hakeemmidan/Jewely#readme",
   "devDependencies": {
-    "css-loader": "^3.2.0",
-    "style-loader": "^1.0.0"
+    "css-loader": "^3.6.0",
+    "style-loader": "^1.2.1"
   }
 }
