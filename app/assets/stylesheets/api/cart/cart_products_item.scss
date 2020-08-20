@@ -11,10 +11,10 @@
 
 .cart-products-item-title {
     float: left;
-    padding-left: 12px;
+    padding-left: 1.2rem;
     width: 80%;
     margin: 0;
-    padding-bottom: 6px;
+    padding-bottom: 0.6rem;
     font-family: 'Poppins', sans-serif;
     font-size: 1.7vh;
 }
@@ -41,20 +41,17 @@
     left: 0;
     bottom: 0;
     // position: absolute;
-    padding-top: 100px
-
+    padding-top: 10rem;
 }
 
 .cart-product-item-drop-down {
     background-color: white;
     display: inline;
-    font-size: 13px;
-    border-radius: 3px;
+    font-size: 1.3rem;
+    border-radius: 0.3rem;
     border-style: none;
-    border: 1px solid rgb(200, 201, 199);
+    border: 0.1rem solid rgb(200, 201, 199);
     box-shadow: none;
-    height: 30px;
-    width: 40px;
 }
 
 .cart-product-item-quantity-and-price {

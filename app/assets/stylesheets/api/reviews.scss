@@ -1,13 +1,13 @@
 .review-form-div {
     background-color: white;
-    padding: 30px;
-    border-radius: 10px;
-    padding-left: 40px;
-    padding-right: 40px;
+    padding: 3rem;
+    border-radius: 1rem;
+    padding-left: 4rem;
+    padding-right: 4rem;
 }
 
 .rating-star {
-    width: 30px;
+    width: 3rem;
 }
 
 .rating-stars {
@@ -15,11 +15,11 @@
 }
 
 .product-show-review-rating-star {
-    width: 14px;
+    width: 1.4rem;
 }
 
 .product-show-average-rating-star {
-    width: 18px;
+    width: 1.8rem;
 }
 
 .product-show-avg-rating-container {
@@ -27,7 +27,7 @@
 }
 
 .reviews-count {
-    font-size: 13px;
+    font-size: 1.3rem;
 }
 
 .product-show-review-li {
@@ -38,7 +38,7 @@
 .review-edit-button {
     position: absolute;
     cursor: pointer;
-    width: 20px;
+    width: 2rem;
     top: 0;
     right: 0;
 }
@@ -50,8 +50,8 @@
 .review-delete-button {
     position: absolute;
     cursor: pointer;
-    width: 20px;
-    top: 8px;
+    width: 2rem;
+    top: 0.8rem;
     right: 0;
 }
 
@@ -72,9 +72,9 @@
 }
 
 .product-show-reviews-ul {
-    padding: 0px;
-    margin-top: 10px;
-    margin-bottom: 75px;
+    padding: 0;
+    margin-top: 1rem;
+    margin-bottom: 7.5rem;
 }
 
 .review-form-submit-button {
@@ -83,22 +83,22 @@
         all: unset;
     }
     cursor: pointer;
-    border-radius: 3px;
+    border-radius: 0.3rem;
     text-align: center;
     background-color: black;
     color: white;
-    font-size: 15px;
+    font-size: 1.5rem;
     line-height: 1.2;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    padding-left: 10px;
-    padding-right: 10px;
-    border: 1px solid gray;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    border: 0.1rem solid gray;
     display: inline-block;
     font-weight: bold;
     font-family: 'Poppins', sans-serif;
     white-space: nowrap;
-    margin-top: 10px;
+    margin-top: 1rem;
 }
 
 .review-form-submit-button:hover {
@@ -106,13 +106,13 @@
 }
 
 .review-form-textarea {
-    font-size: 15px;
-    border-radius: 4px;
-    padding-left: 10px;
-    padding-right: 10px;
-    padding-top: 5px;
-    padding-bottom: 5px;
+    font-size: 1.5rem;
+    border-radius: 0.4rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
     border-style: none;
-    border: 1px solid white;
+    border: 0.1rem solid white;
     box-shadow: none;
 }

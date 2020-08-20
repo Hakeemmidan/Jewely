@@ -1,25 +1,24 @@
 .product-show-image {
     max-width: 42%;
     height: auto;
-    float: left;
-    padding-right: 12px;
-    padding-left: 18px;
-    margin-bottom: 25px;
+    padding-right: 1.2rem;
+    padding-left: 1.8rem;
+    margin-bottom: 2.5rem;
     display: inline-block;
     overflow: hidden;  
 }
 
 .listing-right-column {
-    padding-right: 18px;
-    padding-left: 12px;
+    padding-right: 1.8rem;
+    padding-left: 1.2rem;
 }
 
 .product-show-title {
     font-family: 'Noto Serif', serif;
     font-weight: normal;
-    margin-top: -8px;
-    margin-bottom: 8px;
-    padding-bottom: 7px;
+    margin-top: -0.8rem;
+    margin-bottom: 0.8rem;
+    padding-bottom: 0.7rem;
     text-rendering: optimizeLegibility;
 }
 
@@ -32,7 +31,7 @@
 
 .quantity-label {
     display: block;
-    padding-bottom: 6px;
+    padding-bottom: 0.6rem;
     font-family: 'Raleway', sans-serif;
 }
 
@@ -49,19 +48,19 @@
   }
   display: block;
   cursor: pointer;
-  border: 1px solid grey;
+  border: 0.1rem solid grey;
   padding-right: 2vh;
   padding-left: 2vh;
   padding-top: 1.3vh;
   padding-bottom: 1.3vh;
   text-decoration: none; 
-  border-radius: 3px;
+  border-radius: 0.3rem;
   border-style: solid;
   color: white;
-  margin-top: 7px;
+  margin-top: 0.7rem;
   text-align: center;
   background-color: black;
-  font-size: 15px;
+  font-size: 1.5rem;
   line-height: 1.2;
   width: 35vw;
   border-color: rgba(0, 0, 0, 0.1);
@@ -84,13 +83,11 @@
 .product-show-quantity-dropdown {
     background-color: white;
     display: inline;
-    font-size: 13px;
-    border-radius: 3px;
+    font-size: 1.3rem;
+    border-radius: 0.3rem;
     border-style: none;
-    border: 1px solid #E1E3DF;
+    border: 0.1rem solid #E1E3DF;
     box-shadow: none;
-    height: 30px;
-    width: 45px;
 }
 
 .product-show-seller-username {
@@ -108,8 +105,8 @@
 }
 
 .product-listing {
-    padding-top: 30px;
-    padding-bottom: 20px;
+    padding-top: 3rem;
+    padding-bottom: 2rem;
     display: flex;
     margin-right: 10%;
     margin-left: 10%;
@@ -117,8 +114,8 @@
 // ------- product show lower details (doesn't include comments) START ------- //
 .product-show-column {
     float: left;
-    padding-right: 18px;
-    padding-left: 18px;
+    padding-right: 1.8rem;
+    padding-left: 1.8rem;
     box-sizing: border-box;
     margin-bottom: 5%; 
 }
@@ -129,8 +126,8 @@
 
 .product-show-column1 {
     width: 50%;
-    padding-right: 18px;
-    border-right: 1px solid whitesmoke;
+    padding-right: 1.8rem;
+    border-right: 0.1rem solid whitesmoke;
     position: relative;
 }
 
@@ -140,17 +137,17 @@
         all: unset;
     }
     cursor: pointer;
-    border-radius: 3px;
-    margin-top: 7px;
+    border-radius: 0.3rem;
+    margin-top: 0.7rem;
     text-align: center;
     background-color: white;
-    font-size: 15px;
+    font-size: 1.5rem;
     line-height: 1.2;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    padding-left: 10px;
-    padding-right: 10px;
-    border: 1px solid gray;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    border: 0.1rem solid gray;
     display: inline-block;
     font-weight: bold;
     font-family: 'Poppins', sans-serif;
@@ -158,8 +155,8 @@
     position: absolute;
     bottom: 0;
     left: 0;
-    margin-left: 18px;
-    margin-bottom: 20px;
+    margin-left: 1.8rem;
+    margin-bottom: 2rem;
 }
 
 .product-show-write-review-signin-requirement {
@@ -167,7 +164,7 @@
     position: absolute;
     bottom: 0;
     left: 0;
-    margin-bottom: 20px;
+    margin-bottom: 2rem;
 }
 
 .review-signin-requirement-links {
@@ -183,13 +180,13 @@
 }
 
 .product-show-description {
-    margin: 0px;
-    margin-top: 10px;
+    margin: 0;
+    margin-top: 1rem;
 }
 
 .product-show-divider {
     width: 80%;
-    border: 1px solid whitesmoke;
+    border: 0.1rem solid whitesmoke;
 }
 
 .product-show-divider.reviews {
@@ -209,7 +206,7 @@
     display: flex;
     box-sizing: border-box;
     clear: both;
-    margin-top: 20px;
+    margin-top: 2rem;
     margin-right: 10%;
     margin-left: 10%;
     padding-bottom: 15%;

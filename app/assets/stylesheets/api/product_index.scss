@@ -1,9 +1,9 @@
 .product-index-image {
     object-fit: scale-down;
-    width: 125px;
-    height: 100px;
+    width: 12.5rem;
+    height: 10rem;
     object-position: 50% 50%;
-    border: 0.3px solid lightgray; 
+    border: 0.03rem solid lightgray; 
 }
 
 .product-index-item-price {
@@ -15,10 +15,10 @@
 }
 
 .product-index-item {
-    padding: 9px;
-    max-width: 125px;
-    margin-left: 7px;
-    margin-right: 7px;
+    padding: 0.9rem;
+    max-width: 12.5rem;
+    margin-left: 0.7rem;
+    margin-right: 0.7rem;
 }
 
 .product-index-item-list-container {
@@ -28,7 +28,7 @@
     margin-top: 2%;
     margin-left: 10%;
     margin-right: 10%;
-    margin-bottom: 100px;
+    margin-bottom: 10rem;
 }
 
 .product-index-list {
@@ -78,5 +78,5 @@
     margin-left: auto;
     margin-right: auto;
     width: 100%;
-    max-width: 800px;
+    max-width: 80rem;
 }

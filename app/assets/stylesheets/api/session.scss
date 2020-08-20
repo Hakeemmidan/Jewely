@@ -1,6 +1,6 @@
 // ------------------------ session form styling START ------------------------ //
 .login-form-box {
-  border: 1px solid grey;
+  border: 0.1rem solid grey;
   margin-bottom: 10%;
   width: 33%;
   padding-right: 7vh;
@@ -17,13 +17,13 @@
 
 .session-textbox {
   display: block;
-  height: 48px;
-  font-size: 16px;
-  border-radius: 4px;
-  padding-left: 16px;
-  padding-right: 16px;
+  height: 4.8rem;
+  font-size: 1.6rem;
+  border-radius: 0.4rem;
+  padding-left: 1.6rem;
+  padding-right: 1.6rem;
   border-style: none;
-  border: 1px solid #E1E3DF;
+  border: 0.1rem solid #E1E3DF;
   box-shadow: none;
   width: 90%;
 }
@@ -36,15 +36,15 @@
   // ^ clears all styling
   display: block;
   cursor: pointer;
-  border: 1px solid grey;
+  border: 0.1rem solid grey;
   padding-right: 2vh;
   padding-left: 2vh;
   padding-top: 1.3vh;
   padding-bottom: 1.3vh;
   text-decoration: none; 
-  border-radius: 7px;
+  border-radius: 0.7rem;
   color: black;
-  margin: 7px;
+  margin: 0.7rem;
   text-align: center;
 }
 
@@ -79,13 +79,13 @@
 // ------------------------ session form styling END ------------------------ //
 // ------------------------ navbar buttons START------------------------ //
 .login-navbar-button {
-  border: 1px solid grey;
+  border: 0.1rem solid grey;
   padding-right: 2vh;
   padding-left: 2vh;
   padding-top: 1.3vh;
   padding-bottom: 1.3vh;
   text-decoration: none; 
-  border-radius: 7px;
+  border-radius: 0.7rem;
   color: black;
 }
 
@@ -96,13 +96,13 @@
 
 .logout-navbar-button {
   background-color: white;
-  border: 1px solid grey;
+  border: 0.1rem solid grey;
   padding-right: 2vh;
   padding-left: 2vh;
   padding-top: 1.3vh;
   padding-bottom: 1.3vh;
   text-decoration: none; 
-  border-radius: 7px;
+  border-radius: 0.7rem;
   cursor: pointer;
   color: black;
 }
