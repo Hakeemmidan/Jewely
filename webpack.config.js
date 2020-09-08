@@ -7,8 +7,8 @@ module.exports = {
   // tell webpack where to output bundled js file
   output: {
     // use path module to get absolute path to current directory (2 underscores)
-    path: path.resolve(__dirname, "app", "assets", "javascripts"),
-    filename: 'bundle.js'
+    path: path.resolve(__dirname, 'app', 'assets', 'javascripts'),
+    filename: 'bundle.js',
   },
   // lets us debug in js files we wrote instead of bundled webpack file
   devtool: 'source-map',
@@ -22,14 +22,14 @@ module.exports = {
           loader: 'babel-loader',
           query: {
             presets: ['@babel/env', '@babel/react'],
-            plugins: [["@babel/plugin-proposal-class-properties"]]
-          }
+            plugins: [['@babel/plugin-proposal-class-properties']],
+          },
         },
-      }
-    ]
+      },
+    ],
   },
   // allows us to drop .js or .jsx when importing files
   resolve: {
-    extensions: ['.js', '.jsx', '*']
-  }
-}
+    extensions: ['.js', '.jsx', '*'],
+  },
+};
