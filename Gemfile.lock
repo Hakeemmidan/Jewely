@@ -106,10 +106,6 @@ GEM
     ffi (1.13.1)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
-    graphiql-rails (1.7.0)
-      railties
-      sprockets-rails
-    graphql (1.11.3)
     i18n (1.8.5)
       concurrent-ruby (~> 1.0)
     io-like (0.3.1)
@@ -245,8 +241,6 @@ DEPENDENCIES
   capybara (>= 2.15)
   chromedriver-helper
   coffee-rails (~> 4.2)
-  graphiql-rails
-  graphql (~> 1.11)
   jbuilder (~> 2.5)
   jquery
   jquery-rails

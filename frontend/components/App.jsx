@@ -32,10 +32,6 @@ import FilterFormContainer from './filter/filter_form_container';
 import {Footer} from './footer/footer';
 
 export class App extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     return (
       <div className="main-container-div">
