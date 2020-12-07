@@ -15,8 +15,20 @@
  *= require_self
  */
 
+@import './api/abstract/variables';
+
+html {
+  font-size: 62.5%; // 1rem = 10px, 10px/16px = 62.5%
+}
+
 html, body {
   min-height: 120vh;
+}
+
+svg {
+  height: 2.4rem;
+  width: 2.4rem;
+  padding-left: 0.8rem;
 }
 
 .main-container-div {
@@ -45,7 +57,6 @@ html, body {
   text-decoration: underline;
   cursor: pointer;
 }
-
 
 .black-background-button {
   all: initial;
@@ -110,10 +121,10 @@ header {
 // 'React-responsive-carousel' package CSS ^^^
 
 .product-index-home-image {
-    height: 20.5rem;
-    width: 100%;
-    object-fit: cover;
-    object-position: 100% 90%;
+  height: 20.5rem;
+  width: 100%;
+  object-fit: cover;
+  object-position: 100% 90%;
 }
 
 .product-index-home-image-container {
@@ -122,11 +133,11 @@ header {
 }
 
 .product-index-home-image-text {
-    position: absolute;
-    bottom: 2rem;
-    left: 5%;
-    color: white;
-    font-size: 120%;
+  position: absolute;
+  bottom: 2rem;
+  left: 5%;
+  color: white;
+  font-size: 120%;
 }
 
 .search-input-field {
@@ -134,19 +145,26 @@ header {
   height: 3.1rem;
   font-size: 1.5rem;
   border-radius: 0.4rem;
-  padding-left: 1.6rem;
-  padding-right: 1.6rem;
+  padding: 0 1.6rem;
+  margin-top: 0.5rem;
   border-style: none;
   border: 0.1rem solid #E1E3DF;
   box-shadow: none;
   width: 100%;
-  margin-top: 2rem;
+}
+
+.logo {
+  color: grey;
+  font-size: 3rem;
+  text-decoration: none;
+  padding-right: 1.5rem;
 }
 
 .logo-and-search-bar {
   display: flex;
+  align-items: center;
   padding-left: 10%;
-  width:50%;
+  width: 100%;
 }
 
 .loading-modal {
@@ -155,4 +173,10 @@ header {
   border-radius: 1rem;
   padding-left: 4rem;
   padding-right: 4rem;
+}
+
+@media only screen and (max-width: $bp-small) {
+  .logo {
+    font-size: 2.5rem;
+  }
 }
