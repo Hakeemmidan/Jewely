@@ -32,7 +32,7 @@ const Greeting = ({currentUser, logout}) => {
       </Link>
 
       <Link
-        className="navbar-current-user-show-page-link"
+        className="text-link-underline-hover"
         to={`/users/${currentUser.id}`}
       >
         {currentUser.username}

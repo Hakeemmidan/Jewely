@@ -1,12 +1,14 @@
 import React from 'react';
 import {AuthRoute, ProtectedRoute} from '../util/route_util';
-import {Switch, Route, Link} from 'react-router-dom';
+import {Switch, Route} from 'react-router-dom';
+
+// header vvv
+import { Header } from './header/header';
 
 // users vvv
 import UserShowContainer from './users/user_show_container';
 
 // session vvv
-import GreetingContainer from './greeting/greeting_container';
 import SignUpFormContainer from './auth/signup_form_container';
 import LogInFormContainer from './auth/login_form_container';
 
@@ -22,12 +24,6 @@ import CartShowContainer from './carts/show/cart_show_container';
 // modal vvv
 import ModalContainer from './modal/modal_container';
 
-// reviews vvv
-// import EditReviewFormContainer from './products/reviews/edit_review_form_container';
-
-// filter vvv
-import FilterFormContainer from './filter/filter_form_container';
-
 // footer vvv
 import {Footer} from './footer/footer';
 
@@ -35,17 +31,10 @@ export class App extends React.Component {
   render() {
     return (
       <div className="main-container-div">
-        <header>
-          <ModalContainer />
-          <div className="logo-and-search-bar">
-            <Link to="/" className="logo">
-              {' '}
-              Jewely{' '}
-            </Link>
-            <FilterFormContainer />
-          </div>
-          <GreetingContainer />
-        </header>
+        {/* modal is hidden by default */}
+        <ModalContainer />
+
+        <Header/>
 
         <Switch>
           <ProtectedRoute
