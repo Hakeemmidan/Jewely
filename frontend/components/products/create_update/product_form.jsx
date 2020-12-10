@@ -19,13 +19,7 @@ class ProductForm extends React.Component {
 
   update(field) {
     let that = this;
-    return (e) => {
-      that.setState({[field]: e.target.value});
-      window.localStorage.setItem(
-        'productFormState',
-        JSON.stringify(that.state)
-      );
-    };
+    return (e) => that.setState({[field]: e.target.value});
   }
 
   componentDidMount() {
