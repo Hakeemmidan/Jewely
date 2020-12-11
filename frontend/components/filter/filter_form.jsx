@@ -1,4 +1,5 @@
 import React from 'react';
+import {HamburgerMenuIcon} from '../SVGs/hamburger_menu_icon';
 
 export class FilterForm extends React.Component {
   constructor(props) {
@@ -13,6 +14,7 @@ export class FilterForm extends React.Component {
   render() {
     return (
       <div className="search-input-field-container">
+        <HamburgerMenuIcon />
         <input
           type="string"
           placeholder="Type to filter products by name and description"

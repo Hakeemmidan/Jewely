@@ -9,13 +9,13 @@ export function Header() {
       <div>
         <div className="top-bar">
           <Link to="/" className="logo">
-              {' '}Jewely{' '}
+            {' '}Jewely{' '}
           </Link>
           <FilterFormContainer />
           <GreetingContainer />
         </div>
       </div>
-      <hr className="top-bar-divider"/>
+      <hr className="top-bar-divider" />
     </>
-  )
+  );
 }
