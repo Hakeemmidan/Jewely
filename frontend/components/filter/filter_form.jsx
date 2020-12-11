@@ -20,7 +20,7 @@ export class FilterForm extends React.Component {
           placeholder="Type to filter products by name and description"
           className="search-input-field"
           value={this.props.search}
-          onClick={() => (location.hash = '#/')}
+          onClick={() => (window.location.hash = '#/')}
           onChange={this.handleChange('search')}
         />
       </div>
