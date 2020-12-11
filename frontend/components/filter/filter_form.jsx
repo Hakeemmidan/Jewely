@@ -14,17 +14,19 @@ export class FilterForm extends React.Component {
 
   render() {
     return (
-      <div className="search-input-field-container">
+      <div className="search-input-field-container-main">
         <HamburgerMenuIcon />
-        <input
-          type="string"
-          placeholder="Type to filter products by name and description"
-          className="search-input-field"
-          value={this.props.search}
-          onClick={() => (window.location.hash = '#/')}
-          onChange={this.handleChange('search')}
-        />
-        <SearchIcon />
+        <div className="search-input-field-container-sub">
+          <input
+            type="string"
+            placeholder="Type to filter products by name and description"
+            className="search-input-field"
+            value={this.props.search}
+            onClick={() => (window.location.hash = '#/')}
+            onChange={this.handleChange('search')}
+          />
+          <SearchIcon />
+        </div>
       </div>
     );
   }
