@@ -1,5 +1,6 @@
 import React from 'react';
 import {HamburgerMenuIcon} from '../SVGs/hamburger_menu_icon';
+import {SearchIcon} from '../SVGs/search_icon';
 
 export class FilterForm extends React.Component {
   constructor(props) {
@@ -23,6 +24,7 @@ export class FilterForm extends React.Component {
           onClick={() => (window.location.hash = '#/')}
           onChange={this.handleChange('search')}
         />
+        <SearchIcon />
       </div>
     );
   }
