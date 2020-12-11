@@ -1,6 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
-import {CartIcon} from '../../util/cart_icons';
+import {CartIcon} from '../SVGs/cart_icons';
 import CartBadgeContainer from '../carts/show/cart_badge/cart_badge_container';
 
 const Greeting = ({currentUser, logout}) => {

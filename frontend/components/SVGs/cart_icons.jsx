@@ -1,8 +1,9 @@
 import React from 'react';
 
-export const CartIcon = () => {
+export const CartIcon = (props) => {
   return (
     <svg
+      className={props.className}
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 24 24"
       version="1.1"
@@ -14,10 +15,10 @@ export const CartIcon = () => {
   );
 };
 
-export const VisaIcon = () => {
+export const VisaIcon = (props) => {
   return (
     <svg
-      className="checkout-payment-method-icon"
+      className={props.className}
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 54 18"
       version="1.1"
@@ -35,10 +36,10 @@ export const VisaIcon = () => {
   );
 };
 
-export const MasterCardIcon = () => {
+export const MasterCardIcon = (props) => {
   return (
     <svg
-      className="checkout-payment-method-icon"
+      className={props.className}
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 44 34"
       version="1.1"
@@ -77,10 +78,10 @@ export const MasterCardIcon = () => {
   );
 };
 
-export const AmericanExpressIcon = () => {
+export const AmericanExpressIcon = (props) => {
   return (
     <svg
-      className="checkout-payment-method-icon"
+      className={props.className}
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 15 70 40"
       aria-hidden="true"
@@ -99,10 +100,10 @@ export const AmericanExpressIcon = () => {
   );
 };
 
-export const DiscoverIcon = () => {
+export const DiscoverIcon = (props) => {
   return (
     <svg
-      className="checkout-payment-method-icon"
+      className={props.className}
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 74 16"
       version="1.1"
@@ -161,10 +162,10 @@ export const DiscoverIcon = () => {
   );
 };
 
-export const PaypalIcon = () => {
+export const PaypalIcon = (props) => {
   return (
     <svg
-      className="checkout-payment-method-icon"
+      className={props.className}
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 33 33"
       aria-hidden="true"

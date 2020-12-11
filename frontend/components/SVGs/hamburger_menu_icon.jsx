@@ -1,8 +1,9 @@
 import React from 'react';
 
-export const HamburgerMenuIcon = () => {
+export const HamburgerMenuIcon = (props) => {
   return (
     <svg
+      className={`${props.className}`}
       version="1.1"
       id="Capa_1"
       xmlns="http://www.w3.org/2000/svg"

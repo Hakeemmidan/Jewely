@@ -8,7 +8,7 @@ import {
   AmericanExpressIcon,
   DiscoverIcon,
   PaypalIcon,
-} from '../../../util/cart_icons';
+} from '../../SVGs/cart_icons';
 
 export class CartShow extends React.Component {
   constructor(props) {
@@ -145,10 +145,10 @@ export class CartShow extends React.Component {
                 className="cart-show-radio-input"
               />
               <label>
-                <VisaIcon />
-                <MasterCardIcon />
-                <AmericanExpressIcon />
-                <DiscoverIcon />
+                <VisaIcon className="checkout-payment-method-icon" />
+                <MasterCardIcon className="checkout-payment-method-icon" />
+                <AmericanExpressIcon className="checkout-payment-method-icon" />
+                <DiscoverIcon className="checkout-payment-method-icon" />
               </label>
             </div>
 

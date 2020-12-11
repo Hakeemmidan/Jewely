@@ -1,9 +1,9 @@
 import React from 'react';
 
-export const GithubIcon = () => {
+export const GithubIcon = (props) => {
   return (
     <svg
-      className="personal-account-img-link github"
+      className={`${props.className} github`}
       xmlns="http://www.w3.org/2000/svg"
       xmlnsXlink="http://www.w3.org/1999/xlink"
       width="438.549px"

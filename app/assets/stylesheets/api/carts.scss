@@ -5,6 +5,7 @@
     position: relative;
     display: inline-block;
     opacity: 0.8;
+    padding-left: 1.5rem;
 }
 
 .cart-navbar-icon:hover {
@@ -14,7 +15,7 @@
 .cart-item-count-badge {
     position: absolute;
     top: -0.8rem;
-    left: 3.2rem;
+    left: 2.0rem;
     padding: 0.1rem 0.7rem;
     width: 0.8rem;
     border-radius: 50%;
@@ -72,10 +73,10 @@
 
 .checkout-payment-method-icon {
     border: 0.1rem solid lightgray;
-    padding-right: 0.5vh;
-    padding-left: 0.5vh;
+    padding-right: 0.5rem;
+    padding-left: 0.5rem;
     border-radius: 0.4rem;
-    margin-right: 0.4vh;
+    margin-right: 1.0rem;
 }
 
 .cart-show-items-total {
@@ -204,6 +205,7 @@ input[type='radio']:checked{
 
 .personal-account-img-link.checkout {
     width: 10rem;
+    fill: black;
 }
 
 .personal-account-img-link.checkout.linkedin {

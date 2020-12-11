@@ -1,8 +1,9 @@
 import React from 'react';
 
-export const SearchIcon = () => {
+export const SearchIcon = (props) => {
   return (
     <svg
+      className={`${props.className}`}
       version="1.1"
       id="Capa_1"
       xmlns="http://www.w3.org/2000/svg"
