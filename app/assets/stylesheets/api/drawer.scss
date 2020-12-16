@@ -1,0 +1,18 @@
+.drawer-background {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 10;
+}
+
+.drawer-child {
+  position: absolute;
+	overflow-y: hidden;
+	max-height: 50rem;
+	transition-property: all;
+	transition-duration: .5s;
+	transition-timing-function: ease-in;
+}

@@ -1,9 +1,9 @@
+import * as ReviewAPIUtil from '../util/review_api_util';
+import {convertArrayOfObjectsToObject} from '../app_helper_methods';
 export const RECEIVE_ALL_REVIEWS = 'RECEIVE_ALL_REVIEWS';
 export const RECEIVE_REVIEW = 'RECEIVE_REVIEW';
 export const REMOVE_REVIEW = 'REMOVE_REVIEW';
 export const RECEIVE_REVIEW_ERRORS = 'RECEIVE_REVIEW_ERRORS';
-import * as ReviewAPIUtil from '../util/review_api_util';
-import {convertArrayOfObjectsToObject} from '../app_helper_methods';
 
 const receiveReviews = (reviews) => {
   return {
