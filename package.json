@@ -60,7 +60,8 @@
   },
   "lint-staged": {
     "*.+(json|css|md)": [
-      "prettier --write"
+      "prettier --write",
+      "git add"
     ]
   },
   "engines": {

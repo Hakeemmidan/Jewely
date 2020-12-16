@@ -1,39 +1,39 @@
 // ------------------------ navbar cart icon START------------------------ //
 .cart-navbar-icon {
-    top: 0.5rem;
-    padding: 0.3rem 0.02rem;
-    position: relative;
-    display: inline-block;
-    opacity: 0.8;
-    padding-left: 1.5rem;
+  top: 0.5rem;
+  padding: 0.3rem 0.02rem;
+  position: relative;
+  display: inline-block;
+  opacity: 0.8;
+  padding-left: 1.5rem;
 }
 
 .cart-navbar-icon:hover {
-    opacity: 1.0;
+  opacity: 1;
 }
 
 .cart-item-count-badge {
-    position: absolute;
-    top: -0.8rem;
-    left: 2.0rem;
-    padding: 0.1rem 0.7rem;
-    width: 0.8rem;
-    border-radius: 50%;
-    font-size: 1.5vh;
-    background: orange;
-    color: black;
-    display: flex;
-    justify-content: center;
+  position: absolute;
+  top: -0.8rem;
+  left: 2rem;
+  padding: 0.1rem 0.7rem;
+  width: 0.8rem;
+  border-radius: 50%;
+  font-size: 1.5vh;
+  background: orange;
+  color: black;
+  display: flex;
+  justify-content: center;
 }
 // ------------------------ navbar cart icon END------------------------ //
 .cart-show-component {
-    margin-right: 5vh;
-    margin-left: 5vh;
+  margin-right: 5vh;
+  margin-left: 5vh;
 }
 
 .cart-show-header {
-    display: flex;
-    justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
 }
 
 .cart-show-keep-shopping-button {
@@ -51,163 +51,162 @@
   padding-left: 1.4vh;
   padding-top: 0.4vh;
   padding-bottom: 0.4vh;
-  text-decoration: none; 
+  text-decoration: none;
   border-radius: 0.7rem;
   margin: 0.7rem;
   text-align: center;
   font-weight: 30;
-//   task : Fix 'keep shopping' styling. Make sure that clikcing
-    //   the button doesn't take you anywhere
+  //   task : Fix 'keep shopping' styling. Make sure that clikcing
+  //   the button doesn't take you anywhere
 }
 
 .cart-show-keep-shopping-button:hover {
-    background-color: rgb(247, 247, 247)
+  background-color: rgb(247, 247, 247);
 }
 
 .cart-content-container {
-    display: flex;
-    padding: 1.8rem;
-    margin-bottom: 10%;
+  display: flex;
+  padding: 1.8rem;
+  margin-bottom: 10%;
 }
 
-
 .checkout-payment-method-icon {
-    border: 0.1rem solid lightgray;
-    padding-right: 0.5rem;
-    padding-left: 0.5rem;
-    border-radius: 0.4rem;
-    margin-right: 1.0rem;
+  border: 0.1rem solid lightgray;
+  padding-right: 0.5rem;
+  padding-left: 0.5rem;
+  border-radius: 0.4rem;
+  margin-right: 1rem;
 }
 
 .cart-show-items-total {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 1vh;
-    font-family: 'Poppins', sans-serif;
-    font-weight: lighter;
-    font-size: 1.6vh;
-    padding-top: 0.4vh;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1vh;
+  font-family: 'Poppins', sans-serif;
+  font-weight: lighter;
+  font-size: 1.6vh;
+  padding-top: 0.4vh;
 }
 
 .cart-show-items-total-price {
-    font-size: 1.8vh;
+  font-size: 1.8vh;
 }
 
 .cart-products-ul-col {
-    padding: 0;
-    padding-right: 1.8rem;
-    width: 70%;
-    border-right: 0.1rem solid lightgray;
+  padding: 0;
+  padding-right: 1.8rem;
+  width: 70%;
+  border-right: 0.1rem solid lightgray;
 }
 
 .cart-show-checkout-col {
-    padding-left: 1.8rem;
-    width: 30%;
+  padding-left: 1.8rem;
+  width: 30%;
 }
 
 #proceed-to-checkout-button {
-    margin: 0; 
-    padding-top: 1.2rem;
-    font-family: 'Noto Serif', serif;
-    width: 85%;
+  margin: 0;
+  padding-top: 1.2rem;
+  font-family: 'Noto Serif', serif;
+  width: 85%;
 }
 
 .cart-show-payment-option {
-    padding-bottom: 0.6rem; 
+  padding-bottom: 0.6rem;
 }
 
 .cart-products-item-li {
-    list-style-type: none;
-    padding-bottom: 1vh;
-    border-bottom: 0.1rem solid lightgrey;
+  list-style-type: none;
+  padding-bottom: 1vh;
+  border-bottom: 0.1rem solid lightgrey;
 }
 
 // ------------------------ checkout radio button START------------------------ //
 input[type='radio'] {
-    // margin: 0;
-    // clear: none;
-    // background: lightgray left center no-repeat; 
-    // margin: .4rem;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
+  // margin: 0;
+  // clear: none;
+  // background: lightgray left center no-repeat;
+  // margin: .4rem;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
 
-    border-radius: 50%;
-    width: 2vh;
-    height: 2vh;
+  border-radius: 50%;
+  width: 2vh;
+  height: 2vh;
 
-    border: 0.1rem solid rgb(191, 191, 191);
-    transition: 0.2s all linear;
-    margin-right: 0.7vh;
-    margin-bottom: 1vh;
-    
-    position: relative;
-    top: 0.4rem;
+  border: 0.1rem solid rgb(191, 191, 191);
+  transition: 0.2s all linear;
+  margin-right: 0.7vh;
+  margin-bottom: 1vh;
+
+  position: relative;
+  top: 0.4rem;
 }
 
 input[type='radio']:hover {
-    border: 0.1rem solid rgb(135, 135, 135);
+  border: 0.1rem solid rgb(135, 135, 135);
 }
 
-input[type='radio']:checked{
-    border: 0.1rem solid rgb(171, 171, 171);
-    background-color: orange;
+input[type='radio']:checked {
+  border: 0.1rem solid rgb(171, 171, 171);
+  background-color: orange;
 }
 // Radio button styling inspired by: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/radio
 // Task : add white spacing between checked radio button and border
 // ------------------------ checkout radio button END------------------------ //
 
 .cart-is-empty-message-container {
-    padding-top: 2.4rem;
-    width: 100%; 
-    text-align: center;
+  padding-top: 2.4rem;
+  width: 100%;
+  text-align: center;
 }
 
 .cart-is-empty-message-box {
-    padding: 1.8rem;
-    border: 0.1rem solid lightgray;
-    width: 80%;
-    margin-bottom: 10%;
-    display: inline-block; 
-    margin: 0 auto;
+  padding: 1.8rem;
+  border: 0.1rem solid lightgray;
+  width: 80%;
+  margin-bottom: 10%;
+  display: inline-block;
+  margin: 0 auto;
 }
 // Centering technique applied to .cart-is-empty-message-container and .cart-is-empty-message-box
-    //  : https://www.w3docs.com/snippets/css/how-to-horizontally-center-a-div-in-another-div.html
+//  : https://www.w3docs.com/snippets/css/how-to-horizontally-center-a-div-in-another-div.html
 
 .cart-is-empty-message {
-    display: block;
-    padding-top: 1.2rem;
-    padding-bottom: 1.2rem;
-    text-align: center;
+  display: block;
+  padding-top: 1.2rem;
+  padding-bottom: 1.2rem;
+  text-align: center;
 }
 
 .cart-is-empty-link-div {
-    display: block;
-    padding-bottom: 1.2rem;
-    text-align: center;
+  display: block;
+  padding-bottom: 1.2rem;
+  text-align: center;
 }
 
 .cart-is-empty-link {
-    color: black; 
+  color: black;
 }
 
 .cart-is-empty-link:hover {
-    color: rgb(57, 57, 57); 
+  color: rgb(57, 57, 57);
 }
 
 .proceed-to-checkout-modal-div {
-    background-color: white;
-    padding: 3rem;
-    border-radius: 1rem;
-    padding-left: 4rem;
-    padding-right: 4rem;
+  background-color: white;
+  padding: 3rem;
+  border-radius: 1rem;
+  padding-left: 4rem;
+  padding-right: 4rem;
 }
 
 .personal-account-img-link.checkout {
-    width: 10rem;
-    fill: black;
+  width: 10rem;
+  fill: black;
 }
 
 .personal-account-img-link.checkout.linkedin {
-    padding-left: 2rem;
+  padding-left: 2rem;
 }

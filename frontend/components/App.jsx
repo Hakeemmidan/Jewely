@@ -3,7 +3,7 @@ import {AuthRoute, ProtectedRoute} from '../util/route_util';
 import {Switch, Route} from 'react-router-dom';
 
 // header vvv
-import { Header } from './header/header';
+import {Header} from './header/header';
 
 // users vvv
 import UserShowContainer from './users/user_show_container';
@@ -34,7 +34,7 @@ export class App extends React.Component {
         {/* modal is hidden by default */}
         <ModalContainer />
 
-        <Header/>
+        <Header />
 
         <Switch>
           <ProtectedRoute

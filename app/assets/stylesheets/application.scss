@@ -158,15 +158,15 @@ body {
 }
 
 .search-input-field {
-    height: 3.1rem;
-    margin-top: 0.5rem;
-    margin-bottom: 0.15rem;
-    border: none;
-    width: 100%;
-    background-color: inherit;
-    &:focus {
-      outline: none;
-    }
+  height: 3.1rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.15rem;
+  border: none;
+  width: 100%;
+  background-color: inherit;
+  &:focus {
+    outline: none;
+  }
 }
 
 .logo {

@@ -20,7 +20,10 @@ export function Drawer({drawer, direction, closeDrawer}) {
   return (
     <div>
       <div className="drawer-background" onClick={closeDrawer}>
-        <div className={`drawer-child ${direction}`} onClick={(e) => e.stopPropagation()}>
+        <div
+          className={`drawer-child ${direction}`}
+          onClick={(e) => e.stopPropagation()}
+        >
           {component}
           Some content
         </div>

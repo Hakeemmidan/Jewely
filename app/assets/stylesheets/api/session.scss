@@ -23,7 +23,7 @@
   padding-left: 1.6rem;
   padding-right: 1.6rem;
   border-style: none;
-  border: 0.1rem solid #E1E3DF;
+  border: 0.1rem solid #e1e3df;
   box-shadow: none;
   width: 90%;
 }
@@ -41,7 +41,7 @@
   padding-left: 2vh;
   padding-top: 1.3vh;
   padding-bottom: 1.3vh;
-  text-decoration: none; 
+  text-decoration: none;
   border-radius: 0.7rem;
   color: black;
   margin: 0.7rem;
@@ -49,29 +49,28 @@
 }
 
 .session-form-nav-button:hover {
-  background-color: rgb(247, 247, 247)
+  background-color: rgb(247, 247, 247);
 }
-
 
 // ------- session 'OR' START------- //
 .divider {
-	width:100%;
-	text-align:center;
+  width: 100%;
+  text-align: center;
 }
 
 .divider hr {
-	margin-left:auto;
-	margin-right:auto;
-  width:40%;
+  margin-left: auto;
+  margin-right: auto;
+  width: 40%;
   color: lightgrey;
 }
 
 .left {
-	float:left;
+  float: left;
 }
 
 .right {
-	float:right;
+  float: right;
 }
 // source: https://stackoverflow.com/a/2812819/7974948
 // ------- session 'OR' END------- //
@@ -84,7 +83,7 @@
   padding-left: 2vh;
   padding-top: 1.3vh;
   padding-bottom: 1.3vh;
-  text-decoration: none; 
+  text-decoration: none;
   border-radius: 0.7rem;
   color: black;
 }
@@ -101,7 +100,7 @@
   padding-left: 2vh;
   padding-top: 1.3vh;
   padding-bottom: 1.3vh;
-  text-decoration: none; 
+  text-decoration: none;
   border-radius: 0.7rem;
   cursor: pointer;
   color: black;
