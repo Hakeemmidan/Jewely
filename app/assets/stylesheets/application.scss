@@ -184,6 +184,11 @@ body {
   padding-right: 4rem;
 }
 
+.hamburger-menu-icon {
+  margin: 0.7rem 1rem 0 0;
+  display: none;
+}
+
 @media only screen and (max-width: $bp-small) {
   .logo {
     font-size: 2.5rem;
@@ -204,5 +209,9 @@ body {
   .top-bar {
     flex-wrap: wrap;
     padding: 0 1.5rem;
+  }
+
+  .hamburger-menu-icon {
+    display: block;
   }
 }

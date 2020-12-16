@@ -15,7 +15,7 @@ export class FilterForm extends React.Component {
   render() {
     return (
       <div className="search-input-field-container-main">
-        <HamburgerMenuIcon />
+        <HamburgerMenuIcon className={'hamburger-menu-icon'} />
         <div className="search-input-field-container-sub">
           <input
             type="string"
