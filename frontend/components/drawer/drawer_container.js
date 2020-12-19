@@ -3,10 +3,7 @@ import {closeDrawer} from '../../actions/drawer_actions';
 import {Drawer} from './drawer';
 
 const mapStateToProps = (state) => {
-  return {
-    drawer: state.ui.drawer,
-    direction: state.ui.direction,
-  };
+  return state.ui.drawer;
 };
 
 const mapDispatchToProps = (dispatch) => {

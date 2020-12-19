@@ -21,8 +21,9 @@ import CreateProductFormContainer from './products/create_update/create_product_
 // cart vvv
 import CartShowContainer from './carts/show/cart_show_container';
 
-// modal vvv
+// hidden trigger-able components vvv
 import ModalContainer from './modal/modal_container';
+import DrawerContainer from './drawer/drawer_container';
 
 // footer vvv
 import {Footer} from './footer/footer';
@@ -31,8 +32,9 @@ export class App extends React.Component {
   render() {
     return (
       <div className="main-container-div">
-        {/* modal is hidden by default */}
+        {/* vvv hidden by default */}
         <ModalContainer />
+        <DrawerContainer />
 
         <Header />
 

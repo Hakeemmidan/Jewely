@@ -1,14 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-export function Drawer({drawer, direction, closeDrawer}) {
-  if (!drawer) {
+export function Drawer({drawerType, direction, closeDrawer}) {
+  if (!drawerType) {
     return null;
   }
 
   let component;
 
-  switch (drawer) {
+  switch (drawerType) {
     // example
     case 'categories':
       // component = <CategoriesDrawer />;
@@ -33,6 +33,6 @@ export function Drawer({drawer, direction, closeDrawer}) {
 }
 
 Drawer.propTypes = {
-  drawer: PropTypes.string.isRequired,
-  direction: PropTypes.oneOf(['up', 'down', 'left', 'right']).isRequired,
+  drawerType: PropTypes.string,
+  direction: PropTypes.oneOf(['up', 'down', 'left', 'right']),
 };
