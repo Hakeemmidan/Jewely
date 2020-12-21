@@ -9,8 +9,9 @@ export const openDrawer = (drawerType, direction) => {
   };
 };
 
-export const closeDrawer = () => {
+export const closeDrawer = (direction) => {
   return {
     type: CLOSE_DRAWER,
+    direction,
   };
 };

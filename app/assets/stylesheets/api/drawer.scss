@@ -4,15 +4,63 @@
   bottom: 0;
   right: 0;
   left: 0;
-  background: rgba(0, 0, 0, 0.7);
+  background-color: rgba(0, 0, 0, 0.7);
   z-index: 10;
+  opacity: 1; 
+  display: block;
+  animation: fade-in 0.2s ease-in;
+}
+
+.drawer-background.closed {
+  visibility: hidden;
+  animation: fade-out 0.2s ease-in;
 }
 
 .drawer-child {
+  font-family: 'Raleway';
   position: absolute;
-  overflow-y: hidden;
-  max-height: 50rem;
-  transition-property: all;
-  transition-duration: 0.5s;
-  transition-timing-function: ease-in;
+  bottom: 0;
+  height: 80%;
+  width: 100%;
+  background-color: white;
+}
+
+.drawer-child.up {
+  transform: translateY(3%);
+  animation: slide-up 0.2s ease-in;
+}
+
+.drawer-child.down {
+  animation: slide-down 0.2s ease-in;
+}
+
+.drawer-close-btn {
+  float: right;
+  font-size: 4rem;
+  margin: 1rem 2rem 0 0;
+  color: gray;
+}
+
+@keyframes slide-up {
+  0% { transform: translateY(100%); }
+  
+  40% { transform: translateY(0%); }
+
+  100% { transform: translateY(3%); }
+}
+
+@keyframes slide-down {
+  0% { transform: translateY(3%); }
+
+  100% { transform: translateY(100%); }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fade-out {
+  from { visibility: visible; opacity: 1; }
+  to { opacity: 0; }
 }

@@ -13,20 +13,25 @@ export function Drawer({drawerType, direction, closeDrawer}) {
     case 'categories':
       // component = <CategoriesDrawer />;
       break;
+    case 'closed':
+      break;
     default:
       return null;
   }
 
   return (
-    <div>
-      <div className="drawer-background" onClick={closeDrawer}>
-        <div
-          className={`drawer-child ${direction}`}
-          onClick={(e) => e.stopPropagation()}
-        >
-          {component}
-          Some content
+    <div
+      className={`drawer-background ${drawerType === 'closed' && 'closed'}`}
+      onClick={() => closeDrawer('down')}
+    >
+      <div
+        className={`drawer-child ${direction}`}
+        onClick={(e) => e.stopPropagation()}
+      >
+        <div className="drawer-close-btn" onClick={() => closeDrawer('down')}>
+          x
         </div>
+        {component}
       </div>
     </div>
   );
