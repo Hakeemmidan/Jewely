@@ -15,7 +15,7 @@ export class FilterForm extends React.Component {
   render() {
     return (
       <div className="search-input-field-container-main">
-        <span onClick={() => this.props.openDrawer('categories', 'up')}>
+        <span onClick={() => this.props.openDrawer('categories', 'up', 'up')}>
           <HamburgerMenuIcon className={'hamburger-menu-icon'} />
         </span>
         <div className="search-input-field-container-sub">

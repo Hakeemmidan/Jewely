@@ -12,8 +12,8 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     updateFilter: (filter, value) => dispatch(updateFilter(filter, value)),
-    openDrawer: (drawerType, direction) =>
-      dispatch(openDrawer(drawerType, direction)),
+    openDrawer: (drawerType, openDirection, closeDirection) =>
+      dispatch(openDrawer(drawerType, openDirection, closeDirection)),
   };
 };
 

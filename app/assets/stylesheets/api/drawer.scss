@@ -19,21 +19,14 @@
 .drawer-child {
   font-family: 'Raleway';
   position: absolute;
-  border-top: 1rem solid purple;
-  bottom: 0;
-  height: 80%;
   width: 100%;
   background-color: white;
 }
 
 .drawer-child.up {
-  transform: translateY(3%);
-  animation: slide-up 0.2s ease-in;
-}
-
-.drawer-child.down {
-  visibility: hidden;
-  animation: slide-down 0.2s ease-in;
+  border-top: 1rem solid purple;
+  bottom: 0;
+  height: 80%;
 }
 
 .drawer-close-btn {
@@ -41,31 +34,6 @@
   font-size: 4rem;
   margin: 1rem 2rem 0 0;
   color: gray;
-}
-
-@keyframes slide-up {
-  0% {
-    transform: translateY(100%);
-  }
-
-  80% {
-    transform: translateY(2%);
-  }
-
-  100% {
-    transform: translateY(3%);
-  }
-}
-
-@keyframes slide-down {
-  0% {
-    visibility: visible;
-    transform: translateY(3%);
-  }
-
-  100% {
-    transform: translateY(100%);
-  }
 }
 
 @keyframes fade-in {

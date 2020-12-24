@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-export function Drawer({drawerType, direction, closeDrawer}) {
+export function Drawer({drawerType, openDirection, closeDirection, closeDrawer}) {
   if (!drawerType) {
     return null;
   }
@@ -22,13 +22,13 @@ export function Drawer({drawerType, direction, closeDrawer}) {
   return (
     <div
       className={`drawer-background ${drawerType === 'closed' && 'closed'}`}
-      onClick={() => closeDrawer('down')}
+      onClick={() => closeDrawer(closeDirection)}
     >
       <div
-        className={`drawer-child ${direction}`}
+        className={`drawer-child ${openDirection}`}
         onClick={(e) => e.stopPropagation()}
       >
-        <div className="drawer-close-btn" onClick={() => closeDrawer('down')}>
+        <div className="drawer-close-btn" onClick={() => closeDrawer(closeDirection)}>
           x
         </div>
         {component}

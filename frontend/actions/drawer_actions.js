@@ -1,17 +1,18 @@
 export const OPEN_DRAWER = 'OPEN_DRAWER';
 export const CLOSE_DRAWER = 'CLOSE_DRAWER';
 
-export const openDrawer = (drawerType, direction) => {
+export const openDrawer = (drawerType, openDirection, closeDirection) => {
   return {
     type: OPEN_DRAWER,
     drawerType,
-    direction,
+    openDirection,
+    closeDirection,
   };
 };
 
-export const closeDrawer = (direction) => {
+export const closeDrawer = (closeDirection) => {
   return {
     type: CLOSE_DRAWER,
-    direction,
+    closeDirection: closeDirection,
   };
 };
