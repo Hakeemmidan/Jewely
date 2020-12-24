@@ -1,5 +1,5 @@
 {
-  "name": "Jewely",
+  "name": "jewely",
   "private": true,
   "dependencies": {
     "-": "0.0.1",
@@ -23,7 +23,7 @@
     "webpack": "^4.44.2",
     "webpack-cli": "^3.3.8"
   },
-  "description": "This README would normally document whatever steps are necessary to get the application up and running.",
+  "description": "To run, run `npm i && npm start` to start frontend. `bundle install && rails s` to start backend.",
   "version": "1.0.0",
   "main": "index.js",
   "directories": {

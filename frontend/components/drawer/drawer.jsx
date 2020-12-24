@@ -30,7 +30,7 @@ export function Drawer({
       onClick={() => closeDrawer(closeDirection)}
     >
       <div
-        className={`drawer-child ${openDirection}`}
+        className={`drawer-child ${openDirection || closeDirection}`}
         onClick={(e) => e.stopPropagation()}
       >
         <div
