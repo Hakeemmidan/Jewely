@@ -40,6 +40,7 @@ export function Drawer({
           x
         </div>
         {component}
+        Hello this the mobile drawer = )
       </div>
     </div>
   );
