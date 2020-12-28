@@ -2,7 +2,7 @@ import {connect} from 'react-redux';
 
 import {ReviewsIndex} from './reviews_index';
 import {openModal} from '../../../actions/modal_actions';
-import {fetchReviews, removeReview} from '../../../actions/review_actions';
+import {removeReview} from '../../../actions/review_actions';
 
 const mapStateToProps = (state, ownProps) => {
   return {
@@ -16,7 +16,6 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     openModal: (modal) => dispatch(openModal(modal)),
-    fetchReviews: (productId) => dispatch(fetchReviews(productId)),
     removeReview: (id) => dispatch(removeReview(id)),
   };
 };

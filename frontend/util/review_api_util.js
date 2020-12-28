@@ -1,14 +1,9 @@
+import $ from 'jquery';
+
 export const fetchReview = (id) => {
   return $.ajax({
     method: 'GET',
     url: `api/reviews/${id}`,
-  });
-};
-
-export const fetchReviews = (productId) => {
-  return $.ajax({
-    method: 'GET',
-    url: `api/products/${productId}/reviews`,
   });
 };
 

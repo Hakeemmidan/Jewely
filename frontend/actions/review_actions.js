@@ -1,16 +1,7 @@
 import * as ReviewAPIUtil from '../util/review_api_util';
-import {convertArrayOfObjectsToObject} from '../app_helper_methods';
-export const RECEIVE_ALL_REVIEWS = 'RECEIVE_ALL_REVIEWS';
 export const RECEIVE_REVIEW = 'RECEIVE_REVIEW';
 export const REMOVE_REVIEW = 'REMOVE_REVIEW';
 export const RECEIVE_REVIEW_ERRORS = 'RECEIVE_REVIEW_ERRORS';
-
-const receiveReviews = (reviews) => {
-  return {
-    type: RECEIVE_ALL_REVIEWS,
-    reviews: convertArrayOfObjectsToObject(reviews),
-  };
-};
 
 const receiveReview = (review) => {
   return {
@@ -36,12 +27,6 @@ const deleteReview = (reviewId) => {
 // Action creators ^^^
 ////////////////////////////////////////////
 // Thunk action creators vvv
-
-export const fetchReviews = (productId) => (dispatch) => {
-  return ReviewAPIUtil.fetchReviews(productId).then((reviews) =>
-    dispatch(receiveReviews(reviews))
-  );
-};
 
 export const fetchReview = (id) => (dispatch) => {
   return ReviewAPIUtil.fetchReview(id).then((review) =>

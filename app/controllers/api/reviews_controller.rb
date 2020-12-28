@@ -1,11 +1,4 @@
 class Api::ReviewsController < ApplicationController
-
-    def index
-        if params[:product_id]
-            @reviews = Product.find(params[:product_id]).reviews.order('created_at DESC')
-        end
-    end
-
     def create
         @review = Review.new(review_params)
         
