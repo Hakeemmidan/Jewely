@@ -6,15 +6,13 @@ import GreetingContainer from '../greeting/greeting_container';
 export function Header() {
   return (
     <>
-      <div>
-        <div className="top-bar">
-          <Link to="/" className="logo">
-            {' '}
-            Jewely{' '}
-          </Link>
-          <FilterFormContainer />
-          <GreetingContainer />
-        </div>
+      <div className="top-bar">
+        <Link to="/" className="logo">
+          {' '}
+          Jewely{' '}
+        </Link>
+        <FilterFormContainer />
+        <GreetingContainer />
       </div>
       <hr className="top-bar-divider" />
     </>

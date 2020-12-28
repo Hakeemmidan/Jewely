@@ -9,7 +9,7 @@ export const LinkedInIcon = (props) => {
       width="438.536px"
       height="438.536px"
       viewBox="0 0 438.536 438.536"
-      xmlspace="preserve"
+      xmlSpace="preserve"
     >
       <g>
         <path

@@ -1,16 +1,9 @@
-.product-show-image {
-  max-width: 42%;
-  height: auto;
-  padding-right: 1.2rem;
-  padding-left: 1.8rem;
-  margin-bottom: 2.5rem;
-  display: inline-block;
-  overflow: hidden;
-}
+@import './abstract/variables';
 
-.listing-right-column {
-  padding-right: 1.8rem;
-  padding-left: 1.2rem;
+.listing-right-column,
+.listing-left-column {
+  padding: 0 1.8rem;
+  width: 50%;
 }
 
 .product-show-title {
@@ -46,6 +39,7 @@
   * {
     all: unset;
   }
+  width: 80%;
   display: block;
   cursor: pointer;
   border: 0.1rem solid grey;
@@ -62,7 +56,6 @@
   background-color: black;
   font-size: 1.5rem;
   line-height: 1.2;
-  width: 35vw;
   border-color: rgba(0, 0, 0, 0.1);
   display: inline-block;
   font-weight: bold;
@@ -104,18 +97,20 @@
   overflow: auto;
 }
 
+.product-show-container {
+  margin: 0 10%;
+  padding-bottom: 13rem;
+}
 .product-listing {
   padding-top: 3rem;
   padding-bottom: 2rem;
   display: flex;
-  margin-right: 10%;
-  margin-left: 10%;
 }
+
 // ------- product show lower details (doesn't include comments) START ------- //
 .product-show-column {
   float: left;
-  padding-right: 1.8rem;
-  padding-left: 1.8rem;
+  padding: 0 1.8rem;
   box-sizing: border-box;
   margin-bottom: 5%;
 }
@@ -126,7 +121,6 @@
 
 .product-show-column1 {
   width: 50%;
-  padding-right: 1.8rem;
   border-right: 0.1rem solid whitesmoke;
   position: relative;
 }
@@ -194,20 +188,11 @@
 
 // ------- product show lower details (doesn't include comments) END ------- //
 
-.product-show-carousel-image {
-  width: 100%;
-}
-.product-show-images {
-  width: 40%;
-}
-
 .product-show-lower {
   display: flex;
   box-sizing: border-box;
   clear: both;
   margin-top: 2rem;
-  margin-right: 10%;
-  margin-left: 10%;
   padding-bottom: 15%;
 }
 
@@ -224,8 +209,39 @@
   justify-content: center;
 }
 
+.product-show-add-to-cart-container {
+  text-align: center;
+}
+
 .product-show-carousel-images {
+  width: 100%;
+  height: 100%;
   object-fit: contain;
   max-width: 40vw;
   max-height: 60vh;
+}
+
+@media only screen and (max-width: $bp-medium) {
+  .product-listing {
+    flex-direction: column;
+  }
+
+  .product-show-column1, .product-show-column2,
+  .listing-left-column, .listing-right-column {
+    width: 100%;
+    padding: 0;
+  }
+
+  .product-show-imgs-container {
+    height: 45rem;
+  }
+
+  .product-show-carousel-images {
+    max-width: none;
+    max-height: none;
+  }
+
+  .product-show-lower {
+    flex-direction: column-reverse;
+  }
 }

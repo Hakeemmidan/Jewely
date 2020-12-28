@@ -9,7 +9,7 @@ export const GithubIcon = (props) => {
       width="438.549px"
       height="438.549px"
       viewBox="0 0 438.549 438.549"
-      xmlspace="preserve"
+      xmlSpace="preserve"
     >
       <g>
         <path
