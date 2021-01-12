@@ -8,6 +8,15 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-puts '#=> Seeding started'
-# You can put your seeding instructions here
-puts '#=> Seeding ended'
+puts '#=> Seeding START'
+puts '#### => Prepopulate Categories START'
+CATEGORIES = ['bracelets', 'necklaces', 'rings', 'earrings', 'watches', 'cufflinks', 'other']
+
+CATEGORIES.each do |ctg|
+  if !Category.exists?(name: ctg)
+    Category.create(name: ctg)
+  end
+end
+
+puts '#### => Prepopulate Categories END'
+puts '#=> Seeding END'
