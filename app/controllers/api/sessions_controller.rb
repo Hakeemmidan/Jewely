@@ -1,25 +1,26 @@
-class Api::SessionsController < ApplicationController
-  
-  def create
-    @user = User.find_by_credentials(
-      params[:user][:username],
-      params[:user][:password]
-    )
+# frozen_string_literal: true
 
-    if @user
-      sign_in(@user)
-      render 'api/users/show'
-    else
-      render json: ['Invalid credentials'], status: 422
+module Api
+  class SessionsController < ApplicationController
+    def create
+      @user = User.find_by(username: params[:user][:username])
+      return nil unless @user&.valid_password?(params[:user][:password])
+
+      if @user
+        sign_in(@user)
+        render 'api/users/show'
+      else
+        render json: ['Invalid credentials'], status: :unprocessable_entity
+      end
     end
-  end
 
-  def destroy
-    if current_user
-      sign_out
-      render json: {}
-    else
-      render json: ['Nobody singed in'], status: 404
+    def destroy
+      if current_user
+        sign_out
+        render json: {}
+      else
+        render json: ['Nobody singed in'], status: :not_found
+      end
     end
   end
 end

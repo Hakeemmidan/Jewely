@@ -1,65 +1,74 @@
-class Api::ProductsController < ApplicationController
+# frozen_string_literal: true
+
+module Api
+  class ProductsController < ApplicationController
+    before_action :fetch_current_user_products, only: %i[update destroy]
+
     def index
-        if params[:search].present?
-            @products = Product.all.where('lower(title) LIKE :search
+      if params[:search].present?
+        @products = Product.all.where('lower(title) LIKE :search
                                            OR lower(description) LIKE :search', search: "%#{params[:search]}%")
-        else
-            @products = Product.all
-        end
+      else
+        @products = Product.all
+      end
     end
-    
+
     def show
-        @product = Product.with_attached_photos.find(params[:id])
+      @product = Product.with_attached_photos.find(params[:id])
     end
 
     def create
-        @product = Product.new(product_params)
+      @product = Product.new(product_params)
 
-        if (@product.seller_id)
-            @product.seller_username = User.find(@product.seller_id).username
-        end
+      @product.seller_username = @product.seller.username if @product.seller_id
 
-        if @product.save
-            render :show
-        else
-            render json: @product.errors.full_messages, status: 422
-        end
+      if @product.save
+        render :show
+      else
+        render json: @product.errors.full_messages, status: :unprocessable_entity
+      end
     end
 
     def update
-        @product = current_user.products.find(params[:id])
-
+      if params[:product][:photosToDeleteIds] != 'undefined'
         params[:product][:photosToDeleteIds].split(',').map do |id|
-            @product.photos.destroy(id)
+          @product.photos.destroy(id)
         end
+      end
 
-        if @product.update(product_params)
-            render :show
-        else
-            render json: @product.errors.full_messages, status: 422
-        end
+      if @product.update(product_params)
+        render :show
+      else
+        render json: @product.errors.full_messages, status: :unprocessable_entity
+      end
     end
 
     def destroy
-        @product = current_user.products.find(params[:id])
-        @product.photos.destroy_all
-        
-        if @product.destroy
-            render :index
-        else
-            render json: @product.errors.full_messages, status: 422
-        end
+      @product.photos.destroy_all
+
+      if @product.destroy
+        render :index
+      else
+        render json: @product.errors.full_messages, status: :unprocessable_entity
+      end
     end
 
     private
-    def product_params
-        params.require(:product).permit(
-            :id,
-            :title,
-            :description,
-            :price,
-            :seller_id,
-            :seller_username,
-            photos: [])
+
+    def fetch_current_user_products
+      @product = current_user.products.find(params[:id])
     end
+
+    def product_params
+      params.require(:product).permit(
+        :id,
+        :title,
+        :description,
+        :price,
+        :seller_id,
+        :seller_username,
+        photos: []
+      )
+    end
+  end
 end

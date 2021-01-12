@@ -1,0 +1,16 @@
+require: rubocop-rails
+
+AllCops:
+  Exclude:
+    - 'db/**/*'
+    - 'config/**/*'
+    - 'script/**/*'
+    - 'bin/{rails,rake}'
+    - !ruby/regexp /old_and_unused\.rb$/
+
+# To avoid needing to document controllers and such, which can be self-explanatory
+Documentation:
+    Enabled: false
+
+Rails:
+  StyleGuideBaseURL: https://rails.rubystyle.guide
