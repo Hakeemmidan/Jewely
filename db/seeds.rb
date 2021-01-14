@@ -17,6 +17,5 @@ CATEGORIES.each do |ctg|
     Category.create(name: ctg)
   end
 end
-
 puts '#### => Prepopulate Categories END'
 puts '#=> Seeding END'

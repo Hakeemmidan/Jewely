@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_12_083458) do
+ActiveRecord::Schema.define(version: 2021_01_14_141049) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -63,6 +63,7 @@ ActiveRecord::Schema.define(version: 2021_01_12_083458) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "seller_username"
+    t.integer "category_id"
     t.index ["description"], name: "index_products_on_description"
     t.index ["seller_id"], name: "index_products_on_seller_id"
     t.index ["title"], name: "index_products_on_title"
@@ -91,4 +92,5 @@ ActiveRecord::Schema.define(version: 2021_01_12_083458) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "products", "categories"
 end

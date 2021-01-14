@@ -8,15 +8,18 @@ class Product < ApplicationRecord
   belongs_to :seller,
              class_name: 'User'
 
+  belongs_to :category,
+             class_name: 'Category'
+
   has_many :carts,
            class_name: 'Cart',
+           dependent: :destroy
+
+  has_many :reviews,
+           class_name: 'Review',
            dependent: :destroy
 
   has_many :cart_customers,
            through: :carts,
            source: :customer
-
-  has_many :reviews,
-           class_name: 'Review',
-           dependent: :destroy
 end
