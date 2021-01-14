@@ -20,16 +20,16 @@ class User < ApplicationRecord
           dependent: :destroy,
           inverse_of: :customer
 
-  has_many :cart_products,
-           through: :cart,
-           source: :product,
-           dependent: :destroy
-
   has_many :reviews,
            foreign_key: :author_id,
            class_name: 'Review',
            dependent: :destroy,
            inverse_of: :author
+
+  has_many :cart_products,
+           through: :cart,
+           source: :product,
+           dependent: :destroy
 
   def password=(password)
     @password = password
