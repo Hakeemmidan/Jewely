@@ -12,10 +12,6 @@ export class UserShowItem extends React.Component {
     return (
       <li>
         <div>
-          {/* <Link to={`/products/${product.id}`} >
-                        <img src={product.photoUrls[0]} className="product-index-image" />
-                    </Link> */}
-
           <div className="user-show-item-details">
             <div className="user-show-item-title-container">
               <div>

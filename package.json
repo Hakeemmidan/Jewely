@@ -67,7 +67,7 @@
       "prettier --write"
     ],
     "{app,test}/**/*.rb": [
-      "rubocop -a"
+      "rubocop -A"
     ]
   },
   "engines": {

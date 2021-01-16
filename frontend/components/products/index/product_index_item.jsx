@@ -30,14 +30,6 @@ export class ProductIndexItem extends React.Component {
           </p>
           {/* Number format source : https://stackoverflow.com/a/14428340/7974948  */}
         </Link>
-
-        {/* <Link to={`/products/${product.id}/edit`} removeProduct={props.removeProduct}>
-                    Edit
-                </Link> */}
-        {/* Task: Make this only visible to logged in people */}
-        {/* Task: Make a delete button avilable on the edit form of a specific product
-                    Not sure if passing the removeProduct function as a prop might be the best
-                    thing to do here. Not sure if it works too */}
       </div>
     );
   }

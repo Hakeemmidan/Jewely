@@ -10,7 +10,7 @@
 
 puts '#=> Seeding START'
 puts '#### => Prepopulate Categories START'
-CATEGORIES = ['bracelets', 'necklaces', 'rings', 'earrings', 'watches', 'cufflinks', 'other']
+CATEGORIES = ['Bracelets', 'Necklaces', 'Rings', 'Earrings', 'Watches', 'Cufflinks', 'Other']
 
 CATEGORIES.each do |ctg|
   if !Category.exists?(name: ctg)
