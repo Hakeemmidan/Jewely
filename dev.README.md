@@ -1,44 +1,42 @@
 ---
-
 ## General flow of a feature
 
 Checkout related [commands](#commands)
 
 - Backend
 
-  1. Migration
-     - Gets generated when running migration command (`rails g migration <name_of_migration>`)
-  2. Model
-     - Under `app/models`
-  3. Associations
-     - Inside model files; e.g. `app/models/user.rb`
-  4. Validations
-     - Inside model files; e.g. `app/models/user.rb`
-  5. Routes
-     - Inside `config/routes.rb`
-  6. Controller
-     - Under `app/controllers/api`
+1. Migration
+- Gets generated when running migration command (`rails g migration <name_of_migration>`)
+2. Model
+- Under `app/models`
+3. Associations
+- Inside model files; e.g. `app/models/user.rb`
+4. Validations
+- Inside model files; e.g. `app/models/user.rb`
+5. Routes
+- Inside `config/routes.rb`
+6. Controller
+- Under `app/controllers/api`
 
 - Frontend
 
-  7. API util
-     - Under `frontend/util`
-  8. Action creators
-     - Under `frontend/actions`
-  9. Thunk action creators
-     - Under `frontend/actions`
-  10. Reducers
-      - Under `frontend/reducers`
-  11. Mapping to components
-      - Under `frontend/components`
-      - If you're going to use Redux (use Redux if you need fetched info elsewhere in app)
-        - First create container for component, then create actual component file
-          - Check out `frontend/components/products/index/product_index_container.js` as an example
-  12. Style
+7. API util
+- Under `frontend/util`
+8. Action creators
+- Under `frontend/actions`
+9. Thunk action creators
+- Under `frontend/actions`
+10. Reducers
+- Under `frontend/reducers`
+11. Mapping to components
+- Under `frontend/components`
+- If you're going to use Redux (use Redux if you need fetched info elsewhere in app)
+- First create container for component, then create actual component file
+- Check out `frontend/components/products/index/product_index_container.js` as an example
+12. Style
 
-  - Most styling is inside `app/assets/stylesheets/application.scss`
-    - Don't get intimidated by the size of the file. CMD + F and the browser DOM tree are your best friend here. You should mostly be looking at styling through the browser and modifying to the file as needed.
-
+- Most styling is inside `app/assets/stylesheets/application.scss`
+- Don't get intimidated by the size of the file. CMD + F and the browser DOM tree are your best friend here. You should mostly be looking at styling through the browser and modifying to the file as needed.
 ---
 
 ## Commands
@@ -64,13 +62,22 @@ View available routes:
 
 Generate controller:
 
-- `rails g controller api/controller_name --no-helper --no-stylesheets`
+- `rails g controller api/controller_name`
   - `controller_name` is plural
 
 Generate model and migration:
 
 - `rails g model model_name`
   - `model_name` is singular
+
+Note: Automatic generation of helpers, javascripts, and scss files is turned off. If you want to add them back in remove these lines in `application.rb`:
+
+```Ruby
+config.generators do |generate|
+  generate.helper false
+  generate.assets false
+end
+```
 
 ### Frontend
 
