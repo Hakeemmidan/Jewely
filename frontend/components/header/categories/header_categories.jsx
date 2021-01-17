@@ -1,8 +1,7 @@
-import React, {useEffect} from 'react';
+import React from 'react';
 
 export function HeaderCategories(props) {
   let categories = props.categories;
-  useEffect(() => props.fetchCategories(), []);
 
   return (
     <>

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {AuthRoute, ProtectedRoute} from '../util/route_util';
 import {Switch, Route} from 'react-router-dom';
 
@@ -28,53 +28,54 @@ import DrawerContainer from './drawer/drawer_container';
 // footer vvv
 import {Footer} from './footer/footer';
 
-export class App extends React.Component {
-  render() {
-    return (
-      <div className="main-container-div">
-        {/* vvv hidden by default */}
-        <ModalContainer />
-        <DrawerContainer />
+export function App(props) {
+  // prepopulate app
+  useEffect(() => props.fetchCategories(), []);
 
-        <Header />
+  return (
+    <div className="main-container-div">
+      {/* vvv hidden by default */}
+      <ModalContainer />
+      <DrawerContainer />
 
-        <Switch>
-          <ProtectedRoute
-            exact
-            path="/products/:productId/edit"
-            component={EditProductFormContainer}
-          />
+      <Header />
 
-          <ProtectedRoute
-            exact
-            path="/products/create"
-            component={CreateProductFormContainer}
-          />
+      <Switch>
+        <ProtectedRoute
+          exact
+          path="/products/:productId/edit"
+          component={EditProductFormContainer}
+        />
 
-          <Route exact path="/users/:userId" component={UserShowContainer} />
+        <ProtectedRoute
+          exact
+          path="/products/create"
+          component={CreateProductFormContainer}
+        />
 
-          <Route
-            exact
-            path="/products/:productId"
-            component={ProductShowContainer}
-          />
-          {/* Paths with wild cards at the end should always be put
-                BELOW routes that have the same length */}
+        <Route exact path="/users/:userId" component={UserShowContainer} />
 
-          <AuthRoute exact path="/login" component={LogInFormContainer} />
+        <Route
+          exact
+          path="/products/:productId"
+          component={ProductShowContainer}
+        />
+        {/* Paths with wild cards at the end should always be put
+              BELOW routes that have the same length */}
 
-          <AuthRoute exact path="/signup" component={SignUpFormContainer} />
+        <AuthRoute exact path="/login" component={LogInFormContainer} />
 
-          <Route exact path="/cart" component={CartShowContainer} />
+        <AuthRoute exact path="/signup" component={SignUpFormContainer} />
 
-          <Route path="/" component={ProductIndexContainer} />
+        <Route exact path="/cart" component={CartShowContainer} />
 
-          <Route component={ProductIndexContainer} />
-          {/* ^^^ User gets redirected to this if they don't enter an exisiting path.
-                    This happens because there is no path parameter */}
-        </Switch>
-        <Footer />
-      </div>
-    );
-  }
+        <Route path="/" component={ProductIndexContainer} />
+
+        <Route component={ProductIndexContainer} />
+        {/* ^^^ User gets redirected to this if they don't enter an exisiting path.
+                  This happens because there is no path parameter */}
+      </Switch>
+      <Footer />
+    </div>
+  );
 }

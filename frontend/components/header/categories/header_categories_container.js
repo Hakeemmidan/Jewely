@@ -1,5 +1,4 @@
 import {connect} from 'react-redux';
-import {fetchCategories} from '../../../actions/categories_actions';
 import {HeaderCategories} from './header_categories';
 
 const mapStateToProps = ({entities: {categories}}) => {
@@ -8,8 +7,4 @@ const mapStateToProps = ({entities: {categories}}) => {
   };
 };
 
-const mapDispatchToProps = (dispatch) => ({
-  fetchCategories: () => dispatch(fetchCategories()),
-});
-
-export default connect(mapStateToProps, mapDispatchToProps)(HeaderCategories);
+export default connect(mapStateToProps, null)(HeaderCategories);
