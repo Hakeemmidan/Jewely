@@ -1,3 +1,5 @@
+---
+
 ## General flow of a feature
 
 Checkout related [commands](#commands)
@@ -32,6 +34,12 @@ Checkout related [commands](#commands)
       - If you're going to use Redux (use Redux if you need fetched info elsewhere in app)
         - First create container for component, then create actual component file
           - Check out `frontend/components/products/index/product_index_container.js` as an example
+  12. Style
+
+  - Most styling is inside `app/assets/stylesheets/application.scss`
+    - Don't get intimidated by the size of the file. CMD + F and the browser DOM tree are your best friend here. You should mostly be looking at styling through the browser and modifying to the file as needed.
+
+---
 
 ## Commands
 
@@ -77,6 +85,8 @@ Start Webpack:
 Parse frontend linting errors/warnings:
 
 - `eslint frontend` (assuming you're in root directory)
+
+---
 
 ## Redux Global State (frontend)
 

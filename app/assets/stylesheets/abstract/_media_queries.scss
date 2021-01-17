@@ -1,0 +1,57 @@
+@import './variables';
+
+@media only screen and (max-width: $bp-small) {
+  .logo {
+    font-size: 2.5rem;
+    padding: 0;
+    width: 40%;
+  }
+
+  .navbar-right-side-content {
+    width: 60%;
+    justify-content: flex-end;
+  }
+
+  .search-input-field-container-main {
+    order: 3;
+    max-width: none;
+  }
+
+  .top-bar {
+    flex-wrap: wrap;
+    padding: 0 1.5rem;
+  }
+
+  .header-categories.top-bar {
+    display: none;
+  }
+
+  .hamburger-menu-icon {
+    display: block;
+  }
+}
+
+@media only screen and (max-width: $bp-medium) {
+  .product-listing {
+    flex-direction: column;
+  }
+
+  .product-show-column1, .product-show-column2,
+  .listing-left-column, .listing-right-column {
+    width: 100%;
+    padding: 0;
+  }
+
+  .product-show-imgs-container {
+    height: 45rem;
+  }
+
+  .product-show-carousel-images {
+    max-width: none;
+    max-height: none;
+  }
+
+  .product-show-lower {
+    flex-direction: column-reverse;
+  }
+}
