@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import CategoriesDrawerContainer from './categories/categories_drawer_container';
 
 export function Drawer({
   drawerType,
@@ -14,9 +15,8 @@ export function Drawer({
   let component;
 
   switch (drawerType) {
-    // example
     case 'categories':
-      // component = <CategoriesDrawer />;
+      component = <CategoriesDrawerContainer />;
       break;
     case 'closed':
       break;
@@ -37,10 +37,9 @@ export function Drawer({
           className="drawer-close-btn"
           onClick={() => closeDrawer(closeDirection)}
         >
-          x
+          <span>x</span>
         </div>
         {component}
-        Hello this the mobile drawer = )
       </div>
     </div>
   );

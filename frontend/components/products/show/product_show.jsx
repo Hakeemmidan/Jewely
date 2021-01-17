@@ -276,9 +276,15 @@ export class ProductShow extends React.Component {
                   :
                   <br />
                   <br />
-                  None at the moment 🐣
+                  None at the moment&nbsp;
+                  <span role="img" aria-label="hatching chick">
+                    🐣
+                  </span>
                   <br />
-                  Be the first to review!👇
+                  Be the first to review!&nbsp;
+                  <span role="img" aria-label="finger pointing down">
+                    👇
+                  </span>
                 </div>
               )}
             </b>

@@ -812,23 +812,28 @@ body {
 }
 
 .drawer-child {
-  font-family: 'Raleway';
   position: absolute;
   width: 100%;
   background-color: white;
 }
 
 .drawer-child.up {
-  border-top: 1rem solid purple;
   bottom: 0;
   height: 80%;
 }
 
 .drawer-close-btn {
-  float: right;
+  font-family: 'Raleway';
+  display: flex;
+  justify-content: flex-end;
   font-size: 4rem;
   margin: 1rem 2rem 0 0;
   color: gray;
+}
+
+.drawer-categories__item {
+  margin: 1rem 1.5rem;
+  font-size: 1.5em;
 }
 
 .footer-top-edges {

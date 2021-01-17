@@ -1,5 +1,5 @@
+import {CategoriesDrawer} from './categories_drawer';
 import {connect} from 'react-redux';
-import {HeaderCategories} from './header_categories';
 
 const mapStateToProps = ({entities: {categories}}) => {
   return {
@@ -7,4 +7,4 @@ const mapStateToProps = ({entities: {categories}}) => {
   };
 };
 
-export default connect(mapStateToProps, null)(HeaderCategories);
+export default connect(mapStateToProps, null)(CategoriesDrawer);

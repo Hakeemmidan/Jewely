@@ -1,8 +1,6 @@
 import React from 'react';
 
-export function HeaderCategories(props) {
-  let categories = props.categories;
-
+export function HeaderCategories({categories}) {
   return (
     <>
       {categories.map((category) => {
