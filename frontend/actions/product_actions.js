@@ -1,9 +1,9 @@
+import * as ProductAPIUtil from '../util/product_api_util';
+import {convertArrayOfObjectsToObject} from '../app_helper_methods';
 export const RECEIVE_ALL_PRODUCTS = 'RECEIVE_ALL_PRODUCTS';
 export const RECEIVE_PRODUCT = 'RECEIVE_PRODUCT';
 export const REMOVE_PRODUCT = 'REMOVE_PRODUCT';
 export const RECEIVE_PRODUCT_ERRORS = 'RECEIVE_PRODUCT_ERRORS';
-import * as ProductAPIUtil from '../util/product_api_util';
-import {convertArrayOfObjectsToObject} from '../app_helper_methods';
 
 const receiveProducts = (products) => {
   return {

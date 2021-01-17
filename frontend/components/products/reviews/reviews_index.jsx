@@ -104,12 +104,6 @@ export class ReviewsIndex extends React.Component {
 
                 <hr className="product-show-divider reviews" />
 
-                {/* <Link to={`/reviews/${review.id}`}> */}
-                {/* <img
-                                    className="review-edit-button"
-                                    onClick={() => this.props.openModal('edit review')}
-                                    src="https://image.flaticon.com/icons/svg/1159/1159876.svg" /> */}
-                {/* </Link> */}
                 {this.props.currentUserId === review.author_id ? (
                   <img
                     alt="delete review icon/button"

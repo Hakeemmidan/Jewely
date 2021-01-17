@@ -45,7 +45,7 @@ class EditProductForm extends React.Component {
   }
 
   componentDidUpdate(prevProps) {
-    if (prevProps.product.id != this.props.match.params.productId) {
+    if (prevProps.product.id !== this.props.match.params.productId) {
       this.props.fetchProduct(this.props.match.params.productId);
     }
   }

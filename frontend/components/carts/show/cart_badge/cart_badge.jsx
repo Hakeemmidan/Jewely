@@ -1,11 +1,6 @@
 import React from 'react';
-// import { fetchCartBadge } from '../../../actions/cart_actions';
 
 export class CartBadge extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
   componentDidMount() {
     this.props.fetchCartBadge();
   }

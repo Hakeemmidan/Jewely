@@ -1,3 +1,4 @@
+/* eslint-disable no-restricted-globals */
 import React from 'react';
 import {withRouter} from 'react-router-dom';
 
@@ -219,13 +220,10 @@ class ProductForm extends React.Component {
             </label>
             <img
               htmlFor={`img${i}`}
+              alt="create/edit product placeholder"
               key={`product-form-img-preview-${i}`}
               className="product-form-image-preview"
-              src={
-                this.state.photoUrls[`img${i}`]
-                  ? this.state.photoUrls[`img${i}`]
-                  : this.state.photoUrls[i]
-              }
+              src={this.state.photoUrls[`img${i}`] || this.state.photoUrls[i]}
             />
           </div>
         </div>

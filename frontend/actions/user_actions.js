@@ -1,7 +1,7 @@
+import * as UserAPIUtil from '../util/user_api_util';
 export const RECEIVE_ALL_USERS = 'RECEIVE_ALL_USERS';
 export const RECEIVE_USER = 'RECEIVE_USER';
 export const REMOVE_USER = 'REMOVE_USER';
-import * as UserAPIUtil from '../util/user_api_util';
 
 const receiveUsers = (users) => {
   return {

@@ -43,7 +43,7 @@ class EditReviewForm extends React.Component {
   }
 
   componentDidUpdate(prevProps) {
-    if (prevProps.review.id != this.props.match.params.reviewId) {
+    if (prevProps.review.id !== this.props.match.params.reviewId) {
       this.props.fetchReview(this.props.match.params.reviewId);
     }
   }

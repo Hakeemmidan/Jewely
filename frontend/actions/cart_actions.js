@@ -1,8 +1,7 @@
+import * as CartAPIUtil from '../util/cart_api_util';
 export const RECEIVE_CART = 'RECEIVE_CART';
 export const RECEIVE_CART_BADGE = 'RECEIVE_CART_BADGE';
 export const RECEIVE_CART_SHOW = 'RECEIVE_CART_SHOW';
-
-import * as CartAPIUtil from '../util/cart_api_util';
 
 const receiveCart = (cart) => {
   return {

@@ -8,10 +8,10 @@ Jewely is an Etsy inspired site that specializes in allowing users to buy and se
 
 ## Technologies
 
-### Stack
+### Tech Stack
 
 - Database
-  - postgreSQL
+  - PostgreSQL
 - Backend
   - Ruby on Rails
 - Frontend
@@ -28,6 +28,8 @@ Jewely is an Etsy inspired site that specializes in allowing users to buy and se
 - `sass-rails`
   - Sass adapter for rails pipeline
     - All styling in this project was done through Sass
+- `rubocop`
+  - Connected to `husky` on frontend to lint Ruby code on commit
 
 ### Noticeable Dependencies
 
@@ -36,10 +38,12 @@ Jewely is an Etsy inspired site that specializes in allowing users to buy and se
 - `react-responsive-carousel`
   - Displays images in a photo carousel
     - Used in product show pages and site landing page
-- `redux-thunk`
-  - Thunk middleware for Redux
 - `webpack`, `webpack-cli`
   - Module bundler
+- `react-router`
+  - For frontned routing
+- `husky`, `eslint`, and `prettier`
+  - `husky` lints frontend code using `eslint` and `prettier` on commit
 
 ## Setup
 

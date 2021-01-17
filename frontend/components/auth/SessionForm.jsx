@@ -1,4 +1,5 @@
 import React from 'react';
+import $ from 'jquery';
 
 export class SessionForm extends React.Component {
   constructor(props) {
@@ -84,7 +85,7 @@ export class SessionForm extends React.Component {
     }
 
     // The above only adds to the input field and does not change the actual state
-    // so I decided to change the state at this point
+    // so we change state below
     this.setState({
       username: 'demoUser',
       password: '12345678',
