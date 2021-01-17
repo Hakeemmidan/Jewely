@@ -8,7 +8,10 @@ export function CategoriesDrawer({categories}) {
     category = categories[id];
 
     categoryItems.push(
-      <div className="drawer-categories__item" key={`drawer-category-${id}`}>
+      <div
+        className="drawer-categories__item"
+        key={`drawer-category-${category.id}`}
+      >
         <span role="img" aria-label="finger-pointing-right">
           👉&nbsp;
         </span>

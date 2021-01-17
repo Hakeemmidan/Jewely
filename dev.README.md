@@ -155,12 +155,15 @@ Parse frontend linting errors/warnings:
     "reviews": {},
     "categories": {
       "1": {
+        "id": 1,
         "name": "Bracelets"
       },
       "2": {
+        "id": 2,
         "name": "Necklaces"
       },
       "3": {
+        "id": 3,
         "name": "Rings"
       },
       ...

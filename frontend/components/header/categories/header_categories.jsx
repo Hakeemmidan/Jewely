@@ -8,7 +8,10 @@ export function HeaderCategories({categories}) {
     category = categories[id];
 
     categoryItems.push(
-      <div className="header-categories__item" key={`header-category-${id}`}>
+      <div
+        className="header-categories__item"
+        key={`header-category-${category.id}`}
+      >
         {category.name}
       </div>
     );
