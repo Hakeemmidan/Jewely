@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-json.extract! product, :id, :title, :description, :price, :seller_id, :reviews, :seller_username
+json.extract! product, :id, :title, :description, :price, :seller_id, :reviews, :category_id, :seller_username
 
 if product.photos.attached?
   json.photoFiles product.photos.map { |file| file }

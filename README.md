@@ -168,3 +168,9 @@ Example localStorage cart: `"[[43,2], [75, 1]]"` This cart would be considered t
 Logically, when a user adds an item to their cart, then an array of id and the quantity (e.g. `[12, 2]`) of the item gets pushed to the parent array of localStorage cart. This is demonstrated in 'create' code snippet from 'CRUD' Noticeable Feature.
 
 This was done mainly to allow guest users to add items to their cart without needing to sign in, allowing for better user experience in my belief. Moreover, another reasoning for this is to not query the cart database for each addition or deletion of a product, which could lead to somewhat slow performance.
+
+---
+
+## More Information
+
+Checkout [dev README](./dev.README.md) for more details about the development process.
