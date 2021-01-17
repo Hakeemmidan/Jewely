@@ -29,8 +29,8 @@ import DrawerContainer from './drawer/drawer_container';
 import {Footer} from './footer/footer';
 
 export function App(props) {
-  // prepopulate app
-  useEffect(() => props.fetchCategories(), []);
+  // prepopulate Redux state of app
+  props.fetchCategories();
 
   return (
     <div className="main-container-div">
