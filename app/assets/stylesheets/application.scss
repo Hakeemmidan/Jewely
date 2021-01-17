@@ -91,7 +91,6 @@ body {
 }
 
 .top-bar {
-  font-family: 'Poppins', sans-serif;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -100,6 +99,15 @@ body {
   max-width: 130rem;
   margin: 1.1rem auto 0 auto;
   box-sizing: border-box;
+}
+
+.header-categories.top-bar {
+  padding: 0.2rem 1rem;
+  margin: 0.2rem auto 0 auto;
+}
+
+.header-categories__item {
+  margin: 0 1rem;
 }
 
 .top-bar-divider {
@@ -208,6 +216,10 @@ body {
   .top-bar {
     flex-wrap: wrap;
     padding: 0 1.5rem;
+  }
+
+  .header-categories.top-bar {
+    display: none;
   }
 
   .hamburger-menu-icon {
