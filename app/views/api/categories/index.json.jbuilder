@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
-json.array! @categories do |category|
-  json.extract! category, :id, :name
+@categories.each do |category|
+  json.set! category.id do
+    json.name category.name
+  end
 end

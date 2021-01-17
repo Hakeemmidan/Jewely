@@ -153,17 +153,14 @@ Parse frontend linting errors/warnings:
       ]
     },
     "reviews": {},
-    "categories": [
-      {
-        "id": 1,
+    "categories": {
+      "1": {
         "name": "Bracelets"
       },
-      {
-        "id": 2,
+      "2": {
         "name": "Necklaces"
       },
-      {
-        "id": 3,
+      "3": {
         "name": "Rings"
       },
       ...

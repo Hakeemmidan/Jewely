@@ -1,18 +1,18 @@
 import React from 'react';
 
 export function HeaderCategories({categories}) {
-  return (
-    <>
-      {categories.map((category) => {
-        return (
-          <div
-            className="header-categories__item"
-            key={`header-category-${category.id}`}
-          >
-            {category.name}
-          </div>
-        );
-      })}
-    </>
-  );
+  const categoryItems = [];
+  let category;
+
+  for (let id in categories) {
+    category = categories[id];
+
+    categoryItems.push(
+      <div className="header-categories__item" key={`header-category-${id}`}>
+        {category.name}
+      </div>
+    );
+  }
+
+  return categoryItems;
 }

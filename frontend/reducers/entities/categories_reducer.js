@@ -1,6 +1,6 @@
 import {RECEIVE_ALL_CATEGORIES} from '../../actions/categories_actions';
 
-export const categoriesReducer = (oldState = [], action) => {
+export const categoriesReducer = (oldState = {}, action) => {
   Object.freeze(oldState);
 
   switch (action.type) {
