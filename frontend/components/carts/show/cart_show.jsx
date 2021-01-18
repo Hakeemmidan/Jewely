@@ -91,7 +91,7 @@ export class CartShow extends React.Component {
   }
 
   render() {
-    if (JSON.parse(localStorage.cart).length === 0) {
+    if (this.state.cartProducts.length === 0) {
       return (
         <div className="cart-is-empty-message-container">
           <div className="cart-is-empty-message-box">
@@ -105,10 +105,6 @@ export class CartShow extends React.Component {
           </div>
         </div>
       );
-    }
-
-    if (this.state.cartProducts.length < JSON.parse(localStorage.cart).length) {
-      return <div></div>;
     }
 
     const cartProductsLis = this.state.cartProducts.map((cartProduct, idx) => {
