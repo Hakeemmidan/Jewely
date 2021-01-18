@@ -11,25 +11,25 @@ class User < ApplicationRecord
   has_many :products,
            foreign_key: :seller_id,
            class_name: 'Product',
-           dependent: :destroy,
+           dependent: :nullify,
            inverse_of: :seller
 
   has_one :cart,
           foreign_key: :customer_id,
           class_name: 'Cart',
-          dependent: :destroy,
+          dependent: :nullify,
           inverse_of: :customer
 
   has_many :reviews,
            foreign_key: :author_id,
            class_name: 'Review',
-           dependent: :destroy,
+           dependent: :nullify,
            inverse_of: :author
 
   has_many :cart_products,
            through: :cart,
            source: :product,
-           dependent: :destroy
+           dependent: :nullify
 
   def password=(password)
     @password = password

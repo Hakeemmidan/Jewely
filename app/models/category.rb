@@ -5,6 +5,6 @@ class Category < ApplicationRecord
 
   has_many :products,
            class_name: 'Product',
-           dependent: :destroy,
+           dependent: :nullify,
            inverse_of: :category
 end
