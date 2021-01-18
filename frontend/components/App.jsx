@@ -22,7 +22,7 @@ import {EditProductFormContainer} from './products/create_update/edit_product_fo
 import {CreateProductFormContainer} from './products/create_update/create_product_form_container';
 
 // categories vvv
-import {CategoriesCarouselContainer} from './categories/categories_carousel_container';
+import {CategoriesCarouselContainer} from './categories/carousel/categories_carousel_container';
 
 // cart vvv
 import {CartShowContainer} from './carts/show/cart_show_container';
