@@ -9,13 +9,5 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 puts '#=> Seeding START'
-puts '#### => Prepopulate Categories START'
-CATEGORIES = ['Bracelets', 'Necklaces', 'Rings', 'Earrings', 'Watches', 'Cufflinks', 'Other']
-
-CATEGORIES.each do |ctg|
-  if !Category.exists?(name: ctg)
-    Category.create(name: ctg)
-  end
-end
-puts '#### => Prepopulate Categories END'
+# put your seed data here
 puts '#=> Seeding END'
