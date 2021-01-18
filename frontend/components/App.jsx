@@ -8,6 +8,9 @@ import {Header} from './header/header';
 // users vvv
 import {UserShowContainer} from './users/user_show_container';
 
+// home page
+import {Home} from './home/home';
+
 // session vvv
 import {SignupFormContainer} from './auth/signup_form_container';
 import {LoginFormContainer} from './auth/login_form_container';
@@ -69,7 +72,11 @@ export function App(props) {
 
         <Route exact path="/cart" component={CartShowContainer} />
 
-        <Route path="/" component={ProductIndexContainer} />
+        <Route path="/">
+          <Home>
+            <ProductIndexContainer />
+          </Home>
+        </Route>
 
         <Route component={ProductIndexContainer} />
         {/* ^^^ User gets redirected to this if they don't enter an exisiting path.
