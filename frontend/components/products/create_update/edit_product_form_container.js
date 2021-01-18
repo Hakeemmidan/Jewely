@@ -1,6 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import ProductForm from './product_form';
+import {ProductFormWithRouter} from './product_form';
 import {
   fetchProduct,
   updateProduct,
@@ -53,7 +53,7 @@ class EditProductForm extends React.Component {
   render() {
     const {action, formType, product, errors} = this.props;
     return (
-      <ProductForm
+      <ProductFormWithRouter
         action={action}
         formType={formType}
         product={product}
@@ -66,4 +66,7 @@ class EditProductForm extends React.Component {
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(EditProductForm);
+export const EditProductFormContainer = connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(EditProductForm);

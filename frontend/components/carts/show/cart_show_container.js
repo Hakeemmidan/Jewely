@@ -19,4 +19,7 @@ const mapDispatchToProps = (dispatch) => {
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(CartShow);
+export const CartShowContainer = connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(CartShow);

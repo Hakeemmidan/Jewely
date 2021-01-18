@@ -12,4 +12,7 @@ const mapDispatchToProps = (dispatch) => {
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Drawer);
+export const DrawerContainer = connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Drawer);

@@ -1,4 +1,5 @@
 import React from 'react';
+import $ from 'jquery';
 import PropTypes from 'prop-types';
 import {withRouter} from 'react-router-dom';
 
@@ -27,13 +28,16 @@ class ReviewForm extends React.Component {
     const unfilledStarsArr = Array.from($('.rating-star.unfilled'));
 
     unfilledStarsArr.map((unfilledStar, idx) => {
-      $(unfilledStar).hover(
+      $(unfilledStar).on(
+        'mouseenter',
         () => {
           unfilledStarsArr.slice(0, idx + 1).map((unfilledStar) => {
             $(unfilledStar).attr(
               'src',
               'https://image.flaticon.com/icons/svg/148/148841.svg'
             );
+
+            return true;
           });
         },
         () => {
@@ -44,18 +48,22 @@ class ReviewForm extends React.Component {
                 'src',
                 'https://image.flaticon.com/icons/svg/149/149222.svg'
               );
+
+              return true;
             }
           });
         }
       );
 
-      $(unfilledStar).click(() => {
+      $(unfilledStar).on('click', () => {
         unfilledStarsArr.slice(0, idx + 1).map((unfilledStar) => {
           $(unfilledStar).attr(
             'src',
             'https://image.flaticon.com/icons/svg/148/148841.svg'
           );
           $(unfilledStar).removeClass('unfilled').addClass('filled');
+
+          return true;
         });
         unfilledStarsArr.slice(idx + 1).map((unfilledStar) => {
           $(unfilledStar).attr(
@@ -63,8 +71,12 @@ class ReviewForm extends React.Component {
             'https://image.flaticon.com/icons/svg/149/149222.svg'
           );
           $(unfilledStar).removeClass('filled').addClass('unfilled');
+
+          return true;
         });
       });
+
+      return true;
     });
   }
 
@@ -75,13 +87,10 @@ class ReviewForm extends React.Component {
   triggerAction() {
     const that = this;
 
-    this.props.action(this.state).then(
-      () => {
-        that.props.closeModal();
-        that.props.fetchProduct(that.state.product_id);
-      },
-      (errs) => console.log(errs)
-    );
+    this.props.action(this.state).then(() => {
+      that.props.closeModal();
+      that.props.fetchProduct(that.state.product_id);
+    });
   }
 
   handleSubmit(e) {
@@ -159,4 +168,4 @@ class ReviewForm extends React.Component {
   }
 }
 
-export default withRouter(ReviewForm);
+export const ReviewFormWithRouter = withRouter(ReviewForm);

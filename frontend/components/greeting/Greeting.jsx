@@ -1,9 +1,9 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 import {CartIcon} from '../SVGs/cart_icons';
-import CartBadgeContainer from '../carts/show/cart_badge/cart_badge_container';
+import {CartBadgeContainer} from '../carts/show/cart_badge/cart_badge_container';
 
-const Greeting = ({currentUser, logout}) => {
+export const Greeting = ({currentUser, logout}) => {
   const sessionLinks = () => (
     <nav className="navbar-right-side-content">
       <Link to="/signup" className="text-link-underline-hover">
@@ -42,5 +42,3 @@ const Greeting = ({currentUser, logout}) => {
 
   return currentUser ? personalGreeting() : sessionLinks();
 };
-
-export default Greeting;

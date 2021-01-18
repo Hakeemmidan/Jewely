@@ -20,4 +20,7 @@ const mapDispatchToProps = (dispatch) => {
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(ReviewsIndex);
+export const ReviewsIndexContainer = connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(ReviewsIndex);

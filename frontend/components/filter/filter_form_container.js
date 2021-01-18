@@ -17,4 +17,7 @@ const mapDispatchToProps = (dispatch) => {
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(FilterForm);
+export const FilterFormContainer = connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(FilterForm);

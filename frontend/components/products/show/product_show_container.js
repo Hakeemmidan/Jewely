@@ -17,4 +17,7 @@ const mapDispatchToProps = (dispatch) => {
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(ProductShow);
+export const ProductShowContainer = connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(ProductShow);

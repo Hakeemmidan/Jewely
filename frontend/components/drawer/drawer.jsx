@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import CategoriesDrawerContainer from './categories/categories_drawer_container';
+import {CategoriesDrawerContainer} from './categories/categories_drawer_container';
 
 export function Drawer({
   drawerType,

@@ -71,15 +71,10 @@ class ProductForm extends React.Component {
     this.props.openModal('loading');
 
     const that = this;
-    this.props.action(formData).then(
-      () => {
-        that.props.closeModal();
-        location.hash = '#/';
-      },
-      (err) => {
-        console.log(err);
-      }
-    );
+    this.props.action(formData).then(() => {
+      that.props.closeModal();
+      location.hash = '#/';
+    });
   }
 
   collectOverwrittenPhotosIds(oldObj, insertedObj) {
@@ -308,4 +303,4 @@ class ProductForm extends React.Component {
   }
 }
 
-export default withRouter(ProductForm);
+export const ProductFormWithRouter = withRouter(ProductForm);

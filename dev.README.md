@@ -194,3 +194,17 @@ Parse frontend linting errors/warnings:
 Also, `redux-logger` should be activated during development, and should `console.log`
 Redux global state on each action dispatch. This should be very helpful in understanding the
 Redux global state shape.
+
+## General guidance
+
+Backend:
+
+- Aim for clean/readable code rather than clever code that's hard to read
+
+Frontend:
+
+- Use named exports for less ambiguity in code
+- Use SCSS for styling and place inside `app/assets/stylesheets/application.scss`
+  - If you're going to use variables, mixins, animations, etc.
+    - Then place in respective file under `app/assets/stylesheets/abstract`
+      (or create appropriate file)

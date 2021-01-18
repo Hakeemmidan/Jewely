@@ -1,6 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
-import CartProductsItemContainer from './cart_products_item/cart_products_item_container';
+import {CartProductsItemContainer} from './cart_products_item/cart_products_item_container';
 
 import {
   VisaIcon,

@@ -7,4 +7,7 @@ const mapStateToProps = ({entities: {categories}}) => {
   };
 };
 
-export default connect(mapStateToProps, null)(HeaderCategories);
+export const HeaderCategoriesContainer = connect(
+  mapStateToProps,
+  null
+)(HeaderCategories);

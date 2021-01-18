@@ -1,8 +1,8 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
-import FilterFormContainer from '../filter/filter_form_container';
-import GreetingContainer from '../greeting/greeting_container';
-import HeaderCategoriesContainer from './categories/header_categories_container';
+import {FilterFormContainer} from '../filter/filter_form_container';
+import {GreetingContainer} from '../greeting/greeting_container';
+import {HeaderCategoriesContainer} from './categories/header_categories_container';
 
 export function Header() {
   return (

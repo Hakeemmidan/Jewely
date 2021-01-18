@@ -14,4 +14,7 @@ const mapDispatchToProps = (dispatch) => {
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Modal);
+export const ModalContainer = connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Modal);

@@ -2,7 +2,7 @@ import React from 'react';
 import $ from 'jquery';
 import {Link} from 'react-router-dom';
 import {Carousel} from 'react-responsive-carousel';
-import ReviewsIndexContainer from '../reviews/reviews_index_container';
+import {ReviewsIndexContainer} from '../reviews/reviews_index_container';
 
 export class ProductShow extends React.Component {
   constructor(props) {

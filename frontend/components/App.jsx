@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React from 'react';
 import {AuthRoute, ProtectedRoute} from '../util/route_util';
 import {Switch, Route} from 'react-router-dom';
 
@@ -6,24 +6,24 @@ import {Switch, Route} from 'react-router-dom';
 import {Header} from './header/header';
 
 // users vvv
-import UserShowContainer from './users/user_show_container';
+import {UserShowContainer} from './users/user_show_container';
 
 // session vvv
-import SignUpFormContainer from './auth/signup_form_container';
-import LogInFormContainer from './auth/login_form_container';
+import {SignupFormContainer} from './auth/signup_form_container';
+import {LoginFormContainer} from './auth/login_form_container';
 
 // products vvv
-import ProductShowContainer from './products/show/product_show_container';
-import ProductIndexContainer from './products/index/product_index_container';
-import EditProductFormContainer from './products/create_update/edit_product_form_container';
-import CreateProductFormContainer from './products/create_update/create_product_form_container';
+import {ProductShowContainer} from './products/show/product_show_container';
+import {ProductIndexContainer} from './products/index/product_index_container';
+import {EditProductFormContainer} from './products/create_update/edit_product_form_container';
+import {CreateProductFormContainer} from './products/create_update/create_product_form_container';
 
 // cart vvv
-import CartShowContainer from './carts/show/cart_show_container';
+import {CartShowContainer} from './carts/show/cart_show_container';
 
 // hidden trigger-able components vvv
-import ModalContainer from './modal/modal_container';
-import DrawerContainer from './drawer/drawer_container';
+import {ModalContainer} from './modal/modal_container';
+import {DrawerContainer} from './drawer/drawer_container';
 
 // footer vvv
 import {Footer} from './footer/footer';
@@ -63,9 +63,9 @@ export function App(props) {
         {/* Paths with wild cards at the end should always be put
               BELOW routes that have the same length */}
 
-        <AuthRoute exact path="/login" component={LogInFormContainer} />
+        <AuthRoute exact path="/login" component={LoginFormContainer} />
 
-        <AuthRoute exact path="/signup" component={SignUpFormContainer} />
+        <AuthRoute exact path="/signup" component={SignupFormContainer} />
 
         <Route exact path="/cart" component={CartShowContainer} />
 

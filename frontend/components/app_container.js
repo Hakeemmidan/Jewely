@@ -6,4 +6,4 @@ const mapDispatchToProps = (dispatch) => ({
   fetchCategories: () => dispatch(fetchCategories()),
 });
 
-export default connect(null, mapDispatchToProps)(App);
+export const AppContainer = connect(null, mapDispatchToProps)(App);

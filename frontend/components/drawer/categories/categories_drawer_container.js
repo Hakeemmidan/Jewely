@@ -7,4 +7,7 @@ const mapStateToProps = ({entities: {categories}}) => {
   };
 };
 
-export default connect(mapStateToProps, null)(CategoriesDrawer);
+export const CategoriesDrawerContainer = connect(
+  mapStateToProps,
+  null
+)(CategoriesDrawer);
