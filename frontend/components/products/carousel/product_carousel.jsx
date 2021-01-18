@@ -1,9 +1,9 @@
 import React from 'react';
 import ScrollMenu from 'react-horizontal-scrolling-menu';
 import {Link} from 'react-router-dom';
-import {ProductIndexItem} from './product_index_item';
+import {ProductsCarouselItem} from './product_carousel_item';
 
-export class ProductIndex extends React.Component {
+export class ProductsCarousel extends React.Component {
   componentDidMount() {
     this.props.fetchProducts();
   }
@@ -15,9 +15,13 @@ export class ProductIndex extends React.Component {
         arrowLeft={<div className="scroll-menu-arrow">{' < '}</div>}
         arrowRight={<div className="scroll-menu-arrow">{' > '}</div>}
         data={this.props.products.map((product, idx) => (
-          <Link to={`/products/${product.id}`} style={{textDecoration: 'none'}}>
-            <ProductIndexItem
-              key={`product-index-item-idx-${idx}`}
+          <Link
+            key={`products-carousel-item-link-${idx}`}
+            to={`/products/${product.id}`}
+            style={{textDecoration: 'none'}}
+          >
+            <ProductsCarouselItem
+              key={`products-carousel-item-idx-${idx}`}
               product={product}
             />
           </Link>

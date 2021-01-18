@@ -1,6 +1,6 @@
 import React from 'react';
 
-export function ProductIndexItem(props) {
+export function ProductsCarouselItem(props) {
   const product = props.product;
 
   return (

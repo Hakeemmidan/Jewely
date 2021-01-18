@@ -9,7 +9,12 @@ export function CategoriesCarousel({categories}) {
   for (let id in categories) {
     category = categories[id];
 
-    categoryItems.push(<CategoriesCarouselItem category={category} />);
+    categoryItems.push(
+      <CategoriesCarouselItem
+        key={`category-carousel-item-${id}`}
+        category={category}
+      />
+    );
   }
 
   return (

@@ -1,5 +1,5 @@
 import {connect} from 'react-redux';
-import {ProductIndex} from './product_index';
+import {ProductsCarousel} from './product_carousel';
 import {fetchProducts} from '../../../actions/product_actions';
 
 const mapStateToProps = (state) => {
@@ -14,7 +14,7 @@ const mapDispatchToProps = (dispatch) => {
   };
 };
 
-export const ProductIndexContainer = connect(
+export const ProductsCarouselContainer = connect(
   mapStateToProps,
   mapDispatchToProps
-)(ProductIndex);
+)(ProductsCarousel);
