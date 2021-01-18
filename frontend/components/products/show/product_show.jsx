@@ -179,7 +179,11 @@ export class ProductShow extends React.Component {
   populateQuantityDropDownOptions() {
     let dropDownOptions = [];
     for (let i = 1; i < 102; i++) {
-      dropDownOptions.push(<option value={`${i}`}>{i}</option>);
+      dropDownOptions.push(
+        <option key={`dropdown-option-${i}`} value={`${i}`}>
+          {i}
+        </option>
+      );
     }
 
     return dropDownOptions.map((option) => {
