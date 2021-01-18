@@ -939,7 +939,7 @@ body {
   margin-right: 0.7rem;
 }
 
-.home-scroll-menu-container {
+.home-component-children-container {
   margin-left: 10%;
   margin-right: 10%;
   margin-bottom: 10rem;
@@ -1278,6 +1278,22 @@ body {
 .user-show-products-ul {
   list-style-type: none;
   padding: 0;
+}
+
+.category-carousel-item-container {
+  text-align: center;
+  padding: 0.9rem;
+  max-width: 12.5rem;
+  margin-left: 0.7rem;
+  margin-right: 0.7rem;
+}
+
+.category-carousel-item-img {
+  object-fit: cover;
+  width: 10rem;
+  height: 10rem;
+  object-position: 50% 50%;
+  border-radius: 50%;
 }
 
 @import './abstract/keyframes';

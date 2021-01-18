@@ -17,7 +17,7 @@ export function Home({children}) {
         </div>
       </div>
 
-      {children}
+      <div className="home-component-children-container">{children}</div>
 
       <div className="products-index-what-is-jewely-container">
         <img

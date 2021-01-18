@@ -21,6 +21,9 @@ import {ProductIndexContainer} from './products/index/product_index_container';
 import {EditProductFormContainer} from './products/create_update/edit_product_form_container';
 import {CreateProductFormContainer} from './products/create_update/create_product_form_container';
 
+// categories vvv
+import {CategoriesCarouselContainer} from './categories/categories_carousel_container';
+
 // cart vvv
 import {CartShowContainer} from './carts/show/cart_show_container';
 
@@ -74,7 +77,11 @@ export function App(props) {
 
         <Route path="/">
           <Home>
+            <h2>Some products we love:</h2>
             <ProductIndexContainer />
+            <br />
+            <h2>Choose a category that suits you:</h2>
+            <CategoriesCarouselContainer />
           </Home>
         </Route>
 

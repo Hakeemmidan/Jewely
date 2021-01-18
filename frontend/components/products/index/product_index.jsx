@@ -10,24 +10,19 @@ export class ProductIndex extends React.Component {
 
   render() {
     return (
-      <div className="home-scroll-menu-container">
-        <ScrollMenu
-          wheel={false}
-          arrowLeft={<div className="scroll-menu-arrow">{' < '}</div>}
-          arrowRight={<div className="scroll-menu-arrow">{' > '}</div>}
-          data={this.props.products.map((product, idx) => (
-            <Link
-              to={`/products/${product.id}`}
-              style={{textDecoration: 'none'}}
-            >
-              <ProductIndexItem
-                key={`product-index-item-idx-${idx}`}
-                product={product}
-              />
-            </Link>
-          ))}
-        />
-      </div>
+      <ScrollMenu
+        wheel={false}
+        arrowLeft={<div className="scroll-menu-arrow">{' < '}</div>}
+        arrowRight={<div className="scroll-menu-arrow">{' > '}</div>}
+        data={this.props.products.map((product, idx) => (
+          <Link to={`/products/${product.id}`} style={{textDecoration: 'none'}}>
+            <ProductIndexItem
+              key={`product-index-item-idx-${idx}`}
+              product={product}
+            />
+          </Link>
+        ))}
+      />
     );
   }
 }
