@@ -2,6 +2,8 @@
 
 json.extract! @category, :id, :name
 
-json.products @category.products do |product|
-  json.partial! 'api/products/product', product: product
+json.products do
+  json.array! @category.products do |product|
+    json.partial! 'api/products/product', product: product
+  end
 end

@@ -226,7 +226,14 @@ export class ProductShow extends React.Component {
             {this.renderSellerUsername()}
 
             <h1 className="product-show-title">{product.title}</h1>
-
+            <Link
+              to={`/categories/${product.category_id}`}
+              style={{textDecoration: 'none'}}
+            >
+              <div className="product-show-category">
+                {this.props.categories[product.category_id]?.name}
+              </div>
+            </Link>
             <div>
               {this.state.product.reviews.length > 0
                 ? this.renderAverageStarRating()

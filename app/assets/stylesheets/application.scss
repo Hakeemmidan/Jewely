@@ -253,7 +253,7 @@ input[type='radio']:checked {
   font-family: 'Noto Serif', serif;
   font-weight: normal;
   margin-top: -0.8rem;
-  margin-bottom: 0.8rem;
+  margin-bottom: 0;
   padding-bottom: 0.7rem;
   text-rendering: optimizeLegibility;
 }
@@ -530,6 +530,11 @@ body {
 
 .header-categories__item {
   margin: 0 1rem;
+  color: black;
+
+  &:hover {
+    text-decoration: underline;
+  }
 }
 
 .top-bar-divider {
@@ -832,6 +837,7 @@ body {
 }
 
 .drawer-categories__item {
+  color: black;
   margin: 1rem 1.5rem;
   font-size: 1.5em;
 }
@@ -1307,6 +1313,13 @@ body {
 .categories-show-products-container {
   display: flex;
   flex-wrap: wrap;
+}
+
+.product-show-category {
+  color: gray;
+  &:hover {
+    text-decoration: underline;
+  }
 }
 
 @import './abstract/keyframes';

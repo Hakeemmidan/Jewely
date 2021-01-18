@@ -1,6 +1,7 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 
-export function CategoriesDrawer({categories}) {
+export function CategoriesDrawer({categories, closeDrawer}) {
   const categoryItems = [];
   let category;
 
@@ -8,15 +9,19 @@ export function CategoriesDrawer({categories}) {
     category = categories[id];
 
     categoryItems.push(
-      <div
-        className="drawer-categories__item"
-        key={`drawer-category-${category.id}`}
+      <Link
+        onClick={() => closeDrawer('up')}
+        key={`category-drawer-item-${id}-link`}
+        to={`/categories/${category.id}`}
+        style={{textDecoration: 'none'}}
       >
-        <span role="img" aria-label="finger-pointing-right">
-          👉&nbsp;
-        </span>
-        {category.name}
-      </div>
+        <div className="drawer-categories__item">
+          <span role="img" aria-label="finger-pointing-right">
+            👉&nbsp;
+          </span>
+          {category.name}
+        </div>
+      </Link>
     );
   }
 

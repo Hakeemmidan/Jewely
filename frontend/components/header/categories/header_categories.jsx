@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 
 export function HeaderCategories({categories}) {
   const categoryItems = [];
@@ -8,12 +9,18 @@ export function HeaderCategories({categories}) {
     category = categories[id];
 
     categoryItems.push(
-      <div
-        className="header-categories__item"
-        key={`header-category-${category.id}`}
+      <Link
+        key={`category-header-item-${id}-link`}
+        to={`/categories/${category.id}`}
+        style={{textDecoration: 'none'}}
       >
-        {category.name}
-      </div>
+        <div
+          className="header-categories__item"
+          key={`header-category-${category.id}`}
+        >
+          {category.name}
+        </div>
+      </Link>
     );
   }
 

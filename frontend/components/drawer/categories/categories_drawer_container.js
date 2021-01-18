@@ -1,4 +1,5 @@
 import {CategoriesDrawer} from './categories_drawer';
+import {closeDrawer} from '../../../actions/drawer_actions';
 import {connect} from 'react-redux';
 
 const mapStateToProps = ({entities: {categories}}) => {
@@ -7,7 +8,13 @@ const mapStateToProps = ({entities: {categories}}) => {
   };
 };
 
+const mapDispatchToProps = (dispatch) => {
+  return {
+    closeDrawer: (direction) => dispatch(closeDrawer(direction)),
+  };
+};
+
 export const CategoriesDrawerContainer = connect(
   mapStateToProps,
-  null
+  mapDispatchToProps
 )(CategoriesDrawer);
