@@ -27,7 +27,8 @@ export class UserShow extends React.Component {
 
   render() {
     if (!this.state.user) {
-      return <div>loading</div>;
+      // loading
+      return <div></div>;
     }
 
     return (

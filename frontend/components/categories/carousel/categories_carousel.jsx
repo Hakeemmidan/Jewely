@@ -1,5 +1,6 @@
 import React from 'react';
 import ScrollMenu from 'react-horizontal-scrolling-menu';
+import {Link} from 'react-router-dom';
 import {CategoriesCarouselItem} from './category_carousel_item';
 
 export function CategoriesCarousel({categories}) {
@@ -10,10 +11,13 @@ export function CategoriesCarousel({categories}) {
     category = categories[id];
 
     categoryItems.push(
-      <CategoriesCarouselItem
-        key={`category-carousel-item-${id}`}
-        category={category}
-      />
+      <Link
+        key={`category-carousel-item-${id}-link`}
+        to={`/categories/${category.id}`}
+        style={{textDecoration: 'none'}}
+      >
+        <CategoriesCarouselItem category={category} />
+      </Link>
     );
   }
 
