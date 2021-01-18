@@ -13,11 +13,11 @@ class Product < ApplicationRecord
 
   has_many :carts,
            class_name: 'Cart',
-           dependent: :nullify,
+           dependent: :nullify
 
   has_many :reviews,
            class_name: 'Review',
-           dependent: :nullify,
+           dependent: :nullify
 
   has_many :cart_customers,
            through: :carts,
