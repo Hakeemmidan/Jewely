@@ -6,6 +6,8 @@ module Api
 
     def index
       if params[:search].present?
+        # Protected against SQL Injection by using :search parameter
+        # Learn more: https://guides.rubyonrails.org/security.html#sql-injection-countermeasures
         @products = Product.all.where('lower(title) LIKE :search
                                            OR lower(description) LIKE :search', search: "%#{params[:search]}%")
       else
