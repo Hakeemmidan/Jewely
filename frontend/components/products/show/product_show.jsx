@@ -1,7 +1,8 @@
 import React from 'react';
+import $ from 'jquery';
 import {Link} from 'react-router-dom';
 import {Carousel} from 'react-responsive-carousel';
-import ReviewsIndexContainer from '../reviews/reviews_index_container';
+import {ReviewsIndexContainer} from '../reviews/reviews_index_container';
 
 export class ProductShow extends React.Component {
   constructor(props) {
@@ -25,7 +26,9 @@ export class ProductShow extends React.Component {
   }
 
   componentDidUpdate(prevProps) {
-    if (prevProps.match.params.productId != this.props.match.params.productId) {
+    if (
+      prevProps.match.params.productId !== this.props.match.params.productId
+    ) {
       this.props.fetchProduct(this.props.match.params.productId);
     }
   }
@@ -77,6 +80,7 @@ export class ProductShow extends React.Component {
                 key={`photo-${product.id}-${idx}-container`}
               >
                 <img
+                  alt="Review rating star"
                   key={`photo-${product.id}-${idx}`}
                   className="product-show-carousel-images"
                   src={photoUrl}
@@ -90,7 +94,11 @@ export class ProductShow extends React.Component {
       return (
         <Carousel>
           <div key={`photo-${product.id}-single-photo-container`}>
-            <img key={`photo-${product.id}-single-photo`} src={photoUrl} />
+            <img
+              alt="product"
+              key={`photo-${product.id}-single-photo`}
+              src={product.photoUrls}
+            />
           </div>
         </Carousel>
       );
@@ -123,7 +131,7 @@ export class ProductShow extends React.Component {
   calculateProductAverageRating() {
     let ratingsSum = 0;
     let ratingsCount = 0;
-    this.state.product.reviews.map((review) => {
+    this.state.product.reviews.forEach((review) => {
       ratingsSum += parseInt(review.rating);
       ratingsCount += 1;
     });
@@ -138,6 +146,7 @@ export class ProductShow extends React.Component {
     for (let i = 0; i < avgRatingInt; i++) {
       stars.push(
         <img
+          alt="Review rating star (filled)"
           key={`avg-filledStar-${i}`}
           className="product-show-average-rating-star"
           src="https://image.flaticon.com/icons/svg/148/148841.svg"
@@ -148,6 +157,7 @@ export class ProductShow extends React.Component {
     for (let j = 0; j < 5 - avgRatingInt; j++) {
       stars.push(
         <img
+          alt="Review rating star (unfilled)"
           key={`avg-unfilledStar-${j}`}
           className="product-show-average-rating-star"
           src="https://image.flaticon.com/icons/svg/149/149222.svg"
@@ -168,8 +178,12 @@ export class ProductShow extends React.Component {
 
   populateQuantityDropDownOptions() {
     let dropDownOptions = [];
-    for (let i = 1; i < 14; i++) {
-      dropDownOptions.push(<option value={`${i}`}>{i}</option>);
+    for (let i = 1; i < 102; i++) {
+      dropDownOptions.push(
+        <option key={`dropdown-option-${i}`} value={`${i}`}>
+          {i}
+        </option>
+      );
     }
 
     return dropDownOptions.map((option) => {
@@ -204,15 +218,22 @@ export class ProductShow extends React.Component {
     }
 
     return (
-      <div>
+      <div className="product-show-container">
         <div className="clearfix product-listing">
-          <div className="product-show-images">{this.imageShow()}</div>
+          <div className="listing-left-column">{this.imageShow()}</div>
 
           <div className="listing-right-column">
             {this.renderSellerUsername()}
 
             <h1 className="product-show-title">{product.title}</h1>
-
+            <Link
+              to={`/categories/${product.category_id}`}
+              style={{textDecoration: 'none'}}
+            >
+              <div className="product-show-category">
+                {this.props.categories[product.category_id]?.name}
+              </div>
+            </Link>
             <div>
               {this.state.product.reviews.length > 0
                 ? this.renderAverageStarRating()
@@ -236,16 +257,18 @@ export class ProductShow extends React.Component {
                 {this.populateQuantityDropDownOptions()}
               </select>
             </div>
-            <Link to="/cart">
-              <button
-                className="product-show-add-to-cart-button"
-                onClick={this.handleAddToCart}
-              >
-                <p className="product-show-add-to-cart-button-text">
-                  Add to cart
-                </p>
-              </button>
-            </Link>
+            <div className="product-show-add-to-cart-container">
+              <Link to="/cart">
+                <button
+                  className="product-show-add-to-cart-button"
+                  onClick={this.handleAddToCart}
+                >
+                  <p className="product-show-add-to-cart-button-text">
+                    Add to cart
+                  </p>
+                </button>
+              </Link>
+            </div>
             <br />
             {editLink}
           </div>
@@ -257,16 +280,22 @@ export class ProductShow extends React.Component {
           <div className="product-show-column1">
             <b>
               Reviews{' '}
-              {avgRating > 0 ? (
+              {product.reviews.length > 0 ? (
                 `(${avgRating} average):`
               ) : (
                 <div style={{display: 'inline', fontWeight: 'normal'}}>
                   :
                   <br />
                   <br />
-                  None at the moment 🐣
+                  None at the moment&nbsp;
+                  <span role="img" aria-label="hatching chick">
+                    🐣
+                  </span>
                   <br />
-                  Be the first to review!👇
+                  Be the first to review!&nbsp;
+                  <span role="img" aria-label="finger pointing down">
+                    👇
+                  </span>
                 </div>
               )}
             </b>

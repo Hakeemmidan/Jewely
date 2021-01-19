@@ -1,4 +1,6 @@
 import React from 'react';
+import {HamburgerMenuIcon} from '../SVGs/hamburger_menu_icon';
+import {SearchIcon} from '../SVGs/search_icon';
 
 export class FilterForm extends React.Component {
   constructor(props) {
@@ -12,14 +14,22 @@ export class FilterForm extends React.Component {
 
   render() {
     return (
-      <input
-        type="string"
-        placeholder="Type to filter products by name and description"
-        className="search-input-field"
-        value={this.props.search}
-        onClick={() => (location.hash = '#/')}
-        onChange={this.handleChange('search')}
-      />
+      <div className="search-input-field-container-main">
+        <span onClick={() => this.props.openDrawer('categories', 'up', 'up')}>
+          <HamburgerMenuIcon className={'hamburger-menu-icon'} />
+        </span>
+        <div className="search-input-field-container-sub">
+          <input
+            type="string"
+            placeholder="Type to filter products by name and description"
+            className="search-input-field"
+            value={this.props.search}
+            onClick={() => (window.location.hash = '#/')}
+            onChange={this.handleChange('search')}
+          />
+          <SearchIcon />
+        </div>
+      </div>
     );
   }
 }

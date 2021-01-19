@@ -1,4 +1,4 @@
-// keep track of ANY error messages
+// keep track of any error messages
 // will combine all of our error handling reducers here
 
 import {combineReducers} from 'redux';

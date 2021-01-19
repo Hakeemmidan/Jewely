@@ -1,5 +1,5 @@
 import {connect} from 'react-redux';
-import ReviewForm from './review_form';
+import {ReviewFormWithRouter} from './review_form';
 import {createReview} from '../../../actions/review_actions';
 import {closeModal} from '../../../actions/modal_actions';
 import {fetchProduct} from '../../../actions/product_actions';
@@ -26,4 +26,7 @@ const mapDispatchToProps = (dispatch) => {
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(ReviewForm);
+export const CreateReviewFormContainer = connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(ReviewFormWithRouter);

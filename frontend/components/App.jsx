@@ -1,121 +1,99 @@
 import React from 'react';
 import {AuthRoute, ProtectedRoute} from '../util/route_util';
-import {Switch, Route, Link} from 'react-router-dom';
+import {Switch, Route} from 'react-router-dom';
+
+// header vvv
+import {Header} from './header/header';
 
 // users vvv
-import UserShowContainer from './users/user_show_container';
+import {UserShowContainer} from './users/user_show_container';
+
+// home page
+import {Home} from './home/home';
 
 // session vvv
-import GreetingContainer from './greeting/greeting_container';
-import SignUpFormContainer from './auth/signup_form_container';
-import LogInFormContainer from './auth/login_form_container';
+import {SignupFormContainer} from './auth/signup_form_container';
+import {LoginFormContainer} from './auth/login_form_container';
 
 // products vvv
-import ProductShowContainer from './products/show/product_show_container';
-import ProductIndexContainer from './products/index/product_index_container';
-import EditProductFormContainer from './products/create_update/edit_product_form_container';
-import CreateProductFormContainer from './products/create_update/create_product_form_container';
+import {ProductShowContainer} from './products/show/product_show_container';
+import {ProductsCarouselContainer} from './products/carousel/products_carousel_container';
+import {EditProductFormContainer} from './products/create_update/edit_product_form_container';
+import {CreateProductFormContainer} from './products/create_update/create_product_form_container';
+
+// categories vvv
+import {CategoriesCarouselContainer} from './categories/carousel/categories_carousel_container';
+import {CategoriesShow} from './categories/show/categories_show';
 
 // cart vvv
-import CartShowContainer from './carts/show/cart_show_container';
+import {CartShowContainer} from './carts/show/cart_show_container';
 
-// modal vvv
-import ModalContainer from './modal/modal_container';
-
-// reviews vvv
-// import EditReviewFormContainer from './products/reviews/edit_review_form_container';
-
-// filter vvv
-import FilterFormContainer from './filter/filter_form_container';
+// hidden trigger-able components vvv
+import {ModalContainer} from './modal/modal_container';
+import {DrawerContainer} from './drawer/drawer_container';
 
 // footer vvv
 import {Footer} from './footer/footer';
 
-export class App extends React.Component {
-  constructor(props) {
-    super(props);
-  }
+export function App(props) {
+  // prepopulate Redux state of app
+  props.fetchCategories();
 
-  render() {
-    return (
-      <div className="main-container-div">
-        <header>
-          <ModalContainer />
-          <div className="logo-and-search-bar">
-            <Link to="/" className="logo">
-              {' '}
-              Jewely{' '}
-            </Link>
-            <Switch>
-              <Route
-                exact
-                path="/products/:productId/edit"
-                component={FilterFormContainer}
-              />
+  return (
+    <div className="main-container-div">
+      {/* vvv hidden by default */}
+      <ModalContainer />
+      <DrawerContainer />
 
-              <ProtectedRoute
-                exact
-                path="/products/create"
-                component={FilterFormContainer}
-              />
+      <Header />
 
-              <Route
-                exact
-                path="/users/:userId"
-                component={FilterFormContainer}
-              />
+      <Switch>
+        <ProtectedRoute
+          exact
+          path="/products/:productId/edit"
+          component={EditProductFormContainer}
+        />
 
-              <Route
-                exact
-                path="/products/:productId"
-                component={FilterFormContainer}
-              />
+        <ProtectedRoute
+          exact
+          path="/products/create"
+          component={CreateProductFormContainer}
+        />
 
-              <Route exact path="/cart" component={FilterFormContainer} />
+        <Route exact path="/users/:userId" component={UserShowContainer} />
 
-              <Route exact path="/" component={FilterFormContainer} />
-            </Switch>
-          </div>
-          <GreetingContainer />
-        </header>
+        <Route
+          exact
+          path="/products/:productId"
+          component={ProductShowContainer}
+        />
 
-        <Switch>
-          <ProtectedRoute
-            exact
-            path="/products/:productId/edit"
-            component={EditProductFormContainer}
-          />
+        <Route
+          exact
+          path="/categories/:categoryId"
+          component={CategoriesShow}
+        />
 
-          <ProtectedRoute
-            exact
-            path="/products/create"
-            component={CreateProductFormContainer}
-          />
+        {/* Paths with wild cards at the end should always be put
+              BELOW routes that have the same length */}
 
-          <Route exact path="/users/:userId" component={UserShowContainer} />
+        <AuthRoute exact path="/login" component={LoginFormContainer} />
 
-          <Route
-            exact
-            path="/products/:productId"
-            component={ProductShowContainer}
-          />
-          {/* Paths with wild cards at the end should always be put
-                BELOW routes that have the same length */}
+        <AuthRoute exact path="/signup" component={SignupFormContainer} />
 
-          <AuthRoute exact path="/login" component={LogInFormContainer} />
+        <Route exact path="/cart" component={CartShowContainer} />
 
-          <AuthRoute exact path="/signup" component={SignUpFormContainer} />
-
-          <Route exact path="/cart" component={CartShowContainer} />
-
-          <Route path="/" component={ProductIndexContainer} />
-
-          <Route component={ProductIndexContainer} />
-          {/* ^^^ User gets redirected to this if they don't enter an exisiting path.
-                    This happens because there is no path parameter */}
-        </Switch>
-        <Footer />
-      </div>
-    );
-  }
+        <Route path="/">
+          <Home>
+            <h2>Some products we love:</h2>
+            <ProductsCarouselContainer />
+            <br />
+            <h2>Choose a category that suits you:</h2>
+            <CategoriesCarouselContainer />
+          </Home>
+        </Route>
+      </Switch>
+      <Footer />
+    </div>
+  );
 }

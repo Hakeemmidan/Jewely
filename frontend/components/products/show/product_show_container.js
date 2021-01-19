@@ -7,6 +7,7 @@ const mapStateToProps = (state, ownProps) => {
   return {
     product: state.entities.products[ownProps.match.params.productId],
     currentUserId: state.session.id,
+    categories: state.entities.categories,
   };
 };
 
@@ -17,4 +18,7 @@ const mapDispatchToProps = (dispatch) => {
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(ProductShow);
+export const ProductShowContainer = connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(ProductShow);

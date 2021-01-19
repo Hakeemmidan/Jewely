@@ -8,6 +8,10 @@ export const receiveFilter = (filter, value) => ({
   value,
 });
 
+// Action creators ^^^
+////////////////////////////////////////////
+// Thunk action creators vvv
+
 export const updateFilter = (filter, value) => (dispatch, getState) => {
   dispatch(receiveFilter(filter, value));
   return fetchProducts(getState().ui.filters)(dispatch);

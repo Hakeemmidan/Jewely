@@ -1,15 +1,15 @@
 import React from 'react';
 
-export const LinkedInIcon = () => {
+export const LinkedInIcon = (props) => {
   return (
     <svg
-      className="personal-account-img-link linkedin"
+      className={`${props.className} linkedin`}
       xmlns="http://www.w3.org/2000/svg"
       xmlnsXlink="http://www.w3.org/1999/xlink"
       width="438.536px"
       height="438.536px"
       viewBox="0 0 438.536 438.536"
-      xmlspace="preserve"
+      xmlSpace="preserve"
     >
       <g>
         <path

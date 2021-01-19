@@ -1,59 +1,54 @@
-class Api::ReviewsController < ApplicationController
+# frozen_string_literal: true
 
-    def index
-        if params[:product_id]
-            @reviews = Product.find(params[:product_id]).reviews.order('created_at DESC')
-        end
-    end
-
+module Api
+  class ReviewsController < ApplicationController
     def create
-        @review = Review.new(review_params)
-        
-        if (@review.author_id)
-            @review.author_username = User.find(@review.author_id).username
-        end
+      @review = Review.new(review_params)
 
-        if @review.save
-            render :show
-        else
-            render json: @review.errors.full_messages, status: 422
-        end
+      @review.author_username = @review.author.username if @review.author_id
+
+      if @review.save
+        render :show
+      else
+        render json: @review.errors.full_messages, status: :unprocessable_entity
+      end
     end
 
     def show
-        @review = Review.find(params[:id])
+      @review = Review.find(params[:id])
     end
 
     def update
-        @review = current_user.reviews.find(params[:id])
+      @review = current_user.reviews.find(params[:id])
 
-        if @review.update(review_params)
-            render :show
-        else
-            render json: @review.errors.full_messages, status: 422
-        end
+      if @review.update(review_params)
+        render :show
+      else
+        render json: @review.errors.full_messages, status: :unprocessable_entity
+      end
     end
 
     def destroy
-        @review = current_user.reviews.find(params[:id])
+      @review = current_user.reviews.find(params[:id])
 
-        if @review.destroy
-            render :index
-        else
-            render json: @review.errors.full_messages, status: 422
-        end
+      if @review.destroy
+        render :index
+      else
+        render json: @review.errors.full_messages, status: :unprocessable_entity
+      end
     end
 
     private
 
     def review_params
-        params.require(:review).permit(
-            :id,
-            :body,
-            :rating,
-            :author_id,
-            :product_id,
-            :author_username
-        )
+      params.require(:review).permit(
+        :id,
+        :body,
+        :rating,
+        :author_id,
+        :product_id,
+        :author_username
+      )
     end
+  end
 end

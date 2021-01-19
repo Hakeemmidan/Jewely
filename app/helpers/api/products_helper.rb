@@ -1,2 +1,0 @@
-module Api::ProductsHelper
-end

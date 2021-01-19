@@ -1,6 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import ReviewForm from './review_form';
+import {ReviewFormWithRouter} from './review_form';
 import {
   fetchReview,
   updateReview,
@@ -43,7 +43,7 @@ class EditReviewForm extends React.Component {
   }
 
   componentDidUpdate(prevProps) {
-    if (prevProps.review.id != this.props.match.params.reviewId) {
+    if (prevProps.review.id !== this.props.match.params.reviewId) {
       this.props.fetchReview(this.props.match.params.reviewId);
     }
   }
@@ -51,7 +51,7 @@ class EditReviewForm extends React.Component {
   render() {
     const {action, formType, review, errors} = this.props;
     return (
-      <ReviewForm
+      <ReviewFormWithRouter
         action={action}
         formType={formType}
         review={review}
@@ -62,4 +62,7 @@ class EditReviewForm extends React.Component {
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(EditReviewForm);
+export const EditReviewFormContainer = connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(EditReviewForm);

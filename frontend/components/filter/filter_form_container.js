@@ -1,5 +1,6 @@
 import {connect} from 'react-redux';
 import {updateFilter} from '../../actions/filter_actions';
+import {openDrawer} from '../../actions/drawer_actions';
 import {FilterForm} from './filter_form';
 
 const mapStateToProps = (state) => {
@@ -11,7 +12,12 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     updateFilter: (filter, value) => dispatch(updateFilter(filter, value)),
+    openDrawer: (drawerType, openDirection, closeDirection) =>
+      dispatch(openDrawer(drawerType, openDirection, closeDirection)),
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(FilterForm);
+export const FilterFormContainer = connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(FilterForm);

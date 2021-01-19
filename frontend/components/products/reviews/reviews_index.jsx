@@ -4,17 +4,9 @@ import {Link} from 'react-router-dom';
 export class ReviewsIndex extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {reviews: props.reviews};
     this.handleRemoveReview = this.handleRemoveReview.bind(this);
     this.renderReviewStarRating = this.renderReviewStarRating.bind(this);
-  }
-
-  componentDidMount() {
-    this.props.fetchReviews(this.props.productId).then((action) => {
-      this.setState({
-        reviews: action.reviews,
-      });
-    });
   }
 
   shouldComponentUpdate(nextProps) {
@@ -31,6 +23,7 @@ export class ReviewsIndex extends React.Component {
     for (let i = 0; i < rating; i++) {
       stars.push(
         <img
+          alt="review stsr filled"
           key={`filledStar-index-${i}-${reviewId}`}
           className="product-show-review-rating-star"
           src="https://image.flaticon.com/icons/svg/148/148841.svg"
@@ -41,6 +34,7 @@ export class ReviewsIndex extends React.Component {
     for (let j = 0; j < 5 - rating; j++) {
       stars.push(
         <img
+          alt="review star unfilled"
           key={`unfilledStar-index-${j}-${reviewId}`}
           className="product-show-review-rating-star"
           src="https://image.flaticon.com/icons/svg/149/149222.svg"
@@ -110,14 +104,9 @@ export class ReviewsIndex extends React.Component {
 
                 <hr className="product-show-divider reviews" />
 
-                {/* <Link to={`/reviews/${review.id}`}> */}
-                {/* <img
-                                    className="review-edit-button"
-                                    onClick={() => this.props.openModal('edit review')}
-                                    src="https://image.flaticon.com/icons/svg/1159/1159876.svg" /> */}
-                {/* </Link> */}
                 {this.props.currentUserId === review.author_id ? (
                   <img
+                    alt="delete review icon/button"
                     className="review-delete-button"
                     onClick={this.handleRemoveReview(review.id)}
                     src="https://image.flaticon.com/icons/svg/216/216683.svg"

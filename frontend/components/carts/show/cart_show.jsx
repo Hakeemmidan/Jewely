@@ -1,6 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
-import CartProductsItemContainer from './cart_products_item/cart_products_item_container';
+import {CartProductsItemContainer} from './cart_products_item/cart_products_item_container';
 
 import {
   VisaIcon,
@@ -8,7 +8,7 @@ import {
   AmericanExpressIcon,
   DiscoverIcon,
   PaypalIcon,
-} from '../../../util/cart_icons';
+} from '../../SVGs/cart_icons';
 
 export class CartShow extends React.Component {
   constructor(props) {
@@ -91,7 +91,7 @@ export class CartShow extends React.Component {
   }
 
   render() {
-    if (JSON.parse(localStorage.cart).length === 0) {
+    if (this.state.cartProducts.length === 0) {
       return (
         <div className="cart-is-empty-message-container">
           <div className="cart-is-empty-message-box">
@@ -105,10 +105,6 @@ export class CartShow extends React.Component {
           </div>
         </div>
       );
-    }
-
-    if (this.state.cartProducts.length < JSON.parse(localStorage.cart).length) {
-      return <div></div>;
     }
 
     const cartProductsLis = this.state.cartProducts.map((cartProduct, idx) => {
@@ -145,10 +141,10 @@ export class CartShow extends React.Component {
                 className="cart-show-radio-input"
               />
               <label>
-                <VisaIcon />
-                <MasterCardIcon />
-                <AmericanExpressIcon />
-                <DiscoverIcon />
+                <VisaIcon className="checkout-payment-method-icon" />
+                <MasterCardIcon className="checkout-payment-method-icon" />
+                <AmericanExpressIcon className="checkout-payment-method-icon" />
+                <DiscoverIcon className="checkout-payment-method-icon" />
               </label>
             </div>
 

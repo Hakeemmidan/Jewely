@@ -1,6 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import ProductForm from './product_form';
+import {ProductFormWithRouter} from './product_form';
 import {
   fetchProduct,
   updateProduct,
@@ -14,6 +14,7 @@ const mapStateToProps = (state, ownProps) => {
     description: '',
     price: 0,
     photoUrls: [],
+    category_id: null,
     seller_id: state.session.id,
   };
 
@@ -26,6 +27,7 @@ const mapStateToProps = (state, ownProps) => {
   return {
     product,
     formType,
+    categories: state.entities.categories,
   };
 };
 
@@ -44,19 +46,15 @@ class EditProductForm extends React.Component {
     this.props.fetchProduct(this.props.match.params.productId);
   }
 
-  componentDidUpdate(prevProps) {
-    if (prevProps.product.id != this.props.match.params.productId) {
-      this.props.fetchProduct(this.props.match.params.productId);
-    }
-  }
-
   render() {
-    const {action, formType, product, errors} = this.props;
+    const {action, formType, categories, product, errors} = this.props;
+
     return (
-      <ProductForm
+      <ProductFormWithRouter
         action={action}
         formType={formType}
         product={product}
+        categories={categories}
         openModal={this.props.openModal}
         closeModal={this.props.closeModal}
         removeProduct={this.props.removeProduct}
@@ -66,4 +64,7 @@ class EditProductForm extends React.Component {
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(EditProductForm);
+export const EditProductFormContainer = connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(EditProductForm);

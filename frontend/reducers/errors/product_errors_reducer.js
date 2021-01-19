@@ -3,7 +3,6 @@ import {
   RECEIVE_PRODUCT_ERRORS,
 } from '../../actions/product_actions';
 
-// keeps tracks of product-creation errors
 export const productErrorsReducer = (state = [], action) => {
   Object.freeze(state);
   switch (action.type) {

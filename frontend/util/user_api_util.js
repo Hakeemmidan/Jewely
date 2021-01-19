@@ -1,3 +1,5 @@
+import $ from 'jquery';
+
 export const fetchUsers = () => {
   return $.ajax({
     method: 'GET',

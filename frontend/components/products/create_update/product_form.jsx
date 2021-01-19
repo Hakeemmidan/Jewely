@@ -1,3 +1,4 @@
+/* eslint-disable no-restricted-globals */
 import React from 'react';
 import {withRouter} from 'react-router-dom';
 
@@ -19,13 +20,7 @@ class ProductForm extends React.Component {
 
   update(field) {
     let that = this;
-    return (e) => {
-      that.setState({[field]: e.target.value});
-      window.localStorage.setItem(
-        'productFormState',
-        JSON.stringify(that.state)
-      );
-    };
+    return (e) => that.setState({[field]: e.target.value});
   }
 
   componentDidMount() {
@@ -60,6 +55,7 @@ class ProductForm extends React.Component {
     formData.append('product[description]', this.state.description);
     formData.append('product[price]', this.state.price);
     formData.append('product[seller_id]', this.state.seller_id);
+    formData.append('product[category_id]', this.state.category_id);
     formData.append('product[errors]', this.state.errors);
 
     if (this.state.photoFiles) {
@@ -76,15 +72,10 @@ class ProductForm extends React.Component {
     this.props.openModal('loading');
 
     const that = this;
-    this.props.action(formData).then(
-      () => {
-        that.props.closeModal();
-        location.hash = '#/';
-      },
-      (err) => {
-        console.log(err);
-      }
-    );
+    this.props.action(formData).then(() => {
+      that.props.closeModal();
+      location.hash = '#/';
+    });
   }
 
   collectOverwrittenPhotosIds(oldObj, insertedObj) {
@@ -223,16 +214,15 @@ class ProductForm extends React.Component {
             >
               {this.renderSelectImage(i)}
             </label>
-            <img
-              htmlFor={`img${i}`}
-              key={`product-form-img-preview-${i}`}
-              className="product-form-image-preview"
-              src={
-                this.state.photoUrls[`img${i}`]
-                  ? this.state.photoUrls[`img${i}`]
-                  : this.state.photoUrls[i]
-              }
-            />
+            {this.state.photoUrls[i] && (
+              <img
+                htmlFor={`img${i}`}
+                alt="create/edit product placeholder"
+                key={`product-form-img-preview-${i}`}
+                className="product-form-image-preview"
+                src={this.state.photoUrls[`img${i}`] || this.state.photoUrls[i]}
+              />
+            )}
           </div>
         </div>
       );
@@ -272,6 +262,25 @@ class ProductForm extends React.Component {
                 value={this.state.description}
                 onChange={this.update('description')}
               />
+            </label>
+            <br />
+            <br />
+            <hr />
+            <label className="product-form-label">
+              Categories:
+              <br />
+              {this.props.categories && (
+                <select
+                  onChange={this.update('category_id')}
+                  defaultValue={this.state.category_id}
+                >
+                  {Object.values(this.props.categories).map((catg) => (
+                    <option key={`category-option-${catg.id}`} value={catg.id}>
+                      {catg.name}
+                    </option>
+                  ))}
+                </select>
+              )}
             </label>
 
             <br />
@@ -316,4 +325,4 @@ class ProductForm extends React.Component {
   }
 }
 
-export default withRouter(ProductForm);
+export const ProductFormWithRouter = withRouter(ProductForm);

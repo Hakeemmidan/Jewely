@@ -15,4 +15,7 @@ const mapDispatchToProps = (dispatch) => {
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(UserShow);
+export const UserShowContainer = connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(UserShow);

@@ -15,4 +15,7 @@ const mapDispatchToProps = (dispatch) => {
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(CartBadge);
+export const CartBadgeContainer = connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(CartBadge);
