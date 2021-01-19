@@ -1,5 +1,5 @@
 import {connect} from 'react-redux';
-import {App} from './app';
+import {App} from './App';
 import {fetchCategories} from '../actions/categories_actions';
 
 const mapDispatchToProps = (dispatch) => ({
