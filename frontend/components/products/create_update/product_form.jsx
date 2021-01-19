@@ -56,7 +56,8 @@ class ProductForm extends React.Component {
     formData.append('product[seller_id]', this.state.seller_id);
     formData.append(
       'product[category_id]',
-      this.state.category_id || Object.values(this.props.categories)[0].id
+      this.state.category_id ||
+        Object.values(this.props.categories).slice(-1)[0].id
     );
     formData.append('product[errors]', this.state.errors);
 
@@ -278,6 +279,9 @@ class ProductForm extends React.Component {
                 onChange={this.update('category_id')}
                 defaultValue={this.state.category_id}
               >
+                <option value={null} selected>
+                  select category
+                </option>
                 {Object.values(this.props.categories).map((catg) => (
                   <option key={`category-option-${catg.id}`} value={catg.id}>
                     {catg.name}
