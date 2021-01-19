@@ -69,6 +69,7 @@ module Api
         :price,
         :seller_id,
         :seller_username,
+        :category_id,
         photos: []
       )
     end

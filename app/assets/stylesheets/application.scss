@@ -743,7 +743,7 @@ body {
 }
 
 .product-form-label {
-  font-size: 0.1rem;
+  font-size: 1.5rem;
 }
 
 .product-form-textarea-input {
@@ -787,6 +787,7 @@ body {
 }
 
 .product-form-select-image-statement {
+  text-decoration: underline;
   position: absolute;
   top: 13.3rem;
   left: 7.5rem;

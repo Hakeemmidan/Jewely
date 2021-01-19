@@ -12,13 +12,18 @@ const mapStateToProps = (state) => {
     description: '',
     price: 0,
     photoUrls: [],
+    category_id: null,
     seller_id: state.session.id,
     errors: errors,
   };
 
   const formType = 'Create Product';
 
-  return {product, formType};
+  return {
+    product,
+    formType,
+    categories: state.entities.categories,
+  };
 };
 
 const mapDispatchToProps = (dispatch) => {
