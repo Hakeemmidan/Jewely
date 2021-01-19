@@ -7,6 +7,7 @@ class ProductForm extends React.Component {
     super(props);
     this.state = this.props.product;
 
+    this.categoriesArr = Object.values(this.props.categories);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.update = this.update.bind(this);
     this.handleRemove = this.handleRemove.bind(this);
@@ -55,7 +56,10 @@ class ProductForm extends React.Component {
     formData.append('product[description]', this.state.description);
     formData.append('product[price]', this.state.price);
     formData.append('product[seller_id]', this.state.seller_id);
-    formData.append('product[category_id]', this.state.category_id);
+    formData.append(
+      'product[category_id]',
+      this.state.category_id || this.categoriesArr[0].id
+    );
     formData.append('product[errors]', this.state.errors);
 
     if (this.state.photoFiles) {
@@ -269,18 +273,16 @@ class ProductForm extends React.Component {
             <label className="product-form-label">
               Categories:
               <br />
-              {this.props.categories && (
-                <select
-                  onChange={this.update('category_id')}
-                  defaultValue={this.state.category_id}
-                >
-                  {Object.values(this.props.categories).map((catg) => (
-                    <option key={`category-option-${catg.id}`} value={catg.id}>
-                      {catg.name}
-                    </option>
-                  ))}
-                </select>
-              )}
+              <select
+                onChange={this.update('category_id')}
+                defaultValue={this.state.category_id}
+              >
+                {this.categoriesArr.map((catg) => (
+                  <option key={`category-option-${catg.id}`} value={catg.id}>
+                    {catg.name}
+                  </option>
+                ))}
+              </select>
             </label>
 
             <br />
