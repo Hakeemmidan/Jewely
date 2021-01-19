@@ -1,6 +1,6 @@
 import {connect} from 'react-redux';
-import {fetchCategories} from '../actions/categories_actions';
 import {App} from './app';
+import {fetchCategories} from '../actions/categories_actions';
 
 const mapDispatchToProps = (dispatch) => ({
   fetchCategories: () => dispatch(fetchCategories()),
