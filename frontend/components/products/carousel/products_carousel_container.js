@@ -1,6 +1,5 @@
 import {connect} from 'react-redux';
 import {ProductsCarousel} from './product_carousel';
-import {fetchProducts} from '../../../actions/product_actions';
 
 const mapStateToProps = (state) => {
   return {
@@ -8,13 +7,7 @@ const mapStateToProps = (state) => {
   };
 };
 
-const mapDispatchToProps = (dispatch) => {
-  return {
-    fetchProducts: () => dispatch(fetchProducts()),
-  };
-};
-
 export const ProductsCarouselContainer = connect(
   mapStateToProps,
-  mapDispatchToProps
+  null
 )(ProductsCarousel);

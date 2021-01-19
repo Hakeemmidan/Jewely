@@ -20,6 +20,6 @@ export const productsReducer = (oldState = {}, action) => {
       delete nextState[action.productId];
       return nextState;
     default:
-      return null;
+      return oldState;
   }
 };

@@ -38,6 +38,7 @@ import {Footer} from './footer/footer';
 export function App(props) {
   // prepopulate Redux state of app
   props.fetchCategories();
+  props.fetchProducts();
 
   return (
     <div className="main-container-div">
