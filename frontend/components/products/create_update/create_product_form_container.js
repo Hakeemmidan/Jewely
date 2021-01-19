@@ -10,7 +10,7 @@ const mapStateToProps = (state) => {
   const product = {
     title: '',
     description: '',
-    price: 0,
+    price: null,
     photoUrls: [],
     category_id: null,
     seller_id: state.session.id,

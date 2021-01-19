@@ -97,7 +97,7 @@ export class ReviewsIndex extends React.Component {
                   {this.renderReviewStarRating(review.rating, review.id)}
                 </div>
 
-                <div style={{overflowWrap: 'break-word'}}>
+                <div className="review-body">
                   {review.body}
                   <br />
                 </div>

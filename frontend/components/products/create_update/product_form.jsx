@@ -5,9 +5,7 @@ import {withRouter} from 'react-router-dom';
 class ProductForm extends React.Component {
   constructor(props) {
     super(props);
-    this.state = this.props.product;
-
-    this.categoriesArr = Object.values(this.props.categories);
+    this.state = props.product;
     this.handleSubmit = this.handleSubmit.bind(this);
     this.update = this.update.bind(this);
     this.handleRemove = this.handleRemove.bind(this);
@@ -58,7 +56,7 @@ class ProductForm extends React.Component {
     formData.append('product[seller_id]', this.state.seller_id);
     formData.append(
       'product[category_id]',
-      this.state.category_id || this.categoriesArr[0].id
+      this.state.category_id || Object.values(this.props.categories)[0].id
     );
     formData.append('product[errors]', this.state.errors);
 
@@ -76,9 +74,11 @@ class ProductForm extends React.Component {
     this.props.openModal('loading');
 
     const that = this;
-    this.props.action(formData).then(() => {
+    this.props.action(formData).then((actionRes) => {
       that.props.closeModal();
-      location.hash = '#/';
+      if (!actionRes.errors) {
+        location.hash = '#/';
+      }
     });
   }
 
@@ -241,11 +241,11 @@ class ProductForm extends React.Component {
         <div className="product-form-box">
           <form className="product-form-content" onSubmit={this.handleSubmit}>
             <h2>{this.props.formType}</h2>
-            {this.renderErrors()}
             <label className="product-form-label">
               Title
               <br />
               <input
+                required
                 className="product-form-oneline-input"
                 type="text"
                 value={this.state.title}
@@ -260,6 +260,7 @@ class ProductForm extends React.Component {
               Description
               <br />
               <textarea
+                required
                 className="product-form-textarea-input"
                 rows="15"
                 cols="50"
@@ -277,7 +278,7 @@ class ProductForm extends React.Component {
                 onChange={this.update('category_id')}
                 defaultValue={this.state.category_id}
               >
-                {this.categoriesArr.map((catg) => (
+                {Object.values(this.props.categories).map((catg) => (
                   <option key={`category-option-${catg.id}`} value={catg.id}>
                     {catg.name}
                   </option>
@@ -293,9 +294,10 @@ class ProductForm extends React.Component {
               Price
               <br />
               <input
+                required
                 className="product-form-oneline-input"
                 type="number"
-                value={this.state.price}
+                value={this.state.price || ''}
                 onChange={this.update('price')}
               />
             </label>
@@ -312,6 +314,8 @@ class ProductForm extends React.Component {
             </label>
 
             <br />
+
+            {this.renderErrors()}
 
             <input
               className="black-background-button"

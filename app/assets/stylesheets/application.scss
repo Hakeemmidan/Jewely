@@ -464,7 +464,6 @@ input[type='radio']:checked {
 .error {
   list-style-type: circle;
   color: darkred;
-  float: left;
 }
 
 .errors-ul {
@@ -1321,6 +1320,11 @@ body {
   &:hover {
     text-decoration: underline;
   }
+}
+
+.review-body {
+  overflow-wrap: 'break-word';
+  padding: 0 2rem;
 }
 
 @import './abstract/keyframes';
