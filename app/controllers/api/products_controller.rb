@@ -49,7 +49,7 @@ module Api
       @product.photos.destroy_all
 
       if @product.destroy
-        render :index
+        render :show
       else
         render json: @product.errors.full_messages, status: :unprocessable_entity
       end

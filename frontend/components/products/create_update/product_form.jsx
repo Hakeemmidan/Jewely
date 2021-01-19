@@ -59,7 +59,6 @@ class ProductForm extends React.Component {
       this.state.category_id ||
         Object.values(this.props.categories).slice(-1)[0].id
     );
-    formData.append('product[errors]', this.state.errors);
 
     if (this.state.photoFiles) {
       const photos = Object.values(this.state.photoFiles);
@@ -277,11 +276,9 @@ class ProductForm extends React.Component {
               <br />
               <select
                 onChange={this.update('category_id')}
-                defaultValue={this.state.category_id}
+                defaultValue={this.state.category_id || 'default'}
               >
-                <option value={null} selected>
-                  select category
-                </option>
+                <option value={'default'}>select category</option>
                 {Object.values(this.props.categories).map((catg) => (
                   <option key={`category-option-${catg.id}`} value={catg.id}>
                     {catg.name}

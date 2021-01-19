@@ -4,21 +4,30 @@ import {ProductsCarouselItem} from './product_carousel_item';
 
 export class ProductsCarousel extends React.Component {
   componentDidMount() {
-    this.props.fetchProducts();
+    this.props.products || this.props.fetchProducts();
   }
 
   render() {
+    const productItems = [];
+    let product;
+
+    for (let id in this.props.products) {
+      product = this.props.products[id];
+
+      productItems.push(
+        <ProductsCarouselItem
+          key={`products-carousel-item-idx-${id}`}
+          product={product}
+        />
+      );
+    }
+
     return (
       <ScrollMenu
         wheel={false}
         arrowLeft={<div className="scroll-menu-arrow">{' < '}</div>}
         arrowRight={<div className="scroll-menu-arrow">{' > '}</div>}
-        data={this.props.products.map((product, idx) => (
-          <ProductsCarouselItem
-            key={`products-carousel-item-idx-${idx}`}
-            product={product}
-          />
-        ))}
+        data={productItems}
       />
     );
   }
