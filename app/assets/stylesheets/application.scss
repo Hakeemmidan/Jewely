@@ -16,6 +16,7 @@
 
 html {
   font-size: 62.5%; // 1rem = 10px, 10px/16px = 62.5%
+  font-family: 'Poppins', sans-serif;
 }
 
 html,
@@ -81,6 +82,7 @@ svg {
     all: unset;
   }
   // ^ clears all styling
+  font-family: 'Poppins', sans-serif;
   display: block;
   cursor: pointer;
   border: 0.1rem solid lightgray;
@@ -119,7 +121,6 @@ svg {
   display: flex;
   justify-content: space-between;
   margin-bottom: 1vh;
-  font-family: 'Poppins', sans-serif;
   font-weight: lighter;
   font-size: 1.6vh;
   padding-top: 0.4vh;
@@ -144,7 +145,6 @@ svg {
 #proceed-to-checkout-button {
   margin: 0;
   padding-top: 1.2rem;
-  font-family: 'Noto Serif', serif;
   width: 85%;
 }
 
@@ -250,7 +250,6 @@ input[type='radio']:checked {
 }
 
 .product-show-title {
-  font-family: 'Noto Serif', serif;
   font-weight: normal;
   margin-top: -0.8rem;
   margin-bottom: 0;
@@ -259,7 +258,6 @@ input[type='radio']:checked {
 }
 
 .product-show-price {
-  font-family: 'Poppins', sans-serif;
   font-size: 130%;
   line-height: 1.4;
 }
@@ -267,7 +265,6 @@ input[type='radio']:checked {
 .quantity-label {
   display: block;
   padding-bottom: 0.6rem;
-  font-family: 'Raleway', sans-serif;
 }
 
 .product-show-quantity-select {
@@ -279,6 +276,7 @@ input[type='radio']:checked {
   * {
     all: unset;
   }
+  font-family: 'Poppins', sans-serif;
   width: 80%;
   display: block;
   cursor: pointer;
@@ -299,7 +297,6 @@ input[type='radio']:checked {
   border-color: rgba(0, 0, 0, 0.1);
   display: inline-block;
   font-weight: bold;
-  font-family: 'Poppins', sans-serif;
   white-space: nowrap;
   -webkit-tap-highlight-color: transparent;
   -webkit-appearance: none;
@@ -370,6 +367,7 @@ input[type='radio']:checked {
   * {
     all: unset;
   }
+  font-family: 'Poppins', sans-serif;
   cursor: pointer;
   border-radius: 0.3rem;
   margin-top: 0.7rem;
@@ -384,7 +382,6 @@ input[type='radio']:checked {
   border: 0.1rem solid gray;
   display: inline-block;
   font-weight: bold;
-  font-family: 'Poppins', sans-serif;
   white-space: nowrap;
   position: absolute;
   bottom: 0;
@@ -487,6 +484,7 @@ input[type='radio']:checked {
   * {
     all: unset;
   }
+  font-family: 'Poppins', sans-serif;
   display: block;
   cursor: pointer;
   border: 0.1rem solid grey;
@@ -507,7 +505,6 @@ input[type='radio']:checked {
 }
 
 body {
-  font-family: 'Poppins', sans-serif;
   margin: 0;
 }
 
@@ -639,7 +636,6 @@ body {
   width: 80%;
   margin: 0;
   padding-bottom: 0.6rem;
-  font-family: 'Poppins', sans-serif;
   font-size: 1.7vh;
 }
 
@@ -935,7 +931,6 @@ body {
   color: black;
   font-size: 2vh;
   font-weight: 500;
-  font-family: 'Noto Serif', serif;
 }
 
 .product-index-item {
@@ -1082,6 +1077,7 @@ body {
   * {
     all: unset;
   }
+  font-family: 'Poppins', sans-serif;
   cursor: pointer;
   border-radius: 0.3rem;
   text-align: center;
@@ -1096,7 +1092,6 @@ body {
   border: 0.1rem solid gray;
   display: inline-block;
   font-weight: bold;
-  font-family: 'Poppins', sans-serif;
   white-space: nowrap;
   margin-top: 1rem;
 }
@@ -1153,6 +1148,7 @@ body {
     all: unset;
   }
   // ^ clears all styling
+  font-family: 'Poppins', sans-serif;
   display: block;
   cursor: pointer;
   border: 0.1rem solid grey;
@@ -1244,7 +1240,6 @@ body {
   width: 80%;
   margin: 0;
   padding-bottom: 0.6rem;
-  font-family: 'Poppins', sans-serif;
   font-size: 1.7vh;
 }
 
