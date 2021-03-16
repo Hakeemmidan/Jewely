@@ -1,4 +1,3 @@
----
 ## General flow of a feature
 
 It is suggested to follow the general flow below for implementing full-stack features:
