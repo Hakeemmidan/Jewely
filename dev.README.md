@@ -19,6 +19,14 @@ It is suggested to follow the general flow below for implementing full-stack fea
 
 **Frontend**
 
+> If you plan to use Redux:
+> - Follow 7-13
+> - Use Redux if you need to pass data through more than 2 props
+> - Use Redux if you need the data in multiple, relatively seperate, places in app
+>
+> Else:
+> - Go straight to 12
+
 7. API util
     - Under `frontend/util`
 8. Action creators
@@ -29,10 +37,11 @@ It is suggested to follow the general flow below for implementing full-stack fea
     - Under `frontend/reducers`
 11. Mapping to components
     - Under `frontend/components`
-    - If you're going to use Redux (use Redux if you need fetched info elsewhere in app)
-    - First create container for component, then create actual component file
+    - First create container for component, then create a skeleton component file (exported component with no content)
     - Check out `frontend/components/products/index/product_index_container.js` as an example
-12. Style
+12. Create component
+    - Under `frontend/components`
+13. Style
     - Most styling is inside `app/assets/stylesheets/application.scss`
     - Don't get intimidated by the size of the file. CMD + F and the browser DOM tree are your best friend here. You should mostly be looking at styling through the browser and modifying to the file as needed.
 ---
