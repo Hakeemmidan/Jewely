@@ -1,7 +1,7 @@
 ---
 ## General flow of a feature
 
-It is suggested to follow the general flow from the backend to the frontend.
+It is suggested to follow the general flow below for implementing full-stack features:
 
 **Backend**
 
