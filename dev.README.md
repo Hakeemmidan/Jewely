@@ -1,42 +1,49 @@
----
 ## General flow of a feature
 
-Checkout related [commands](#commands)
+It is suggested to follow the general flow below for implementing full-stack features:
 
-- Backend
+**Backend**
 
 1. Migration
-- Gets generated when running migration command (`rails g migration <name_of_migration>`)
+    - Gets generated when running migration command (`rails g migration <name_of_migration>`)
 2. Model
-- Under `app/models`
+    - Under `app/models`
 3. Associations
-- Inside model files; e.g. `app/models/user.rb`
+    - Inside model files; e.g. `app/models/user.rb`
 4. Validations
-- Inside model files; e.g. `app/models/user.rb`
+    - Inside model files; e.g. `app/models/user.rb`
 5. Routes
-- Inside `config/routes.rb`
+    - Inside `config/routes.rb`
 6. Controller
-- Under `app/controllers/api`
+    - Under `app/controllers/api`
 
-- Frontend
+**Frontend**
+
+> If you plan to use Redux:
+> - Follow 7-13
+> - Use Redux if you need to pass data through more than 2 props
+> - Use Redux if you need the data in multiple, relatively seperate, places in app
+>
+> Else:
+> - Go straight to 12
 
 7. API util
-- Under `frontend/util`
+    - Under `frontend/util`
 8. Action creators
-- Under `frontend/actions`
+    - Under `frontend/actions`
 9. Thunk action creators
-- Under `frontend/actions`
+    - Under `frontend/actions`
 10. Reducers
-- Under `frontend/reducers`
+    - Under `frontend/reducers`
 11. Mapping to components
-- Under `frontend/components`
-- If you're going to use Redux (use Redux if you need fetched info elsewhere in app)
-- First create container for component, then create actual component file
-- Check out `frontend/components/products/index/product_index_container.js` as an example
-12. Style
-
-- Most styling is inside `app/assets/stylesheets/application.scss`
-- Don't get intimidated by the size of the file. CMD + F and the browser DOM tree are your best friend here. You should mostly be looking at styling through the browser and modifying to the file as needed.
+    - Under `frontend/components`
+    - First create container for component, then create a skeleton component file (exported component with no content)
+    - Check out `frontend/components/products/index/product_index_container.js` as an example
+12. Create component
+    - Under `frontend/components`
+13. Style
+    - Most styling is inside `app/assets/stylesheets/application.scss`
+    - Don't get intimidated by the size of the file. CMD + F and the browser DOM tree are your best friend here. You should mostly be looking at styling through the browser and modifying to the file as needed.
 ---
 
 ## Commands
