@@ -185,7 +185,7 @@ Parse frontend linting errors/warnings:
   "ui": {
     "modal": "<name-of-opened-modal>",
     "filters": {
-      "search": "<search content collected here>"
+      "search": "<search-content-collected-here>"
     },
     "drawer": {
       "closeDirection": "<open-drawer-close-dir>",
