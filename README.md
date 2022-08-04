@@ -1,7 +1,5 @@
 # Jewely
 
-[Jewely live](https://jewely-fsp.herokuapp.com/#/)
-
 ## Background and Overview
 
 Jewely is an Etsy inspired site that specializes in allowing users to buy and sell jewelry. It works like most e-commerce stores, except in this one, you could be a vendor. A user must sign up or sign in order to be able to sell.
